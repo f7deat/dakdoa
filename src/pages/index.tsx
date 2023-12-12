@@ -1,17 +1,20 @@
-import yayJpg from '../assets/yay.jpg';
+import { Cover, Page1, Page2, Page3, Page4 } from "@/components/homes";
+import { Carousel } from "antd";
+import { Helmet } from "umi";
 
 export default function HomePage() {
   return (
     <div>
-      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
-        <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
-          Coming Soon
-        </h1>
-        <p className="text-white text-lg mb-8">
-          We're working hard to bring you something amazing. Stay tuned!
-        </p>
-      </div>
-
+      <Helmet>
+        <title>Shinec Gia Lai</title>
+      </Helmet>
+      <Carousel dots dotPosition="left">
+        <Cover />
+        <Page1 />
+        <Page2 />
+        <Page3 />
+        <Page4 />
+      </Carousel>
     </div>
   );
 }

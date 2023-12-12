@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@umijs/plugins": "^4.0.89",
+    "antd": "^5.12.2",
     "umi": "^4.0.89",
     "umi-plugin-locale": "^2.11.7"
   },
