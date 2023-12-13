@@ -8,7 +8,7 @@ export default function HomePage() {
       <Helmet>
         <title>Shinec Gia Lai</title>
       </Helmet>
-      <Carousel dots dotPosition="left">
+      <Carousel dots dotPosition="left" id="2222">
         <Cover />
         <Page1 />
         <Page2 />
