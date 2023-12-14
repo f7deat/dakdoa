@@ -7,7 +7,6 @@ import land from '../../assets/icons/land.svg';
 import logistics from '../../assets/icons/logistic.svg';
 import office from '../../assets/icons/office.svg';
 import warehouse from '../../assets/icons/warehouse.svg';
-import { Carousel } from "antd";
 import NestedCarousel from "../nested-carousel";
 
 const ServiceItem = (icon: string, name: string) => {
@@ -33,10 +32,9 @@ const Page3: React.FC = () => {
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="container mx-auto mb-[65px] h-full">
-                        <NestedCarousel />
-                        <Carousel dotPosition="bottom">
-                            <div>
+                    <div className="container mx-auto h-full flex items-center">
+                        <NestedCarousel items={[
+                            <div key={1}>
                                 <div className="md:flex gap-20 items-center h-full">
                                     <div className="md:w-1/2 pr-10">
                                         <div className="flex flex-wrap">
@@ -77,10 +75,8 @@ const Page3: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                Empty
-                            </div>
-                        </Carousel>
+                        ]} />
+
                     </div>
                     <img src={infra} alt="IMG" className="absolute bottom-0 right-0" />
                 </div>
