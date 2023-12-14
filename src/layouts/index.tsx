@@ -29,7 +29,8 @@ export default function Layout() {
             }
           },
           token: {
-            fontSize: 16
+            fontSize: 16,
+            colorLinkHover: '#0B8936'
           }
         }}
       >

@@ -1,6 +1,7 @@
 import { MenuData } from '@/data';
 import logoWhite from '../../assets/logo/logo-green.svg';
 import viFlag from '../../assets/flags/vi.svg';
+import { Link } from 'umi';
 
 const Navbar: React.FC = () => {
     return (
@@ -14,7 +15,11 @@ const Navbar: React.FC = () => {
                         <div className='flex text-slate-700 font-semibold gap-8 inter'>
                             {
                                 MenuData.map(menu => (
-                                    <div key={menu.key}>{menu.label}</div>
+                                    <div key={menu.key}>
+                                        <Link to="#" className='nav-link'>
+                                            {menu.label}
+                                        </Link>
+                                    </div>
                                 ))
                             }
                         </div>
