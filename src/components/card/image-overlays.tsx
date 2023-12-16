@@ -1,5 +1,6 @@
 type CardImageOverlaysProps = {
     image: string;
+    maxHeight: number;
 }
 
 const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
