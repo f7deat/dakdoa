@@ -1,21 +1,24 @@
-import overlays from '../../assets/css/overlays.svg';
-
 type CardImageOverlaysProps = {
     image: string;
 }
 
 const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
     return (
-        <div className="relative text-white">
-            <div className='absolute top-0 left-0 bottom-0 right-0 hover:bg-[#2CAF58E5] cursor-pointer z-10'></div>
-            <img src={props.image} alt="IMG" />
-            <div className="absolute bottom-0 px-8 py-6 bg-contain" style={{
-                backgroundImage: `url(${overlays})`
-            }}>
-                <div className="montserrat text-[27px] font-bold mb-2">
-                    Đất công nghiệp tại Hải Phòng
+        <div className="relative card-image-overlay">
+            <div className="item">
+            <a href="#">
+                <div className="text-white">
+                    <img src={props.image} alt="IMG" className="w-full" />
+                    <div className="linear-gradient"></div>
+                    <div className="item__overlay">
+                        <h3 className="text-[27px] font-bold montserrat">Đất công nghiệp tại Hải Phòng</h3>
+                        <div className="border-b w-16 border-2 mx-4 mb-4"></div>
+                        <div className="item__body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="border-b border-2 w-16 bg-white"></div>
+            </a>
             </div>
         </div>
     )

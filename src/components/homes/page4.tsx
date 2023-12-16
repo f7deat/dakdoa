@@ -11,12 +11,12 @@ const Page4: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-screen flex flex-col justify-between w-screen" >
+            <div className="flex h-screen flex-col justify-between w-screen" >
                 <Navbar />
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="flex  h-full items-center">
+                    <div className="flex h-full items-center">
                         <div className="container mx-auto">
                             <div className="text-center text-[50px] montserrat text-white font-bold">
                                 Sản phẩm chúng tôi cung cấp
@@ -24,16 +24,22 @@ const Page4: React.FC = () => {
                             <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
                                 As a company, we’ve always believed in walking our own path and doing things a little differently.
                             </div>
-                            <NestedCarousel
-                                items={[
-                                    <div key={1} className="flex justify-center">
+                            <div className="max-w-[1240px] mx-auto">
+                                <NestedCarousel
+                                    slidesPerRow={4}
+                                    slidesToScroll={1}
+                                    items={[
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
+                                        <CardImageOverlays image={product1} />,
                                         <CardImageOverlays image={product1} />
-                                        <CardImageOverlays image={product1} />
-                                        <CardImageOverlays image={product1} />
-                                        <CardImageOverlays image={product1} />
-                                    </div>
-                                ]}
-                            />
+                                    ]}
+                                />
+                            </div>
                         </div>
                     </div>
                     <img src={infra} alt="IMG" className="absolute bottom-0 right-0" />

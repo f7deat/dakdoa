@@ -24,7 +24,7 @@ export default function HomePage() {
       <Helmet>
         <title>Shinec Gia Lai</title>
       </Helmet>
-      <Carousel dots dotPosition="left" ref={carouselRef} infinite={false}>
+      <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} rootClassName="c1" id="cc">
         <Cover />
         <Page1 />
         <Page2 />

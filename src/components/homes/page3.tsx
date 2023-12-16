@@ -27,7 +27,7 @@ const Page3: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-screen flex flex-col justify-between w-screen" >
+            <div className="h-screen flex flex-col justify-between">
                 <Navbar />
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
