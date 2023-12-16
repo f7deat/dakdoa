@@ -1,21 +1,27 @@
 type CardImageOverlaysProps = {
     image: string;
-    maxHeight: number;
+    title: string;
+    description?: string;
+    height?: number;
 }
 
 const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
     return (
         <div className="relative card-image-overlay">
-            <div className="item">
+            <div className="item" style={{
+                height: props.height
+            }}>
             <a href="#">
                 <div className="text-white">
-                    <img src={props.image} alt="IMG" className="w-full" />
-                    <div className="linear-gradient"></div>
+                    <img src={props.image} alt="IMG" className="w-full" loading="lazy" />
+                    <div className="linear-gradient" style={{
+                height: props.height
+            }}></div>
                     <div className="item__overlay">
-                        <h3 className="text-[27px] font-bold montserrat">Đất công nghiệp tại Hải Phòng</h3>
+                        <h3 className="text-[27px] font-bold montserrat">{props.title}</h3>
                         <div className="border-b w-16 border-2 mx-4 mb-4"></div>
                         <div className="item__body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            {props.description}
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,26 @@
 import Navbar from "../navbar"
 import bg from '../../assets/css/bg-feature.gif';
 import NestedCarousel from "../nested-carousel";
-import { CardImageOverlays } from "..";
-import product1 from '../../assets/products/product1.png';
+import trafic from '../../assets/amenities/trafic.png';
+import electric from '../../assets/amenities/electric.png';
+import water from '../../assets/amenities/water.png';
 
 const Page5: React.FC = () => {
+
+    const Amenities = (image: string, title: string, description: string[]) => (
+        <div className="px-4 text-white montserrat">
+            <img src={image} className="w-full h-full bg-cover h-[317px] rounded-lg mb-2" alt="Amenities" loading="lazy" />
+            <div className="font-semibold text-xl py-2">{title}</div>
+            <ul className="text-sm list-disc">
+                {
+                    description.map((value: string, index: number) => (
+                        <li key={index} className="ml-4">{value}</li>
+                    ))
+                }
+            </ul>
+        </div>
+    )
+
     return (
         <div className="h-screen bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
             style={{
@@ -23,6 +39,14 @@ const Page5: React.FC = () => {
                             <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
                                 As a company, we’ve always believed in walking our own path and doing things a little differently.
                             </div>
+                            <NestedCarousel
+                                slidesPerRow={3}
+                                items={[
+                                    Amenities(trafic, 'Giao thông', ['Hệ thống đường giao thông đồng bộ, tiêu chuẩn', 'Chiều rộng: 40m – 30m – 25m']),
+                                    Amenities(electric, 'Hệ thống cấp điện - nước', ['Điện áp: 110KV-22KV', 'Công suất: 189 MVA (có dự trù nâng cao)']),
+                                    Amenities(water, 'Hệ thống XLNT tập trung', ['Công suất: 2.000 m3/ngày đêm (có dự trù nâng cao công suất)', 'Công nghệ xử lý vi sinh tiêu chuẩn']),
+                                ]}
+                            />
                         </div>
                     </div>
                 </div>

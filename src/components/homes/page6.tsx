@@ -10,8 +10,13 @@ import restaurent from '../../assets/amenities/restaurent.png';
 import hotel from '../../assets/amenities/hotel.png';
 import golf from '../../assets/amenities/golf.png';
 import cafe from '../../assets/amenities/cafe.png';
+import { useIntl } from "umi";
+import NestedCarousel from "../nested-carousel";
 
 const Page6: React.FC = () => {
+
+    const intl = useIntl();
+
     return (
         <div className="h-screen bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
             style={{
@@ -24,23 +29,24 @@ const Page6: React.FC = () => {
                 }}>
                     <div className="flex h-full items-center">
                         <div className="container mx-auto">
-                            <div className="text-center text-[50px] montserrat text-white font-bold">
-                            Tiện ích ngoại khu
+                            <div className="text-center text-[50px] montserrat text-white font-bold mb-4">
+                                Tiện ích ngoại khu
                             </div>
-                            <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
-                                As a company, we’ve always believed in walking our own path and doing things a little differently.
-                            </div>
-                            <div className="grid grid-cols-3 gap-4">
-                                <CardImageOverlays maxHeight={150} image={hospital} />
-                                <CardImageOverlays maxHeight={150} image={school} />
-                                <CardImageOverlays maxHeight={150} image={bank} />
-                                <CardImageOverlays maxHeight={150} image={govern} />
-                                <CardImageOverlays maxHeight={150} image={mall} />
-                                <CardImageOverlays maxHeight={150} image={restaurent} />
-                                <CardImageOverlays maxHeight={150} image={hotel} />
-                                <CardImageOverlays maxHeight={150} image={golf} />
-                                <CardImageOverlays maxHeight={150} image={cafe} />
-                            </div>
+                            <NestedCarousel
+                                items={[
+                                    <div className="grid grid-cols-3 gap-6">
+                                        <CardImageOverlays height={190} title={intl.formatMessage({ id: 'hospital' })} image={hospital} />
+                                        <CardImageOverlays height={190} title="Trường học" image={school} />
+                                        <CardImageOverlays height={190} title="Ngân hàng" image={bank} />
+                                        <CardImageOverlays height={190} title="Khu vực hành chính công" image={govern} />
+                                        <CardImageOverlays height={190} title="Trung tâm thương mại" image={mall} />
+                                        <CardImageOverlays height={190} title="Nhà hàng" image={restaurent} />
+                                        <CardImageOverlays height={190} title="Khách sạn" image={hotel} />
+                                        <CardImageOverlays height={190} title="Dịch vụ khác" image={golf} />
+                                        <CardImageOverlays height={190} title="Các lĩnh vực sản suất ngoại khu" image={cafe} />
+                                    </div>
+                                ]}
+                            />
                         </div>
                     </div>
                 </div>

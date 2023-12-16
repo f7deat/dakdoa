@@ -29,14 +29,14 @@ const Page4: React.FC = () => {
                                     slidesPerRow={4}
                                     slidesToScroll={1}
                                     items={[
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />,
-                                        <CardImageOverlays image={product1} />
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
+                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />
                                     ]}
                                 />
                             </div>

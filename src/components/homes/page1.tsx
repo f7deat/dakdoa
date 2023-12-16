@@ -5,8 +5,18 @@ import ContactButton from "../button";
 const Page1: React.FC = () => {
     return (
         <div className="relative">
-            <div className="h-screen bg-slate-100 flex flex-col justify-between">
+            <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
+                <source
+                    src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </video>
+            <div className="h-screen flex flex-col justify-between z-10 relative" style={{
+                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
+            }}>
                 <Navbar />
+
                 <div className="relative">
                     <div className="container mx-auto mb-[65px]">
                         <div className="montserrat text-[#0B8936] text-[49px] font-bold mb-4 border-b border-green-600 py-1">Tây Nguyên Tươi đẹp</div>
