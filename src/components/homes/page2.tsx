@@ -7,11 +7,10 @@ const Page2: React.FC = () => {
         <div className="relative">
             <div className="h-screen bg-slate-100 flex flex-col justify-between">
                 <Navbar />
-
                 <div className="relative">
-                    <div className="container mx-auto mb-[65px]">
-                        <div className="montserrat text-[#0B8936] text-[49px] font-bold mb-4 border-b border-green-600 py-1">Cụm công nghiệp sinh thái hàng đầu</div>
-                        <div className="text-slate-400 mb-4 montserrat" style={{
+                    <div className="container mx-auto mb-[65px] px-10 md:px-0">
+                        <div className="montserrat text-[#0B8936] text-2xl md:text-[49px] font-bold mb-4 border-b border-green-600 py-1">Cụm công nghiệp sinh thái hàng đầu</div>
+                        <div className="text-slate-400 mb-4 montserrat text-sm md:text-base" style={{
                             maxWidth: 670
                         }}>
                             Friendly neighbors and smiling faces. Southern charm with a coastal vibe.

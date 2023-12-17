@@ -9,7 +9,7 @@ const Page5: React.FC = () => {
 
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="px-4 text-white montserrat">
-            <img src={image} className="w-full h-full bg-cover h-[317px] rounded-lg mb-2" alt="Amenities" loading="lazy" />
+            <img src={image} className="w-full bg-cover h-[250px] md:h-[317px] rounded-lg mb-2" alt="Amenities" loading="lazy" />
             <div className="font-semibold text-xl py-2">{title}</div>
             <ul className="text-sm list-disc">
                 {
@@ -32,8 +32,8 @@ const Page5: React.FC = () => {
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
                     <div className="flex  h-full items-center">
-                        <div className="container mx-auto">
-                            <div className="text-center text-[50px] montserrat text-white font-bold">
+                        <div className="container mx-auto px-10 md:px-0">
+                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold">
                                 TIỆN ÍCH NỘI KHU
                             </div>
                             <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
@@ -41,6 +41,14 @@ const Page5: React.FC = () => {
                             </div>
                             <NestedCarousel
                                 slidesPerRow={3}
+                                responsive={[
+                                    {
+                                      breakpoint: 640,
+                                      settings: {
+                                        slidesPerRow: 1
+                                      }
+                                    }
+                                ]}
                                 items={[
                                     Amenities(trafic, 'Giao thông', ['Hệ thống đường giao thông đồng bộ, tiêu chuẩn', 'Chiều rộng: 40m – 30m – 25m']),
                                     Amenities(electric, 'Hệ thống cấp điện - nước', ['Điện áp: 110KV-22KV', 'Công suất: 189 MVA (có dự trù nâng cao)']),

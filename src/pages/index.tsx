@@ -1,6 +1,4 @@
-import { Cover, Page1, Page2, Page3, Page4 } from "@/components/homes";
-import Page5 from "@/components/homes/page5";
-import Page6 from "@/components/homes/page6";
+import { Cover, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8 } from "@/components/homes";
 import { Carousel } from "antd";
 import { useEffect, useRef } from "react";
 import { Helmet } from "umi";
@@ -32,6 +30,8 @@ export default function HomePage() {
         <Page4 />
         <Page5 />
         <Page6 />
+        <Page7 />
+        <Page8 />
       </Carousel>
     </div>
   );

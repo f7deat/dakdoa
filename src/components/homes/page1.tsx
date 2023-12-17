@@ -16,20 +16,21 @@ const Page1: React.FC = () => {
                 background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
             }}>
                 <Navbar />
-
                 <div className="relative">
-                    <div className="container mx-auto mb-[65px]">
-                        <div className="montserrat text-[#0B8936] text-[49px] font-bold mb-4 border-b border-green-600 py-1">Tây Nguyên Tươi đẹp</div>
-                        <div className="text-slate-400 mb-4 montserrat" style={{
-                            maxWidth: 670
-                        }}>
-                            Friendly neighbors and smiling faces. Southern charm with a coastal vibe.
-                            Regardless of where you choose to live on the Mississippi Gulf Coast,
-                            you’ll find that you are welcome here. From large neighborhoods with lots
-                            of amenities to exclusive enclaves that provide privacy and proximity to
-                            nature, Elliott Homes offers a variety of communities that fit your lifestyle.
+                    <div className="container mx-auto mb-[65px] px-10 md:px-0">
+                        <div>
+                            <div className="montserrat text-[#0B8936] text-2xl md:text-[49px] font-bold mb-4 border-b border-green-600 py-1">Tây Nguyên Tươi đẹp</div>
+                            <div className="text-slate-400 mb-4 montserrat text-xs md:text-base" style={{
+                                maxWidth: 670
+                            }}>
+                                Friendly neighbors and smiling faces. Southern charm with a coastal vibe.
+                                Regardless of where you choose to live on the Mississippi Gulf Coast,
+                                you’ll find that you are welcome here. From large neighborhoods with lots
+                                of amenities to exclusive enclaves that provide privacy and proximity to
+                                nature, Elliott Homes offers a variety of communities that fit your lifestyle.
+                            </div>
+                            <ContactButton />
                         </div>
-                        <ContactButton />
                     </div>
                     <img src={infra} alt="IMG" className="absolute bottom-0 right-0" />
                 </div>

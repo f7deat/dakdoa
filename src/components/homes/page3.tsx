@@ -15,7 +15,7 @@ const ServiceItem = (icon: string, name: string) => {
             <div>
                 <img src={icon} alt="IMG" />
             </div>
-            <div className="text-[27px] montserrat font-semibold text-white">{name}</div>
+            <div className="md:text-[27px] montserrat font-semibold text-white">{name}</div>
         </div>
     )
 }

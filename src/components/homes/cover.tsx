@@ -4,6 +4,7 @@ import cover from '../../assets/cover-min.jpg';
 import logoWhite from '../../assets/logo/logo-white.svg';
 import icon360 from '../../assets/icons/360.svg';
 import viFlag from '../../assets/flags/vi.svg';
+import Languages from '../navbar/languages';
 
 const Cover: React.FC = () => {
     return (
@@ -29,13 +30,7 @@ const Cover: React.FC = () => {
                                     }
                                 </div>
                                 <div className='border-r h-8 mx-8'></div>
-                                <button className='border rounded-full px-4 py-1 md:py-2 flex items-center gap-2 text-white font-semibold text-sm md:text-base'>
-                                    <img src={viFlag} alt='VI' />
-                                    <span>Tiếng Việt</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg>
-                                </button>
+                                <Languages white />
                             </div>
                         </div>
                         <div className='h-full py-10 md:py-0'>

@@ -28,25 +28,27 @@ const Page6: React.FC = () => {
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
                     <div className="flex h-full items-center">
-                        <div className="container mx-auto">
-                            <div className="text-center text-[50px] montserrat text-white font-bold mb-4">
+                        <div className="container mx-auto px-10 md:px-0">
+                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
                                 Tiện ích ngoại khu
                             </div>
-                            <NestedCarousel
-                                items={[
-                                    <div className="grid grid-cols-3 gap-6">
-                                        <CardImageOverlays height={190} title={intl.formatMessage({ id: 'hospital' })} image={hospital} />
-                                        <CardImageOverlays height={190} title="Trường học" image={school} />
-                                        <CardImageOverlays height={190} title="Ngân hàng" image={bank} />
-                                        <CardImageOverlays height={190} title="Khu vực hành chính công" image={govern} />
-                                        <CardImageOverlays height={190} title="Trung tâm thương mại" image={mall} />
-                                        <CardImageOverlays height={190} title="Nhà hàng" image={restaurent} />
-                                        <CardImageOverlays height={190} title="Khách sạn" image={hotel} />
-                                        <CardImageOverlays height={190} title="Dịch vụ khác" image={golf} />
-                                        <CardImageOverlays height={190} title="Các lĩnh vực sản suất ngoại khu" image={cafe} />
-                                    </div>
-                                ]}
-                            />
+                            <div className="amenities">
+                                <NestedCarousel
+                                    items={[
+                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'hospital' })} image={hospital} />
+                                            <CardImageOverlays title="Trường học" image={school} />
+                                            <CardImageOverlays title="Ngân hàng" image={bank} />
+                                            <CardImageOverlays title="Khu vực hành chính công" image={govern} />
+                                            <CardImageOverlays title="Trung tâm thương mại" image={mall} />
+                                            <CardImageOverlays title="Nhà hàng" image={restaurent} />
+                                            <CardImageOverlays title="Khách sạn" image={hotel} />
+                                            <CardImageOverlays title="Dịch vụ khác" image={golf} />
+                                            <CardImageOverlays title="Các lĩnh vực sản suất ngoại khu" image={cafe} />
+                                        </div>
+                                    ]}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
