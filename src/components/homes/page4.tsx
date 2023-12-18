@@ -9,12 +9,11 @@ import product4 from '../../assets/products/product4.png';
 
 const Page4: React.FC = () => {
     return (
-        <div className="h-screen bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
+        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="flex h-screen flex-col justify-between w-screen" >
-                <Navbar />
+            <div className="flex h-body flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>

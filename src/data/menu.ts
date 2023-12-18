@@ -1,19 +1,23 @@
 const MenuData = [
     {
         key: '1',
-        label: 'Giới thiệu'
+        label: 'ABOUT',
+        url: '/'
     },
     {
         key: '2',
-        label: 'Sản phẩm đang chạy'
+        label: 'PRODUCT',
+        url: '/products'
     },
     {
         key: '3',
-        label: 'Blog'
+        label: 'NEWS',
+        url: '/'
     },
     {
         key: '4',
-        label: 'Liên hệ'
+        label: 'CONTACT',
+        url: '/'
     }
 ]
 

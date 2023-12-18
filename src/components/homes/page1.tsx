@@ -12,10 +12,9 @@ const Page1: React.FC = () => {
                 />
                 Your browser does not support the video tag.
             </video>
-            <div className="h-screen flex flex-col justify-between z-10 relative" style={{
+            <div className="h-body flex flex-col justify-end z-10 relative" style={{
                 background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
             }}>
-                <Navbar />
                 <div className="relative">
                     <div className="container mx-auto mb-[65px] px-10 md:px-0">
                         <div>

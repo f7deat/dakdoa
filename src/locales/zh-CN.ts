@@ -1,9 +1,8 @@
 export default {
     'HOME': 'Trang chủ',
     'hospital': 'Bệnh viện',
-    'CONTACT': 'Liên hệ',
+    'CONTACT': '接触',
     'ABOUT': 'Giới thiệu',
-    'PRODUCT': 'Sản phẩm & dịch vụ',
-    'NEWS': 'Tin tức'
+    'NEWS': '消息'
   };
   

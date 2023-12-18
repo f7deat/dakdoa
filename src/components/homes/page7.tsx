@@ -11,16 +11,16 @@ const Page7: React.FC = () => {
 
     const Item = (title: string, description: string[], image: string, icon: string) => (
         <div className="montserrat text-white h-full px-4">
-            <div className="flex flex-col justify-between h-full bg-[#1C9C47] rounded-xl p-4 md:p-[50px]">
+            <div className="flex flex-col gap-4 justify-between h-full bg-[#1C9C47] rounded-xl p-4 md:p-[50px]">
                 <div className="mb-4">
                     <img src={icon} alt="ICON" className="w-8 h-8 md:w-14 md:h-14" />
                 </div>
-                <div>
-                    <div className="text-lg md:text-[30px] font-medium mb-2">{title}</div>
-                    <ul className="list-disc px-6 mb-4 text-xs md:text-base">
+                <div className="flex-1">
+                    <div className="text-lg md:text-[30px] font-medium mb-2 truncate">{title}</div>
+                    <ul className="mb-4 text-xs md:text-base">
                         {
                             description.map((value, index) => (
-                                <li key={index}>{value}</li>
+                                <li key={index} className="truncate"><span className="px-2">&bull;</span>{value}</li>
                             ))
                         }
                     </ul>
@@ -33,18 +33,21 @@ const Page7: React.FC = () => {
     )
 
     return (
-        <div className="h-screen bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
+        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-screen flex flex-col justify-between w-screen" >
-                <Navbar />
+            <div className="h-body flex flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="flex h-full items-center">
+                    <div className="flex h-full items-center" style={{
+                        backgroundImage: `url(${infra})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'bottom right'
+                    }}>
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
+                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-10">
                                 Khác biệt và lợi thế
                             </div>
                             <Carousel dots={false} autoplay infinite
@@ -70,7 +73,6 @@ const Page7: React.FC = () => {
                             </Carousel>
                         </div>
                     </div>
-                    <img src={infra} alt="IMG" className="absolute bottom-0 right-0" />
                 </div>
             </div>
         </div>

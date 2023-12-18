@@ -3,26 +3,27 @@ import './index.less';
 import { ConfigProvider } from 'antd';
 import fav from '../assets/favicon.png';
 import { useEffect, useState } from 'react';
+import Navbar from '@/components/navbar';
 
 export default function Layout() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [position1, setPosition1] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setTimeout(() => {
-        setPosition1({ x: e.pageX, y: e.pageY });
-      }, 100);
-      setTimeout(() => {
-        setPosition({ x: e.pageX -14, y: e.pageY -14 });
-      }, 200);
-    };
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
+  // const [position1, setPosition1] = useState({ x: 0, y: 0 });
+  // useEffect(() => {
+  //   const handleMouseMove = (e: any) => {
+  //     setTimeout(() => {
+  //       setPosition1({ x: e.pageX, y: e.pageY });
+  //     }, 100);
+  //     setTimeout(() => {
+  //       setPosition({ x: e.pageX -14, y: e.pageY -14 });
+  //     }, 200);
+  //   };
 
-    document.addEventListener("mousemove", handleMouseMove);
+  //   document.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
   return (
     <div>
       <Helmet>
@@ -56,13 +57,14 @@ export default function Layout() {
           }
         }}
       >
+        <Navbar />
         <Outlet />
-        <div
-          className="border-2 h-8 w-8 rounded-full border-slate-600 fixed"
+        {/* <div
+          className="border h-8 w-8 rounded-full border-slate-800 fixed"
           style={{ left: position.x, top: position.y }}
         >
         </div>
-          <div className='h-[5px] w-[5px] rounded-full bg-slate-600 fixed' style={{ left: position1.x, top: position1.y }}></div>
+          <div className='h-[5px] w-[5px] rounded-full bg-slate-800 fixed' style={{ left: position1.x, top: position1.y }}></div> */}
       </ConfigProvider>
     </div>
   );
