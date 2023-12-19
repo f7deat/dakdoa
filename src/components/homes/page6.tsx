@@ -35,7 +35,7 @@ const Page6: React.FC = () => {
                                 <NestedCarousel
                                     items={[
                                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'hospital' })} image={hospital} />
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'HOSPITAL' })} image={hospital} />
                                             <CardImageOverlays title="Trường học" image={school} />
                                             <CardImageOverlays title="Ngân hàng" image={bank} />
                                             <CardImageOverlays title="Khu vực hành chính công" image={govern} />

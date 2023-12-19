@@ -18,7 +18,7 @@ const Page1: React.FC = () => {
                 <div className="relative">
                     <div className="container mx-auto mb-[65px] px-10 md:px-0">
                         <div>
-                            <div className="montserrat text-[#0B8936] text-2xl md:text-[49px] font-bold mb-4 border-b border-green-600 py-1">Tây Nguyên Tươi đẹp</div>
+                            <div className="montserrat text-[#0B8936] text-2xl md:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-4">Tây Nguyên Tươi đẹp</div>
                             <div className="text-slate-400 mb-4 montserrat text-xs md:text-base" style={{
                                 maxWidth: 670
                             }}>

@@ -7,12 +7,12 @@ const MenuData = [
     {
         key: '2',
         label: 'PRODUCT',
-        url: '/products'
+        url: '/'
     },
     {
         key: '3',
         label: 'NEWS',
-        url: '/'
+        url: '/news'
     },
     {
         key: '4',

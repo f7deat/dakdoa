@@ -1,7 +1,10 @@
+import { Link } from "umi";
+
 type CardImageOverlaysProps = {
     image: string;
     title: string;
     description?: string;
+    url?: string;
 }
 
 const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
@@ -13,7 +16,13 @@ const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
                         <img src={props.image} alt="IMG" className="w-full" loading="lazy" />
                         <div className="linear-gradient"></div>
                         <div className="item__overlay">
-                            <h3 className="md:text-[27px] text-xl font-bold montserrat">{props.title}</h3>
+                            {
+                                props.url ? (
+                                    <Link to={props.url}>
+                                        <h3 className="md:text-[27px] text-xl font-bold montserrat">{props.title}</h3>
+                                    </Link>
+                                ) : (<h3 className="md:text-[27px] text-xl font-bold montserrat">{props.title}</h3>)
+                            }
                             <div className="border-b w-16 border-2 mx-4 mb-4"></div>
                             <div className="item__body">
                                 {props.description}

@@ -1,13 +1,30 @@
-import Navbar from "../navbar"
 import cover from '../../assets/cover-min.jpg';
 import infra from '../../assets/tree-opa.svg';
 import NestedCarousel from "../nested-carousel";
 import { CardImageOverlays } from "..";
 import product1 from '../../assets/products/product1.png';
-import product2 from '../../assets/products/product2.png';
-import product4 from '../../assets/products/product4.png';
+import { useEffect, useState } from 'react';
 
 const Page4: React.FC = () => {
+
+    const [products, setProducts] = useState<any[]>([]);
+
+    const getProducts = async () => {
+        const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('wf_token')
+            }
+        });
+        const articles = await res.json().then(res => res.data);
+        setProducts(articles);
+    }
+
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
             style={{
@@ -37,16 +54,9 @@ const Page4: React.FC = () => {
                                             }
                                         }
                                     ]}
-                                    items={[
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product2} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product4} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product2} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product1} />,
-                                        <CardImageOverlays title="Đất công nghiệp tại Hải Phòng" image={product4} />
-                                    ]}
+                                    items={products.map(product => (
+                                        <CardImageOverlays title={product.name} image={product1} url={`/product/${product.id}`} />
+                                    ))}
                                 />
                             </div>
                         </div>

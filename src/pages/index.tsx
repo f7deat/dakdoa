@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <div>
       <Helmet>
-        <title>Shinec Gia Lai</title>
+        <title>Shinec Gia Lai - Industrial Cluster</title>
       </Helmet>
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} rootClassName="c1" id="cc">
         <Cover />

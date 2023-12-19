@@ -6,7 +6,7 @@ import NavbarItem from './navbar-items';
 const Navbar: React.FC = () => {
 
     return (
-        <nav className="bg-white">
+        <nav className="bg-white shadow">
             <div className='container mx-auto py-3 px-2 md:px-0'>
                 <div className='flex justify-between items-center'>
                     <div>

@@ -4,6 +4,7 @@ import logoWhite from '../../assets/logo/logo-white.svg';
 import icon360 from '../../assets/icons/360.svg';
 import Languages from '../navbar/languages';
 import NavbarItem from '../navbar/navbar-items';
+import { Link } from 'umi';
 
 const Cover: React.FC = () => {
     return (
@@ -30,10 +31,12 @@ const Cover: React.FC = () => {
                             </div>
                             <div className='flex md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
                                 <button className='rounded-full text-white py-1 md:py-2 px-2 md:px-8 bg-gradient-to-b from-orange-500 to-orange-400 text-sm md:text-base'>Liên hệ với chúng tôi</button>
-                                <button className='rounded-full text-green-700 bg-white py-1 md:py-2 px-2 md:px-8 flex gap-3 items-center'>
-                                    <span>VR 360°</span>
-                                    <img src={icon360} alt='icon' className='w-8 md:w-10' />
-                                </button>
+                                <Link to='/vr360'>
+                                    <button className='rounded-full text-green-700 bg-white py-1 md:py-2 px-2 md:px-8 flex gap-3 items-center'>
+                                        <span>VR 360°</span>
+                                        <img src={icon360} alt='icon' className='w-8 md:w-10' />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

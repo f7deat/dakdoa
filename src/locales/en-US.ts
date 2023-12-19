@@ -1,9 +1,10 @@
 export default {
     'HOME': 'Home',
-    'hospital': 'Hospital',
+    'HOSPITAL': 'Hospital',
     'CONTACT': 'Contact',
     'ABOUT': 'About',
     'NEWS': 'News',
-    'PRODUCT': 'Product & Service'
+    'PRODUCT': 'Product & Service',
+    'TESTIMONIAL': 'Testimonial'
   };
   

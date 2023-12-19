@@ -11,7 +11,7 @@ const NavbarItem: React.FC<NavbarItemProps> = (props) => {
             {
                 MenuData.map(menu => (
                     <div key={menu.key}>
-                        <Link to="#" className='nav-link'>
+                        <Link to={menu.url} className='nav-link'>
                             <FormattedMessage id={menu.label} />
                         </Link>
                     </div>

@@ -24,6 +24,26 @@ export default function Layout() {
   //     document.removeEventListener("mousemove", handleMouseMove);
   //   };
   // }, []);
+
+  useEffect(() => {
+
+    const account = {
+      userName: 'admin',
+      passWord: 'Password@123'
+    }
+    fetch(`https://shinecgialai.com.vn/api/user/password-sign-in`, {
+      method: 'POST',
+      body: JSON.stringify(account),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(login => {
+      login.json().then(token => {
+        localStorage.setItem('wf_token', token.token)
+      });
+    });
+  }, [])
+
   return (
     <div>
       <Helmet>
@@ -31,6 +51,15 @@ export default function Layout() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W248JMRJ32"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W248JMRJ32');
+          `}
+        </script>
       </Helmet>
       {/* <ul>
         <li>
@@ -65,6 +94,10 @@ export default function Layout() {
         >
         </div>
           <div className='h-[5px] w-[5px] rounded-full bg-slate-800 fixed' style={{ left: position1.x, top: position1.y }}></div> */}
+
+        <footer>
+
+        </footer>
       </ConfigProvider>
     </div>
   );

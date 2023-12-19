@@ -32,7 +32,7 @@ const Page5: React.FC = () => {
                 }}>
                     <div className="flex  h-full items-center">
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold">
+                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold md:mb-8">
                                 TIỆN ÍCH NỘI KHU
                             </div>
                             <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
