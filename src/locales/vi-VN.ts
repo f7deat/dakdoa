@@ -9,6 +9,7 @@ export default {
     'PARNERS_AND_CUSTOMERS': 'Đối tác và khách hàng',
     'PRIVACY_POLICY': 'Chính sách bảo mật',
     'BANK': 'Ngân hàng',
-    'SCHOOL': 'Trường học'
+    'SCHOOL': 'Trường học',
+    'CONTACT_US': 'Liên hệ với chúng tôi'
   };
   

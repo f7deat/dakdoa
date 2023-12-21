@@ -9,6 +9,7 @@ export default {
     'PARNERS_AND_CUSTOMERS': '合作伙伴和客户',
     'PRIVACY_POLICY': '隐私政策',
     'BANK': '银行',
-    'SCHOOL': '学校'
+    'SCHOOL': '学校',
+    'CONTACT_US': '联系我们'
   };
   

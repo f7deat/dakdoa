@@ -10,12 +10,14 @@ import ContactButton from '../button';
 import land from '../../assets/icons/land.svg';
 import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 const Partner: React.FC = () => {
 
     const CarouselItem = (logo: string) => (
         <div>
-            <div className='rounded-xl h-[160px] max-w-[400px] flex justify-center items-center p-4 bg-gradient-to-b from-[#28A753] to-[#108E3B]'>
+            <div className='rounded-xl h-[160px] flex justify-center items-center p-4 bg-gradient-to-b from-[#28A753] to-[#108E3B]'>
                 <img src={logo} alt='LOGO' />
             </div>
         </div>
@@ -61,13 +63,23 @@ const Partner: React.FC = () => {
                             {TextItem('Hỗ trợ', 'Sự thành công của khách hàng cũng là sự thành công của DakDoa 2', support)}
                         </div>
                     </div>
-                    <Carousel dots={false} centerMode slidesPerRow={4} slidesToScroll={1} autoplay infinite>
-                        {CarouselItem(growViet)}
-                        {CarouselItem(vietcombank)}
-                        {CarouselItem(sonha)}
-                        {CarouselItem(gomDatViet)}
-                        {CarouselItem(mit)}
-                    </Carousel>
+                    <Swiper
+                        slidesPerView={4}
+                        autoplay={{
+                            delay: 0
+                        }}
+                        loop
+                        speed={2000}
+                        centeredSlides
+                        spaceBetween={60}
+                        modules={[Autoplay]}
+                    >
+                        <SwiperSlide>{CarouselItem(growViet)}</SwiperSlide>
+                        <SwiperSlide>{CarouselItem(vietcombank)}</SwiperSlide>
+                        <SwiperSlide>{CarouselItem(sonha)}</SwiperSlide>
+                        <SwiperSlide>{CarouselItem(gomDatViet)}</SwiperSlide>
+                        <SwiperSlide>{CarouselItem(mit)}</SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
         </div>

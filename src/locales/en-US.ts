@@ -9,6 +9,7 @@ export default {
     'PARNERS_AND_CUSTOMERS': 'Partners and customers',
     'PRIVACY_POLICY': 'Privacy Policy',
     'BANK': 'Bank',
-    'SCHOOL': 'School'
+    'SCHOOL': 'School',
+    'CONTACT_US': 'Contact us'
   };
   

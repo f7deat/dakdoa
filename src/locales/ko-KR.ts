@@ -9,6 +9,7 @@ export default {
     'PARNERS_AND_CUSTOMERS': '파트너 및 고객',
     'PRIVACY_POLICY': '개인 정보 정책',
     'BANK': '은행',
-    'SCHOOL': '학교'
+    'SCHOOL': '학교',
+    'CONTACT_US': '문의하기'
   };
   

@@ -14,12 +14,12 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     const ContactItem = (icon: string, title: string, description: string) => (
         <div className="flex gap-4">
-            <div className="h-12 w-12 rounded-full flex items-center justify-center bg-[#815332]">
+            <div className="h-10 md:h-12 w-10 md:w-12 rounded-full flex items-center justify-center bg-[#815332]">
                 <img src={icon} alt="ICON" loading="lazy" />
             </div>
-            <div>
-                <div>{title}</div>
-                <div className="font-bold">{description}</div>
+            <div className="hidden md:block">
+                <div className="text-xs md:text-base">{title}</div>
+                <div className="font-bold text-xs md:text-base">{description}</div>
             </div>
         </div>
     )
@@ -39,8 +39,8 @@ const Footer: React.FC<FooterProps> = (props) => {
                         {ContactItem(globe, 'Website:', 'shinecgialai.vn')}
                     </div>
                 </div>
-                <div className="flex justify-between border-t py-2 border-[#ffffff1a]">
-                    <div>
+                <div className="flex flex-col md:flex-row justify-between border-t py-2 border-[#ffffff1a]">
+                    <div className="hidden md:block">
                         <FormattedMessage id='PRIVACY_POLICY' />
                     </div>
                     <div>

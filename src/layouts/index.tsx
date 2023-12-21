@@ -4,6 +4,9 @@ import { ConfigProvider } from 'antd';
 import fav from '../assets/favicon.png';
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export default function Layout() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
