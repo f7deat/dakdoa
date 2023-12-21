@@ -9,6 +9,7 @@ export default function HomePage() {
 
   const carouselRef = useRef<any>();
   const [height, setHeight] = useState<number>(0);
+  const [currentSlide, setCurrentSile] = useState<number>(0);
 
   useEffect(() => {
     window.addEventListener('wheel', (e) => {
@@ -20,12 +21,13 @@ export default function HomePage() {
     })
   }, []);
 
-  const afterChange = (currentSlide: number) => {
-    if (currentSlide === 9) {
+  const afterChange = (current: number) => {
+    if (current === 9) {
       setHeight(147);
     } else {
       setHeight(0)
     }
+    setCurrentSile(current);
   }
 
   return (
@@ -38,7 +40,7 @@ export default function HomePage() {
         <Page1 />
         <Page2 />
         <Page3 />
-        <Page4 />
+        <Page4 currentSection={currentSlide} />
         <Page5 />
         <Page6 />
         <Page7 />

@@ -7,6 +7,8 @@ export default {
     'PRODUCT': '产品与服务',
     'TESTIMONIAL': '感言',
     'PARNERS_AND_CUSTOMERS': '合作伙伴和客户',
-    'PRIVACY_POLICY': '隐私政策'
+    'PRIVACY_POLICY': '隐私政策',
+    'BANK': '银行',
+    'SCHOOL': '学校'
   };
   

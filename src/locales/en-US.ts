@@ -7,6 +7,8 @@ export default {
     'PRODUCT': 'Product & Service',
     'TESTIMONIAL': 'Testimonial',
     'PARNERS_AND_CUSTOMERS': 'Partners and customers',
-    'PRIVACY_POLICY': 'Privacy Policy'
+    'PRIVACY_POLICY': 'Privacy Policy',
+    'BANK': 'Bank',
+    'SCHOOL': 'School'
   };
   

@@ -1,4 +1,3 @@
-import Navbar from "../navbar"
 import bg from '../../assets/css/bg-feature.gif';
 import NestedCarousel from "../nested-carousel";
 import trafic from '../../assets/amenities/trafic.png';

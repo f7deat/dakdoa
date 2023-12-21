@@ -26,7 +26,7 @@ const NestedCarousel: React.FC<NestedCarouselProps> = (props) => {
 
     return (
         <div>
-            <Carousel ref={carouselRef} dots={false} autoplay infinite className="h-full" {...props} beforeChange={beforeChange}>
+            <Carousel ref={carouselRef} dots={false} className="h-full" {...props} beforeChange={beforeChange}>
                 {
                     items.map((item, index) => <div key={index}>{item}</div>)
                 }
@@ -38,11 +38,8 @@ const NestedCarousel: React.FC<NestedCarouselProps> = (props) => {
                     </svg>
                 </button>
                 <div className="flex items-center justify-center gap-2">
-                    {
-                        items.map((_, index) => (
-                            <button key={index} className={`h-5 w-5 rounded-full border-2 border-white ` + (index === currentSlide ? 'bg-orange-500' : '')}></button>
-                        ))
-                    }
+                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === currentSlide ? 'bg-orange-500' : '')}></button>
+                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === currentSlide ? 'bg-orange-500' : '')}></button>
                 </div>
                 <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

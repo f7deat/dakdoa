@@ -7,6 +7,8 @@ export default {
     'PRODUCT': '製品とサービス',
     'TESTIMONIAL': 'お客様の声',
     'PARNERS_AND_CUSTOMERS': 'パートナーと顧客',
-    'PRIVACY_POLICY': 'プライバシーポリシー'
+    'PRIVACY_POLICY': 'プライバシーポリシー',
+    'BANK': '銀行',
+    'SCHOOL': '学校'
   };
   

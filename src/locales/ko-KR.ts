@@ -7,6 +7,8 @@ export default {
     'PRODUCT': '제품 및 서비스',
     'TESTIMONIAL': '증명서',
     'PARNERS_AND_CUSTOMERS': '파트너 및 고객',
-    'PRIVACY_POLICY': '개인 정보 정책'
+    'PRIVACY_POLICY': '개인 정보 정책',
+    'BANK': '은행',
+    'SCHOOL': '학교'
   };
   

@@ -43,10 +43,6 @@ export default function Layout() {
     });
   }, [])
 
-  useEffect(() => {
-    console.log(window.innerHeight)
-  }, [])
-
   return (
     <div>
       <Helmet>

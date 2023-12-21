@@ -7,6 +7,8 @@ export default {
     'NEWS': 'Tin tức',
     'TESTIMONIAL': 'Khách hàng nói gì về chúng tôi',
     'PARNERS_AND_CUSTOMERS': 'Đối tác và khách hàng',
-    'PRIVACY_POLICY': 'Chính sách bảo mật'
+    'PRIVACY_POLICY': 'Chính sách bảo mật',
+    'BANK': 'Ngân hàng',
+    'SCHOOL': 'Trường học'
   };
   
