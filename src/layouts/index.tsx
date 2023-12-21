@@ -26,7 +26,6 @@ export default function Layout() {
   // }, []);
 
   useEffect(() => {
-
     const account = {
       userName: 'admin',
       passWord: 'Password@123'
@@ -42,6 +41,10 @@ export default function Layout() {
         localStorage.setItem('wf_token', token.token)
       });
     });
+  }, [])
+
+  useEffect(() => {
+    console.log(window.innerHeight)
   }, [])
 
   return (
@@ -94,10 +97,6 @@ export default function Layout() {
         >
         </div>
           <div className='h-[5px] w-[5px] rounded-full bg-slate-800 fixed' style={{ left: position1.x, top: position1.y }}></div> */}
-
-        <footer>
-
-        </footer>
       </ConfigProvider>
     </div>
   );

@@ -1,6 +1,9 @@
 import { Dropdown, MenuProps } from "antd";
 import viFlag from '../../assets/flags/vi.svg';
 import enFlag from '../../assets/flags/en.svg';
+import cnFlag from '../../assets/flags/cn.svg';
+import krFlag from '../../assets/flags/kr.svg';
+import jpFlag from '../../assets/flags/jp.svg';
 import { setLocale, useIntl } from "umi";
 
 type LanguagesProps = {
@@ -68,6 +71,15 @@ const Languages: React.FC<LanguagesProps> = (props) => {
         const locale = intl.locale;
         if (locale === 'en-US') {
             return enFlag;
+        }
+        if (locale === 'zh-CN') {
+            return cnFlag;
+        }
+        if (locale === 'ja-JP') {
+            return jpFlag;
+        }
+        if (locale === 'ko-KR') {
+            return krFlag;
         }
         return viFlag;
     }

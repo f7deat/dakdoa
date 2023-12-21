@@ -2,7 +2,7 @@
 <g id="Frame" clip-path="url(#clip0_134_916)">
 <g id="Group">
 <g id="Group_2">
-<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M13 0C20.1789 0 26 5.82111 26 13C26 20.1789 20.1789 26 13 26C5.82111 26 0 20.1789 0 13C0 5.82111 5.82111 0 13 0Z" fill="#DA251D"/>
+<path id="Vector" d="M13 0.5C19.9027 0.5 25.5 6.09725 25.5 13C25.5 19.9027 19.9027 25.5 13 25.5C6.09725 25.5 0.5 19.9027 0.5 13C0.5 6.09725 6.09725 0.5 13 0.5Z" fill="#DA251D" stroke="#E9E9E9"/>
 <path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M7 11.553L10.708 14.3972L9.292 18.9992L13 16.1558L16.708 19L15.2905 14.398L19 11.553H14.401L13 7L11.599 11.553H7Z" fill="#FFFF00"/>
 </g>
 </g>

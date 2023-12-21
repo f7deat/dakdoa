@@ -5,6 +5,8 @@ export default {
     'ABOUT': 'Giới thiệu',
     'PRODUCT': 'Sản phẩm & dịch vụ',
     'NEWS': 'Tin tức',
-    'TESTIMONIAL': 'Khách hàng nói gì về chúng tôi'
+    'TESTIMONIAL': 'Khách hàng nói gì về chúng tôi',
+    'PARNERS_AND_CUSTOMERS': 'Đối tác và khách hàng',
+    'PRIVACY_POLICY': 'Chính sách bảo mật'
   };
   

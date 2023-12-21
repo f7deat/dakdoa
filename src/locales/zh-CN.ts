@@ -5,6 +5,8 @@ export default {
     'ABOUT': '关于',
     'NEWS': '消息',
     'PRODUCT': '产品与服务',
-    'TESTIMONIAL': '感言'
+    'TESTIMONIAL': '感言',
+    'PARNERS_AND_CUSTOMERS': '合作伙伴和客户',
+    'PRIVACY_POLICY': '隐私政策'
   };
   
