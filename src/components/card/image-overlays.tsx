@@ -1,3 +1,4 @@
+import { Card } from "antd";
 import { Link } from "umi";
 
 type CardImageOverlaysProps = {
