@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Shinec Gia Lai - Industrial Cluster</title>
+        <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} afterChange={afterChange}>
         <Cover />
@@ -47,7 +47,7 @@ export default function HomePage() {
         <Page8 />
         <Partner />
       </Carousel>
-      <Footer height={height}/>
+      <Footer height={height} fixed/>
     </>
   );
 }

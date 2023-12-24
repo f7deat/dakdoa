@@ -1,7 +1,7 @@
 
 import cover from '../../assets/cover-min.jpg';
 import icon360 from '../../assets/icons/360.svg';
-import { Link } from 'umi';
+import { FormattedMessage, Link } from 'umi';
 import ContactButton from '../button';
 
 const Cover: React.FC = () => {
@@ -17,15 +17,19 @@ const Cover: React.FC = () => {
                     <div className='h-full md:py-0'>
                         <div className='px-10 md:px-0'>
                             <div className='pt-[134px]'>
-                                <div className='montserrat text-2xl lg:text-[68px] font-extrabold text-white lg:leading-[74px] mb-4 md:mb-[40px] uppercase' style={{
+                                <div className='montserrat text-2xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-[40px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
-                                    <div>Khu công nghiệp</div>
-                                    <div>SHINEC GIA LAI</div>
+                                    <div>
+                                        <FormattedMessage id='INDUSTRIAL_CLUSTERS' />
+                                    </div>
+                                    <div>
+                                        <FormattedMessage id='NO_2' /> Đak Đoa
+                                    </div>
                                 </div>
                             </div>
                             <div className='text-white montserrat mb-6 md:mb-[40px] max-w-[537px]'>
-                                Thương hiệu KCN Nam Cầu Kiền gắn liền với hình ảnh khu công nghiệp sinh thái, thân thiện với môi trường, chuỗi kinh tế tuần hoàn gắn liền với bảo vệ môi trường.
+                                <FormattedMessage id='COVER_SUBTITLE' />
                             </div>
                             <div className='flex md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
                                 <ContactButton />

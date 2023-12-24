@@ -10,6 +10,17 @@ export default {
     'PRIVACY_POLICY': '隐私政策',
     'BANK': '银行',
     'SCHOOL': '学校',
-    'CONTACT_US': '联系我们'
+    'CONTACT_US': '联系我们',
+    'INDUSTRIAL_CLUSTERS': '工业集群',
+    'COVER_SUBTITLE': 'Shinec Gia Lai股票公司 -  ESG取向开发的工业集群模型。 与生态工业集群，每周经济连锁店和环保的形象相关。',
+    'NO_2': '第2号',
+    'VR360': 'VR 360°',
+    'TEAM': '团队',
+    'TEAM_QUOTE': '专业、善解人意的员工，提供多种解决方案并与客户并肩工作',
+    'TARGET': '目标',
+    'TARGET_QUOTE': '为企业生产经营创造良好环境',
+    'SUPPORT': '支持',
+    'SUPPORT_QUOTE': '客户的成功也是Dak Doa 2的成功',
+    'PARTNER_QUOTE': '对于每一位合作伙伴——客户，我们传递可持续的价值观、信任和陪伴'
   };
   

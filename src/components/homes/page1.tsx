@@ -22,11 +22,12 @@ const Page1: React.FC = () => {
                             <div className="text-slate-400 mb-4 montserrat text-xs md:text-base" style={{
                                 maxWidth: 670
                             }}>
-                                Friendly neighbors and smiling faces. Southern charm with a coastal vibe.
-                                Regardless of where you choose to live on the Mississippi Gulf Coast,
-                                you’ll find that you are welcome here. From large neighborhoods with lots
-                                of amenities to exclusive enclaves that provide privacy and proximity to
-                                nature, Elliott Homes offers a variety of communities that fit your lifestyle.
+                                <div>
+                                    Gia Lai là tỉnh có diện tích lớn thứ hai Việt Nam và là một tỉnh cao nguyên nằm ở khu vực Bắc Tây Nguyên (Gia Lai đứng thứ nhất về diện tích và đứng thứ 2 về dân số khu vực Tây Nguyên).
+                                </div>
+                                <div>
+                                    Với nhiều lợi thế trong phát triển sản xuất nông nghiệp, xuất khẩu nông sản, Gia Lai bắt nhịp xu hướng quốc tế thúc đẩy phát triển công nghiệp và dịch vụ, tạo nên sức bật và đột phá mới trong tương lại, đem đến nhiều cơ hội tốt cho các nhà đầu tư.
+                                </div>
                             </div>
                             <ContactButton />
                         </div>

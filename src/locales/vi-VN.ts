@@ -10,6 +10,17 @@ export default {
     'PRIVACY_POLICY': 'Chính sách bảo mật',
     'BANK': 'Ngân hàng',
     'SCHOOL': 'Trường học',
-    'CONTACT_US': 'Liên hệ với chúng tôi'
+    'CONTACT_US': 'Liên hệ với chúng tôi',
+    'INDUSTRIAL_CLUSTERS': 'Cụm công nghiệp',
+    'COVER_SUBTITLE': 'Công ty cổ phần Shinec Gia Lai - Mô hình cụm công nghiệp phát triển theo định hướng ESG. Gắn liền với hình ảnh cụm công nghiệp sinh thái, chuỗi kinh tế tuần và thân thiện với môi trường.',
+    'NO_2': 'Số 2',
+    'VR360': 'VR 360°',
+    'TEAM': 'Đội ngũ',
+    'TEAM_QUOTE': 'Đội ngũ nhân sự chuyên nghiệp, thấu hiểu, cung ứng nhiều giải pháp và song hành cùng khách hàng',
+    'TARGET': 'Mục tiêu',
+    'TARGET_QUOTE': 'Tạo ra một môi trường thuận lợi để các doanh nghiệp sản xuất và kinh doanh',
+    'SUPPORT': 'Hỗ trợ',
+    'SUPPORT_QUOTE': 'Sự thành công của khách hàng cũng là sự thành công của Đak Đoa 2',
+    'PARTNER_QUOTE': 'Với mỗi đối tác - khách hàng, chúng tôi trao gửi những giá trị bền vững, tín nhiệm và đồng hành'
   };
   

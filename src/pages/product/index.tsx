@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import cover from '../../assets/cover-min.jpg';
 import { Helmet, useParams } from 'umi';
+import Footer from '@/layouts/footer';
 
 const ProductPage: React.FC = () => {
 
     const { id } = useParams();
+    const [height, setHeight] = useState<number>(0);
     const [product, setProduct] = useState<{
         name: string;
         id: string;
@@ -29,24 +31,21 @@ const ProductPage: React.FC = () => {
         }).then(response => response.json().then(data => {
             setProduct(data);
         }));
+        setTimeout(() => {
+            setHeight(147)
+        }, 100);
     }, [])
 
     return (
         <>
-        <Helmet>
-            <title>{product?.name || ''} - Shinec Gia Lai</title>
-        </Helmet>
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
-            style={{
-                backgroundImage: `url(${cover})`
-            }}>
-            <div className="flex h-body flex-col justify-between w-screen" >
-                <div className="relative h-full" style={{
-                    background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                }}>
+            <Helmet>
+                <title>{product?.name || ''} - Shinec Gia Lai</title>
+            </Helmet>
+            <div className="h-body relative">
+                <div className="flex h-body flex-col justify-between" >
                 </div>
             </div>
-        </div>
+            <Footer height={height} />
         </>
     )
 }

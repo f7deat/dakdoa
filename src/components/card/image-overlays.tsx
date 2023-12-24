@@ -1,4 +1,3 @@
-import { Card } from "antd";
 import { Link } from "umi";
 
 type CardImageOverlaysProps = {
@@ -14,7 +13,7 @@ const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
             <div className="item">
                 <a href="#">
                     <div className="text-white">
-                        <img src={props.image} alt="IMG" className="w-full" loading="lazy" />
+                        <img src={props.image} alt="IMG" className="w-full h-full object-cover" loading="lazy" />
                         <div className="linear-gradient"></div>
                         <div className="item__overlay">
                             {

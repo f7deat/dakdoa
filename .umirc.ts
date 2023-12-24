@@ -5,6 +5,7 @@ export default defineConfig({
     { path: "/", component: "index" },
     { path: "/product/:id", component: "product" },
     { path: "/news", component: "news" },
+    { path: "/news/:id", component: "news/detail" },
     { path: "/vr360", component: "vr360", layout: false },
   ],
   history: {

@@ -10,6 +10,17 @@ export default {
     'PRIVACY_POLICY': '개인 정보 정책',
     'BANK': '은행',
     'SCHOOL': '학교',
-    'CONTACT_US': '문의하기'
+    'CONTACT_US': '문의하기',
+    'INDUSTRIAL_CLUSTERS': '산업 클러스터',
+    'COVER_SUBTITLE': 'Shinec Gia Lai 공동 주식 회사 - ESG 오리엔테이션으로 개발 된 산업 클러스터 모델. 생태 산업 클러스터, 주간 경제 체인 및 환경 친화적 인 이미지와 관련이 있습니다.',
+    'NO_2': '2 번',
+    'VR360': 'VR 360°',
+    'TEAM': '팀',
+    'TEAM_QUOTE': '전문적이고 이해심 많은 직원, 다양한 솔루션을 제공하고 고객과 함께 일함',
+    'TARGET': '표적',
+    'TARGET_QUOTE': '기업이 생산하고 사업하기 좋은 환경 조성',
+    'SUPPORT': '지원하다',
+    'SUPPORT_QUOTE': '고객의 성공은 닥도아2의 성공이기도 합니다',
+    'PARTNER_QUOTE': '각 파트너, 즉 고객에게 지속가능한 가치와 신뢰, 동행을 전달합니다.'
   };
   

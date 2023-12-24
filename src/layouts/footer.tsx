@@ -1,4 +1,4 @@
-import { FormattedMessage } from "umi";
+import { FormattedMessage, Link } from "umi";
 import logo from '../assets/logo/logo-white.svg';
 import paper from '../assets/icons/paper-airplane.svg';
 import globe from '../assets/icons/globe.svg';
@@ -6,11 +6,12 @@ import phone from '../assets/icons/phone.svg';
 
 type FooterProps = {
     height: number;
+    fixed?: boolean;
 }
 
 const Footer: React.FC<FooterProps> = (props) => {
 
-    const { height } = props;
+    const { height, fixed } = props;
 
     const ContactItem = (icon: string, title: string, description: string) => (
         <div className="flex gap-4">
@@ -25,16 +26,18 @@ const Footer: React.FC<FooterProps> = (props) => {
     )
 
     return (
-        <footer className='bg-[#484f1f] fixed bottom-0 left-0 right-0 transition-height duration-500' style={{
+        <footer className={`bg-[#484f1f] bottom-0 left-0 right-0 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
             height: height
         }}>
             <div className="md:px-20 mx-auto px-4 text-white flex flex-col justify-between h-full">
                 <div className="flex-1 flex items-center">
                     <div className="flex-1">
-                        <img src={logo} alt="LOGO" loading="lazy" />
+                        <Link to='/'>
+                            <img src={logo} alt="LOGO" loading="lazy" />
+                        </Link>
                     </div>
                     <div className="flex gap-4 md:gap-40">
-                        {ContactItem(paper, 'Email:', 'info@namcaukien.com.vn')}
+                        {ContactItem(paper, 'Email:', 'congtyshinecgialai@gmail.com')}
                         {ContactItem(phone, 'Hotline:', '02253.645.365')}
                         {ContactItem(globe, 'Website:', 'shinecgialai.vn')}
                     </div>

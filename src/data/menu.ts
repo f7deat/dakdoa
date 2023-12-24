@@ -16,7 +16,7 @@ const MenuData = [
     },
     {
         key: '4',
-        label: 'CONTACT',
+        label: 'VR360',
         url: '/'
     }
 ]
