@@ -21,6 +21,8 @@ export default {
     'TARGET_QUOTE': '기업이 생산하고 사업하기 좋은 환경 조성',
     'SUPPORT': '지원하다',
     'SUPPORT_QUOTE': '고객의 성공은 닥도아2의 성공이기도 합니다',
-    'PARTNER_QUOTE': '각 파트너, 즉 고객에게 지속가능한 가치와 신뢰, 동행을 전달합니다.'
+    'PARTNER_QUOTE': '각 파트너, 즉 고객에게 지속가능한 가치와 신뢰, 동행을 전달합니다.',
+    'INTERNAL_AMENITIES': '내부 편의시설',
+    'External_Amenities': '외부 편의시설'
   };
   

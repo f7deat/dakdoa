@@ -21,6 +21,8 @@ export default {
     'TARGET_QUOTE': '为企业生产经营创造良好环境',
     'SUPPORT': '支持',
     'SUPPORT_QUOTE': '客户的成功也是Dak Doa 2的成功',
-    'PARTNER_QUOTE': '对于每一位合作伙伴——客户，我们传递可持续的价值观、信任和陪伴'
+    'PARTNER_QUOTE': '对于每一位合作伙伴——客户，我们传递可持续的价值观、信任和陪伴',
+    'INTERNAL_AMENITIES': '内部设施',
+    'External_Amenities': '外部设施'
   };
   

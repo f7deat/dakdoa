@@ -9,7 +9,7 @@ import restaurent from '../../assets/amenities/restaurent.png';
 import hotel from '../../assets/amenities/hotel.png';
 import golf from '../../assets/amenities/golf.png';
 import cafe from '../../assets/amenities/cafe.png';
-import { useIntl } from "umi";
+import { FormattedMessage, useIntl } from "umi";
 import NestedCarousel from "../nested-carousel";
 
 const Page6: React.FC = () => {
@@ -28,7 +28,7 @@ const Page6: React.FC = () => {
                     <div className="flex h-full items-center">
                         <div className="container mx-auto px-10 md:px-0">
                             <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
-                                Tiện ích ngoại khu
+                                <FormattedMessage id='External_Amenities' />
                             </div>
                             <div className="amenities">
                                 <NestedCarousel

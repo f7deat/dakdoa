@@ -21,6 +21,8 @@ export default {
     'TARGET_QUOTE': 'Tạo ra một môi trường thuận lợi để các doanh nghiệp sản xuất và kinh doanh',
     'SUPPORT': 'Hỗ trợ',
     'SUPPORT_QUOTE': 'Sự thành công của khách hàng cũng là sự thành công của Đak Đoa 2',
-    'PARTNER_QUOTE': 'Với mỗi đối tác - khách hàng, chúng tôi trao gửi những giá trị bền vững, tín nhiệm và đồng hành'
+    'PARTNER_QUOTE': 'Với mỗi đối tác - khách hàng, chúng tôi trao gửi những giá trị bền vững, tín nhiệm và đồng hành',
+    'INTERNAL_AMENITIES': 'TIỆN ÍCH NỘI KHU',
+    'External_Amenities': 'Tiện ích ngoại khu'
   };
   

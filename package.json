@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@umijs/plugins": "^4.0.89",
     "antd": "^5.12.2",
     "swiper": "^11.0.5",

@@ -1,7 +1,7 @@
 import Footer from "@/layouts/footer";
 import { useEffect, useState } from "react"
 import { Helmet, useIntl, useParams } from "umi";
-import { Image } from 'antd';
+import { Image, Spin } from 'antd';
 
 const NewsDetails: React.FC = () => {
 
@@ -11,11 +11,13 @@ const NewsDetails: React.FC = () => {
     const intl = useIntl();
     const [catalog, setCatalog] = useState<API.Catalog>();
     const [editor, setEditor] = useState<any>();
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         setTimeout(() => {
             setHeight(147)
         }, 100);
+        setLoading(true);
         fetch(`https://shinecgialai.com.vn/api/catalog/${id}`, {
             method: 'GET',
             headers: {
@@ -41,6 +43,7 @@ const NewsDetails: React.FC = () => {
                     }
                 })
             }
+            setLoading(false);
         }));
     }, []);
 
@@ -49,6 +52,7 @@ const NewsDetails: React.FC = () => {
             <Helmet>
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
+            <Spin fullscreen spinning={loading} />
             <main className="container mx-auto">
                 <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
                 <div className="shadow p-4">

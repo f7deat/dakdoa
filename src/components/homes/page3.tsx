@@ -69,7 +69,8 @@ const Page3: React.FC = () => {
                         <div className='container mx-auto flex h-full justify-center flex-col md:gap-20 gap-4'>
                             <div className='md:flex items-center mb-4 md:gap-20 gap-4'>
                                 <div className='md:w-1/2'>
-                                    <Swiper autoplay
+                                    <Swiper 
+                                        autoplay
                                         ref={swiperRef}
                                         modules={[Autoplay]}
                                         onAutoplay={(event) => {
@@ -106,7 +107,8 @@ const Page3: React.FC = () => {
                             <div className="flex justify-between mx-auto md:w-1/2">
                                 <button
                                     onClick={() => {
-                                        swiperRef.current?.swiper.slidePrev()
+                                        swiperRef.current?.swiper.slidePrev();
+                                        setActiveIndex(swiperRef?.current?.swiper.realIndex || activeIndex);
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -119,7 +121,8 @@ const Page3: React.FC = () => {
                                 </div>
                                 <button
                                     onClick={() => {
-                                        swiperRef.current?.swiper.slideNext()
+                                        swiperRef.current?.swiper.slideNext();
+                                        setActiveIndex(swiperRef?.current?.swiper.realIndex || activeIndex);
                                     }} className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

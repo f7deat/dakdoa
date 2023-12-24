@@ -21,6 +21,8 @@ export default {
     'TARGET_QUOTE': '企業が生産し、ビジネスを行うのに有利な環境を作り出す',
     'SUPPORT': 'サポート',
     'SUPPORT_QUOTE': '顧客の成功は Dak Doa 2 の成功でもあります',
-    'PARTNER_QUOTE': 'それぞれのパートナー、つまり顧客に、私たちは持続可能な価値、信頼、仲間意識をお届けします'
+    'PARTNER_QUOTE': 'それぞれのパートナー、つまり顧客に、私たちは持続可能な価値、信頼、仲間意識をお届けします',
+    'INTERNAL_AMENITIES': '内部アメニティ',
+    'External_Amenities': '外部アメニティ'
   };
   
