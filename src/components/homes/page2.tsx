@@ -1,7 +1,15 @@
+import { FormattedMessage, Link, useIntl } from 'umi';
 import infra from '../../assets/tree2.svg';
-import ContactButton from "../button";
+import Texty from 'rc-texty';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
-const Page2: React.FC = () => {
+type HomeSectionItemProps = {
+    active: boolean
+}
+
+const Page2: React.FC<HomeSectionItemProps> = (props) => {
+    const { active } = props;
+    const intl = useIntl();
     return (
         <div className="relative">
             <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
@@ -16,13 +24,25 @@ const Page2: React.FC = () => {
             }}>
                 <div className="relative">
                     <div className="container mx-auto mb-[65px] px-10 md:px-0">
-                        <div className="montserrat text-[#0B8936] text-2xl md:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-4">Cụm công nghiệp sinh thái hàng đầu</div>
-                        <div className="text-slate-400 mb-4 montserrat text-sm md:text-base" style={{
-                            maxWidth: 670
-                        }}>
-                            Cụm công nghiệp Đak Đoa 2 được xây dựng và phát triển theo bộ tiêu chí với mong muốn xây dựng một KCNST, trong đó các cộng đồng các doanh nghiệp sản xuất có mối liên hệ mật thiết trên cùng một lợi ích; đồng thời hợp tác chặt chẽ trong quản lý các vấn đề về môi trường và tài nguyên thiên nhiên.
+                        <div className="montserrat text-[#0B8936] text-2xl md:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-4">
+                            <Texty mode="sync" type="right" duration={500}>
+                                {active ? intl.formatMessage({ id: 'TOP_INDUSTRIAL' }) : ''}
+                            </Texty>
                         </div>
-                        <ContactButton />
+                        <div className="text-slate-400 mb-4 montserrat text-sm md:text-base max-w-[800px]">
+                            <Texty mode="sync" type="bottom">
+                                {active ? intl.formatMessage({ id: 'TOP_INDUSTRIAL_DES' }) : ''}
+                            </Texty>
+                        </div>
+                        <Link to={`/news/67dd6e55-b552-433c-d103-08dc0551893f`}
+                            className='flex'>
+                            <div className="flex gap-2 h-14 px-8 rounded-full text-white hover:text-white items-center bg-gradient-to-b from-orange-500 to-orange-400 poppins font-semibold md:text-lg">
+                                <span>
+                                    <FormattedMessage id='VIEWMORE' />
+                                </span>
+                                <ArrowRightOutlined />
+                            </div>
+                        </Link>
                     </div>
                     <img src={infra} alt="IMG" className="absolute bottom-0 right-0" />
                 </div>

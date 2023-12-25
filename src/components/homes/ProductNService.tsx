@@ -6,7 +6,7 @@ import land from '../../assets/icons/land.svg';
 import logistics from '../../assets/icons/logistic.svg';
 import office from '../../assets/icons/office.svg';
 import warehouse from '../../assets/icons/warehouse.svg';
-import { FormattedMessage } from 'umi';
+import { FormattedMessage, useIntl } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { useRef, useState } from 'react';
 import { Autoplay } from 'swiper/modules';
@@ -22,35 +22,36 @@ const ServiceItem = (icon: string, name: string) => {
     )
 }
 
-const SlideItem = (
-    <div key={1} className='px-10 md:px-0'>
-        <div className="flex flex-wrap mb-4">
-            <div className="w-1/3 md:w-1/2 border-r border-b">
-                {ServiceItem(land, 'Đất công nghiệp cho thuê')}
-            </div>
-            <div className="w-1/3 md:w-1/2 border-b">
-                {ServiceItem(factory, 'Nhà xưởng/Nhà kho cho thuê')}
-            </div>
-            <div className="w-1/3 md:w-1/2 border-r border-b">
-                {ServiceItem(office, 'Cho thuê văn phòng')}
-            </div>
-            <div className="w-1/3 md:w-1/2 border-b">
-                {ServiceItem(warehouse, 'Cho thuê đất thương mại')}
-            </div>
-            <div className="w-1/3 md:w-1/2 border-r">
-                {ServiceItem(logistics, 'Dịch vụ Logistics')}
-            </div>
-            <div className="w-1/3 md:w-1/2">
-                {ServiceItem(infrastructure, 'Dịch vụ cơ sở hạ tầng')}
-            </div>
-        </div>
-    </div>
-)
-
-const Page3: React.FC = () => {
+const ProductNService: React.FC = () => {
 
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
+    const intl = useIntl();
+
+    const SlideItem = (
+        <div key={1} className='px-10 md:px-0'>
+            <div className="flex flex-wrap mb-4">
+                <div className="w-1/3 md:w-1/2 border-r border-b">
+                    {ServiceItem(land, 'Đất công nghiệp cho thuê')}
+                </div>
+                <div className="w-1/3 md:w-1/2 border-b">
+                    {ServiceItem(factory, 'Nhà xưởng/Nhà kho cho thuê')}
+                </div>
+                <div className="w-1/3 md:w-1/2 border-r border-b">
+                    {ServiceItem(office, 'Cho thuê văn phòng')}
+                </div>
+                <div className="w-1/3 md:w-1/2 border-b">
+                    {ServiceItem(warehouse, 'Cho thuê đất thương mại')}
+                </div>
+                <div className="w-1/3 md:w-1/2 border-r">
+                    {ServiceItem(logistics, intl.formatMessage({ id : 'ServicesofLogistics'}))}
+                </div>
+                <div className="w-1/3 md:w-1/2">
+                    {ServiceItem(infrastructure, intl.formatMessage({ id : 'Infrastructureservices'}))}
+                </div>
+            </div>
+        </div>
+    )
 
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
@@ -91,16 +92,16 @@ const Page3: React.FC = () => {
                                         <FormattedMessage id='PRODUCT' />
                                     </div>
                                     <div className="md:text-xl font-semibold mb-4">
-                                        Quỹ đất công nghiệp cho thuê: 48,16 ha
+                                        <FormattedMessage id='Industriallandfundforlease' />: 48,16 ha
                                     </div>
                                     <div className="mb-6 text-sm md:text-base hidden md:block">
-                                        Với mục tiêu xây dựng CCN sinh thái, tuần hoàn và tái tạo, DakDoa 2 ưu tiên thu hút các ngành nghề về sản xuất, chế biến nông sản và gỗ, cùng với đó là lĩnh vực logistics giúp hình thành các liên kết cộng sinh, giúp tối ưu hoá lợi nhuận và giảm thiểu chi phí.
+                                        <FormattedMessage id='IndustriallandfundforleaseDes' />
                                     </div>
                                     <div className="md:text-xl font-semibold mb-4">
-                                        Quỹ đất Hậu cần dịch vụ cho thuê: 4,58 ha
+                                        <FormattedMessage id='LandfundLogisticsrentalservices' />: 4,58 ha
                                     </div>
                                     <div className="mb-4 text-sm md:text-base hidden md:block">
-                                        Thu hút các dự án như Trung tâm thương mại, ngân hàng, khu trưng bày triển lãm, siêu thị, cửa hàng dịch vụ bán lẻ; nhà hàng, bãi đỗ xe và các công trình thương mại dịch vụ… Khu trưng bày và triển lãm các sản phẩm của các Nhà đầu tư trong cụm công nghiệp, trung tâm phân phối các sản phẩm, trung tâm bảo trì bảo hành, triển lãm các giải pháp công nghệ…
+                                        <FormattedMessage id='LandfundLogisticsrentalservicesDes' />
                                     </div>
                                 </div>
                             </div>
@@ -137,4 +138,4 @@ const Page3: React.FC = () => {
     )
 }
 
-export default Page3
+export default ProductNService

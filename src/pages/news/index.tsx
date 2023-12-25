@@ -1,5 +1,7 @@
 import Footer from "@/layouts/footer";
-import { Avatar, Card, Spin, Tooltip } from "antd";
+import Sidebar from "@/layouts/sidebar";
+import { SearchOutlined } from "@ant-design/icons";
+import { Avatar, Breadcrumb, Card, Input, Spin, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 
@@ -18,6 +20,9 @@ const NewsPage: React.FC = () => {
     }[]>([]);
 
     useEffect(() => {
+        if (articles && articles.length > 1) {
+            return;
+        }
         setLoading(true);
         fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=1`, {
             method: 'GET',
@@ -40,37 +45,52 @@ const NewsPage: React.FC = () => {
             </Helmet>
             <div className="container mx-auto py-4 md:py-10">
                 <Spin fullscreen spinning={loading} />
-                <div className="grid md:grid-cols-4 gap-4">
-                    {
-                        articles.map(article => (
-                            <Card
-                                hoverable
-                                key={article.id}
-                                cover={
-                                    <img
-                                        alt={article.name}
-                                        src={article.thumbnail}
-                                        className="h-52 object-cover"
-                                    />
-                                }
-                            >
-                                <Tooltip title={article.name}>
-                                    <Meta
-                                        title={(
-                                            <Link to={`/news/${article.id}`}>
-                                                {article.name}
-                                            </Link>
-                                        )}
-                                        description={(
-                                            <div className="truncate">
-                                                {article.description}
-                                            </div>
-                                        )}
-                                    />
-                                </Tooltip>
-                            </Card>
-                        ))
-                    }
+                <div className="mb-4 px-4">
+                    <Breadcrumb items={[
+                        {
+                            title: intl.formatMessage({ id: 'HOME' })
+                        },
+                        {
+                            title: intl.formatMessage({ id: 'NEWS' })
+                        }
+                    ]} />
+                </div>
+                <div className="md:flex gap-4">
+                    <div className="md:w-3/4">
+                        <div className="grid md:grid-cols-3 gap-4">
+                            {
+                                articles.map(article => (
+                                    <Card
+                                        hoverable
+                                        key={article.id}
+                                        cover={
+                                            <img
+                                                alt={article.name}
+                                                src={article.thumbnail}
+                                                className="h-52 object-cover"
+                                            />
+                                        }
+                                    >
+                                        <Tooltip title={article.name}>
+                                            <Meta
+                                                title={(
+                                                    <Link to={`/news/${article.id}`}>
+                                                        {article.name}
+                                                    </Link>
+                                                )}
+                                                description={(
+                                                    <div className="truncate">
+                                                        {article.description}
+                                                    </div>
+                                                )}
+                                            />
+                                        </Tooltip>
+                                    </Card>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <Sidebar />
                 </div>
             </div>
             <Footer height={height} />

@@ -3,5 +3,6 @@ declare namespace API {
         id: string;
         name: string;
         description: string;
+        thumbnail: string;
     }
 }

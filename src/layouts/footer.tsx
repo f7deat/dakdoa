@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                 <Form layout="vertical" form={form}>
                     <Row gutter={16}>
                         <Col span={24} md={12}>
-                            <Form.Item name='name' label="Họ và tên" rules={[
+                            <Form.Item name='name' label={<FormattedMessage id='FULL_NAME' />} rules={[
                                 {
                                     required: true
                                 }
@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                             </Form.Item>
                         </Col>
                         <Col span={24} md={12}>
-                            <Form.Item name='phoneNumber' label="Số điện thoại" rules={[
+                            <Form.Item name='phoneNumber' label={<FormattedMessage id='PhoneNumber' />} rules={[
                                 {
                                     required: true
                                 }

@@ -23,6 +23,21 @@ export default {
     'SUPPORT_QUOTE': '顧客の成功は Dak Doa 2 の成功でもあります',
     'PARTNER_QUOTE': 'それぞれのパートナー、つまり顧客に、私たちは持続可能な価値、信頼、仲間意識をお届けします',
     'INTERNAL_AMENITIES': '内部アメニティ',
-    'External_Amenities': '外部アメニティ'
+    'External_Amenities': '外部アメニティ',
+    'ServicesofLogistics': '物流サービス',
+    'THINKING_DIFFERENT': '違う考え',
+    'TAY_NGUYEN_NATURE': 'Tây Nguyên の自然',
+    'TAY_NGUYEN_NATURE_DESCRIPTION1': 'ザライはベトナムで 2 番目に面積が大きい省で、タイグエン地方北部に位置する高原省です (ザライはタイグエンで面積で 1 位、人口で 2 位です)。',
+    'TAY_NGUYEN_NATURE_DESCRIPTION2': '農業生産の発展と農産物の輸出に多くの利点があるザライは、産業とサービスの発展を促進する国際的な傾向に歩調を合わせ、将来の新たな回復力とブレークスルーを生み出し、投資家に多くの良い機会をもたらします。',
+    'FULL_NAME': 'フルネーム',
+    'TOP_INDUSTRIAL': '先進的なエコロジー産業クラスター',
+    'TOP_INDUSTRIAL_DES': 'Dak Doa 2 産業クラスターは、製造業のコミュニティが同じ利益を持って密接な関係を持つエコ産業パークの構築を目的として、一連の基準に従って建設および開発されました。 同時に、私たちは環境および天然資源の問題の管理において緊密に協力します。',
+    'Industriallandfundforlease': '工業用地貸付基金',
+    'IndustriallandfundforleaseDes': 'DakDoa 2 は、環境に優しく、循環型で再生可能な産業複合体を構築することを目標に、共生関係の形成を支援する物流部門とともに、農産物や木材の製造と加工の職業の誘致を優先しています。 、利益の最適化とコストの最小化に役立ちます。',
+    'LandfundLogisticsrentalservices': '土地ファンド 物流レンタルサービス',
+    'LandfundLogisticsrentalservicesDes': '商業センター、銀行、展示展示場、スーパーマーケット、小売サービス店などのプロジェクトを誘致する。 レストラン、駐車場、商業およびサービスビル... 産業クラスターにおける投資家の製品の展示および展示エリア、製品流通センター、メンテナンスおよび保証センター、展示会 技術ソリューションの展示',
+    'PhoneNumber': '電話番号',
+    'Infrastructureservices': 'インフラストラクチャサービス',
+    'VIEWMORE': '続きを読む'
   };
   

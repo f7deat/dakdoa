@@ -1,10 +1,14 @@
 
 import cover from '../../assets/cover-min.jpg';
 import icon360 from '../../assets/icons/360.svg';
-import { FormattedMessage, Link } from 'umi';
+import { FormattedMessage, Link, useIntl } from 'umi';
 import ContactButton from '../button';
+import Texty from 'rc-texty';
 
 const Cover: React.FC = () => {
+
+    const intl = useIntl();
+
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800"
             style={{
@@ -20,12 +24,12 @@ const Cover: React.FC = () => {
                                 <div className='montserrat text-2xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-[40px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
-                                    <div>
-                                        <FormattedMessage id='INDUSTRIAL_CLUSTERS' />
-                                    </div>
-                                    <div>
-                                        <FormattedMessage id='NO_2' /> Đak Đoa
-                                    </div>
+                                    <Texty>
+                                        {intl.formatMessage({ id: 'INDUSTRIAL_CLUSTERS' })}
+                                    </Texty>
+                                    <Texty>
+                                        {intl.formatMessage({ id: 'NO_2' }) + ' Đak Đoa'}
+                                    </Texty>
                                 </div>
                             </div>
                             <div className='text-white montserrat mb-6 md:mb-[40px] max-w-[537px]'>

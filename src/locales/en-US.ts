@@ -23,6 +23,21 @@ export default {
     'SUPPORT_QUOTE': 'The success of customers is also the success of Dak Doa 2',
     'PARTNER_QUOTE': 'To each partner - customer, we deliver sustainable values, trust and companionship',
     'INTERNAL_AMENITIES': 'INTERNAL AMENITIES',
-    'External_Amenities': 'External Amenities'
+    'External_Amenities': 'External Amenities',
+    'ServicesofLogistics': 'Services of Logistics',
+    'THINKING_DIFFERENT': 'Thinking Different',
+    'TAY_NGUYEN_NATURE': 'Tay Nguyen Nature',
+    'TAY_NGUYEN_NATURE_DESCRIPTION1': 'Gia Lai is the second largest province in area in Vietnam and is a highland province located in the Northern Tay Nguyen region (Gia Lai ranks first in area and second in population in the Tay Nguyen).',
+    'TAY_NGUYEN_NATURE_DESCRIPTION2': 'With many advantages in developing agricultural production and exporting agricultural products, Gia Lai keeps pace with the international trend of promoting industrial and service development, creating new resilience and breakthroughs in the future, bringing many Good opportunity for investors.',
+    'FULL_NAME': 'Full Name',
+    'TOP_INDUSTRIAL': 'Leading ecological industrial cluster',
+    'TOP_INDUSTRIAL_DES': 'Dak Doa 2 industrial cluster was built and developed according to a set of criteria with the desire to build an eco-industrial park, in which communities of manufacturing businesses have close relationships with the same interests; At the same time, we cooperate closely in managing environmental and natural resource issues.',
+    'Industriallandfundforlease': 'Industrial land fund for lease',
+    'IndustriallandfundforleaseDes': 'With the goal of building an ecological, circular and renewable industrial complex, DakDoa 2 prioritizes attracting occupations in manufacturing and processing agricultural products and wood, along with the logistics sector to help form symbiotic links. , helping to optimize profits and minimize costs.',
+    'LandfundLogisticsrentalservices': 'Land fund Logistics rental services',
+    'LandfundLogisticsrentalservicesDes': 'Attract projects such as commercial centers, banks, exhibition display areas, supermarkets, retail service stores; restaurants, parking lots and commercial and service buildings... Display and exhibition areas for products of investors in industrial clusters, product distribution centers, maintenance and warranty centers, exhibitions Exhibition of technological solutions',
+    'PhoneNumber': 'Phone number',
+    'Infrastructureservices': 'Infrastructure services',
+    'VIEWMORE': 'Read more'
   };
   

@@ -1,48 +1,96 @@
-import { useEffect, useState } from 'react';
-import cover from '../../assets/cover-min.jpg';
-import { Helmet, useParams } from 'umi';
-import Footer from '@/layouts/footer';
+import Footer from "@/layouts/footer";
+import Sidebar from "@/layouts/sidebar";
+import { SearchOutlined } from "@ant-design/icons";
+import { Avatar, Breadcrumb, Card, Input, Spin, Tooltip } from "antd";
+import { useEffect, useState } from "react";
+import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 
-const ProductPage: React.FC = () => {
+const ProductListPage: React.FC = () => {
 
-    const { id } = useParams();
+    const { Meta } = Card;
     const [height, setHeight] = useState<number>(0);
-    const [product, setProduct] = useState<{
-        name: string;
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const intl = useIntl();
+    const [articles, setArticles] = useState<{
         id: string;
+        name: string;
+        thumbnail: string;
         description: string;
-        modifiedDate: Date;
-    }>();
+    }[]>([]);
 
     useEffect(() => {
-        fetch(`https://shinecgialai.com.vn/api/catalog/structure/${id}`, {
+        if (articles && articles.length > 1) {
+            return;
+        }
+        setLoading(true);
+        fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('wf_token')
             }
         }).then(response => response.json().then(data => {
-            console.log(data);
-        }));
-        fetch(`https://shinecgialai.com.vn/api/catalog/${id}`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('wf_token')
-            }
-        }).then(response => response.json().then(data => {
-            setProduct(data);
+            setArticles(data.data);
+            setLoading(false);
         }));
         setTimeout(() => {
             setHeight(147)
         }, 100);
-    }, [])
+    }, []);
 
     return (
         <>
             <Helmet>
-                <title>{product?.name || ''} - Shinec Gia Lai</title>
+                <title>{intl.formatMessage({ id: 'PRODUCT' })} - Shinec Gia Lai</title>
             </Helmet>
-            <div className="h-body relative">
-                <div className="flex h-body flex-col justify-between" >
+            <div className="container mx-auto py-4 md:py-10">
+                <Spin fullscreen spinning={loading} />
+                <div className="mb-4">
+                    <Breadcrumb items={[
+                        {
+                            title: intl.formatMessage({ id: 'HOME' })
+                        },
+                        {
+                            title: intl.formatMessage({ id: 'PRODUCT' })
+                        }
+                    ]} />
+                </div>
+                <div className="md:flex gap-4">
+                    <div className="md:w-3/4">
+                        <div className="grid md:grid-cols-3 gap-4">
+                            {
+                                articles.map(article => (
+                                    <Card
+                                        hoverable
+                                        key={article.id}
+                                        cover={
+                                            <img
+                                                alt={article.name}
+                                                src={article.thumbnail}
+                                                className="h-52 object-cover"
+                                            />
+                                        }
+                                    >
+                                        <Tooltip title={article.name}>
+                                            <Meta
+                                                title={(
+                                                    <Link to={`/product/${article.id}`}>
+                                                        {article.name}
+                                                    </Link>
+                                                )}
+                                                description={(
+                                                    <div className="truncate">
+                                                        {article.description}
+                                                    </div>
+                                                )}
+                                            />
+                                        </Tooltip>
+                                    </Card>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <Sidebar />
                 </div>
             </div>
             <Footer height={height} />
@@ -50,4 +98,4 @@ const ProductPage: React.FC = () => {
     )
 }
 
-export default ProductPage
+export default ProductListPage;

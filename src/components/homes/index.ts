@@ -1,9 +1,9 @@
 export { default as Cover } from './cover';
 export { default as Page1 } from './page1';
 export { default as Page2 } from './page2';
-export { default as Page3 } from './page3';
+export { default as ProductNService } from './ProductNService';
 export { default as Page4 } from './page4';
 export { default as Page5 } from './page5';
 export { default as Page6 } from './page6';
 export { default as Page7 } from './page7';
-export { default as Page8 } from './page8';
+export { default as Testimonial } from './testimonial';

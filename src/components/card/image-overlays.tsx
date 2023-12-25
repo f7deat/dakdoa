@@ -3,7 +3,7 @@ import { Link } from "umi";
 type CardImageOverlaysProps = {
     image: string;
     title: string;
-    description?: string;
+    descriptions: string[];
     url?: string;
 }
 
@@ -24,8 +24,12 @@ const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
                                 ) : (<h3 className="md:text-[27px] text-xl font-bold montserrat">{props.title}</h3>)
                             }
                             <div className="border-b w-16 border-2 mx-4 mb-4"></div>
-                            <div className="item__body">
-                                {props.description}
+                            <div className="item__body px-4">
+                                <ul className="list-disc pl-4">
+                                    {props.descriptions.map((description, index) => (
+                                        <li key={index}>{description}</li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </div>

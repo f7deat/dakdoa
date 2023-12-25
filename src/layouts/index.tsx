@@ -7,6 +7,7 @@ import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'rc-texty/assets/index.css';
 
 export default function Layout() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });

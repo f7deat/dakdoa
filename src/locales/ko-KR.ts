@@ -23,6 +23,21 @@ export default {
     'SUPPORT_QUOTE': '고객의 성공은 닥도아2의 성공이기도 합니다',
     'PARTNER_QUOTE': '각 파트너, 즉 고객에게 지속가능한 가치와 신뢰, 동행을 전달합니다.',
     'INTERNAL_AMENITIES': '내부 편의시설',
-    'External_Amenities': '외부 편의시설'
+    'External_Amenities': '외부 편의시설',
+    'ServicesofLogistics': '물류 서비스',
+    'THINKING_DIFFERENT': '생각이 다르다',
+    'TAY_NGUYEN_NATURE': 'Tây Nguyên 자연',
+    'TAY_NGUYEN_NATURE_DESCRIPTION1': 'Gia Lai는 베트남에서 두 번째로 큰 성이며 북부 Tay Nguyen 지역에 위치한 고지대 성입니다(Gia Lai는 Tay Nguyen에서 면적 1위, 인구 2위).',
+    'TAY_NGUYEN_NATURE_DESCRIPTION2': '농업 생산 개발 및 농산물 수출에 많은 이점을 갖고 있는 Gia Lai는 산업 및 서비스 개발을 촉진하는 국제 추세에 보조를 맞추고 미래에 새로운 탄력성과 돌파구를 마련하여 투자자에게 많은 좋은 기회를 제공합니다.',
+    'FULL_NAME': '성명',
+    'TOP_INDUSTRIAL': '선도적 생태산업 클러스터',
+    'TOP_INDUSTRIAL_DES': 'Dak Doa 2 산업 클러스터는 제조 기업 공동체가 동일한 이해 관계를 가지고 긴밀한 관계를 맺는 생태 산업 단지를 건설하고자 하는 일련의 기준에 따라 건설 및 개발되었습니다. 동시에 우리는 환경 및 천연자원 문제 관리에 긴밀히 협력합니다.',
+    'Industriallandfundforlease': '산업용지임대펀드',
+    'IndustriallandfundforleaseDes': 'DakDoa 2는 생태학적, 순환적, 재생 가능한 산업 단지 건설을 목표로 농산물, 목재 제조 및 가공 분야의 직업 유치와 물류 부문을 우선적으로 유치하여 공생 관계를 형성하는 데 도움을 줍니다. , 이익을 최적화하고 비용을 최소화하는 데 도움이 됩니다.',
+    'LandfundLogisticsrentalservices': '토지기금 물류임대 서비스',
+    'LandfundLogisticsrentalservicesDes': '상업 센터, 은행, 전시 전시 구역, 슈퍼마켓, 소매 서비스 매장과 같은 프로젝트를 유치합니다. 레스토랑, 주차장, 상업 및 서비스 건물... 산업 클러스터의 투자자 제품 전시 및 전시 공간, 제품 유통 센터, 유지 보수 및 보증 센터, 전시회 기술 솔루션 전시',
+    'PhoneNumber': '전화 번호',
+    'Infrastructureservices': '인프라 서비스',
+    'VIEWMORE': '더 읽으십시오'
   };
   

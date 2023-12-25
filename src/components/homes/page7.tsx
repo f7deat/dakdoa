@@ -6,6 +6,7 @@ import infra from '../../assets/tree-opa.svg';
 import { Carousel } from "antd";
 import cases from '../../assets/icons/case.svg';
 import tree from '../../assets/icons/tree.svg';
+import { FormattedMessage } from "umi";
 
 const Page7: React.FC = () => {
 
@@ -48,7 +49,7 @@ const Page7: React.FC = () => {
                     }}>
                         <div className="container mx-auto px-10 md:px-0">
                             <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-10">
-                                Khác biệt và lợi thế
+                                <FormattedMessage id='THINKING_DIFFERENT' />
                             </div>
                             <Carousel dots={false} autoplay infinite
                                 responsive={[

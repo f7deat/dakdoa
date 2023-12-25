@@ -23,6 +23,21 @@ export default {
     'SUPPORT_QUOTE': 'Sự thành công của khách hàng cũng là sự thành công của Đak Đoa 2',
     'PARTNER_QUOTE': 'Với mỗi đối tác - khách hàng, chúng tôi trao gửi những giá trị bền vững, tín nhiệm và đồng hành',
     'INTERNAL_AMENITIES': 'TIỆN ÍCH NỘI KHU',
-    'External_Amenities': 'Tiện ích ngoại khu'
+    'External_Amenities': 'Tiện ích ngoại khu',
+    'ServicesofLogistics': 'Dịch vụ logistics',
+    'THINKING_DIFFERENT': 'Khác biệt và lợi thế',
+    'TAY_NGUYEN_NATURE': 'Tây Nguyên Tươi đẹp',
+    'TAY_NGUYEN_NATURE_DESCRIPTION1': 'Gia Lai là tỉnh có diện tích lớn thứ hai Việt Nam và là một tỉnh cao nguyên nằm ở khu vực Bắc Tây Nguyên (Gia Lai đứng thứ nhất về diện tích và đứng thứ 2 về dân số khu vực Tây Nguyên).',
+    'TAY_NGUYEN_NATURE_DESCRIPTION2': 'Với nhiều lợi thế trong phát triển sản xuất nông nghiệp, xuất khẩu nông sản, Gia Lai bắt nhịp xu hướng quốc tế thúc đẩy phát triển công nghiệp và dịch vụ, tạo nên sức bật và đột phá mới trong tương lại, đem đến nhiều cơ hội tốt cho các nhà đầu tư.',
+    'FULL_NAME': 'Họ và tên',
+    'TOP_INDUSTRIAL': 'Cụm công nghiệp sinh thái hàng đầu',
+    'TOP_INDUSTRIAL_DES': 'Cụm công nghiệp Đak Đoa 2 được xây dựng và phát triển theo bộ tiêu chí với mong muốn xây dựng một KCNST, trong đó các cộng đồng các doanh nghiệp sản xuất có mối liên hệ mật thiết trên cùng một lợi ích; đồng thời hợp tác chặt chẽ trong quản lý các vấn đề về môi trường và tài nguyên thiên nhiên.',
+    'Industriallandfundforlease': 'Quỹ đất công nghiệp cho thuê',
+    'IndustriallandfundforleaseDes': 'Với mục tiêu xây dựng CCN sinh thái, tuần hoàn và tái tạo, DakDoa 2 ưu tiên thu hút các ngành nghề về sản xuất, chế biến nông sản và gỗ, cùng với đó là lĩnh vực logistics giúp hình thành các liên kết cộng sinh, giúp tối ưu hoá lợi nhuận và giảm thiểu chi phí.',
+    'LandfundLogisticsrentalservices': 'Quỹ đất Hậu cần dịch vụ cho thuê',
+    'LandfundLogisticsrentalservicesDes': 'Thu hút các dự án như Trung tâm thương mại, ngân hàng, khu trưng bày triển lãm, siêu thị, cửa hàng dịch vụ bán lẻ; nhà hàng, bãi đỗ xe và các công trình thương mại dịch vụ… Khu trưng bày và triển lãm các sản phẩm của các Nhà đầu tư trong cụm công nghiệp, trung tâm phân phối các sản phẩm, trung tâm bảo trì bảo hành, triển lãm các giải pháp công nghệp',
+    'PhoneNumber': 'Số điện thoại',
+    'Infrastructureservices': 'Dịch vụ cơ sở hạ tầng',
+    'VIEWMORE': 'Xem thêm'
   };
   

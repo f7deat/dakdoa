@@ -1,4 +1,4 @@
-import { Cover, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8 } from "@/components/homes";
+import { Cover, Page1, Page2, ProductNService, Page4, Page5, Page6, Page7, Testimonial } from "@/components/homes";
 import Partner from "@/components/homes/partner";
 import Footer from "@/layouts/footer";
 import { Carousel } from "antd";
@@ -37,17 +37,17 @@ export default function HomePage() {
       </Helmet>
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} afterChange={afterChange}>
         <Cover />
-        <Page1 />
-        <Page2 />
-        <Page3 />
+        <Page1 active={currentSlide === 1} />
+        <Page2 active={currentSlide === 2} />
+        <ProductNService />
         <Page4 currentSection={currentSlide} />
         <Page5 />
         <Page6 />
         <Page7 />
-        <Page8 />
+        <Testimonial />
         <Partner />
       </Carousel>
-      <Footer height={height} fixed/>
+      <Footer height={height} fixed />
     </>
   );
 }

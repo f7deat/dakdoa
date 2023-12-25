@@ -23,6 +23,21 @@ export default {
     'SUPPORT_QUOTE': '客户的成功也是Dak Doa 2的成功',
     'PARTNER_QUOTE': '对于每一位合作伙伴——客户，我们传递可持续的价值观、信任和陪伴',
     'INTERNAL_AMENITIES': '内部设施',
-    'External_Amenities': '外部设施'
+    'External_Amenities': '外部设施',
+    'ServicesofLogistics': '物流服务',
+    'THINKING_DIFFERENT': '想法不同',
+    'TAY_NGUYEN_NATURE': 'Tây Nguyên 自然',
+    'TAY_NGUYEN_NATURE_DESCRIPTION1': '嘉莱省是越南面积第二大省，是位于西原省北部的一个高原省份（嘉莱省面积居西原省第一，人口第二）。',
+    'TAY_NGUYEN_NATURE_DESCRIPTION2': '嘉莱凭借在发展农业生产和出口农产品方面的诸多优势，紧跟推动工业和服务业发展的国际趋势，创造未来新的韧性和突破，为投资者带来许多良好的机会。',
+    'FULL_NAME': '全名',
+    'TOP_INDUSTRIAL': '领先的生态产业集群',
+    'TOP_INDUSTRIAL_DES': 'Dak Doa 2工业集群是根据一系列标准建设和发展的，旨在建设一个生态工业园区，其中制造企业社区有着密切的关系和相同的利益； 同时，我们在管理环境和自然资源问题上密切合作。',
+    'Industriallandfundforlease': '工业用地基金租赁',
+    'IndustriallandfundforleaseDes': 'DakDoa 2以建设生态、循环和可再生工业综合体为目标，优先吸引农产品和木材的制造和加工以及物流业的职业，以帮助形成共生联系。 ，帮助优化利润并最小化成本。',
+    'LandfundLogisticsrentalservices': '土地资金 物流租赁服务',
+    'LandfundLogisticsrentalservicesDes': '吸引商业中心、银行、展览展示区、超市、零售服务店等项目； 餐厅、停车场、商业服务楼……产业集群投资者产品展示展示区、产品集散中心、维修保修中心、展览会、技术解决方案展示',
+    'PhoneNumber': '电话号码',
+    'Infrastructureservices': '基础设施服务',
+    'VIEWMORE': '阅读更多'
   };
   

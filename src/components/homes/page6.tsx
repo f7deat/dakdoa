@@ -34,15 +34,47 @@ const Page6: React.FC = () => {
                                 <NestedCarousel
                                     items={[
                                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'HOSPITAL' })} image={hospital} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'SCHOOL' })} image={school} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'BANK' })} image={bank} />
-                                            <CardImageOverlays title="Khu vực hành chính công" image={govern} />
-                                            <CardImageOverlays title="Trung tâm thương mại" image={mall} />
-                                            <CardImageOverlays title="Nhà hàng" image={restaurent} />
-                                            <CardImageOverlays title="Khách sạn" image={hotel} />
-                                            <CardImageOverlays title="Dịch vụ khác" image={golf} />
-                                            <CardImageOverlays title="Các lĩnh vực sản suất ngoại khu" image={cafe} />
+                                            <CardImageOverlays
+                                                title={intl.formatMessage({ id: 'HOSPITAL' })}
+                                                image={hospital}
+                                                descriptions={[
+                                                    'Bệnh viện Đa khoa Tỉnh Gia Lai',
+                                                    'Bệnh viện Quân Y 211',
+                                                    'Bệnh Viện Y Học Cổ Truyển Gia Lai'
+                                                ]}
+                                            />
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'SCHOOL' })} image={school}
+                                                descriptions={[
+                                                    'Trường THPT Chuyên Hùng Vương',
+                                                    'Trường THPT Pleiku',
+                                                    'Trường THPT Quang Trung',
+                                                    'Trường THPT Lê Lợi',
+                                                    'Trường THPT Nguyễn Thái Học'
+                                                ]} />
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'BANK' })} image={bank}
+                                                descriptions={[
+                                                    'Agribank',
+                                                    'Vietcombank',
+                                                    'Sacombank',
+                                                    'Techcombank',
+                                                    'MBBank'
+                                                ]} />
+                                            <CardImageOverlays title="Khu vực hành chính công" image={govern}
+                                                descriptions={[
+                                                    'Trung tâm phục vụ hành chính công tỉnh Gia Lai'
+                                                ]} />
+                                            <CardImageOverlays title="Trung tâm thương mại" image={mall}
+                                                descriptions={[
+                                                    'Sense City Pleiku'
+                                                ]} />
+                                            <CardImageOverlays title="Nhà hàng" image={restaurent}
+                                                descriptions={[]} />
+                                            <CardImageOverlays title="Khách sạn" image={hotel}
+                                                descriptions={[]} />
+                                            <CardImageOverlays title="Dịch vụ khác" image={golf}
+                                                descriptions={[]} />
+                                            <CardImageOverlays title="Các lĩnh vực sản suất ngoại khu" image={cafe}
+                                                descriptions={[]} />
                                         </div>
                                     ]}
                                 />
