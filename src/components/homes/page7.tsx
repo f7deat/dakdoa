@@ -1,4 +1,3 @@
-import Navbar from "../navbar";
 import cover from '../../assets/cover-min.jpg';
 import fid from '../../assets/fdi.png';
 import london from '../../assets/london-office.png';
@@ -6,18 +5,20 @@ import infra from '../../assets/tree-opa.svg';
 import { Carousel } from "antd";
 import cases from '../../assets/icons/case.svg';
 import tree from '../../assets/icons/tree.svg';
-import { FormattedMessage } from "umi";
+import { FormattedMessage, useIntl } from "umi";
 
 const Page7: React.FC = () => {
 
+    const intl = useIntl();
+
     const Item = (title: string, description: string[], image: string, icon: string) => (
-        <div className="montserrat text-white h-full px-4">
-            <div className="flex flex-col gap-4 justify-between h-full bg-[#1C9C47] rounded-xl p-4 md:p-[50px]">
+        <div className="text-white h-full px-4">
+            <div className="flex flex-col gap-4 justify-between h-full bg-[#1C9C47] rounded-xl p-4 md:p-10">
                 <div className="mb-4">
                     <img src={icon} alt="ICON" className="w-8 h-8 md:w-14 md:h-14" />
                 </div>
                 <div className="flex-1">
-                    <div className="text-lg md:text-[30px] font-medium mb-2 truncate">{title}</div>
+                    <div className="text-lg md:text-[30px] font-medium mb-2">{title}</div>
                     <ul className="mb-4 text-xs md:text-base">
                         {
                             description.map((value, index) => (
@@ -61,15 +62,15 @@ const Page7: React.FC = () => {
                                     }
                                 ]}
                                 slidesPerRow={2}>
-                                {Item('Hỗ trợ nhà đầu tư với thị trường trong nước', [
-                                    'Hỗ trợ thu hút, cung ứng nguồn lao động phổ thông và lao động đã qua đào tạo.',
-                                    'Hỗ trợ kết nối các đối tác, khách hàng tham gia vào quá trình sản xuất, cung ứng sản phẩm.',
-                                    'Hỗ trợ giải quyết các thủ tục pháp lý của doanh nghiệp trong quá trình hoạt động.'
+                                {Item(intl.formatMessage({ id: 'SUPPORT_IN'}), [
+                                    intl.formatMessage({ id: 'SUPPORT_IN1'}),
+                                    intl.formatMessage({ id: 'SUPPORT_IN2'}),
+                                    intl.formatMessage({ id: 'SUPPORT_IN3'})
                                 ], fid, cases)}
-                                {Item('Hỗ trợ nhà đầu tư với thị trường quốc tế', [
-                                    'Thu xếp tín dụng cho các dự án đầu tư vào KCN, CCN với mức vốn ưu đãi.',
-                                    'Hỗ trợ thị trường xuất khẩu đầu ra và tài trợ tín dụng xuất khẩu cho các Nhà đầu tư trong KCN, CCN do Shinec đầu tư. Hỗ trợ các thủ tục pháp lý, logistics và hậu cần trong giao dịch kinh doanh quốc tế.',
-                                    'Hỗ trợ nhà đầu tư hoàn thành các chứng chỉ, tín chỉ xanh.'
+                                {Item(intl.formatMessage({ id: 'SUPPORT_OUT'}), [
+                                    intl.formatMessage({ id: 'SUPPORT_OUT1'}),
+                                    intl.formatMessage({ id: 'SUPPORT_OUT2'}),
+                                    intl.formatMessage({ id: 'SUPPORT_OUT3'})
                                 ], london, tree)}
                             </Carousel>
                         </div>

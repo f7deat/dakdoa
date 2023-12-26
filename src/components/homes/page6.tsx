@@ -59,21 +59,21 @@ const Page6: React.FC = () => {
                                                     'Techcombank',
                                                     'MBBank'
                                                 ]} />
-                                            <CardImageOverlays title="Khu vực hành chính công" image={govern}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'Publicadministrativearea' })} image={govern}
                                                 descriptions={[
                                                     'Trung tâm phục vụ hành chính công tỉnh Gia Lai'
                                                 ]} />
-                                            <CardImageOverlays title="Trung tâm thương mại" image={mall}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'MALL' })} image={mall}
                                                 descriptions={[
                                                     'Sense City Pleiku'
                                                 ]} />
-                                            <CardImageOverlays title="Nhà hàng" image={restaurent}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'Restaurant' })} image={restaurent}
                                                 descriptions={[]} />
-                                            <CardImageOverlays title="Khách sạn" image={hotel}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'Hotel' })} image={hotel}
                                                 descriptions={[]} />
-                                            <CardImageOverlays title="Dịch vụ khác" image={golf}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'Otherservices' })} image={golf}
                                                 descriptions={[]} />
-                                            <CardImageOverlays title="Các lĩnh vực sản suất ngoại khu" image={cafe}
+                                            <CardImageOverlays title={intl.formatMessage({ id: 'Outsideproductionareas' })} image={cafe}
                                                 descriptions={[]} />
                                         </div>
                                     ]}

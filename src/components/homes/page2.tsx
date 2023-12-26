@@ -14,7 +14,7 @@ const Page2: React.FC<HomeSectionItemProps> = (props) => {
         <div className="relative">
             <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
                 <source
-                    src="https://assets.mixkit.co/videos/preview/mixkit-train-heading-through-an-industrial-city-25881-large.mp4"
+                    src="https://shinecgialai.com.vn/videos/knc.mp4"
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.

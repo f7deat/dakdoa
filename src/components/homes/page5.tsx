@@ -5,11 +5,12 @@ import water from '../../assets/amenities/water.png';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { useRef, useState } from 'react';
-import { FormattedMessage } from 'umi';
+import { FormattedMessage, useIntl } from 'umi';
 
 const Page5: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
+    const intl = useIntl();
 
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="px-4 text-white montserrat">
@@ -40,7 +41,7 @@ const Page5: React.FC = () => {
                                 <FormattedMessage id='INTERNAL_AMENITIES' />
                             </div>
                             <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8">
-                                As a company, we’ve always believed in walking our own path and doing things a little differently.
+                                <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <Swiper
                                 autoplay
@@ -67,23 +68,23 @@ const Page5: React.FC = () => {
                                 }}
                             >
                                 <SwiperSlide>
-                                    {Amenities(trafic, 'Giao thông', ['Hệ thống đường giao thông đồng bộ, tiêu chuẩn', 'Chiều rộng: 40m – 30m – 25m'])}
+                                    {Amenities(trafic, intl.formatMessage({id: 'Traffic'}), [intl.formatMessage({id: 'Traffic_des1'}), intl.formatMessage({id: 'Traffic_des2'})])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities(electric, 'Hệ thống cấp điện - nước', ['Điện áp: 110KV-22KV', 'Công suất: 189 MVA (có dự trù nâng cao)'])}
+                                    {Amenities(electric, intl.formatMessage({id: 'WATER_ELEC'}), [intl.formatMessage({id: 'WATER_ELEC_DES1'}), intl.formatMessage({id: 'WATER_ELEC_DES2'})])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities(water, 'Hệ thống XLNT tập trung', ['Công suất: 2.000 m3/ngày đêm (có dự trù nâng cao công suất)', 'Công nghệ xử lý vi sinh tiêu chuẩn'])}
+                                    {Amenities(water, intl.formatMessage({id: 'wastewater'}), [intl.formatMessage({id: 'wastewater_des1'}), intl.formatMessage({id: 'wastewater_des2'})])}
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     {Amenities('https://www.elcom.com.vn/storage/uploads/images/o8cvBIoy6PcyWJkPMGNFKFYQau4llZ1XI1dCXbeX.jpg', 
-                                    'Viễn thông & Internet', 
-                                    ['Dịch vụ tích hợp Viễn thông công nghệ đặc thù cho từng khách hàng ', 'Truyền dữ liệu & Internet – Cloud - Voice IP - VAS & CNTT – Hệ thống M&E'])}
+                                    intl.formatMessage({id: 'Internet'}), 
+                                    [intl.formatMessage({id: 'Internet_des1'}), intl.formatMessage({id: 'Internet_des2'})])}
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     {Amenities('https://file1.dangcongsan.vn/data/0/images/2021/09/10/hungnm/t12.jpg', 
-                                    'Phòng cháy chữa cháy', 
-                                    ['Hệ thống xe PCCC và phương tiện chuyên dụng', 'Hệ thống họng cứu hỏa cấp nước PCCC xuyên suốt các tuyến đường.'])}
+                                    intl.formatMessage({id: 'FIRE_PROTECTION'}), 
+                                    [intl.formatMessage({id: 'FIRE_PROTECTION_DES1'}), intl.formatMessage({id: 'FIRE_PROTECTION_DES2'})])}
                                 </SwiperSlide>
                             </Swiper>
 

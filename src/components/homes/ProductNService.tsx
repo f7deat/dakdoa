@@ -32,16 +32,16 @@ const ProductNService: React.FC = () => {
         <div key={1} className='px-10 md:px-0'>
             <div className="flex flex-wrap mb-4">
                 <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(land, 'Đất công nghiệp cho thuê')}
+                    {ServiceItem(land, intl.formatMessage({ id : 'Industrial land for rent'}))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(factory, 'Nhà xưởng/Nhà kho cho thuê')}
+                    {ServiceItem(factory, intl.formatMessage({ id : 'Factories and warehouses for rent'}))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(office, 'Cho thuê văn phòng')}
+                    {ServiceItem(office, intl.formatMessage({ id : 'Renting office'}))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(warehouse, 'Cho thuê đất thương mại')}
+                    {ServiceItem(warehouse, intl.formatMessage({ id : 'Commercial land for rent'}))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-r">
                     {ServiceItem(logistics, intl.formatMessage({ id : 'ServicesofLogistics'}))}

@@ -3,9 +3,6 @@ import logo from '../assets/logo/logo-white.svg';
 import paper from '../assets/icons/paper-airplane.svg';
 import globe from '../assets/icons/globe.svg';
 import phone from '../assets/icons/phone.svg';
-import { MessageOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Space } from "antd";
-import { useState } from "react";
 
 type FooterProps = {
     height: number;
@@ -15,8 +12,6 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = (props) => {
 
     const { height, fixed } = props;
-    const [open, setOpen] = useState<boolean>(false);
-    const [form] = Form.useForm();
 
     const ContactItem = (icon: string, title: string, description: string) => (
         <div className="flex gap-4">
@@ -32,55 +27,6 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <Modal open={open} onCancel={() => setOpen(false)} centered footer={false} title={
-                (
-                    <div className="text-2xl text-green-600 border-b pb-2 border-dashed">Let's talk</div>
-                )
-            }>
-                <Form layout="vertical" form={form}>
-                    <Row gutter={16}>
-                        <Col span={24} md={12}>
-                            <Form.Item name='name' label={<FormattedMessage id='FULL_NAME' />} rules={[
-                                {
-                                    required: true
-                                }
-                            ]}>
-                                <Input addonAfter={<UserOutlined className="text-green-600" />} />
-                            </Form.Item>
-                        </Col>
-                        <Col span={24} md={12}>
-                            <Form.Item name='phoneNumber' label={<FormattedMessage id='PhoneNumber' />} rules={[
-                                {
-                                    required: true
-                                }
-                            ]}>
-                                <Input addonAfter={<PhoneOutlined className="text-green-600" />} />
-                            </Form.Item>
-                        </Col>
-                    </Row>
-                    <Form.Item name='note' label="Nội dung" rules={[
-                        {
-                            required: true
-                        }
-                    ]}>
-                        <Input.TextArea />
-                    </Form.Item>
-                    <Form.Item>
-                        <div className="flex justify-center">
-                            <Button htmlType="submit" shape="round" type="dashed" className="w-full font-semibold text-green-700">Đồng ý</Button>
-                        </div>
-                    </Form.Item>
-                </Form>
-            </Modal>
-            <div className="fixed inset-y-2/4 right-6" onClick={() => {
-                form.resetFields();
-                setOpen(true);
-            }}>
-                <div className='h-16 w-16 border-4 border-green-700 rounded-full hidden md:flex items-center justify-center bg-white cursor-pointer shadow-lg'>
-                    <MessageOutlined className="text-2xl text-green-700" />
-                    <span className="animate-ping absolute inline-flex h-14 w-14 rounded-full bg-green-400 opacity-75"></span>
-                </div>
-            </div>
             <footer className={`bg-[#484f1f] bottom-0 left-0 right-0 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>

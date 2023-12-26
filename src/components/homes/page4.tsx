@@ -78,8 +78,8 @@ const Page4: React.FC<SectionProps> = (props) => {
                             <div className="text-center text-2xl md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
                                 <FormattedMessage id='PRODUCT' />
                             </div>
-                            <div className="text-white montserrat text-center max-w-[550px] mx-auto mb-8 text-sm md:text-base">
-                                As a company, we’ve always believed in walking our own path and doing things a little differently.
+                            <div className="text-white montserrat text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
+                                <FormattedMessage id='PRODUCT_DES' />
                             </div>
                             {
                                 loading ? (<Fragment />) : (

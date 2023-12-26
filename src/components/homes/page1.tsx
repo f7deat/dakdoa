@@ -9,6 +9,7 @@ type HomeSectionItemProps = {
 
 const Page1: React.FC<HomeSectionItemProps> = (props) => {
 
+    const { active } = props;
     const intl = useIntl();
 
     return (
@@ -28,15 +29,15 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
                         <div>
                             <div className="montserrat text-[#0B8936] text-2xl md:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-6">
                                 <Texty mode="sync" type="right">
-                                    {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE' })}
+                                    {active ? intl.formatMessage({ id: 'TAY_NGUYEN_NATURE' }) : ''}
                                 </Texty>
                             </div>
                             <div className="text-slate-400 mb-4 montserrat text-xs md:text-base max-w-[900px]">
                                 <Texty mode='sync' type='bottom'>
-                                    {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION1' })}
+                                    {active ? intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION1' }) : ''}
                                 </Texty>
                                 <Texty mode='sync' type='bottom'>
-                                    {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION2' })}
+                                    {active ? intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION2' }) : ''}
                                 </Texty>
                             </div>
                             <Link to={`/news/c15e1eab-884b-42aa-4eb5-08dc054f1e5e`}
