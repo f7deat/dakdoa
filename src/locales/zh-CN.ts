@@ -37,7 +37,7 @@ export default {
     'LandfundLogisticsrentalservices': '土地资金 物流租赁服务',
     'LandfundLogisticsrentalservicesDes': '吸引商业中心、银行、展览展示区、超市、零售服务店等项目； 餐厅、停车场、商业服务楼……产业集群投资者产品展示展示区、产品集散中心、维修保修中心、展览会、技术解决方案展示',
     'PhoneNumber': '电话号码',
-    'Infrastructureservices': '基础设施服务',
+    'Infrastructureservices': '按要求建设厂房、仓库',
     'VIEWMORE': '阅读更多',
     'MALL': '购物中心',
     'Restaurant': '餐厅',

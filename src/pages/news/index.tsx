@@ -1,7 +1,8 @@
+import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
-import { SearchOutlined } from "@ant-design/icons";
-import { Avatar, Breadcrumb, Card, Input, Spin, Tooltip } from "antd";
+import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
+import { Avatar, Breadcrumb, Card, Input, Pagination, Spin, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 
@@ -44,11 +45,11 @@ const NewsPage: React.FC = () => {
                 <title>{intl.formatMessage({ id: 'NEWS' })} - Shinec Gia Lai</title>
             </Helmet>
             <div className="container mx-auto py-4 md:py-10">
-                <Spin fullscreen spinning={loading} />
+                <Loader loading={loading} />
                 <div className="mb-4 px-4">
                     <Breadcrumb items={[
                         {
-                            title: intl.formatMessage({ id: 'HOME' })
+                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
                         },
                         {
                             title: intl.formatMessage({ id: 'NEWS' })
@@ -88,6 +89,9 @@ const NewsPage: React.FC = () => {
                                     </Card>
                                 ))
                             }
+                        </div>
+                        <div className="py-2 flex justify-end">
+                            <Pagination />
                         </div>
                     </div>
                     <Sidebar />

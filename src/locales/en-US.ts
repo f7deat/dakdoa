@@ -37,7 +37,7 @@ export default {
     'LandfundLogisticsrentalservices': 'Land fund Logistics rental services',
     'LandfundLogisticsrentalservicesDes': 'Attract projects such as commercial centers, banks, exhibition display areas, supermarkets, retail service stores; restaurants, parking lots and commercial and service buildings... Display and exhibition areas for products of investors in industrial clusters, product distribution centers, maintenance and warranty centers, exhibitions Exhibition of technological solutions',
     'PhoneNumber': 'Phone number',
-    'Infrastructureservices': 'Infrastructure services',
+    'Infrastructureservices': 'Build workshops and warehouses as required',
     'VIEWMORE': 'Read more',
     'MALL': 'Shopping mall',
     'Restaurant': 'Restaurant',

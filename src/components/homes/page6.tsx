@@ -21,13 +21,13 @@ const Page6: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-body flex flex-col justify-between w-screen" >
+            <div className="h-full flex flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
                     <div className="flex h-full items-center">
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
+                            <div className="text-center text-lg md:text-5xl uppercase text-white font-bold mb-4 md:mb-8">
                                 <FormattedMessage id='External_Amenities' />
                             </div>
                             <div className="amenities">

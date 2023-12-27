@@ -55,20 +55,21 @@ const Testimonial: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-body flex flex-col justify-between w-screen" >
+            <div className="h-full flex flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="h-body items-center" style={{
+                    <div className="h-full items-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
-                        <div className="h-body p-20 md:px-0">
-                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold mb-4 md:mb-8">
+                        <div className="h-full p-20 md:px-0">
+                            <div className="text-center text-lg md:text-5xl uppercase montserrat text-white font-bold mb-4 md:mb-8">
                                 <FormattedMessage id='TESTIMONIAL' />
                             </div>
-                            <Carousel slidesPerRow={1}
+                            <Carousel
+                                slidesPerRow={1}
                                 ref={carouselRef}
                                 beforeChange={beforeChange}
                                 dots={false}
@@ -84,14 +85,14 @@ const Testimonial: React.FC = () => {
                                     }
                                 ]}>
                                 {Item('https://i.imgur.com/rXKiANQ.jpg', 'Ông. Mẫn Ngọc Anh',
-                                'Chủ tịch Tập đoàn HANAKA',
-                                'Đây là mô hình KCN sinh thái - tuần hoàn đầu tiên tại tỉnh Bắc Ninh, áp dụng những công nghệ tiên tiến nhất từ các nước phát triển, sẽ thu hút các nhà đầu tư trong và ngoài nước trong lĩnh vực công nghệ cao, tạo việc làm và thu nhập ổn định cho hàng ngàn lao động, góp phần tăng ngân sách địa phương, tạo ra môi trường xanh sạch đẹp, hấp dẫn để thu hút các nhà đầu tư. Trong quá trình triển khai, dự án đã được UBND tỉnh Bắc Ninh, Bộ Tài Nguyên và Môi trường')}
+                                    'Chủ tịch Tập đoàn HANAKA',
+                                    'Đây là mô hình KCN sinh thái - tuần hoàn đầu tiên tại tỉnh Bắc Ninh, áp dụng những công nghệ tiên tiến nhất từ các nước phát triển, sẽ thu hút các nhà đầu tư trong và ngoài nước trong lĩnh vực công nghệ cao, tạo việc làm và thu nhập ổn định cho hàng ngàn lao động, góp phần tăng ngân sách địa phương, tạo ra môi trường xanh sạch đẹp, hấp dẫn để thu hút các nhà đầu tư. Trong quá trình triển khai, dự án đã được UBND tỉnh Bắc Ninh, Bộ Tài Nguyên và Môi trường')}
                                 {Item('https://i.imgur.com/9iKD3dq.jpg', 'TS. Đỗ Văn Chiến',
-                                'Phó Chủ tịch thường trực',
-                                'Đánh giá khả năng thực hiện mô hình kinh tế tuần hoàn trong khu công nghiệp Việt Nam. (Khảo sát mô hình điểm khu công nghiệp Nam Cầu Kiền)” có ý nghĩa quan trọng, không chỉ đối với  Viện Sức khỏe và Môi trường vì cộng đồng và Công ty Cổ phần Shinec (Chủ đầu tư Khu công nghiệp Nam Cầu Kiền), mà còn đối với các tổ chức khác trong nước, đối với việc xây dựng chính sách của Nhà nước vì mục tiêu chiến lược phát triển quốc gia bền vững.')}
+                                    'Phó Chủ tịch thường trực',
+                                    'Đánh giá khả năng thực hiện mô hình kinh tế tuần hoàn trong khu công nghiệp Việt Nam. (Khảo sát mô hình điểm khu công nghiệp Nam Cầu Kiền)” có ý nghĩa quan trọng, không chỉ đối với  Viện Sức khỏe và Môi trường vì cộng đồng và Công ty Cổ phần Shinec (Chủ đầu tư Khu công nghiệp Nam Cầu Kiền), mà còn đối với các tổ chức khác trong nước, đối với việc xây dựng chính sách của Nhà nước vì mục tiêu chiến lược phát triển quốc gia bền vững.')}
                                 {Item('https://i.imgur.com/q8VAC7s.jpg', 'Ông. Lê Tấn Dũng',
-                                'Thứ trưởng Bộ Lao động, Thương binh và Xã hội',
-                                'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
+                                    'Thứ trưởng Bộ Lao động, Thương binh và Xã hội',
+                                    'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
                             </Carousel>
                             <div className="flex justify-between w-2/3 mx-auto mt-8">
                                 <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(false)}>

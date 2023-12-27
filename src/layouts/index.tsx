@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'rc-texty/assets/index.css';
+import 'rc-banner-anim/assets/index.css';
 
 export default function Layout() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -98,7 +99,8 @@ export default function Layout() {
           },
           token: {
             fontSize: 16,
-            colorLinkHover: '#0B8936'
+            colorLinkHover: '#0B8936',
+            fontFamily: `'Montserrat', sans-serif`
           }
         }}
       >

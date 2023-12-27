@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                         </div>
                         <div className="flex gap-4 md:gap-40">
                             {ContactItem(paper, 'Email:', 'congtyshinecgialai@gmail.com')}
-                            {ContactItem(phone, 'Hotline:', '02253.645.365')}
+                            {ContactItem(phone, 'Hotline:', '0269.6333.456')}
                             {ContactItem(globe, 'Website:', 'shinecgialai.vn')}
                         </div>
                     </div>

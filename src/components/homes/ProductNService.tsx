@@ -32,22 +32,22 @@ const ProductNService: React.FC = () => {
         <div key={1} className='px-10 md:px-0'>
             <div className="flex flex-wrap mb-4">
                 <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(land, intl.formatMessage({ id : 'Industrial land for rent'}))}
+                    {ServiceItem(land, intl.formatMessage({ id: 'Industrial land for rent' }))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(factory, intl.formatMessage({ id : 'Factories and warehouses for rent'}))}
+                    {ServiceItem(factory, intl.formatMessage({ id: 'Factories and warehouses for rent' }))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(office, intl.formatMessage({ id : 'Renting office'}))}
+                    {ServiceItem(office, intl.formatMessage({ id: 'Renting office' }))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(warehouse, intl.formatMessage({ id : 'Commercial land for rent'}))}
+                    {ServiceItem(warehouse, intl.formatMessage({ id: 'Commercial land for rent' }))}
                 </div>
                 <div className="w-1/3 md:w-1/2 border-r">
-                    {ServiceItem(logistics, intl.formatMessage({ id : 'ServicesofLogistics'}))}
+                    {ServiceItem(logistics, intl.formatMessage({ id: 'ServicesofLogistics' }))}
                 </div>
                 <div className="w-1/3 md:w-1/2">
-                    {ServiceItem(infrastructure, intl.formatMessage({ id : 'Infrastructureservices'}))}
+                    {ServiceItem(infrastructure, intl.formatMessage({ id: 'Infrastructureservices' }))}
                 </div>
             </div>
         </div>
@@ -58,11 +58,11 @@ const ProductNService: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-body flex flex-col justify-between">
+            <div className="h-full flex flex-col justify-between">
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="h-body items-center" style={{
+                    <div className="h-full items-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
@@ -70,35 +70,26 @@ const ProductNService: React.FC = () => {
                         <div className='container mx-auto flex h-full justify-center flex-col md:gap-20 gap-4'>
                             <div className='md:flex items-center mb-4 md:gap-20 gap-4'>
                                 <div className='md:w-1/2'>
-                                    <Swiper 
-                                        autoplay
-                                        ref={swiperRef}
-                                        modules={[Autoplay]}
-                                        onAutoplay={(event) => {
-                                            setActiveIndex(event.realIndex);
-                                        }}
-                                        loop
-                                    >
-                                        <SwiperSlide>
-                                            {SlideItem}
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            {SlideItem}
-                                        </SwiperSlide>
-                                    </Swiper>
+                                    <video autoPlay loop muted className="w-auto min-w-full min-h-full">
+                                        <source
+                                            src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+                                            type="video/mp4"
+                                        />
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                                 <div className="md:w-1/2 montserrat text-white">
                                     <div className="text-lg md:text-[50px] font-bold md:mb-8 mb-2">
                                         <FormattedMessage id='PRODUCT' />
                                     </div>
                                     <div className="md:text-xl font-semibold mb-4">
-                                        <FormattedMessage id='Industriallandfundforlease' />: 48,16 ha
+                                        <FormattedMessage id='Industriallandfundforlease' />: 50,7 ha
                                     </div>
                                     <div className="mb-6 text-sm md:text-base hidden md:block">
                                         <FormattedMessage id='IndustriallandfundforleaseDes' />
                                     </div>
                                     <div className="md:text-xl font-semibold mb-4">
-                                        <FormattedMessage id='LandfundLogisticsrentalservices' />: 4,58 ha
+                                        <FormattedMessage id='LandfundLogisticsrentalservices' />: 3,3 ha
                                     </div>
                                     <div className="mb-4 text-sm md:text-base hidden md:block">
                                         <FormattedMessage id='LandfundLogisticsrentalservicesDes' />

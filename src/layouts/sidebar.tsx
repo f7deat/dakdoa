@@ -1,3 +1,4 @@
+import Hotline from "@/components/banner/hotline";
 import { AppstoreAddOutlined, CaretRightOutlined, SearchOutlined } from "@ant-design/icons"
 import { useEffect, useState } from "react";
 import { Link } from "umi";
@@ -43,7 +44,7 @@ const Sidebar: React.FC = () => {
                 }
             </div>
             <div className="mb-4">
-                <img src="https://namcaukien.com.vn/wp-content/uploads/2021/05/photo-Hotline.jpg" alt="HOTLINE" className="w-full" />
+                <Hotline />
             </div>
         </div>
     )

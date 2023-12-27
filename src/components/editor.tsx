@@ -32,7 +32,7 @@ const Editor: React.FC<EditorProps> = (props) => {
                         </div>}
                         {block.type === "simpleImage" && (
                             <div className="flex justify-center mb-2">
-                                <Image src={block.data.url} alt="IMG" loading="lazy" />
+                                <Image src={block.data.url} alt="IMG" loading="lazy" width='80%' />
                             </div>
                         )}
                     </div>

@@ -1,9 +1,11 @@
 import Footer from "@/layouts/footer";
 import { useEffect, useState } from "react"
-import { Helmet, useIntl, useParams } from "umi";
+import { Helmet, Link, useIntl, useParams } from "umi";
 import { Breadcrumb, Image, Spin } from 'antd';
 import Sidebar from "@/layouts/sidebar";
 import Editor from "@/components/editor";
+import Loader from "@/components/loader";
+import { HomeOutlined } from "@ant-design/icons";
 
 const NewsDetails: React.FC = () => {
 
@@ -58,12 +60,12 @@ const NewsDetails: React.FC = () => {
             <Helmet>
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
-            <Spin fullscreen spinning={loading} />
+            <Loader loading={loading} />
             <main className="container mx-auto py-10 px-4 md:px-0">
                 <div className="mb-4">
                     <Breadcrumb items={[
                         {
-                            title: intl.formatMessage({ id: 'HOME' })
+                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
                         },
                         {
                             title: intl.formatMessage({ id: 'NEWS' })

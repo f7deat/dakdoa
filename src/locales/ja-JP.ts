@@ -37,7 +37,7 @@ export default {
     'LandfundLogisticsrentalservices': '土地ファンド 物流レンタルサービス',
     'LandfundLogisticsrentalservicesDes': '商業センター、銀行、展示展示場、スーパーマーケット、小売サービス店などのプロジェクトを誘致する。 レストラン、駐車場、商業およびサービスビル... 産業クラスターにおける投資家の製品の展示および展示エリア、製品流通センター、メンテナンスおよび保証センター、展示会 技術ソリューションの展示',
     'PhoneNumber': '電話番号',
-    'Infrastructureservices': 'インフラストラクチャサービス',
+    'Infrastructureservices': '必要に応じて作業場や倉庫を建設します',
     'VIEWMORE': '続きを読む',
     'MALL': 'ショッピングモール',
     'Restaurant': 'レストラン',

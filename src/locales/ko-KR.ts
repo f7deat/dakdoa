@@ -37,7 +37,7 @@ export default {
     'LandfundLogisticsrentalservices': '토지기금 물류임대 서비스',
     'LandfundLogisticsrentalservicesDes': '상업 센터, 은행, 전시 전시 구역, 슈퍼마켓, 소매 서비스 매장과 같은 프로젝트를 유치합니다. 레스토랑, 주차장, 상업 및 서비스 건물... 산업 클러스터의 투자자 제품 전시 및 전시 공간, 제품 유통 센터, 유지 보수 및 보증 센터, 전시회 기술 솔루션 전시',
     'PhoneNumber': '전화 번호',
-    'Infrastructureservices': '인프라 서비스',
+    'Infrastructureservices': '필요에 따라 작업장과 창고를 건설하세요',
     'VIEWMORE': '더 읽으십시오',
     'MALL': '쇼핑몰',
     'Restaurant': '식당',

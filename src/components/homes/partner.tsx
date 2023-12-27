@@ -40,15 +40,52 @@ const Partner: React.FC = () => {
             style={{
                 backgroundImage: `url(${cover})`
             }}>
-            <div className="h-body flex flex-col justify-between">
+            <div className="h-full flex flex-col justify-between">
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(180deg, rgba(11, 137, 54, 0.67) 0%, #00812C 55.05%)'
                 }}>
                     <div className='container mx-auto md:py-4 text-white md:px-0 px-10 '>
-                        <div className="text-center text-2xl md:text-[50px] font-bold mb-4 md:mb-8 py-10">
+                        <div className="text-center text-2xl md:text-5xl uppercase font-bold mb-4 md:mb-8 py-10">
                             <FormattedMessage id='PARNERS_AND_CUSTOMERS' />
                         </div>
-                        <div className='grid grid-cols-2 md:grid-cols-4 mb-4 md:mb-20'>
+                        <div className='mb-20'>
+                            <Swiper
+                                slidesPerView={2}
+                                autoplay={{
+                                    delay: 0
+                                }}
+                                breakpoints={{
+                                    768: {
+                                        spaceBetween: 20,
+                                        slidesPerView: 2
+                                    },
+                                    1024: {
+                                        spaceBetween: 30,
+                                        slidesPerView: 2
+                                    },
+                                    1280: {
+                                        spaceBetween: 40,
+                                        slidesPerView: 3
+                                    },
+                                    1536: {
+                                        spaceBetween: 60,
+                                        slidesPerView: 4
+                                    },
+                                }}
+                                loop
+                                speed={2000}
+                                centeredSlides
+                                spaceBetween={10}
+                                modules={[Autoplay]}
+                            >
+                                <SwiperSlide>{CarouselItem(growViet)}</SwiperSlide>
+                                <SwiperSlide>{CarouselItem(vietcombank)}</SwiperSlide>
+                                <SwiperSlide>{CarouselItem(sonha)}</SwiperSlide>
+                                <SwiperSlide>{CarouselItem(gomDatViet)}</SwiperSlide>
+                                <SwiperSlide>{CarouselItem(mit)}</SwiperSlide>
+                            </Swiper>
+                        </div>
+                        <div className='grid grid-cols-2 md:grid-cols-4 mb-4'>
                             <div>
                                 <div className='mb-4'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="48" viewBox="0 0 55 48" fill="none">
@@ -67,41 +104,7 @@ const Partner: React.FC = () => {
                             {TextItem(intl.formatMessage({ id: 'SUPPORT' }), intl.formatMessage({ id: 'SUPPORT_QUOTE' }), support)}
                         </div>
                     </div>
-                    <Swiper
-                        slidesPerView={2}
-                        autoplay={{
-                            delay: 0
-                        }}
-                        breakpoints={{
-                            768: {
-                                spaceBetween: 20,
-                                slidesPerView: 2
-                            },
-                            1024: {
-                                spaceBetween: 30,
-                                slidesPerView: 2
-                            },
-                            1280: {
-                                spaceBetween: 40,
-                                slidesPerView: 3
-                            },
-                            1536: {
-                                spaceBetween: 60,
-                                slidesPerView: 4
-                            },
-                        }}
-                        loop
-                        speed={2000}
-                        centeredSlides
-                        spaceBetween={10}
-                        modules={[Autoplay]}
-                    >
-                        <SwiperSlide>{CarouselItem(growViet)}</SwiperSlide>
-                        <SwiperSlide>{CarouselItem(vietcombank)}</SwiperSlide>
-                        <SwiperSlide>{CarouselItem(sonha)}</SwiperSlide>
-                        <SwiperSlide>{CarouselItem(gomDatViet)}</SwiperSlide>
-                        <SwiperSlide>{CarouselItem(mit)}</SwiperSlide>
-                    </Swiper>
+
                 </div>
             </div>
         </div>
