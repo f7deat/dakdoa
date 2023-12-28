@@ -32,21 +32,22 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
                 background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
             }}>
                 <div className="relative">
-                    <div className="container mx-auto pb-20 px-10 md:px-0">
+                    <div className="container mx-auto pb-40 md:pb-20 px-10 md:px-0">
                         <div>
-                            <div className="montserrat text-[#0B8936] text-2xl md:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-6 uppercase">
+                            <div className="montserrat text-[#0B8936] text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 border-b border-green-600 py-1 md:py-6 uppercase">
                                 <animated.div style={styles2}>
                                     {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE' })}
                                 </animated.div>
                             </div>
-                            <animated.div className="text-slate-500 mb-4 montserrat text-xs md:text-base break-words max-w-[900px]">
+                            <animated.div className="text-slate-600 mb-4 text-sm md:text-base break-words max-w-[900px]">
                                 {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION1' })}
                                 {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION2' })}
                             </animated.div>
                             <animated.div>
                                 <Link to={`/news/c15e1eab-884b-42aa-4eb5-08dc054f1e5e`}
                                     className='flex'>
-                                    <div className="flex gap-2 h-12 md:h-14 px-8 rounded-full text-white hover:text-white items-center bg-gradient-to-b from-orange-500 to-orange-400 poppins font-semibold md:text-lg">
+                                    <div
+                                        className="transition-all hover:w-64 w-52 duration-500 flex gap-2 h-12 md:h-14 px-10 rounded-full text-white hover:text-white items-center justify-between bg-gradient-to-b from-orange-500 to-orange-400 poppins font-semibold md:text-lg">
                                         <span>
                                             <FormattedMessage id='VIEWMORE' />
                                         </span>

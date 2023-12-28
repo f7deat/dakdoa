@@ -5,29 +5,37 @@ import { CarouselRef } from "antd/es/carousel";
 import { useRef, useState } from "react";
 import { FormattedMessage } from "umi";
 import Header1 from '../header1';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
 const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
 
     const { active } = props;
 
     const Item = (avatar: string, name: string, role: string, content: string) => (
-        <div className="px-10">
+        <div className="px-2 md:px-10">
             <div className="p-4 md:p-[40px] rounded-lg max-w-[1000px]" style={{
                 background: 'linear-gradient(109deg, rgba(131, 255, 173, 0.30) 0%, rgba(91, 208, 131, 0.28) 73.74%, rgba(54, 164, 92, 0.00) 137.77%)'
             }}>
-                <div className="md:flex gap-4 montserrat text-white">
-                    <div className="md:w-[387px] bg-slate-200 rounded-lg max-h-[450px]">
-                        <img src={avatar} alt='AVATAR' className='w-full h-full object-cover rounded' />
+                <div className="md:flex gap-4 text-white">
+                    <div className="md:w-[387px] w-full bg-slate-200 rounded-lg mb-4">
+                        <figure className="snip1577">
+                            <img src={avatar} className="object-cover w-full h-full  md:max-h-[400px] 2xl:max-h-[450px] mb-2" alt="AVATAR" loading="lazy" />
+                            <figcaption>
+                                <h3>CCN SỐ 2 Đak Đoa</h3>
+                                <h4>Shinec Gia Lai</h4>
+                            </figcaption>
+                            <a href="#"></a>
+                        </figure>
                     </div>
-                    <div className="flex-1 px-8 md:border-l">
-                        <div className="mb-4">
+                    <div className="flex-1 md:px-8 md:border-l">
+                        <div className="mb-4 hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" width={66} height={57} viewBox="0 0 66 57" fill="none">
                                 <path opacity="0.4" d="M66 11.7234C61.9259 13.2057 58.8025 15.4965 56.6296 18.5957C54.5926 21.695 53.5741 25.4007 53.5741 29.7128L66 29.7128L66 57L40.537 57L40.537 29.7128C40.537 25.9397 41.2161 22.4362 42.5741 19.2021C43.9321 15.9681 45.7654 13.1383 48.0741 10.7128C50.3827 8.15249 53.0309 5.99646 56.0185 4.24469C59.142 2.49291 62.4691 1.07802 66 5.7699e-06L66 11.7234ZM25.463 11.7234C21.3889 13.2057 18.2654 15.4965 16.0926 18.5957C14.0556 21.695 13.037 25.4007 13.037 29.7128L25.463 29.7128L25.463 57L-4.9831e-06 57L-2.59757e-06 29.7128C-2.26772e-06 25.9397 0.679011 22.4362 2.03704 19.2021C3.39506 15.9681 5.22839 13.1383 7.53704 10.7128C9.84568 8.15249 12.4938 5.99646 15.4815 4.24468C18.6049 2.49291 21.9321 1.07802 25.463 2.22604e-06L25.463 11.7234Z" fill="white" />
                             </svg>
                         </div>
                         <div>
-                            <div className="text-[30px] font-bold mb-4">{name}</div>
-                            <div className="italic mb-4 text-sm md:text-lg">
+                            <div className="text-lg md:text-3xl font-bold mb-4">{name}</div>
+                            <div className="italic mb-4 text-sm 2xl:text-lg h-40 md:h-auto overflow-hidden">
                                 {content}
                             </div>
                             <div className="text-lg font-bold">{role}</div>
@@ -67,7 +75,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
-                        <div className="h-full p-20 md:px-0">
+                        <div className="h-full 2xl:p-10 md:px-0">
                             <Header1 active={active}>
                                 <FormattedMessage id='TESTIMONIAL' />
                             </Header1>
@@ -78,18 +86,18 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                 dots={false}
                                 autoplay
                                 centerMode
-                                variableWidth
+                                variableWidth={true}
                                 responsive={[
                                     {
                                         breakpoint: 640,
                                         settings: {
-                                            slidesPerRow: 1
+                                            variableWidth: false
                                         }
                                     }
                                 ]}>
-                                {Item('https://i.imgur.com/rXKiANQ.jpg', 'Ông. Mẫn Ngọc Anh',
-                                    'Chủ tịch Tập đoàn HANAKA',
-                                    'Đây là mô hình KCN sinh thái - tuần hoàn đầu tiên tại tỉnh Bắc Ninh, áp dụng những công nghệ tiên tiến nhất từ các nước phát triển, sẽ thu hút các nhà đầu tư trong và ngoài nước trong lĩnh vực công nghệ cao, tạo việc làm và thu nhập ổn định cho hàng ngàn lao động, góp phần tăng ngân sách địa phương, tạo ra môi trường xanh sạch đẹp, hấp dẫn để thu hút các nhà đầu tư. Trong quá trình triển khai, dự án đã được UBND tỉnh Bắc Ninh, Bộ Tài Nguyên và Môi trường')}
+                                {Item('https://namcaukien.com.vn/wp-content/uploads/2022/08/01.jpg', 'Ông. Phạm Hồng Điệp',
+                                    'Phạm Hồng Điệp - Chủ tịch SHINEC',
+                                    'Chúng tôi chung tay xây dựng thành công Khu Công Nghiệp Sinh Thái theo đúng nghĩa tại Nam Cầu Kiền, mang niềm tự hào này từ Hải Phòng truyền cảm hứng cho các Nhà đầu tư trong cả nước có cách nhìn đầu tư bền vững, đầu tư cho tương lai phát triển kinh tế gắn chặt với bảo vệ môi trường. Từ đó tạo ra nhiều hệ sinh thái cộng sinh đem niềm hạnh phúc đến cho mọi người”')}
                                 {Item('https://i.imgur.com/9iKD3dq.jpg', 'TS. Đỗ Văn Chiến',
                                     'Phó Chủ tịch thường trực',
                                     'Đánh giá khả năng thực hiện mô hình kinh tế tuần hoàn trong khu công nghiệp Việt Nam. (Khảo sát mô hình điểm khu công nghiệp Nam Cầu Kiền)” có ý nghĩa quan trọng, không chỉ đối với  Viện Sức khỏe và Môi trường vì cộng đồng và Công ty Cổ phần Shinec (Chủ đầu tư Khu công nghiệp Nam Cầu Kiền), mà còn đối với các tổ chức khác trong nước, đối với việc xây dựng chính sách của Nhà nước vì mục tiêu chiến lược phát triển quốc gia bền vững.')}
@@ -97,11 +105,9 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                     'Thứ trưởng Bộ Lao động, Thương binh và Xã hội',
                                     'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
                             </Carousel>
-                            <div className="flex justify-between w-2/3 mx-auto mt-8">
+                            <div className="flex justify-between md:w-2/3 mx-auto mt-8">
                                 <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(false)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                                    </svg>
+                                    <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === currentSlide ? 'bg-orange-500' : '')}></button>
@@ -110,9 +116,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
 
                                 </div>
                                 <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(true)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                    </svg>
+                                    <ArrowRightOutlined />
                                 </button>
                             </div>
                         </div>

@@ -32,10 +32,6 @@ export default {
     'FULL_NAME': '全名',
     'TOP_INDUSTRIAL': '领先的生态产业集群',
     'TOP_INDUSTRIAL_DES': 'Dak Doa 2工业集群是根据一系列标准建设和发展的，旨在建设一个生态工业园区，其中制造企业社区有着密切的关系和相同的利益； 同时，我们在管理环境和自然资源问题上密切合作。',
-    'Industriallandfundforlease': '工业用地基金租赁',
-    'IndustriallandfundforleaseDes': 'DakDoa 2以建设生态、循环和可再生工业综合体为目标，优先吸引农产品和木材的制造和加工以及物流业的职业，以帮助形成共生联系。 ，帮助优化利润并最小化成本。',
-    'LandfundLogisticsrentalservices': '土地资金 物流租赁服务',
-    'LandfundLogisticsrentalservicesDes': '吸引商业中心、银行、展览展示区、超市、零售服务店等项目； 餐厅、停车场、商业服务楼……产业集群投资者产品展示展示区、产品集散中心、维修保修中心、展览会、技术解决方案展示',
     'PhoneNumber': '电话号码',
     'Infrastructureservices': '按要求建设厂房、仓库',
     'VIEWMORE': '阅读更多',
@@ -73,6 +69,7 @@ export default {
     'SUPPORT_OUT': '支持投资者进入国际市场',
     'SUPPORT_OUT1': '以优惠资本水平为工业园区、工业园区投资项目安排信贷。',
     'SUPPORT_OUT2': '支持Shinec投资的工业园区和工业园区投资者的产出出口市场和出口信贷融资。 支持国际商业交易中的法律程序、物流和物流。',
-    'SUPPORT_OUT3': '支持投资者完成绿色证书和信贷。'
+    'SUPPORT_OUT3': '支持投资者完成绿色证书和信贷。',
+    'LATEST_NEWS': '最新消息'
   };
   

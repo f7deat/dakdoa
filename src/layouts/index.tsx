@@ -7,28 +7,8 @@ import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'rc-texty/assets/index.css';
-import 'rc-banner-anim/assets/index.css';
 
 export default function Layout() {
-  // const [position, setPosition] = useState({ x: 0, y: 0 });
-  // const [position1, setPosition1] = useState({ x: 0, y: 0 });
-  // useEffect(() => {
-  //   const handleMouseMove = (e: any) => {
-  //     setTimeout(() => {
-  //       setPosition1({ x: e.pageX, y: e.pageY });
-  //     }, 100);
-  //     setTimeout(() => {
-  //       setPosition({ x: e.pageX -14, y: e.pageY -14 });
-  //     }, 200);
-  //   };
-
-  //   document.addEventListener("mousemove", handleMouseMove);
-
-  //   return () => {
-  //     document.removeEventListener("mousemove", handleMouseMove);
-  //   };
-  // }, []);
 
   useEffect(() => {
     const account = {
@@ -78,17 +58,6 @@ export default function Layout() {
           `}
         </script>
       </Helmet>
-      {/* <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/docs">Docs</Link>
-        </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul> */}
       <ConfigProvider
         theme={{
           components: {
@@ -106,12 +75,6 @@ export default function Layout() {
       >
         <Navbar />
         <Outlet />
-        {/* <div
-          className="border h-8 w-8 rounded-full border-slate-800 fixed"
-          style={{ left: position.x, top: position.y }}
-        >
-        </div>
-          <div className='h-[5px] w-[5px] rounded-full bg-slate-800 fixed' style={{ left: position1.x, top: position1.y }}></div> */}
       </ConfigProvider>
     </div>
   );

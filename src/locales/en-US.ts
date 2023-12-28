@@ -32,10 +32,6 @@ export default {
     'FULL_NAME': 'Full Name',
     'TOP_INDUSTRIAL': 'Leading ecological industrial cluster',
     'TOP_INDUSTRIAL_DES': 'Dak Doa 2 industrial cluster was built and developed according to a set of criteria with the desire to build an eco-industrial park, in which communities of manufacturing businesses have close relationships with the same interests; At the same time, we cooperate closely in managing environmental and natural resource issues.',
-    'Industriallandfundforlease': 'Industrial land fund for lease',
-    'IndustriallandfundforleaseDes': 'With the goal of building an ecological, circular and renewable industrial complex, DakDoa 2 prioritizes attracting occupations in manufacturing and processing agricultural products and wood, along with the logistics sector to help form symbiotic links. , helping to optimize profits and minimize costs.',
-    'LandfundLogisticsrentalservices': 'Land fund Logistics rental services',
-    'LandfundLogisticsrentalservicesDes': 'Attract projects such as commercial centers, banks, exhibition display areas, supermarkets, retail service stores; restaurants, parking lots and commercial and service buildings... Display and exhibition areas for products of investors in industrial clusters, product distribution centers, maintenance and warranty centers, exhibitions Exhibition of technological solutions',
     'PhoneNumber': 'Phone number',
     'Infrastructureservices': 'Build workshops and warehouses as required',
     'VIEWMORE': 'Read more',
@@ -73,6 +69,7 @@ export default {
     'SUPPORT_OUT': 'Support investors with international markets',
     'SUPPORT_OUT1': 'Arrange credit for investment projects in industrial parks and industrial complexes with preferential capital levels.',
     'SUPPORT_OUT2': 'Support output export markets and export credit financing for investors in industrial parks and industrial clusters invested by Shinec. Support legal procedures, logistics and logistics in international business transactions.',
-    'SUPPORT_OUT3': 'Support investors to complete green certificates and credits.'
+    'SUPPORT_OUT3': 'Support investors to complete green certificates and credits.',
+    'LATEST_NEWS': 'Tin tức mới nhất'
   };
   

@@ -32,10 +32,6 @@ export default {
     'FULL_NAME': '성명',
     'TOP_INDUSTRIAL': '선도적 생태산업 클러스터',
     'TOP_INDUSTRIAL_DES': 'Dak Doa 2 산업 클러스터는 제조 기업 공동체가 동일한 이해 관계를 가지고 긴밀한 관계를 맺는 생태 산업 단지를 건설하고자 하는 일련의 기준에 따라 건설 및 개발되었습니다. 동시에 우리는 환경 및 천연자원 문제 관리에 긴밀히 협력합니다.',
-    'Industriallandfundforlease': '산업용지임대펀드',
-    'IndustriallandfundforleaseDes': 'DakDoa 2는 생태학적, 순환적, 재생 가능한 산업 단지 건설을 목표로 농산물, 목재 제조 및 가공 분야의 직업 유치와 물류 부문을 우선적으로 유치하여 공생 관계를 형성하는 데 도움을 줍니다. , 이익을 최적화하고 비용을 최소화하는 데 도움이 됩니다.',
-    'LandfundLogisticsrentalservices': '토지기금 물류임대 서비스',
-    'LandfundLogisticsrentalservicesDes': '상업 센터, 은행, 전시 전시 구역, 슈퍼마켓, 소매 서비스 매장과 같은 프로젝트를 유치합니다. 레스토랑, 주차장, 상업 및 서비스 건물... 산업 클러스터의 투자자 제품 전시 및 전시 공간, 제품 유통 센터, 유지 보수 및 보증 센터, 전시회 기술 솔루션 전시',
     'PhoneNumber': '전화 번호',
     'Infrastructureservices': '필요에 따라 작업장과 창고를 건설하세요',
     'VIEWMORE': '더 읽으십시오',
@@ -73,6 +69,7 @@ export default {
     'SUPPORT_OUT': '국제 시장으로 투자자 지원',
     'SUPPORT_OUT1': '산업단지 및 산업단지의 투자 프로젝트에 대해 자본금 우대 혜택을 제공합니다.',
     'SUPPORT_OUT2': 'Shinec이 투자한 산업 단지 및 산업 클러스터의 투자자를 위한 생산 수출 시장 및 수출 신용 금융을 지원합니다. 국제 비즈니스 거래의 법적 절차, 물류 및 물류를 지원합니다.',
-    'SUPPORT_OUT3': '투자자가 친환경 인증서 및 크레딧을 완료할 수 있도록 지원합니다.'
+    'SUPPORT_OUT3': '투자자가 친환경 인증서 및 크레딧을 완료할 수 있도록 지원합니다.',
+    'LATEST_NEWS': '최근 뉴스'
   };
   

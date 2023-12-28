@@ -32,10 +32,6 @@ export default {
     'FULL_NAME': 'Họ và tên',
     'TOP_INDUSTRIAL': 'Cụm công nghiệp sinh thái hàng đầu',
     'TOP_INDUSTRIAL_DES': 'Cụm công nghiệp số 2 Đak Đoa được xây dựng và phát triển theo bộ tiêu chí với mong muốn xây dựng một KCNST, trong đó các cộng đồng các doanh nghiệp sản xuất có mối liên hệ mật thiết trên cùng một lợi ích; đồng thời hợp tác chặt chẽ trong quản lý các vấn đề về môi trường và tài nguyên thiên nhiên.',
-    'Industriallandfundforlease': 'Quỹ đất công nghiệp cho thuê',
-    'IndustriallandfundforleaseDes': 'Với mục tiêu xây dựng CCN sinh thái, tuần hoàn và tái tạo, DakDoa 2 ưu tiên thu hút các ngành nghề về sản xuất, chế biến nông sản và gỗ, cùng với đó là lĩnh vực logistics giúp hình thành các liên kết cộng sinh, giúp tối ưu hoá lợi nhuận và giảm thiểu chi phí.',
-    'LandfundLogisticsrentalservices': 'Quỹ đất Hậu cần dịch vụ cho thuê',
-    'LandfundLogisticsrentalservicesDes': 'Thu hút các dự án như Trung tâm thương mại, ngân hàng, khu trưng bày triển lãm, siêu thị, cửa hàng dịch vụ bán lẻ; nhà hàng, bãi đỗ xe và các công trình thương mại dịch vụ… Khu trưng bày và triển lãm các sản phẩm của các Nhà đầu tư trong cụm công nghiệp, trung tâm phân phối các sản phẩm, trung tâm bảo trì bảo hành, triển lãm các giải pháp công nghệp',
     'PhoneNumber': 'Số điện thoại',
     'Infrastructureservices': 'Xây dựng xưởng, kho theo yêu cầu',
     'VIEWMORE': 'Xem thêm',
@@ -73,6 +69,7 @@ export default {
     'SUPPORT_OUT': 'Hỗ trợ nhà đầu tư với thị trường quốc tế',
     'SUPPORT_OUT1': 'Thu xếp tín dụng cho các dự án đầu tư vào KCN, CCN với mức vốn ưu đãi.',
     'SUPPORT_OUT2': 'Hỗ trợ thị trường xuất khẩu đầu ra, thủ tục pháp lý, logistics, hậu cần và tài trợ tín dụng xuất khẩu trong giao dịch quốc tế.',
-    'SUPPORT_OUT3': 'Hỗ trợ nhà đầu tư hoàn thành các chứng chỉ, tín chỉ xanh.'
+    'SUPPORT_OUT3': 'Hỗ trợ nhà đầu tư hoàn thành các chứng chỉ, tín chỉ xanh.',
+    'LATEST_NEWS': 'Tin tức mới nhất'
   };
   

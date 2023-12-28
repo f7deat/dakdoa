@@ -5,6 +5,7 @@ import { FormattedMessage, Link } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Header1 from '../header1';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
 type SectionProps = {
     products: API.Catalog[];
@@ -25,10 +26,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                     <div className="linear-gradient"></div>
                     <div className="item__overlay">
                         <Link to={`/product/${product.id}`}>
-                            <div className="md:text-xl px-4 text-lg font-bold text-white py-4">{product.name}</div>
-                            <div className="border-b w-16 border-2 mx-4"></div>
+                            <div className="md:text-xl p-4 text-lg font-bold text-white">{product.name}</div>
+                        <div className="border-b w-16 border-2 mx-4 mb-2"></div>
                         </Link>
-                        <div className='text-white px-4'>{product.description}</div>
+                        <div className='text-white px-4 line-clamp-3'>{product.description}</div>
                     </div>
                 </a>
             </div>
@@ -69,7 +70,7 @@ const Page4: React.FC<SectionProps> = (props) => {
                                 onAutoplay={(event) => {
                                     setActiveIndex(event.realIndex);
                                 }}
-                                
+
                                 breakpoints={{
                                     768: {
                                         slidesPerView: 2,
@@ -93,15 +94,13 @@ const Page4: React.FC<SectionProps> = (props) => {
 
                             </Swiper>
 
-                            <div className="flex justify-between w-2/3 mx-auto mt-8">
+                            <div className="flex justify-between mx-auto mt-8">
                                 <button
                                     onClick={() => {
                                         swiperRef.current?.swiper.slidePrev()
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                                    </svg>
+                                    <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
                                     {
@@ -115,9 +114,7 @@ const Page4: React.FC<SectionProps> = (props) => {
                                         swiperRef.current?.swiper.slideNext()
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                    </svg>
+                                    <ArrowRightOutlined />
                                 </button>
                             </div>
                         </div>

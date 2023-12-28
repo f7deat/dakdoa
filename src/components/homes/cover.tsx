@@ -25,13 +25,13 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                 backgroundImage: `url(${cover})`
             }}>
             <div className='h-full relative' style={{
-                background: 'linear-gradient(118deg, #0B8935 29.32%, rgba(27, 151, 60, 0.61) 48.73%, rgba(255, 255, 255, 0.00) 73.8%)'
+                background: 'linear-gradient(118deg, #0c9138 29.32%, rgba(27, 151, 60, 0.61) 48.73%, rgba(255, 255, 255, 0.00) 73.8%)'
             }}>
                 <div className='container mx-auto h-full'>
                     <div className='h-full md:py-0'>
                         <div className='px-10 md:px-0'>
                             <div className='pt-[134px]'>
-                                <div className='montserrat text-2xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-[40px] uppercase' style={{
+                                <div className='montserrat text-5xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-[40px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
                                     <div>
@@ -48,13 +48,11 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                                 </animated.div>
                             </div>
                             <animated.div style={styles2}>
-                                <div className='flex md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
+                                <div className='flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
                                     <ContactButton />
-                                    <Link to='/vr360'>
-                                        <button className='rounded-full text-green-700 bg-white py-1 md:py-2 px-2 md:px-8 flex gap-3 items-center'>
-                                            <span>VR 360°</span>
-                                            <img src={icon360} alt='icon' className='w-8 md:w-10' />
-                                        </button>
+                                    <Link to='/vr360' className='rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center'>
+                                        <span>VR 360°</span>
+                                        <img src={icon360} alt='icon' className='w-8 md:w-10' />
                                     </Link>
                                 </div>
                             </animated.div>

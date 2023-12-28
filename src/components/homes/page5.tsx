@@ -18,8 +18,15 @@ const Page5: React.FC<HomeSectionItemProps> = (props) => {
     const intl = useIntl();
 
     const Amenities = (image: string, title: string, description: string[]) => (
-        <div className="px-4 text-white montserrat">
-            <img src={image} className="w-full bg-cover h-[250px] md:h-[317px] rounded-lg mb-2" alt="Amenities" loading="lazy" />
+        <div className="px-4 text-white">
+            <figure className="snip1577">
+                <img src={image} className="w-full bg-cover h-[250px] md:h-[317px] mb-2" alt="Amenities" loading="lazy" />
+                <figcaption>
+                    <h3>CCN SỐ 2 Đak Đoa</h3>
+                    <h4>Shinec Gia Lai</h4>
+                </figcaption>
+                <a href="#"></a>
+            </figure>
             <div className="font-semibold text-xl py-2">{title}</div>
             <ul className="text-sm list-disc">
                 {
@@ -49,7 +56,9 @@ const Page5: React.FC<HomeSectionItemProps> = (props) => {
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <Swiper
-                                autoplay
+                                autoplay={{
+                                    pauseOnMouseEnter: true
+                                }}
                                 loop
                                 modules={[Autoplay]}
                                 ref={swiperRef}
@@ -94,11 +103,11 @@ const Page5: React.FC<HomeSectionItemProps> = (props) => {
                             </Swiper>
 
                             <div className="flex justify-between md:w-2/3 mx-auto mt-8 gap-4">
-                                <button 
-                                onClick={() => {
-                                    swiperRef.current?.swiper.slidePrev();
-                                }}
-                                className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                <button
+                                    onClick={() => {
+                                        swiperRef.current?.swiper.slidePrev();
+                                    }}
+                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
@@ -108,11 +117,11 @@ const Page5: React.FC<HomeSectionItemProps> = (props) => {
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (3 === activeIndex ? 'bg-orange-500' : '')}></button>
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (4 === activeIndex ? 'bg-orange-500' : '')}></button>
                                 </div>
-                                <button 
-                                onClick={() => {
-                                    swiperRef.current?.swiper.slideNext();
-                                }}
-                                className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                <button
+                                    onClick={() => {
+                                        swiperRef.current?.swiper.slideNext();
+                                    }}
+                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowRightOutlined />
                                 </button>
                             </div>
