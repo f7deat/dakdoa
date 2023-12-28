@@ -66,16 +66,16 @@ export default function HomePage() {
         <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} beforeChange={beforeChange}>
-        <Cover />
+        <Cover active={currentSlide === 0} />
         <Page1 active={currentSlide === 1} />
         <Page2 active={currentSlide === 2} />
         <ProductNService />
-        <Page4 products={products} />
-        <Page5 />
-        <Page6 />
-        <Page7 />
-        <Testimonial />
-        <Partner />
+        <Page4 products={products} active={currentSlide === 4} />
+        <Page5 active={currentSlide === 5} />
+        <Page6 active={currentSlide === 6} />
+        <Page7 active={currentSlide === 7} />
+        <Testimonial active={currentSlide === 8} />
+        <Partner active={currentSlide === 9} />
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />

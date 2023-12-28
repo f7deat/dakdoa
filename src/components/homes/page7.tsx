@@ -2,14 +2,15 @@ import cover from '../../assets/cover-min.jpg';
 import fid from '../../assets/fdi.png';
 import london from '../../assets/london-office.png';
 import infra from '../../assets/tree-opa.svg';
-import { Carousel } from "antd";
 import cases from '../../assets/icons/case.svg';
 import tree from '../../assets/icons/tree.svg';
 import { FormattedMessage, useIntl } from "umi";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Header1 from '../header1';
 
-const Page7: React.FC = () => {
+const Page7: React.FC<HomeSectionItemProps> = (props) => {
 
+    const { active } = props;
     const intl = useIntl();
 
     const Item = (title: string, description: string[], image: string, icon: string) => (
@@ -54,8 +55,11 @@ const Page7: React.FC = () => {
                         backgroundPosition: 'bottom right'
                     }}>
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-5xl uppercase text-white font-bold mb-4 md:mb-10">
+                            <Header1 active={active}>
                                 <FormattedMessage id='THINKING_DIFFERENT' />
+                            </Header1>
+                            <div className="text-center text-lg md:text-5xl uppercase text-white font-bold mb-4 md:mb-10">
+
                             </div>
                             <Swiper autoplay loop
                                 breakpoints={{
@@ -66,15 +70,15 @@ const Page7: React.FC = () => {
                                 slidesPerView={1}
                                 autoHeight
                                 spaceBetween={60}
-                                >
-                                <SwiperSlide>
+                            >
+                                <SwiperSlide className='md:flex-1'>
                                     {Item(intl.formatMessage({ id: 'SUPPORT_IN' }), [
                                         intl.formatMessage({ id: 'SUPPORT_IN1' }),
                                         intl.formatMessage({ id: 'SUPPORT_IN2' }),
                                         intl.formatMessage({ id: 'SUPPORT_IN3' })
                                     ], fid, cases)}
                                 </SwiperSlide>
-                                <SwiperSlide>
+                                <SwiperSlide className='md:flex-1'>
                                     {Item(intl.formatMessage({ id: 'SUPPORT_OUT' }), [
                                         intl.formatMessage({ id: 'SUPPORT_OUT1' }),
                                         intl.formatMessage({ id: 'SUPPORT_OUT2' }),

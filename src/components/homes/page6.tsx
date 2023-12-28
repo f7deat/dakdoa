@@ -11,9 +11,11 @@ import golf from '../../assets/amenities/golf.png';
 import cafe from '../../assets/amenities/cafe.png';
 import { FormattedMessage, useIntl } from "umi";
 import NestedCarousel from "../nested-carousel";
+import Header1 from '../header1';
 
-const Page6: React.FC = () => {
+const Page6: React.FC<HomeSectionItemProps> = (props) => {
 
+    const { active } = props;
     const intl = useIntl();
 
     return (
@@ -27,57 +29,49 @@ const Page6: React.FC = () => {
                 }}>
                     <div className="flex h-full items-center">
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-5xl uppercase text-white font-bold mb-4 md:mb-8">
+                            <Header1 active={active}>
                                 <FormattedMessage id='External_Amenities' />
-                            </div>
+                            </Header1>
                             <div className="amenities">
-                                <NestedCarousel
-                                    items={[
-                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                                            <CardImageOverlays
-                                                title={intl.formatMessage({ id: 'HOSPITAL' })}
-                                                image={hospital}
-                                                descriptions={[
-                                                    'Bệnh viện Đa khoa Tỉnh Gia Lai',
-                                                    'Bệnh viện Quân Y 211',
-                                                    'Bệnh Viện Y Học Cổ Truyển Gia Lai'
-                                                ]}
-                                            />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'SCHOOL' })} image={school}
-                                                descriptions={[
-                                                    'Trường THPT Chuyên Hùng Vương',
-                                                    'Trường THPT Pleiku',
-                                                    'Trường THPT Quang Trung',
-                                                    'Trường THPT Lê Lợi',
-                                                    'Trường THPT Nguyễn Thái Học'
-                                                ]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'BANK' })} image={bank}
-                                                descriptions={[
-                                                    'Agribank',
-                                                    'Vietcombank',
-                                                    'Sacombank',
-                                                    'Techcombank',
-                                                    'MBBank'
-                                                ]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'Publicadministrativearea' })} image={govern}
-                                                descriptions={[
-                                                    'Trung tâm phục vụ hành chính công tỉnh Gia Lai'
-                                                ]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'MALL' })} image={mall}
-                                                descriptions={[
-                                                    'Sense City Pleiku'
-                                                ]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'Restaurant' })} image={restaurent}
-                                                descriptions={[]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'Hotel' })} image={hotel}
-                                                descriptions={[]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'Otherservices' })} image={golf}
-                                                descriptions={[]} />
-                                            <CardImageOverlays title={intl.formatMessage({ id: 'Outsideproductionareas' })} image={cafe}
-                                                descriptions={[]} />
-                                        </div>
-                                    ]}
-                                />
+                                <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+                                    <CardImageOverlays
+                                        title={intl.formatMessage({ id: 'HOSPITAL' })}
+                                        image={hospital}
+                                        descriptions={[
+                                            'Bệnh viện Đa khoa Tỉnh Gia Lai',
+                                            'Bệnh viện Quân Y 211',
+                                            'Bệnh Viện Y Học Cổ Truyển Gia Lai'
+                                        ]}
+                                    />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'SCHOOL' })} image={school}
+                                        descriptions={[
+                                            'Trường THPT Chuyên Hùng Vương',
+                                            'Trường THPT Pleiku',
+                                            'Trường THPT Quang Trung',
+                                        ]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'BANK' })} image={bank}
+                                        descriptions={[
+                                            'Agribank',
+                                            'Vietcombank',
+                                            'Sacombank',
+                                        ]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'Publicadministrativearea' })} image={govern}
+                                        descriptions={[
+                                            'Trung tâm phục vụ hành chính công tỉnh Gia Lai'
+                                        ]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'MALL' })} image={mall}
+                                        descriptions={[
+                                            'Sense City Pleiku'
+                                        ]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'Restaurant' })} image={restaurent}
+                                        descriptions={[]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'Hotel' })} image={hotel}
+                                        descriptions={[]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'Otherservices' })} image={golf}
+                                        descriptions={[]} />
+                                    <CardImageOverlays title={intl.formatMessage({ id: 'Outsideproductionareas' })} image={cafe}
+                                        descriptions={[]} />
+                                </div>
                             </div>
                         </div>
                     </div>

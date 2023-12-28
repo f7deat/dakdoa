@@ -4,8 +4,11 @@ import { Carousel } from "antd";
 import { CarouselRef } from "antd/es/carousel";
 import { useRef, useState } from "react";
 import { FormattedMessage } from "umi";
+import Header1 from '../header1';
 
-const Testimonial: React.FC = () => {
+const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
+
+    const { active } = props;
 
     const Item = (avatar: string, name: string, role: string, content: string) => (
         <div className="px-10">
@@ -65,9 +68,9 @@ const Testimonial: React.FC = () => {
                         backgroundPosition: 'bottom right'
                     }}>
                         <div className="h-full p-20 md:px-0">
-                            <div className="text-center text-lg md:text-5xl uppercase montserrat text-white font-bold mb-4 md:mb-8">
+                            <Header1 active={active}>
                                 <FormattedMessage id='TESTIMONIAL' />
-                            </div>
+                            </Header1>
                             <Carousel
                                 slidesPerRow={1}
                                 ref={carouselRef}

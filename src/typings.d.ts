@@ -6,3 +6,7 @@ declare namespace API {
         thumbnail: string;
     }
 }
+
+type HomeSectionItemProps = {
+    active: boolean
+}

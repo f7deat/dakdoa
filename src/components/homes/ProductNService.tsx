@@ -9,7 +9,6 @@ import warehouse from '../../assets/icons/warehouse.svg';
 import { FormattedMessage, useIntl } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { useRef, useState } from 'react';
-import { Autoplay } from 'swiper/modules';
 
 const ServiceItem = (icon: string, name: string) => {
     return (
@@ -27,31 +26,6 @@ const ProductNService: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
     const intl = useIntl();
-
-    const SlideItem = (
-        <div key={1} className='px-10 md:px-0'>
-            <div className="flex flex-wrap mb-4">
-                <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(land, intl.formatMessage({ id: 'Industrial land for rent' }))}
-                </div>
-                <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(factory, intl.formatMessage({ id: 'Factories and warehouses for rent' }))}
-                </div>
-                <div className="w-1/3 md:w-1/2 border-r border-b">
-                    {ServiceItem(office, intl.formatMessage({ id: 'Renting office' }))}
-                </div>
-                <div className="w-1/3 md:w-1/2 border-b">
-                    {ServiceItem(warehouse, intl.formatMessage({ id: 'Commercial land for rent' }))}
-                </div>
-                <div className="w-1/3 md:w-1/2 border-r">
-                    {ServiceItem(logistics, intl.formatMessage({ id: 'ServicesofLogistics' }))}
-                </div>
-                <div className="w-1/3 md:w-1/2">
-                    {ServiceItem(infrastructure, intl.formatMessage({ id: 'Infrastructureservices' }))}
-                </div>
-            </div>
-        </div>
-    )
 
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
@@ -72,7 +46,7 @@ const ProductNService: React.FC = () => {
                                 <div className='md:w-1/2'>
                                     <video autoPlay loop muted className="w-auto min-w-full min-h-full">
                                         <source
-                                            src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+                                            src="https://shinecgialai.com.vn/videos/dakdoa-full.mp4"
                                             type="video/mp4"
                                         />
                                         Your browser does not support the video tag.

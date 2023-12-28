@@ -1,6 +1,5 @@
 import { FormattedMessage, useIntl } from 'umi';
 import cover from '../../assets/cover-min.jpg';
-import { Carousel } from 'antd';
 import vietcombank from '../../assets/logo/vietcombank.png';
 import growViet from '../../assets/logo/grow-viet.png';
 import mit from '../../assets/logo/mit.png';
@@ -12,9 +11,11 @@ import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Header1 from '../header1';
 
-const Partner: React.FC = () => {
+const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
+    const { active } = props;
     const intl = useIntl();
 
     const CarouselItem = (logo: string) => (
@@ -45,9 +46,9 @@ const Partner: React.FC = () => {
                     background: 'linear-gradient(180deg, rgba(11, 137, 54, 0.67) 0%, #00812C 55.05%)'
                 }}>
                     <div className='container mx-auto md:py-4 text-white md:px-0 px-10 '>
-                        <div className="text-center text-2xl md:text-5xl uppercase font-bold mb-4 md:mb-8 py-10">
+                        <Header1 active={active}>
                             <FormattedMessage id='PARNERS_AND_CUSTOMERS' />
-                        </div>
+                        </Header1>
                         <div className='mb-20'>
                             <Swiper
                                 slidesPerView={2}

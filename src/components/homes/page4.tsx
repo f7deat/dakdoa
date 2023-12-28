@@ -4,14 +4,16 @@ import { useRef, useState } from 'react';
 import { FormattedMessage, Link } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Header1 from '../header1';
 
 type SectionProps = {
     products: API.Catalog[];
+    active: boolean;
 }
 
 const Page4: React.FC<SectionProps> = (props) => {
 
-    const { products } = props;
+    const { products, active } = props;
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
 
@@ -48,9 +50,9 @@ const Page4: React.FC<SectionProps> = (props) => {
                         backgroundPosition: 'bottom right'
                     }}>
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-2xl md:text-5xl uppercase text-white font-bold mb-4 md:mb-8">
+                            <Header1 active={active}>
                                 <FormattedMessage id='PRODUCT' />
-                            </div>
+                            </Header1>
                             <div className="text-white montserrat text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
                                 <FormattedMessage id='PRODUCT_DES' />
                             </div>
@@ -58,12 +60,16 @@ const Page4: React.FC<SectionProps> = (props) => {
                                 ref={swiperRef}
                                 slidesPerView={1}
                                 loop
-                                autoplay
+                                autoplay={{
+                                    pauseOnMouseEnter: true,
+
+                                }}
                                 modules={[Autoplay]}
                                 spaceBetween={30}
                                 onAutoplay={(event) => {
                                     setActiveIndex(event.realIndex);
                                 }}
+                                
                                 breakpoints={{
                                     768: {
                                         slidesPerView: 2,

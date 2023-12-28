@@ -6,8 +6,13 @@ import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { useRef, useState } from 'react';
 import { FormattedMessage, useIntl } from 'umi';
+import Header1 from '../header1';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
-const Page5: React.FC = () => {
+const Page5: React.FC<HomeSectionItemProps> = (props) => {
+
+    const { active } = props;
+
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
     const intl = useIntl();
@@ -37,9 +42,9 @@ const Page5: React.FC = () => {
                 }}>
                     <div className="flex  h-full items-center">
                         <div className="container mx-auto px-10 md:px-0">
-                            <div className="text-center text-lg md:text-[50px] montserrat text-white font-bold md:mb-8">
+                            <Header1 active={active}>
                                 <FormattedMessage id='INTERNAL_AMENITIES' />
-                            </div>
+                            </Header1>
                             <div className="text-white text-center max-w-[720px] mx-auto mb-8 text-base md:text-lg">
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
@@ -68,31 +73,33 @@ const Page5: React.FC = () => {
                                 }}
                             >
                                 <SwiperSlide>
-                                    {Amenities(trafic, intl.formatMessage({id: 'Traffic'}), [intl.formatMessage({id: 'Traffic_des1'}), intl.formatMessage({id: 'Traffic_des2'})])}
+                                    {Amenities(trafic, intl.formatMessage({ id: 'Traffic' }), [intl.formatMessage({ id: 'Traffic_des1' }), intl.formatMessage({ id: 'Traffic_des2' })])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities(electric, intl.formatMessage({id: 'WATER_ELEC'}), [intl.formatMessage({id: 'WATER_ELEC_DES1'}), intl.formatMessage({id: 'WATER_ELEC_DES2'})])}
+                                    {Amenities(electric, intl.formatMessage({ id: 'WATER_ELEC' }), [intl.formatMessage({ id: 'WATER_ELEC_DES1' }), intl.formatMessage({ id: 'WATER_ELEC_DES2' })])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities(water, intl.formatMessage({id: 'wastewater'}), [intl.formatMessage({id: 'wastewater_des1'}), intl.formatMessage({id: 'wastewater_des2'})])}
+                                    {Amenities(water, intl.formatMessage({ id: 'wastewater' }), [intl.formatMessage({ id: 'wastewater_des1' }), intl.formatMessage({ id: 'wastewater_des2' })])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities('https://www.elcom.com.vn/storage/uploads/images/o8cvBIoy6PcyWJkPMGNFKFYQau4llZ1XI1dCXbeX.jpg', 
-                                    intl.formatMessage({id: 'Internet'}), 
-                                    [intl.formatMessage({id: 'Internet_des1'}), intl.formatMessage({id: 'Internet_des2'})])}
+                                    {Amenities('https://www.elcom.com.vn/storage/uploads/images/o8cvBIoy6PcyWJkPMGNFKFYQau4llZ1XI1dCXbeX.jpg',
+                                        intl.formatMessage({ id: 'Internet' }),
+                                        [intl.formatMessage({ id: 'Internet_des1' }), intl.formatMessage({ id: 'Internet_des2' })])}
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    {Amenities('https://file1.dangcongsan.vn/data/0/images/2021/09/10/hungnm/t12.jpg', 
-                                    intl.formatMessage({id: 'FIRE_PROTECTION'}), 
-                                    [intl.formatMessage({id: 'FIRE_PROTECTION_DES1'}), intl.formatMessage({id: 'FIRE_PROTECTION_DES2'})])}
+                                    {Amenities('https://file1.dangcongsan.vn/data/0/images/2021/09/10/hungnm/t12.jpg',
+                                        intl.formatMessage({ id: 'FIRE_PROTECTION' }),
+                                        [intl.formatMessage({ id: 'FIRE_PROTECTION_DES1' }), intl.formatMessage({ id: 'FIRE_PROTECTION_DES2' })])}
                                 </SwiperSlide>
                             </Swiper>
 
                             <div className="flex justify-between md:w-2/3 mx-auto mt-8 gap-4">
-                                <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                                    </svg>
+                                <button 
+                                onClick={() => {
+                                    swiperRef.current?.swiper.slidePrev();
+                                }}
+                                className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                    <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === activeIndex ? 'bg-orange-500' : '')}></button>
@@ -101,10 +108,12 @@ const Page5: React.FC = () => {
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (3 === activeIndex ? 'bg-orange-500' : '')}></button>
                                     <button className={`h-5 w-5 rounded-full border-2 border-white ` + (4 === activeIndex ? 'bg-orange-500' : '')}></button>
                                 </div>
-                                <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                    </svg>
+                                <button 
+                                onClick={() => {
+                                    swiperRef.current?.swiper.slideNext();
+                                }}
+                                className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                    <ArrowRightOutlined />
                                 </button>
                             </div>
                         </div>
