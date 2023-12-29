@@ -2,7 +2,7 @@ const MenuData = [
     {
         key: '1',
         label: 'ABOUT',
-        url: '/'
+        url: '/catalog'
     },
     {
         key: '2',
@@ -17,7 +17,7 @@ const MenuData = [
     {
         key: '4',
         label: 'VR360',
-        url: '/'
+        url: '/vr360'
     }
 ]
 

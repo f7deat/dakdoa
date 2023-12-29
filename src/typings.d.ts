@@ -4,6 +4,8 @@ declare namespace API {
         name: string;
         description: string;
         thumbnail: string;
+        modifiedDate: string;
+        viewCount: number;
     }
 }
 

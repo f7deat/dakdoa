@@ -1,3 +1,4 @@
+import { GoogleMap } from "@/components";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
@@ -44,7 +45,7 @@ const ProductListPage: React.FC = () => {
             <Helmet>
                 <title>{intl.formatMessage({ id: 'PRODUCT' })} - Shinec Gia Lai</title>
             </Helmet>
-            <div className="container mx-auto py-4 md:py-10">
+            <div className="container mx-auto py-4">
                 <Loader loading={loading} />
                 <div className="mb-4">
                     <Breadcrumb items={[
@@ -56,7 +57,7 @@ const ProductListPage: React.FC = () => {
                         }
                     ]} />
                 </div>
-                <div className="md:flex gap-4">
+                <div className="md:flex gap-4 mb-4">
                     <div className="md:w-3/4">
                         <div className="grid md:grid-cols-3 gap-4">
                             {
@@ -94,6 +95,7 @@ const ProductListPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </div>
+                <GoogleMap />
             <Footer height={height} />
         </>
     )

@@ -15,7 +15,6 @@ const Editor: React.FC<EditorProps> = (props) => {
         }
         return React.createElement("div", { dangerouslySetInnerHTML: { __html: value } });
     }
-    console.log(blocks)
     return (
         <>
             {
@@ -26,7 +25,7 @@ const Editor: React.FC<EditorProps> = (props) => {
                         {block.type === "list" && <div className="mb-2">
                             <ul className='list-disc pl-6'>
                                 {block.data.items.map((v: any, i: number) => (
-                                    <li key={i}>{v}</li>
+                                    <li key={i}>{stripHtml(v)}</li>
                                 ))}
                             </ul>
                         </div>}

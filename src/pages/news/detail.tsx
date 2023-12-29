@@ -5,7 +5,10 @@ import { Breadcrumb, Image, Spin } from 'antd';
 import Sidebar from "@/layouts/sidebar";
 import Editor from "@/components/editor";
 import Loader from "@/components/loader";
-import { HomeOutlined } from "@ant-design/icons";
+import { CalendarOutlined, EyeOutlined, HomeOutlined } from "@ant-design/icons";
+import ShareButton from "@/components/share-button";
+import { GoogleMap } from "@/components";
+import moment from "moment";
 
 const NewsDetails: React.FC = () => {
 
@@ -75,13 +78,21 @@ const NewsDetails: React.FC = () => {
                 <div className="md:flex gap-4">
                     <div className="md:w-3/4">
                         <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
-                        <div className="mb-4">
-                            {editor?.blocks && <Editor blocks={editor.blocks} />}
+                        <div className="mb-4 border-b border-dashed">
+                            <div className='mb-4'>
+                                {editor?.blocks && <Editor blocks={editor.blocks} />}
+                            </div>
+                            <div className='text-slate-500 italic flex justify-between'>
+                                <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
+                                <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
+                            </div>
                         </div>
+                        <ShareButton />
                     </div>
                     <Sidebar />
                 </div>
             </main>
+            <GoogleMap />
             <Footer height={height} />
         </>
     )

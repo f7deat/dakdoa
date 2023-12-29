@@ -1,3 +1,4 @@
+import { GoogleMap } from "@/components";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
@@ -97,6 +98,7 @@ const NewsPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </div>
+            <GoogleMap />
             <Footer height={height} />
         </>
     )
