@@ -12,3 +12,5 @@ declare namespace API {
 type HomeSectionItemProps = {
     active: boolean
 }
+
+declare module 'animated-cursor';

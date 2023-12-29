@@ -7,8 +7,18 @@ import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import AnimatedCursor from 'animated-cursor'
 
 export default function Layout() {
+
+  useEffect(() => {
+    const ac = AnimatedCursor({
+      color: '#1e293b',
+      outerAlpha: 0,
+      outerBorderSize: 2
+    })
+    ac.init()
+  }, [])
 
   useEffect(() => {
     const account = {
@@ -73,6 +83,10 @@ export default function Layout() {
           }
         }}
       >
+        <div id="cursor" className='md:opacity-100 opacity-0'>
+          <div id="cursor-outer" className='z-50'></div>
+          <div id="cursor-inner" className='z-50'></div>
+        </div>
         <Navbar />
         <Outlet />
       </ConfigProvider>

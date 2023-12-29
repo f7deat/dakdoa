@@ -12,7 +12,6 @@ import cafe from '../../assets/amenities/cafe.png';
 import { FormattedMessage, useIntl } from "umi";
 import Header1 from '../header1';
 import { animated, useSpring } from '@react-spring/web';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 const External: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -39,8 +38,8 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
                                 <FormattedMessage id='External_Amenities' />
                             </Header1>
                             <animated.div style={styles}>
-                                <div className="amenities">
-                                    <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6">
+                                <div className="amenities max-h-[600px] md:max-h-full overflow-auto">
+                                    <div className="grid md:grid-cols-3 gap-4 md:gap-6] max-w-[320px] md:max-w-full">
                                         <CardImageOverlays
                                             title={intl.formatMessage({ id: 'HOSPITAL' })}
                                             image={hospital}

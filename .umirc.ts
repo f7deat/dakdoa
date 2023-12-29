@@ -23,4 +23,5 @@ export default defineConfig({
     baseNavigator: true,
   },
   npmClient: 'npm',
+  
 });

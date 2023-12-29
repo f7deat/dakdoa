@@ -95,7 +95,7 @@ const ProductListPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </div>
-                <GoogleMap />
+            <GoogleMap />
             <Footer height={height} />
         </>
     )

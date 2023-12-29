@@ -9,10 +9,11 @@ import land from '../../assets/icons/land.svg';
 import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Parallax } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Header1 from '../header1';
 import { PhoneOutlined } from '@ant-design/icons';
 import { animated, useSpring } from '@react-spring/web';
+import { Divider } from 'antd';
 
 const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -29,10 +30,15 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
         delay: 400
     })
 
+    const styles = useSpring({
+        y: props.active ? 0 : -400,
+        opacity: props.active ? 1 : 0
+    })
+
     const CarouselItem = (logo: string) => (
-        <div>
-            <div className='rounded-xl h-32 md:h-[160px] flex justify-center items-center p-4 bg-gradient-to-b from-[#28A753] to-[#108E3B]'>
-                <img src={logo} alt='LOGO' className='h-16 md:h-auto' />
+        <div className='shadow-lg'>
+            <div className='h-32 md:h-[160px] flex justify-center items-center p-4 bg-white border-green-700 border'>
+                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500' />
             </div>
         </div>
     )
@@ -46,33 +52,73 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                 <div className='font-medium text-lg md:text-2xl mb-2'>{title}</div>
             </animated.div>
             <animated.div style={fadeLeft1}>
-            <div className='text-xs md:text-base'>{description}</div>
+                <div className='text-xs md:text-base line-clamp-3'>{description}</div>
             </animated.div>
         </div>
     )
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
-            style={{
-                backgroundImage: `url(${cover})`
-            }}>
+        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center relative">
             <div className="h-full flex flex-col justify-between">
                 <div className="relative h-full" style={{
-                    background: 'linear-gradient(180deg, rgba(11, 137, 54, 0.67) 0%, #00812C 55.05%)'
+                    background: 'linear-gradient(180deg, #fff 0%, #00812C 70%)'
                 }}>
                     <div className='container mx-auto md:pt-10 text-white md:px-0 px-10'>
                         <div className='md:mb-20 mb-10'>
-                            <Header1 active={active}>
-                                <FormattedMessage id='PARNERS_AND_CUSTOMERS' />
-                            </Header1>
-                            <div className='grid grid-cols-2 md:grid-cols-4 mb-4'>
+                            <animated.div style={styles}>
+                                <div className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-10">
+                                    <FormattedMessage id='PARNERS_AND_CUSTOMERS' />
+                                </div>
+                            </animated.div>
+
+                            <div>
+                                <Swiper
+                                    slidesPerView={1}
+                                    autoplay={{
+                                        disableOnInteraction: false,
+                                        pauseOnMouseEnter: true
+                                    }}
+                                    breakpoints={{
+                                        768: {
+                                            spaceBetween: 20,
+                                            slidesPerView: 2
+                                        },
+                                        1024: {
+                                            spaceBetween: 30,
+                                            slidesPerView: 2
+                                        },
+                                        1280: {
+                                            spaceBetween: 40,
+                                            slidesPerView: 3
+                                        },
+                                        1536: {
+                                            spaceBetween: 60,
+                                            slidesPerView: 4
+                                        },
+                                    }}
+                                    loop
+                                    spaceBetween={10}
+                                    modules={[Autoplay, Navigation]}
+                                >
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-45.jpg')}</SwiperSlide>
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2022/10/Logo-DoiTac.jpg')}</SwiperSlide>
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-51.jpg')}</SwiperSlide>
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-50.jpg')}</SwiperSlide>
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-47.jpg')}</SwiperSlide>
+                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/06/DoiTac-004.jpg')}</SwiperSlide>
+                                </Swiper>
+                            </div>
+
+                            <div className='md:py-5 py-2 mb-2 md:mb-10'></div>
+
+                            <div className='grid grid-cols-2 gap-4 md:grid-cols-4 mb-4'>
                                 <div>
                                     <div className='mb-4 w-10 md:w-20'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 48" fill="none">
                                             <path opacity="0.4" d="M55 9.87235C51.6049 11.1206 49.0021 13.0496 47.1914 15.6596C45.4938 18.2695 44.6451 21.3901 44.6451 25.0213L55 25.0213L55 48L33.7809 48L33.7809 25.0213C33.7809 21.844 34.3467 18.8936 35.4784 16.1702C36.6101 13.4468 38.1379 11.0638 40.0617 9.02128C41.9856 6.86526 44.1924 5.04965 46.6821 3.57447C49.285 2.0993 52.0576 0.907808 55 4.80825e-06L55 9.87235ZM21.2191 9.87234C17.8241 11.1206 15.2212 13.0496 13.4105 15.6596C11.713 18.2695 10.8642 21.3901 10.8642 25.0213L21.2191 25.0213L21.2191 48L-4.19629e-06 48L-2.18743e-06 25.0213C-1.90966e-06 21.844 0.565842 18.8936 1.69753 16.1702C2.82922 13.4468 4.357 11.0638 6.28086 9.02128C8.20473 6.86525 10.4115 5.04965 12.9012 3.57447C15.5041 2.09929 18.2767 0.907805 21.2191 1.85504e-06L21.2191 9.87234Z" fill="white" />
                                         </svg>
                                     </div>
-                                    <div className='text-white text-xl mb-4 md:px-4 text-xs md:text-base'>
+                                    <div className='text-white text-xl mb-4 md:px-4 text-xs md:text-base line-clamp-3'>
                                         <FormattedMessage id='PARTNER_QUOTE' />
                                     </div>
                                     <div className='flex'>
@@ -92,47 +138,6 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                 {TextItem(intl.formatMessage({ id: 'TARGET' }), intl.formatMessage({ id: 'TARGET_QUOTE' }), target)}
                                 {TextItem(intl.formatMessage({ id: 'SUPPORT' }), intl.formatMessage({ id: 'SUPPORT_QUOTE' }), support)}
                             </div>
-                        </div>
-                        <div>
-                            <Swiper
-                                slidesPerView={1}
-                                autoplay={{
-                                    delay: 5,
-                                    disableOnInteraction: false,
-                                    pauseOnMouseEnter: true
-                                }}
-                                breakpoints={{
-                                    768: {
-                                        spaceBetween: 20,
-                                        slidesPerView: 2
-                                    },
-                                    1024: {
-                                        spaceBetween: 30,
-                                        slidesPerView: 2
-                                    },
-                                    1280: {
-                                        spaceBetween: 40,
-                                        slidesPerView: 3
-                                    },
-                                    1536: {
-                                        spaceBetween: 60,
-                                        slidesPerView: 4
-                                    },
-                                }}
-                                loop
-                                speed={3000}
-                                centeredSlides
-                                spaceBetween={10}
-                                modules={[Autoplay, Parallax]}
-                                grabCursor
-                                watchSlidesProgress
-                            >
-                                <SwiperSlide>{CarouselItem(growViet)}</SwiperSlide>
-                                <SwiperSlide>{CarouselItem(vietcombank)}</SwiperSlide>
-                                <SwiperSlide>{CarouselItem(sonha)}</SwiperSlide>
-                                <SwiperSlide>{CarouselItem(gomDatViet)}</SwiperSlide>
-                                <SwiperSlide>{CarouselItem(mit)}</SwiperSlide>
-                            </Swiper>
                         </div>
                     </div>
                 </div>

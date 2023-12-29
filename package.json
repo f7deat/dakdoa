@@ -14,6 +14,7 @@
     "@ant-design/icons": "^5.2.6",
     "@react-spring/web": "^9.7.3",
     "@umijs/plugins": "^4.0.89",
+    "animated-cursor": "^1.2.0",
     "antd": "^5.12.2",
     "rc-animate": "^3.1.1",
     "swiper": "^11.0.5",
