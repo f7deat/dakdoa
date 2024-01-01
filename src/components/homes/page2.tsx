@@ -27,7 +27,7 @@ const Page2: React.FC<HomeSectionItemProps> = (props) => {
                 Your browser does not support the video tag.
             </video>
             <div className="h-full flex flex-col justify-end z-10 relative" style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
+                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 20%, #FFF 70%)'
             }}>
                 <div className="relative">
                     <div className="container mx-auto md:pb-10 px-10 md:px-0 pb-40">

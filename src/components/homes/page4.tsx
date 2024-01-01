@@ -1,4 +1,4 @@
-import cover from '../../assets/cover-min.jpg';
+import bg from '../../assets/css/bg-feature.gif';
 import infra from '../../assets/tree-opa.svg';
 import { useRef, useState } from 'react';
 import { FormattedMessage, Link } from 'umi';
@@ -39,7 +39,7 @@ const Page4: React.FC<SectionProps> = (props) => {
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
             style={{
-                backgroundImage: `url(${cover})`
+                backgroundImage: `url(${bg})`
             }}>
             <div className="flex h-full flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{

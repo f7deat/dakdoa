@@ -1,10 +1,11 @@
-import { Cover, Page1, Page2, News, Page4, Page5, External, Different, Testimonial } from "@/components/homes";
+import { Cover, Page1, Page2, News, Page4, Internal, External, Different, Testimonial } from "@/components/homes";
 import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
+import { simpleLocale } from "@/ultis";
 import { Carousel } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Helmet } from "umi";
+import { Helmet, useIntl } from "umi";
 
 export default function HomePage() {
 
@@ -14,13 +15,14 @@ export default function HomePage() {
   const [products, setProducts] = useState<any[]>([]);
   const [news, setNews] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const intl = useIntl();
 
   const getProducts = async () => {
     if (products && products.length > 0) {
       return;
     }
     setLoading(true)
-    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2`, {
+    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2&language=${simpleLocale(intl.locale)}`, {
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('wf_token')
@@ -37,7 +39,7 @@ export default function HomePage() {
     if (products && products.length > 0) {
       return;
     }
-    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=4&type=1`, {
+    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=4&type=1&language=${simpleLocale(intl.locale)}`, {
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('wf_token')
@@ -61,7 +63,6 @@ export default function HomePage() {
       setHeight(0)
     }
     setCurrentSile(next);
-    console.log('beforeChange', next)
   }, []);
 
   const scroll = useCallback((y: number) => {
@@ -89,7 +90,7 @@ export default function HomePage() {
         <Page2 active={currentSlide === 2} />
         <News news={news} active={currentSlide === 3} />
         <Page4 products={products} active={currentSlide === 4} />
-        <Page5 active={currentSlide === 5} />
+        <Internal active={currentSlide === 5} />
         <External active={currentSlide === 6} />
         <Different active={currentSlide === 7} />
         <Testimonial active={currentSlide === 8} />

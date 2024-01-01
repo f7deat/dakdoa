@@ -9,7 +9,7 @@ import { FormattedMessage, useIntl } from 'umi';
 import Header1 from '../header1';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
-const Page5: React.FC<HomeSectionItemProps> = (props) => {
+const Internal: React.FC<HomeSectionItemProps> = (props) => {
 
     const { active } = props;
 
@@ -133,4 +133,4 @@ const Page5: React.FC<HomeSectionItemProps> = (props) => {
     )
 }
 
-export default Page5
+export default Internal

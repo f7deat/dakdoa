@@ -23,13 +23,13 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
         <div className="relative h-body">
             <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
                 <source
-                    src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+                    src="https://shinecgialai.com.vn/videos/plateaus-seen-from-the-heights-in-a-sunset.mp4"
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
             </video>
             <div className="h-full flex flex-col justify-end z-10 relative" style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0.93%, #FFF 73.8%)'
+                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 20%, #FFF 70%)'
             }}>
                 <div className="relative">
                     <div className="container mx-auto pb-40 md:pb-20 px-10 md:px-0">

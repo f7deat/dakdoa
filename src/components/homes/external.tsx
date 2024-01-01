@@ -1,4 +1,4 @@
-import cover from '../../assets/cover-min.jpg';
+import bg from '../../assets/css/bg-feature.gif';
 import { CardImageOverlays } from "..";
 import hospital from '../../assets/amenities/hospital.png';
 import school from '../../assets/amenities/school.png';
@@ -26,7 +26,7 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
     return (
         <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
             style={{
-                backgroundImage: `url(${cover})`
+                backgroundImage: `url(${bg})`
             }}>
             <div className="h-full flex flex-col justify-between w-screen" >
                 <div className="relative h-full" style={{

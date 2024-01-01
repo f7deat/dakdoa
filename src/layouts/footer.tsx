@@ -1,8 +1,6 @@
 import { FormattedMessage, Link } from "umi";
 import logo from '../assets/logo/logo-white.svg';
-import paper from '../assets/icons/paper-airplane.svg';
-import globe from '../assets/icons/globe.svg';
-import phone from '../assets/icons/phone.svg';
+import { GlobalOutlined, PhoneOutlined, SendOutlined } from "@ant-design/icons";
 
 type FooterProps = {
     height: number;
@@ -13,10 +11,10 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     const { height, fixed } = props;
 
-    const ContactItem = (icon: string, title: string, description: string) => (
+    const ContactItem = (icon: any, title: string, description: string) => (
         <div className="flex gap-4">
-            <div className="h-10 md:h-12 w-10 md:w-12 rounded-full flex items-center justify-center bg-[#815332]">
-                <img src={icon} alt="ICON" loading="lazy" />
+            <div className="h-10 md:h-12 w-10 md:w-12 rounded-full flex items-center justify-center bg-[#006E26] md:text-xl">
+                {icon}
             </div>
             <div className="hidden md:block">
                 <div className="text-xs md:text-base">{title}</div>
@@ -27,7 +25,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <footer className={`bg-[#484f1f] bottom-0 left-0 right-0 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
+            <footer className={`bg-[#015D20] bottom-0 left-0 right-0 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>
                 <div className="md:px-20 mx-auto px-4 text-white flex flex-col justify-between h-full">
@@ -38,9 +36,9 @@ const Footer: React.FC<FooterProps> = (props) => {
                             </Link>
                         </div>
                         <div className="flex gap-4 md:gap-40">
-                            {ContactItem(paper, 'Email:', 'congtyshinecgialai@gmail.com')}
-                            {ContactItem(phone, 'Hotline:', '0269.6333.456')}
-                            {ContactItem(globe, 'Website:', 'shinecgialai.vn')}
+                            {ContactItem(<SendOutlined />, 'Email:', 'congtyshinecgialai@gmail.com')}
+                            {ContactItem(<PhoneOutlined />, 'Hotline:', '0269.6333.456')}
+                            {ContactItem(<GlobalOutlined />, 'Website:', 'shinecgialai.vn')}
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between border-t py-2 border-[#ffffff1a]">
