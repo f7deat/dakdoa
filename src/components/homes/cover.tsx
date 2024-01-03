@@ -42,7 +42,7 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-white montserrat mb-6 md:mb-[40px] max-w-[537px]'>
+                            <div className='text-white montserrat mb-6 md:mb-[40px] max-w-[545px]'>
                                 <animated.div style={styles}>
                                     {intl.formatMessage({ id: 'COVER_SUBTITLE' })}
                                 </animated.div>

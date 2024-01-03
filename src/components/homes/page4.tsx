@@ -24,10 +24,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                 <a href="#" className='text-white'>
                     <img src={product.thumbnail} alt="IMG" className="object-cover" loading="lazy" />
                     <div className="linear-gradient"></div>
-                    <div className="item__overlay">
+                    <div className="item__overlay justify-start pt-24">
                         <Link to={`/product/${product.id}`}>
                             <div className="md:text-xl p-4 text-lg font-bold text-white">{product.name}</div>
-                        <div className="border-b w-16 border-2 mx-4 mb-2"></div>
+                            <div className="border-b w-16 border-2 mx-4 mb-2"></div>
                         </Link>
                         <div className='text-white px-4 line-clamp-3'>{product.description}</div>
                     </div>

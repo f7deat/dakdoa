@@ -22,7 +22,7 @@ const NewsDetails: React.FC = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            setHeight(147)
+            setHeight(100)
         }, 100);
         if (id) {
             setLoading(true);

@@ -36,7 +36,7 @@ const NewsPage: React.FC = () => {
             setLoading(false);
         }));
         setTimeout(() => {
-            setHeight(147)
+            setHeight(100)
         }, 100);
     }, []);
 

@@ -16,6 +16,7 @@ export default {
     'NO_2': '第2号',
     'VR360': 'VR 360°',
     'TEAM': '团队',
+    'Assist': '协助',
     'TEAM_QUOTE': '专业、善解人意的员工，提供多种解决方案并与客户并肩工作',
     'TARGET': '目标',
     'TARGET_QUOTE': '为企业生产经营创造良好环境',

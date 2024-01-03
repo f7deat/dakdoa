@@ -34,6 +34,15 @@ const Editor: React.FC<EditorProps> = (props) => {
                                 <Image src={block.data.url} alt="IMG" loading="lazy" width='80%' />
                             </div>
                         )}
+                        {
+                            block.type === 'raw' && (
+                                <div className='py-4 flex justify-center'>
+                                    <div className='md:w-1/2'>
+                                        {stripHtml(block.data.html)}
+                                    </div>
+                                </div>
+                            )
+                        }
                     </div>
                 ))
             }

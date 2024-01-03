@@ -43,7 +43,7 @@ const CatalogPage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer height={147} />
+            <Footer height={100} />
         </>
     )
 }

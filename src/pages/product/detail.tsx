@@ -52,7 +52,7 @@ const ProductPage: React.FC = () => {
                 setProduct(data);
             }));
             setTimeout(() => {
-                setHeight(147)
+                setHeight(100)
             }, 100);
         }
     }, [id])
