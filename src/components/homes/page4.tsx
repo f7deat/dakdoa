@@ -97,7 +97,8 @@ const Page4: React.FC<SectionProps> = (props) => {
                             <div className="flex justify-between mx-auto mt-8">
                                 <button
                                     onClick={() => {
-                                        swiperRef.current?.swiper.slidePrev()
+                                        swiperRef.current?.swiper.slidePrev();
+                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowLeftOutlined />
@@ -105,13 +106,19 @@ const Page4: React.FC<SectionProps> = (props) => {
                                 <div className="flex items-center justify-center gap-2">
                                     {
                                         products.map((_, index) => (
-                                            <button className={`h-5 w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
+                                            <button key={index}
+                                                onClick={() => {
+                                                    swiperRef.current?.swiper.slideTo(index);
+                                                    setActiveIndex(index)
+                                                }}
+                                                className={`h-5 w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
                                         ))
                                     }
                                 </div>
                                 <button
                                     onClick={() => {
-                                        swiperRef.current?.swiper.slideNext()
+                                        swiperRef.current?.swiper.slideNext();
+                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowRightOutlined />

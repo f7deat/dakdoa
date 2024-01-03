@@ -110,9 +110,9 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === currentSlide ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === currentSlide ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === currentSlide ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {carouselRef.current?.goTo(0);}} className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === currentSlide ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {carouselRef.current?.goTo(1);}} className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === currentSlide ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {carouselRef.current?.goTo(2);}} className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === currentSlide ? 'bg-orange-500' : '')}></button>
 
                                 </div>
                                 <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(true)}>

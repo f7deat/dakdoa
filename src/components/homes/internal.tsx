@@ -106,20 +106,22 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                 <button
                                     onClick={() => {
                                         swiperRef.current?.swiper.slidePrev();
+                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (3 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button className={`h-5 w-5 rounded-full border-2 border-white ` + (4 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {setActiveIndex(0); swiperRef.current?.swiper.slideTo(0)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {setActiveIndex(1); swiperRef.current?.swiper.slideTo(1)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {setActiveIndex(2); swiperRef.current?.swiper.slideTo(2)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {setActiveIndex(3); swiperRef.current?.swiper.slideTo(3)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (3 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    <button onClick={() => {setActiveIndex(4); swiperRef.current?.swiper.slideTo(4)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (4 === activeIndex ? 'bg-orange-500' : '')}></button>
                                 </div>
                                 <button
                                     onClick={() => {
                                         swiperRef.current?.swiper.slideNext();
+                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
                                     className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowRightOutlined />
