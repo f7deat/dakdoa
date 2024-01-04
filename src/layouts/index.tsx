@@ -15,7 +15,7 @@ export default function Layout() {
     const ac = AnimatedCursor({
       color: '#1e293b',
       outerAlpha: 0,
-      outerBorderSize: 2,
+      outerBorderSize: 1,
       hasBlendMode: true,
       outerScale: 2,
       hideNativeCursor: false

@@ -137,9 +137,9 @@ const NewsPage: React.FC = () => {
                                                 {
                                                     title: 'Tiêu đề',
                                                     render: (value, record) => (
-                                                        <Link to='#' className="hover:text-green-700">
+                                                        <a href={`https://namcaukien.com.vn/${record.slug}`} target="_blank" className="hover:text-green-700">
                                                             {stripHtml(record.title.rendered)}
-                                                        </Link>
+                                                        </a>
                                                     )
                                                 },
                                                 {
@@ -156,9 +156,6 @@ const NewsPage: React.FC = () => {
                             ]}  >
 
                         </Tabs>
-                        {
-
-                        }
                     </div>
                     <Sidebar />
                 </div>

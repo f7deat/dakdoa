@@ -14,7 +14,7 @@ export default {
     'INDUSTRIAL_CLUSTERS': '工业集群',
     'COVER_SUBTITLE': 'Shinec Gia Lai股票公司 -  ESG取向开发的工业集群模型。 与生态工业集群，每周经济连锁店和环保的形象相关。',
     'NO_2': '第2号',
-    'VR360': 'VR 360°',
+    'VR360': 'VR 360',
     'TEAM': '团队',
     'Assist': '协助',
     'TEAM_QUOTE': '专业、善解人意的员工，提供多种解决方案并与客户并肩工作',

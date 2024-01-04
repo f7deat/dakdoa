@@ -14,7 +14,7 @@ export default {
     'INDUSTRIAL_CLUSTERS': '산업 클러스터',
     'COVER_SUBTITLE': 'Shinec Gia Lai 공동 주식 회사 - ESG 오리엔테이션으로 개발 된 산업 클러스터 모델. 생태 산업 클러스터, 주간 경제 체인 및 환경 친화적 인 이미지와 관련이 있습니다.',
     'NO_2': '2 번',
-    'VR360': 'VR 360°',
+    'VR360': 'VR 360',
     'TEAM': '팀',
     'Assist': '돕다',
     'TEAM_QUOTE': '전문적이고 이해심 많은 직원, 다양한 솔루션을 제공하고 고객과 함께 일함',

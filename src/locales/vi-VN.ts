@@ -14,7 +14,7 @@ export default {
     'INDUSTRIAL_CLUSTERS': 'Cụm công nghiệp',
     'COVER_SUBTITLE': 'Công ty cổ phần Shinec Gia Lai - Mô hình cụm công nghiệp phát triển theo định hướng ESG. Gắn liền với hình ảnh cụm công nghiệp sinh thái, chuỗi kinh tế tuần hoàn và thân thiện với môi trường.',
     'NO_2': 'Số 2',
-    'VR360': 'VR 360°',
+    'VR360': 'VR 360',
     'TEAM': 'Đội ngũ',
     'Assist': 'Kiến tạo',
     'TEAM_QUOTE': 'Đội ngũ nhân sự chuyên nghiệp, thấu hiểu, cung ứng nhiều giải pháp và song hành cùng khách hàng',

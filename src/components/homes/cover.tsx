@@ -50,10 +50,17 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                             <animated.div style={styles2}>
                                 <div className='flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
                                     <ContactButton />
-                                    <Link to='/vr360' className='rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center'>
-                                        <span>VR 360°</span>
-                                        <img src={icon360} alt='icon' className='w-8 md:w-10' />
-                                    </Link>
+                                    <div className='vr'>
+                                        <div className='btn'>
+                                            <Link to='/vr360' className='z-10 rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
+                                                <div className="loader">
+                                                    <span>VR 360</span>
+                                                    <div className="tile"></div>
+                                                </div>
+                                                <img src={icon360} alt='icon' className='w-8 md:w-10' />
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </animated.div>
                         </div>

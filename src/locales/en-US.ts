@@ -14,7 +14,7 @@ export default {
     'INDUSTRIAL_CLUSTERS': 'Industrial clusters',
     'COVER_SUBTITLE': 'SHINEC Gia Lai Joint Stock Company - model of industrial clusters developed in ESG orientation. Associated with the image of ecological industrial clusters, weekly economic chains and environmentally friendly.',
     'NO_2': 'No. 2',
-    'VR360': 'VR 360°',
+    'VR360': 'VR 360',
     'TEAM': 'Team',
     'Assist': 'Assist',
     'TEAM_QUOTE': 'Professional, understanding staff, providing many solutions and working side by side with customers',
