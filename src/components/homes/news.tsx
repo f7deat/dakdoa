@@ -27,14 +27,14 @@ const News: React.FC<NewsProps> = (props) => {
                                 <Header1 active={active}>
                                     <FormattedMessage id='LATEST_NEWS' />
                                 </Header1>
-                                <div className='text-white text-center mb-10'>
+                                <div className='text-white text-center mb-10 hidden md:block'>
                                     <FormattedMessage id='AMENITIES_DES' />
                                 </div>
                                 <div className='md:flex mb-4 md:gap-10 gap-4'>
                                     <div className='md:w-1/2 md:h-full flex items-center flex-col justify-center'>
                                         <div>
                                             <div className='border-2 rounded-lg mb-4'>
-                                                <video autoPlay loop muted controls className="w-auto min-w-full min-h-full rounded-lg" ref={videoRef}>
+                                                <video autoPlay loop muted controls className="w-auto min-w-full min-h-full rounded-lg h-52 md:h-[420px] object-cover" ref={videoRef}>
                                                     <source
                                                         src="https://shinecgialai.com.vn/videos/dakdoa-full.mp4"
                                                         type="video/mp4"
