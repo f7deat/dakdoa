@@ -16,6 +16,7 @@
     "@umijs/plugins": "^4.0.89",
     "animated-cursor": "^1.2.0",
     "antd": "^5.12.2",
+    "axios": "^1.6.5",
     "rc-animate": "^3.1.1",
     "swiper": "^11.0.5",
     "umi": "^4.0.89",

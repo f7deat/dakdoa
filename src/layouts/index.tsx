@@ -23,24 +23,6 @@ export default function Layout() {
     ac.init()
   }, [])
 
-  useEffect(() => {
-    const account = {
-      userName: 'admin',
-      passWord: 'Password@123'
-    }
-    fetch(`https://shinecgialai.com.vn/api/user/password-sign-in`, {
-      method: 'POST',
-      body: JSON.stringify(account),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then(login => {
-      login.json().then(token => {
-        localStorage.setItem('wf_token', token.token)
-      });
-    });
-  }, [])
-
   return (
     <div>
       <Helmet>

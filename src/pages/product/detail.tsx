@@ -9,6 +9,7 @@ import { CalendarOutlined, EyeOutlined, HomeOutlined } from '@ant-design/icons';
 import ShareButton from '@/components/share-button';
 import { GoogleMap } from '@/components';
 import moment from 'moment';
+import { apiGetCatalog, apiGetStructure } from '@/services/catalog';
 
 const ProductPage: React.FC = () => {
 
@@ -23,12 +24,8 @@ const ProductPage: React.FC = () => {
     useEffect(() => {
         if (id) {
             setLoading(true);
-            fetch(`https://shinecgialai.com.vn/api/catalog/structure/${id}`, {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('wf_token')
-                }
-            }).then(response => response.json().then(data => {
+            apiGetStructure(id).then(response => {
+                const data = response.data;
                 if (data && data.length > 0) {
                     data.forEach((value: any) => {
                         if (value.name === "Editor") {
@@ -42,15 +39,10 @@ const ProductPage: React.FC = () => {
                     setEditor([])
                 }
                 setLoading(false);
-            }));
-            fetch(`https://shinecgialai.com.vn/api/catalog/${id}`, {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('wf_token')
-                }
-            }).then(response => response.json().then(data => {
-                setProduct(data);
-            }));
+            })
+            apiGetCatalog(id).then(response => {
+                setProduct(response.data.data);
+            })
             setTimeout(() => {
                 setHeight(100)
             }, 100);

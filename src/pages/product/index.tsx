@@ -2,6 +2,7 @@ import { GoogleMap } from "@/components";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
+import { apiCatalogList } from "@/services/catalog";
 import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
 import { Avatar, Breadcrumb, Card, Input, Spin, Tooltip } from "antd";
 import { useEffect, useState } from "react";
@@ -26,15 +27,14 @@ const ProductListPage: React.FC = () => {
             return;
         }
         setLoading(true);
-        fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('wf_token')
-            }
-        }).then(response => response.json().then(data => {
-            setArticles(data.data);
+        apiCatalogList({
+            current: 1,
+            pageSize: 8,
+            type: 2
+        }).then(response => {
+            setArticles(response.data.data);
             setLoading(false);
-        }));
+        })
         setTimeout(() => {
             setHeight(100)
         }, 100);

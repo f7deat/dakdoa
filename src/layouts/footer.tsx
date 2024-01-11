@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                     <div className="flex-1 flex items-center gap-4">
                         <div className="flex-1">
                             <div className="flex gap-4 md:gap-10 items-center">
-                                <Link to='/'>
+                                <Link to='/' className="cursor-pointer">
                                     <img src={logo} alt="LOGO" loading="lazy" />
                                 </Link>
                                 <div className="flex gap-4">

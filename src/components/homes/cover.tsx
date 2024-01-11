@@ -52,7 +52,7 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                                     <ContactButton />
                                     <div className='vr'>
                                         <div className='btn'>
-                                            <Link to='/vr360' className='z-10 rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
+                                            <Link to='/vr360' className='z-10 w-full rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
                                                 <div className="loader">
                                                     <span>VR 360</span>
                                                     <div className="tile"></div>

@@ -118,7 +118,7 @@ body {
 
 	overflow-x: auto;
 	width: 1000px;
-	
+
 	img {
 		height: 190px;
 	}
@@ -136,6 +136,7 @@ body {
 @media screen and (min-width: 720px) {
 	.amenities {
 		width: 100%;
+
 		img {
 			height: 190px;
 		}
@@ -514,46 +515,47 @@ body {
 
 .overlay {
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: #fff;
-    z-index: 3;
-    padding: 4.375em 0.625em 1.25em;
-    transition: all 0.2s ease-in-out;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 0%, rgba(1, 20, 9, 0.9) 90%, #0a3a21 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	z-index: 3;
+	padding: 4.375em 0.625em 1.25em;
+	transition: all 0.2s ease-in-out;
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+	background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 0%, rgba(1, 20, 9, 0.9) 90%, #0a3a21 100%);
 }
 
 
 :root {
-  --size-default: 22px;
-  --size-sm: 16px;
-  --color-green: orange;
-  --color-black: #000;
+	--size-default: 22px;
+	--size-sm: 16px;
+	--color-green: orange;
+	--color-black: #000;
 }
 
 @property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
 }
 
 @property --glowColor {
-  syntax: "<color>";
-  initial-value: #58dd93;
+	syntax: "<color>";
+	initial-value: #58dd93;
 }
 
 @keyframes rotate {
-  0% {
-    --angle: 0deg;
-    --glowColor: var(--color-green);
-  }
-  100% {
-    --angle: 360deg;
-    --glowColor: var(--color-green);
-  }
+	0% {
+		--angle: 0deg;
+		--glowColor: var(--color-green);
+	}
+
+	100% {
+		--angle: 360deg;
+		--glowColor: var(--color-green);
+	}
 }
 
 .vr .btn {
@@ -561,64 +563,63 @@ body {
 }
 
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  border: none;
-  background: none;
-  position: relative;
-  padding: 1px;
-  text-decoration: none;
-  transition: all 0.18s ease-in-out;
-  transform: translate3d(0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100px;
+	border: none;
+	background: none;
+	position: relative;
+	padding: 1px;
+	text-decoration: none;
+	transition: all 0.18s ease-in-out;
+	transform: translate3d(0, 0, 0);
 
-  &:after,
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: calc(100px + 1.5px);
-    background-size: 100% 100%;
-    background-position: 0px 0px;
-    background-image: conic-gradient(
-      from var(--angle) at 50% 50%,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0) 33%,
-      var(--glowColor) 50%,
-      rgba(0, 0, 0, 0) 66%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    animation: rotate 2s infinite linear;
-  }
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: calc(100px + 1.5px);
+		background-size: 100% 100%;
+		background-position: 0px 0px;
+		background-image: conic-gradient(from var(--angle) at 50% 50%,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0) 33%,
+				var(--glowColor) 50%,
+				rgba(0, 0, 0, 0) 66%,
+				rgba(0, 0, 0, 0) 100%);
+		animation: rotate 2s infinite linear;
+	}
 
-  &:before {
-    animation: rotate 2s infinite linear;
-    filter: blur(20px);
-  }
+	&:before {
+		animation: rotate 2s infinite linear;
+		filter: blur(20px);
+	}
 
-  .btnInner {
-    position: relative;
-    width: 100%;
-    border-radius: 100px;
-    font-weight: 500;
-    z-index: 1;
-    transition: all 0.18s ease;
-    backface-visibility: hidden;
-  }
+	.btnInner {
+		position: relative;
+		width: 100%;
+		border-radius: 100px;
+		font-weight: 500;
+		z-index: 1;
+		transition: all 0.18s ease;
+		backface-visibility: hidden;
+	}
 
-  &:hover {
-    .btnInner {
-	  transform: scale(1.05);
-    }
-  }
-  &:active {
-    transform: scale(0.95);
-  }
+	&:hover {
+		.btnInner {
+			transform: scale(1.05);
+		}
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
 }
 
 
@@ -626,17 +627,17 @@ body {
 	--speed: 1000ms;
 	position: relative;
 	display: flex;
-  }
-  
-  .loader .tile {
+}
+
+.loader .tile {
 	width: 0.5em;
 	height: 0.5em;
 	animation: var(--speed) ease infinite jump;
 	transform-origin: 0 100%;
 	will-change: transform;
-  }
-  
-  .loader .tile::before {
+}
+
+.loader .tile::before {
 	content: "";
 	display: block;
 	width: inherit;
@@ -645,9 +646,9 @@ body {
 	background-color: currentColor;
 	animation: var(--speed) ease-out infinite spin;
 	will-change: transform;
-  }
-  
-  .loader::after {
+}
+
+.loader::after {
 	content: "";
 	display: block;
 	width: 6.1em;
@@ -661,75 +662,81 @@ body {
 	animation: var(--speed) ease-in-out infinite shadow;
 	filter: blur(0.02em);
 	will-change: transform filter;
-  }
-  
-  @keyframes jump {
+}
+
+@keyframes jump {
 	0% {
-	  transform: scaleY(1) translateY(0);
+		transform: scaleY(1) translateY(0);
 	}
+
 	16% {
-	  transform: scaleY(0.6) translateY(0);
+		transform: scaleY(0.6) translateY(0);
 	}
+
 	22% {
-	  transform: scaleY(1.2) translateY(-5%);
+		transform: scaleY(1.2) translateY(-5%);
 	}
+
 	24%,
 	62% {
-	  transform: scaleY(1) translateY(-33%);
+		transform: scaleY(1) translateY(-33%);
 	}
+
 	66% {
-	  transform: scaleY(1.2) translateY(0);
+		transform: scaleY(1.2) translateY(0);
 	}
+
 	72% {
-	  transform: scaleY(0.8) translateY(0);
+		transform: scaleY(0.8) translateY(0);
 	}
+
 	88% {
-	  transform: scaleY(1) translateY(0);
+		transform: scaleY(1) translateY(0);
 	}
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
+
 	0%,
 	18% {
-	  transform: rotateZ(0);
-	  border-radius: 0.15em;
+		transform: rotateZ(0);
+		border-radius: 0.15em;
 	}
+
 	38% {
-	  border-radius: 0.25em;
+		border-radius: 0.25em;
 	}
+
 	66%,
 	100% {
-	  transform: rotateZ(1turn);
-	  border-radius: 0.15em;
+		transform: rotateZ(1turn);
+		border-radius: 0.15em;
 	}
-  }
-  
-  @keyframes shadow {
+}
+
+@keyframes shadow {
 	0% {
-	  transform: scale(1);
-	  filter: blur(0.02em);
+		transform: scale(1);
+		filter: blur(0.02em);
 	}
+
 	25%,
 	60% {
-	  transform: scale(0.8);
-	  filter: blur(0.06em);
+		transform: scale(0.8);
+		filter: blur(0.06em);
 	}
+
 	70% {
-	  transform: scale(1.1);
-	  filter: blur(0.02em);
+		transform: scale(1.1);
+		filter: blur(0.02em);
 	}
+
 	90% {
-	  transform: scale(1);
+		transform: scale(1);
 	}
-  }
-  
-  // Demo
-  
-  :root {
-	box-sizing: border-box;
-	height: 100%;
-	-webkit-font-smoothing: antialiased;
-	background-color: var(--color-root, hsl(210 18% 44%));
-	color: var(--color-text, hsl(210 15% 96%));
-	background-image: radial-gradient(#fff4, #fff0);
-  }
+}
+
+button,
+input {
+	outline: none;
+}
