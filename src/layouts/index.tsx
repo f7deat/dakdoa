@@ -2,7 +2,7 @@ import { Helmet, Link, Outlet } from 'umi';
 import './index.less';
 import { ConfigProvider } from 'antd';
 import fav from '../assets/favicon.png';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,9 +13,9 @@ export default function Layout() {
 
   useEffect(() => {
     const ac = AnimatedCursor({
-      color: '#1e293b',
+      color: '#fafafa',
       outerAlpha: 0,
-      outerBorderSize: 1,
+      outerBorderSize: 2,
       hasBlendMode: true,
       outerScale: 2,
       hideNativeCursor: false
