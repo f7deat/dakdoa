@@ -39,7 +39,7 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
                             </Header1>
                             <animated.div style={styles}>
                                 <div className="amenities max-h-[600px] md:max-h-full overflow-auto">
-                                    <div className="grid md:grid-cols-3 gap-4 md:gap-6] max-w-[320px] md:max-w-full">
+                                    <div className="grid md:grid-cols-3 gap-4 2xl:gap-6] max-w-[320px] md:max-w-full">
                                         <CardImageOverlays
                                             title={intl.formatMessage({ id: 'HOSPITAL' })}
                                             image={hospital}

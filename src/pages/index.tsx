@@ -2,6 +2,7 @@ import { Cover, Page1, Page2, News, Page4, Internal, External, Different, Testim
 import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
+import { apiCatalogList } from "@/services/catalog";
 import { simpleLocale } from "@/ultis";
 import { Carousel } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -22,33 +23,33 @@ export default function HomePage() {
       return;
     }
     setLoading(true)
-    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=8&type=2&language=${simpleLocale(intl.locale)}`, {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('wf_token')
+    apiCatalogList({
+      current: 1,
+      pageSize: 8,
+      type: 2,
+      language: simpleLocale(intl.locale)
+    }).then(response => {
+      if (response.data.data) {
+        setProducts(response.data.data);
       }
-    });
-    if (res.ok) {
-      const response = await res.json().then(res => res.data);
-      setProducts(response);
-    }
-    setLoading(false)
+      setLoading(false)
+    })
   }
 
   const getNews = async () => {
     if (products && products.length > 0) {
       return;
     }
-    const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=4&type=1&language=${simpleLocale(intl.locale)}`, {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('wf_token')
+    apiCatalogList({
+      current: 1,
+      pageSize: 4,
+      type: 1,
+      language: simpleLocale(intl.locale)
+    }).then(response => {
+      if (response.data.data) {
+        setNews(response.data.data);
       }
-    });
-    if (res.ok) {
-      const response = await res.json().then(res => res.data);
-      setNews(response);
-    }
+    })
   }
 
   useEffect(() => {
@@ -66,14 +67,14 @@ export default function HomePage() {
   }, []);
 
   const scroll = useCallback((y: number) => {
-      if (y > 0) {
-        return carouselRef?.current?.next();
-      } else {
-        return carouselRef?.current?.prev();
-      }
-    }, [carouselRef]);
+    if (y > 0) {
+      return carouselRef?.current?.next();
+    } else {
+      return carouselRef?.current?.prev();
+    }
+  }, [carouselRef]);
 
- useEffect(() => {
+  useEffect(() => {
     window.addEventListener("wheel", e => {
       scroll(e.deltaY);
     });

@@ -27,7 +27,7 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
             <div className='h-full relative' style={{
                 background: 'linear-gradient(118deg, #0c9138 29.32%, rgba(27, 151, 60, 0.61) 48.73%, rgba(255, 255, 255, 0.00) 73.8%)'
             }}>
-                <div className='container mx-auto h-full'>
+                <div className='container mx-auto md:px-10 2xl:px-0 h-full'>
                     <div className='h-full md:py-0'>
                         <div className='px-10 md:px-0'>
                             <div className='pt-[134px]'>

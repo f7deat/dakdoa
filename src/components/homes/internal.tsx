@@ -20,7 +20,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="px-4 text-white">
             <figure className="snip1577">
-                <img src={image} className="w-full bg-cover h-[250px] md:h-[317px] mb-2" alt="Amenities" loading="lazy" />
+                <img src={image} className="w-full bg-cover h-[250px] 2xl:h-[317px] mb-2" alt="Amenities" loading="lazy" />
                 <figcaption>
                     <h3>CCN SỐ 2 Đak Đoa</h3>
                     <h4>Shinec Gia Lai</h4>
@@ -108,7 +108,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                         swiperRef.current?.swiper.slidePrev();
                                         setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
-                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                    className="h-10 w-10 md:h-12 md:w-12 2xl:h-14 2xl:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
@@ -123,7 +123,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                         swiperRef.current?.swiper.slideNext();
                                         setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
                                     }}
-                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
+                                    className="h-10 w-10 md:h-12 md:w-12 2xl:h-14 2xl:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
                                     <ArrowRightOutlined />
                                 </button>
                             </div>

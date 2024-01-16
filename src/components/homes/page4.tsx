@@ -6,6 +6,8 @@ import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Header1 from '../header1';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import NextButton from '../button/next';
+import PreviousButton from '../button/previous';
 
 type SectionProps = {
     products: API.Catalog[];
@@ -20,10 +22,10 @@ const Page4: React.FC<SectionProps> = (props) => {
 
     const ProductItem = (product: API.Catalog) => (
         <div className="relative card-image-overlay">
-            <div className="item">
+            <div className="item h-80 2xl:h-[390px]">
                 <a href="#" className='text-white'>
-                    <img src={product.thumbnail} alt="IMG" className="object-cover" loading="lazy" />
-                    <div className="linear-gradient"></div>
+                    <img src={product.thumbnail} alt="IMG" className="object-cover h-80 2xl:h-[390px]" loading="lazy" />
+                    <div className="linear-gradient h-80 2xl:h-[390px]"></div>
                     <div className="item__overlay justify-start pt-24">
                         <Link to={`/product/${product.id}`}>
                             <div className="md:text-xl p-4 text-lg font-bold text-white">{product.name}</div>
@@ -95,14 +97,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                             </Swiper>
 
                             <div className="flex justify-between mx-auto mt-8">
-                                <button
-                                    onClick={() => {
-                                        swiperRef.current?.swiper.slidePrev();
-                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
-                                    }}
-                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <ArrowLeftOutlined />
-                                </button>
+                                <PreviousButton onClick={() => {
+                                    swiperRef.current?.swiper.slidePrev();
+                                    setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
+                                }} />
                                 <div className="flex items-center justify-center gap-2">
                                     {
                                         products.map((_, index) => (
@@ -115,14 +113,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                                         ))
                                     }
                                 </div>
-                                <button
-                                    onClick={() => {
-                                        swiperRef.current?.swiper.slideNext();
-                                        setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
-                                    }}
-                                    className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500">
-                                    <ArrowRightOutlined />
-                                </button>
+                                <NextButton onClick={() => {
+                                    swiperRef.current?.swiper.slideNext();
+                                    setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
+                                }} />
                             </div>
                         </div>
                     </div>

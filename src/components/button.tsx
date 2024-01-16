@@ -1,11 +1,11 @@
 import { PhoneOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
+import { Popover, Tooltip } from "antd";
 import { FormattedMessage } from "umi";
 
 const ContactButton: React.FC = () => {
     return (
         <>
-            <Tooltip title="0269.6333.456" placement="bottom">
+            <Popover title="Hotline:" content="0269.6333.456" placement="bottom" trigger="hover">
                 <a
                     href="tel:02696333456"
                     className='btn'>
@@ -14,7 +14,7 @@ const ContactButton: React.FC = () => {
                         <PhoneOutlined />
                     </div>
                 </a>
-            </Tooltip>
+            </Popover>
         </>
     )
 }

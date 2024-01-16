@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                 {icon}
             </div>
             <div className="hidden md:block">
-                <div className="text-xs md:text-sm">{title}</div>
+                <div className="text-xs 2xl:text-sm">{title}</div>
                 <div className="font-bold text-xs md:text-sm">{description}</div>
             </div>
         </div>

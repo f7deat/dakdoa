@@ -106,7 +106,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                     'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
                             </Carousel>
                             <div className="flex justify-between md:w-2/3 mx-auto mt-8">
-                                <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(false)}>
+                                <button className="h-10 w-10 md:h-12 md:w-12 2xl:h-14 2xl:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(false)}>
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
@@ -115,7 +115,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                     <button onClick={() => {carouselRef.current?.goTo(2);}} className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === currentSlide ? 'bg-orange-500' : '')}></button>
 
                                 </div>
-                                <button className="h-10 w-10 md:h-14 md:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(true)}>
+                                <button className="h-10 w-10 md:h-12 md:w-12 2xl:h-14 2xl:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(true)}>
                                     <ArrowRightOutlined />
                                 </button>
                             </div>

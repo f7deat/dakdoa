@@ -41,7 +41,7 @@ export default {
     'Publicadministrativearea': 'Khu vực hành chính công',
     'Hotel': 'Khách sạn',
     'Otherservices': 'Các dịch vụ khác',
-    'Outsideproductionareas': 'Các lĩnh vực sản xuất ngoại khu',
+    'Outsideproductionareas': 'Lĩnh vực sản xuất ngoại khu',
     'Industrial land for rent': 'Cho thuê lại đất công nghiệp',
     'Commercial land for rent': 'Cho thuê đất thương mại',
     'Renting office': 'Cho thuê văn phòng',

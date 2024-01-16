@@ -4,8 +4,6 @@ import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import Header1 from '../header1';
-import { PhoneOutlined } from '@ant-design/icons';
 import { animated, useSpring } from '@react-spring/web';
 
 const Partner: React.FC<HomeSectionItemProps> = (props) => {
@@ -30,7 +28,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
     const CarouselItem = (logo: string) => (
         <div className='shadow-lg'>
-            <div className='h-32 md:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
+            <div className='h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
                 <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500' />
             </div>
         </div>
@@ -42,10 +40,10 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                 <img src={icon} loading='lazy' alt='ICON' className='w-10 md:w-auto' />
             </div>
             <animated.div style={fadeLeft}>
-                <div className='font-medium text-lg md:text-2xl mb-2'>{title}</div>
+                <div className='font-medium text-lg 2xl:text-2xl mb-2'>{title}</div>
             </animated.div>
             <animated.div style={fadeLeft1}>
-                <div className='text-xs md:text-base line-clamp-3'>{description}</div>
+                <div className='text-xs 2xl:text-base line-clamp-3 md:text-sm'>{description}</div>
             </animated.div>
         </div>
     )
@@ -112,12 +110,12 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                         </svg>
                                     </div>
                                     <animated.div style={fadeLeft}>
-                                        <div className='font-medium text-lg md:text-2xl mb-2'>
+                                        <div className='font-medium text-lg 2xl:text-2xl mb-2'>
                                             <FormattedMessage id='Assist' />
                                         </div>
                                     </animated.div>
                                     <animated.div style={fadeLeft1}>
-                                        <div className='text-white text-xl mb-4 text-xs md:text-base line-clamp-3'>
+                                        <div className='text-white mb-4 md:text-sm text-xs line-clamp-3 2xl:text-xl'>
                                             <FormattedMessage id='PARTNER_QUOTE' />
                                         </div>
                                     </animated.div>
