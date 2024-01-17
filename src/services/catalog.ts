@@ -9,6 +9,7 @@ export async function apiGetStructure(id: string) {
 }
 
 export async function apiCatalogList(params: any) {
+    params.active = true;
     return request.get(`catalog/list`, {
         params
     });

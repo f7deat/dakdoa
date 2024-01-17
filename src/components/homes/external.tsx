@@ -4,7 +4,6 @@ import hospital from '../../assets/amenities/hospital.png';
 import school from '../../assets/amenities/school.png';
 import bank from '../../assets/amenities/bank.png';
 import govern from '../../assets/amenities/govern.png';
-import mall from '../../assets/amenities/mall.png';
 import restaurent from '../../assets/amenities/restaurent.png';
 import hotel from '../../assets/amenities/hotel.png';
 import golf from '../../assets/amenities/golf.png';
@@ -45,21 +44,21 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
                                             image={hospital}
                                             descriptions={[
                                                 'Bệnh viện Đa khoa Tỉnh Gia Lai',
-                                                'Bệnh viện Quân Y 211',
-                                                'Bệnh Viện Y Học Cổ Truyển Gia Lai'
+                                                'Bệnh viện Hoàng Anh Gia Lai',
+                                                'Bệnh viện Hùng Vương'
                                             ]}
                                         />
                                         <CardImageOverlays title={intl.formatMessage({ id: 'SCHOOL' })} image={school}
                                             descriptions={[
                                                 'Trường THPT Chuyên Hùng Vương',
-                                                'Trường THPT Pleiku',
-                                                'Trường THPT Quang Trung',
+                                                'Trường Quốc Tế UK',
+                                                'Trường THPT Nguyễn Huệ',
                                             ]} />
                                         <CardImageOverlays title={intl.formatMessage({ id: 'BANK' })} image={bank}
                                             descriptions={[
-                                                'Agribank',
-                                                'Vietcombank',
-                                                'Sacombank',
+                                                'Ngân hàng BIDV',
+                                                'Ngân hàng Á Châu',
+                                                'Ngân hàng Vietcombank',
                                             ]} />
                                         <CardImageOverlays title={intl.formatMessage({ id: 'Publicadministrativearea' })} image={govern}
                                             descriptions={[
@@ -67,11 +66,9 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
                                                 'Trung tâm việc làm',
                                                 'Trung tâm hỗ trợ'
                                             ]} />
-                                        <CardImageOverlays title={intl.formatMessage({ id: 'MALL' })} image={mall}
+                                        <CardImageOverlays title={intl.formatMessage({ id: 'MALL' })} image='https://ticotravel.com.vn/wp-content/uploads/2022/04/san-bay-Quy-Nhon-1-1200x600.jpg'
                                             descriptions={[
-                                                'Sense City Pleiku',
-                                                'Ia Blứ',
-                                                'KIM Center Pleiku'
+                                                'Gần sân bay, gần cảng Quy Nhơn'
                                             ]} />
                                         <CardImageOverlays title={intl.formatMessage({ id: 'Restaurant' })} image={restaurent}
                                             descriptions={[

@@ -72,7 +72,7 @@ const News: React.FC<NewsProps> = (props) => {
                                     <Link to='/news'
                                         className='px-8 py-3 rounded-full text-green-600 hover:text-green-700 bg-white md:text-lg font-semibold'
                                     >
-                                        Xem tất cả
+                                        <FormattedMessage id='VIEWMORE' />
                                         <ArrowRightOutlined className='ml-3' />
                                     </Link>
                                 </div>

@@ -1,13 +1,11 @@
 import bg from '../../assets/css/bg-feature.gif';
-import trafic from '../../assets/amenities/trafic.png';
-import electric from '../../assets/amenities/electric.png';
-import water from '../../assets/amenities/water.png';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FormattedMessage, useIntl } from 'umi';
 import Header1 from '../header1';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { apiCatalogList } from '@/services/catalog';
 
 const Internal: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -16,6 +14,19 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
     const intl = useIntl();
+    const [dataSource, setDataSource] = useState<API.Catalog[]>([]);
+
+    useEffect(() => {
+        let parentId = '9eef307d-751e-44c7-3d31-08dc176ae07c';
+        if (intl.locale === 'en-US') {
+            parentId = '36c28881-24bb-40b2-3d37-08dc176ae07c';
+        }
+        apiCatalogList({
+            parentId: parentId
+        }).then(response => {
+            setDataSource(response.data.data);
+        })
+    }, []);
 
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="px-4 text-white">
@@ -52,7 +63,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                             <Header1 active={active}>
                                 <FormattedMessage id='INTERNAL_AMENITIES' />
                             </Header1>
-                            <div className="text-white text-center max-w-[720px] mx-auto mb-8 text-base md:text-lg">
+                            <div className="text-white text-center mx-auto mb-8 text-base md:text-lg">
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <Swiper
@@ -81,25 +92,13 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                     },
                                 }}
                             >
-                                <SwiperSlide>
-                                    {Amenities(trafic, intl.formatMessage({ id: 'Traffic' }), [intl.formatMessage({ id: 'Traffic_des1' }), intl.formatMessage({ id: 'Traffic_des2' })])}
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    {Amenities(electric, intl.formatMessage({ id: 'WATER_ELEC' }), [intl.formatMessage({ id: 'WATER_ELEC_DES1' }), intl.formatMessage({ id: 'WATER_ELEC_DES2' })])}
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    {Amenities(water, intl.formatMessage({ id: 'wastewater' }), [intl.formatMessage({ id: 'wastewater_des1' }), intl.formatMessage({ id: 'wastewater_des2' })])}
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    {Amenities('https://www.elcom.com.vn/storage/uploads/images/o8cvBIoy6PcyWJkPMGNFKFYQau4llZ1XI1dCXbeX.jpg',
-                                        intl.formatMessage({ id: 'Internet' }),
-                                        [intl.formatMessage({ id: 'Internet_des1' }), intl.formatMessage({ id: 'Internet_des2' })])}
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    {Amenities('https://file1.dangcongsan.vn/data/0/images/2021/09/10/hungnm/t12.jpg',
-                                        intl.formatMessage({ id: 'FIRE_PROTECTION' }),
-                                        [intl.formatMessage({ id: 'FIRE_PROTECTION_DES1' }), intl.formatMessage({ id: 'FIRE_PROTECTION_DES2' })])}
-                                </SwiperSlide>
+                                {
+                                    dataSource.map(item => (
+                                        <SwiperSlide>
+                                            {Amenities(item.thumbnail, item.name, item.description.split(','))}
+                                        </SwiperSlide>
+                                    ))
+                                }
                             </Swiper>
 
                             <div className="flex justify-between md:w-2/3 mx-auto mt-8 gap-4">
@@ -112,11 +111,11 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                     <ArrowLeftOutlined />
                                 </button>
                                 <div className="flex items-center justify-center gap-2">
-                                    <button onClick={() => {setActiveIndex(0); swiperRef.current?.swiper.slideTo(0)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (0 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button onClick={() => {setActiveIndex(1); swiperRef.current?.swiper.slideTo(1)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (1 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button onClick={() => {setActiveIndex(2); swiperRef.current?.swiper.slideTo(2)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (2 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button onClick={() => {setActiveIndex(3); swiperRef.current?.swiper.slideTo(3)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (3 === activeIndex ? 'bg-orange-500' : '')}></button>
-                                    <button onClick={() => {setActiveIndex(4); swiperRef.current?.swiper.slideTo(4)}} className={`h-5 w-5 rounded-full border-2 border-white ` + (4 === activeIndex ? 'bg-orange-500' : '')}></button>
+                                    {
+                                        dataSource.map((item, index) => (
+                                            <button key={item.id} onClick={() => { setActiveIndex(index); swiperRef.current?.swiper.slideTo(index) }} className={`h-5 w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
+                                        ))
+                                    }
                                 </div>
                                 <button
                                     onClick={() => {

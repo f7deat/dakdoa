@@ -8,6 +8,7 @@ import { FormattedMessage, useIntl } from "umi";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Header1 from '../header1';
 import { animated, useSpring } from '@react-spring/web';
+import { Tooltip } from 'antd';
 
 const Different: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -37,7 +38,11 @@ const Different: React.FC<HomeSectionItemProps> = (props) => {
                         <ul className="mb-4 text-xs md:text-sm 2xl:text-base list-disc">
                             {
                                 description.map((value, index) => (
-                                    <li key={index} className='py-1'>{value}</li>
+                                    <li key={index} className='py-1'>
+                                        <Tooltip title={value}>
+                                            <div className='line-clamp-3'>{value}</div>
+                                        </Tooltip>
+                                    </li>
                                 ))
                             }
                         </ul>
@@ -65,7 +70,7 @@ const Different: React.FC<HomeSectionItemProps> = (props) => {
                             <Header1 active={active}>
                                 <FormattedMessage id='THINKING_DIFFERENT' />
                             </Header1>
-                            <div className="text-white text-center max-w-[720px] mx-auto mb-8 text-base md:text-lg md:hidden 2xl:block">
+                            <div className="text-white text-center mx-auto mb-8 text-base md:text-lg md:hidden 2xl:block">
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <animated.div style={styles}>

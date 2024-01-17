@@ -4,6 +4,7 @@ import icon360 from '../../assets/icons/360.svg';
 import { Link, useIntl } from 'umi';
 import ContactButton from '../button';
 import { animated, useSpring } from '@react-spring/web';
+import { AliyunOutlined } from '@ant-design/icons';
 
 const Cover: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -52,12 +53,11 @@ const Cover: React.FC<HomeSectionItemProps> = (props) => {
                                     <ContactButton />
                                     <div className='vr'>
                                         <div className='btn'>
-                                            <Link to='/vr360' className='z-10 w-full rounded-full text-green-700 bg-white py-2 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
+                                            <Link to='/vr360' className='z-10 w-full rounded-full text-red-600 bg-white py-3 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
                                                 <div className="loader">
-                                                    <span>VR 360</span>
+                                                    <span><AliyunOutlined className='text-xl' /> VR 360</span>
                                                     <div className="tile"></div>
                                                 </div>
-                                                <img src={icon360} alt='icon' className='w-8 md:w-10' />
                                             </Link>
                                         </div>
                                     </div>

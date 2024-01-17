@@ -5,7 +5,6 @@ import { FormattedMessage, Link } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Header1 from '../header1';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import NextButton from '../button/next';
 import PreviousButton from '../button/previous';
 

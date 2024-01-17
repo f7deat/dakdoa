@@ -71,6 +71,6 @@ export default {
     'SUPPORT_OUT1': 'Arrange credit for investment projects in industrial parks and industrial complexes with preferential capital levels.',
     'SUPPORT_OUT2': 'Support output export markets and export credit financing for investors in industrial parks and industrial clusters invested by Shinec. Support legal procedures, logistics and logistics in international business transactions.',
     'SUPPORT_OUT3': 'Support investors to complete green certificates and credits.',
-    'LATEST_NEWS': 'Tin tức mới nhất'
+    'LATEST_NEWS': 'Latest news'
   };
   
