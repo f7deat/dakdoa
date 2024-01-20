@@ -1,0 +1,5 @@
+.wp-block-image {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}

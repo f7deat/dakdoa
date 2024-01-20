@@ -22,7 +22,7 @@ const CatalogPage: React.FC = () => {
                     ]} />
                 </div>
                 <div className="text-center text-green-700 font-semibold uppercase text-2xl md:text-4xl mb-4">
-                    Tài liệu
+                    Catalogue
                 </div>
                 <div className="grid grid-cols-4 gap-4">
                     <div className="border p-3">

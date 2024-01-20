@@ -1,8 +1,10 @@
 import { GoogleMap } from "@/components";
+import BannerFooter from "@/components/banner/footer";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
 import { apiCatalogList } from "@/services/catalog";
+import { simpleLocale } from "@/ultis";
 import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
 import { Avatar, Breadcrumb, Card, Input, Spin, Tooltip } from "antd";
 import { useEffect, useState } from "react";
@@ -30,7 +32,8 @@ const ProductListPage: React.FC = () => {
         apiCatalogList({
             current: 1,
             pageSize: 8,
-            type: 2
+            type: 2,
+            language: simpleLocale(intl.locale)
         }).then(response => {
             setArticles(response.data.data);
             setLoading(false);
@@ -41,7 +44,7 @@ const ProductListPage: React.FC = () => {
     }, []);
 
     return (
-        <>
+        <div className="relative">
             <Helmet>
                 <title>{intl.formatMessage({ id: 'PRODUCT' })} - Shinec Gia Lai</title>
             </Helmet>
@@ -95,9 +98,9 @@ const ProductListPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </div>
-            <GoogleMap />
+            <BannerFooter />
             <Footer height={height} />
-        </>
+        </div>
     )
 }
 

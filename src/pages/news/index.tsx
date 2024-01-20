@@ -4,17 +4,22 @@ import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
 import { apiCatalogList } from "@/services/catalog";
 import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
-import { Avatar, Breadcrumb, Card, Input, Pagination, Spin, Table, Tabs, Tooltip } from "antd";
+import { Avatar, Breadcrumb, Card, Input, Modal, Pagination, Spin, Table, Tabs, Tooltip } from "antd";
 import moment from "moment";
 import React from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
+import './style.css';
+import { simpleLocale } from "@/ultis";
+import BannerFooter from "@/components/banner/footer";
 
 const NewsPage: React.FC = () => {
 
     const { Meta } = Card;
     const [loading, setLoading] = useState<boolean>(false);
     const [shinecLoading, setShinecLoading] = useState<boolean>(false);
+    const [artice, setArtice] = useState<any>();
+    const [open, setOpen] = useState<boolean>(false);
 
     const intl = useIntl();
     const [articles, setArticles] = useState<{
@@ -34,7 +39,8 @@ const NewsPage: React.FC = () => {
         apiCatalogList({
             current: 1,
             pageSize: 8,
-            type: 1
+            type: 1,
+            language: simpleLocale(intl.locale)
         }).then(response => {
             setArticles(response.data.data);
             setLoading(false);
@@ -60,11 +66,11 @@ const NewsPage: React.FC = () => {
         return React.createElement("div", { dangerouslySetInnerHTML: { __html: value } });
     }
     return (
-        <>
+        <div className="relative">
             <Helmet>
                 <title>{intl.formatMessage({ id: 'NEWS' })} - Shinec Gia Lai</title>
             </Helmet>
-            <div className="container mx-auto py-4 md:py-10">
+            <div className="container mx-auto py-4 md:py-10 px-4 md:px-0">
                 <Loader loading={loading} />
                 <div className="mb-4 px-4">
                     <Breadcrumb items={[
@@ -84,38 +90,45 @@ const NewsPage: React.FC = () => {
                             items={[
                                 {
                                     key: 'gialai',
-                                    label: 'Nội bộ',
+                                    label: 'Đak Đoa',
                                     children: (
                                         <>
                                             <div className="grid md:grid-cols-3 gap-4">
                                                 {
                                                     articles.map(article => (
-                                                        <Card
-                                                            hoverable
+                                                        <div
                                                             key={article.id}
-                                                            cover={
-                                                                <img
-                                                                    alt={article.name}
-                                                                    src={article.thumbnail}
-                                                                    className="h-52 object-cover"
-                                                                />
-                                                            }
+                                                            className="shadow rounded bg-white"
                                                         >
-                                                            <Tooltip title={article.name}>
-                                                                <Meta
-                                                                    title={(
-                                                                        <Link to={`/news/${article.id}`}>
+                                                            <Link to={`/news/${article.id}`}>
+                                                                <figure className="snip1577">
+                                                                    <img
+                                                                        alt={article.name}
+                                                                        src={article.thumbnail}
+                                                                        className="h-52 object-cover max-w-64 w-full"
+                                                                        loading="lazy"
+                                                                    />
+                                                                    <figcaption>
+                                                                        <h3>CCN NO.2 Đak Đoa</h3>
+                                                                        <h4>Shinec Gia Lai</h4>
+                                                                    </figcaption>
+                                                                    <Link to={`/news/${article.id}`}></Link>
+                                                                </figure>
+                                                                <div className="p-2">
+                                                                    <Meta title={(
+                                                                        <div className="text-green-700 hover:text-green-800 font-semibold">
                                                                             {article.name}
-                                                                        </Link>
-                                                                    )}
-                                                                    description={(
-                                                                        <div className="truncate">
-                                                                            {article.description}
                                                                         </div>
                                                                     )}
-                                                                />
-                                                            </Tooltip>
-                                                        </Card>
+                                                                        description={(
+                                                                            <div className="line-clamp-3 text-gray-500 text-sm">
+                                                                                {article.description}
+                                                                            </div>
+                                                                        )}
+                                                                    />
+                                                                </div>
+                                                            </Link>
+                                                        </div>
                                                     ))
                                                 }
                                             </div>
@@ -137,9 +150,12 @@ const NewsPage: React.FC = () => {
                                                 {
                                                     title: 'Tiêu đề',
                                                     render: (value, record) => (
-                                                        <a href={`https://namcaukien.com.vn/${record.slug}`} target="_blank" className="hover:text-green-700">
+                                                        <button className="hover:text-green-700" onClick={() => {
+                                                            setArtice(record)
+                                                            setOpen(true);
+                                                        }}>
                                                             {stripHtml(record.title.rendered)}
-                                                        </a>
+                                                        </button>
                                                     )
                                                 },
                                                 {
@@ -160,9 +176,12 @@ const NewsPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </div>
-            <GoogleMap />
+            <Modal title={stripHtml(artice?.title.rendered)} open={open} onCancel={() => setOpen(false)} footer={false} width={1000}>
+                {stripHtml(artice?.content.rendered)}
+            </Modal>
+            <BannerFooter />
             <Footer height={100} />
-        </>
+        </div>
     )
 }
 

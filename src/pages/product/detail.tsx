@@ -10,12 +10,13 @@ import ShareButton from '@/components/share-button';
 import { GoogleMap } from '@/components';
 import moment from 'moment';
 import { apiGetCatalog, apiGetStructure } from '@/services/catalog';
+import BannerFooter from '@/components/banner/footer';
+import Header1 from '@/components/header1';
 
 const ProductPage: React.FC = () => {
 
     const { id } = useParams();
 
-    const [height, setHeight] = useState<number>(0);
     const intl = useIntl();
     const [product, setProduct] = useState<API.Catalog>();
     const [editor, setEditor] = useState<any>();
@@ -41,16 +42,14 @@ const ProductPage: React.FC = () => {
                 setLoading(false);
             })
             apiGetCatalog(id).then(response => {
-                setProduct(response.data.data);
+                setProduct(response.data);
+                console.log(response.data)
             })
-            setTimeout(() => {
-                setHeight(100)
-            }, 100);
         }
     }, [id])
 
     return (
-        <>
+        <div className='relative'>
             <Helmet>
                 <title>{product?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
@@ -83,9 +82,9 @@ const ProductPage: React.FC = () => {
                     <Sidebar />
                 </div>
             </main>
-            <GoogleMap />
-            <Footer height={height} />
-        </>
+            <BannerFooter />
+            <Footer height={100} />
+        </div>
     )
 }
 

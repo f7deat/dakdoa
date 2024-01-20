@@ -10,6 +10,7 @@ import ShareButton from "@/components/share-button";
 import { GoogleMap } from "@/components";
 import moment from "moment";
 import { apiGetCatalog, apiGetStructure } from "@/services/catalog";
+import BannerFooter from "@/components/banner/footer";
 
 const NewsDetails: React.FC = () => {
 
@@ -51,7 +52,7 @@ const NewsDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <>
+        <div className="relative">
             <Helmet>
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
@@ -84,9 +85,9 @@ const NewsDetails: React.FC = () => {
                     <Sidebar />
                 </div>
             </main>
-            <GoogleMap />
+            <BannerFooter />
             <Footer height={height} />
-        </>
+        </div>
     )
 }
 
