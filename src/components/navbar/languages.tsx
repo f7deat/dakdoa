@@ -5,6 +5,7 @@ import cnFlag from '../../assets/flags/cn.svg';
 import krFlag from '../../assets/flags/kr.svg';
 import jpFlag from '../../assets/flags/jp.svg';
 import { setLocale, useIntl } from "umi";
+import { CaretDownOutlined, DownOutlined } from "@ant-design/icons";
 
 type LanguagesProps = {
     white?: boolean;
@@ -120,18 +121,13 @@ const Languages: React.FC<LanguagesProps> = (props) => {
     }
 
     return (
-
-        <>
-            <Dropdown menu={{ items, onClick: menuClick }} arrow>
-                <button className={'border rounded-full px-2 md:px-4 py-1 md:py-2 flex items-center gap-2 font-semibold text-sm' + (props.white ? ' text-white' : ' text-slate-700')}>
-                    <img src={flag()} alt='FLAG' />
-                    <span>{label()}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                </button>
-            </Dropdown>
-        </>
+        <Dropdown menu={{ items, onClick: menuClick }} arrow>
+            <button className={'border rounded-full px-2 md:px-4 py-1 md:py-2 flex items-center gap-1 font-semibold text-sm' + (props.white ? ' text-white' : ' text-slate-700')}>
+                <img src={flag()} alt='FLAG' />
+                <span className="hidden md:block">{label()}</span>
+                <CaretDownOutlined />
+            </button>
+        </Dropdown>
     )
 }
 

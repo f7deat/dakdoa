@@ -13,7 +13,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
 
     const Item = (avatar: string, name: string, role: string, content: string) => (
         <div className="px-2 md:px-10">
-            <div className="p-4 md:p-[40px] rounded-lg max-w-[1000px]" style={{
+            <div className="p-4 md:p-[40px] rounded-lg max-w-[1200px]" style={{
                 background: 'linear-gradient(109deg, rgba(131, 255, 173, 0.30) 0%, rgba(91, 208, 131, 0.28) 73.74%, rgba(54, 164, 92, 0.00) 137.77%)'
             }}>
                 <div className="md:flex gap-4 text-white">
@@ -38,7 +38,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                             <div className="italic mb-4 text-sm 2xl:text-lg h-40 md:h-auto overflow-hidden">
                                 {content}
                             </div>
-                            <div className="text-lg font-bold">{role}</div>
+                            <div className="md:text-lg font-bold">{role}</div>
                         </div>
                     </div>
                 </div>

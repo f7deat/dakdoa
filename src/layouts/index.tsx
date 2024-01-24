@@ -1,6 +1,6 @@
 import { Helmet, Link, Outlet } from 'umi';
 import './index.less';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, Layout, Menu } from 'antd';
 import fav from '../assets/favicon.png';
 import { useEffect } from 'react';
 import Navbar from '@/components/navbar';
@@ -8,8 +8,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import AnimatedCursor from 'animated-cursor'
+import { MenuData } from '@/data';
+import logoWhite from '../assets/logo/logo-green.svg';
 
-export default function Layout() {
+const { Header, Content, Footer } = Layout;
+
+export default function Layout1() {
 
   useEffect(() => {
     const ac = AnimatedCursor({
@@ -72,8 +76,13 @@ export default function Layout() {
           <div id="cursor-outer" className='z-50'></div>
           <div id="cursor-inner" className='z-50'></div>
         </div>
-        <Navbar />
-        <Outlet />
+        <Layout hasSider>
+          <Navbar />
+          <Content>
+            <Outlet />
+          </Content>
+
+        </Layout>
       </ConfigProvider>
     </div>
   );

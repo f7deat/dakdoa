@@ -1,6 +1,6 @@
 body {
 	font-family: 'Montserrat', sans-serif;
-	padding-top: 70px;
+	padding-top: 60px;
 }
 
 .montserrat {
@@ -12,7 +12,7 @@ body {
 }
 
 .h-body {
-	height: calc(100vh - 70px);
+	height: calc(100vh - 60px);
 }
 
 .ant-carousel .slick-dots li.slick-active button {
@@ -465,6 +465,15 @@ body {
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		padding-top: 70px;
+	}
+	.h-body {
+		height: calc(100vh - 70px);
+	}
 }
 
 @media screen and (min-width: 1530px) {
