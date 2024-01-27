@@ -27,10 +27,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                     <div className="linear-gradient h-80 2xl:h-[390px]"></div>
                     <div className="item__overlay justify-start pt-24">
                         <Link to={`/product/${product.id}`}>
-                            <div className="md:text-xl p-4 text-lg font-bold text-white">{product.name}</div>
-                            <div className="border-b w-16 border-2 mx-4 mb-2"></div>
+                            <div className="md:text-xl p-4 text-lg font-bold text-white 2xl:min-h-[90px]">{product.name}</div>
+                            <div className="border-b w-16 border-2 mx-4"></div>
                         </Link>
-                        <div className='text-white px-4 line-clamp-3'>{product.description}</div>
+                        <div className='text-white px-4 py-2'>{product.description}</div>
                     </div>
                 </a>
             </div>

@@ -2,11 +2,11 @@ import { Cover, Page1, Page2, News, Page4, Internal, External, Different, Testim
 import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
-import { apiCatalogList } from "@/services/catalog";
+import { apiCatalogList, queryGetComponents } from "@/services/catalog";
 import { simpleLocale } from "@/ultis";
 import { Carousel } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Helmet, useIntl } from "umi";
+import { Helmet, getLocale, useIntl } from "umi";
 
 export default function HomePage() {
 
@@ -16,6 +16,8 @@ export default function HomePage() {
   const [products, setProducts] = useState<any[]>([]);
   const [news, setNews] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [components, setComponents] = useState<any[]>([]);
+  const [brands, setBrands] = useState<any[]>([]);
   const intl = useIntl();
 
   const getProducts = async () => {
@@ -33,6 +35,15 @@ export default function HomePage() {
         setProducts(response.data.data);
       }
       setLoading(false)
+    })
+    queryGetComponents('/index', getLocale()).then(response => {
+      setComponents(response.data);
+      const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
+      if (sponsor) {
+        const component1 = JSON.parse(sponsor.arguments)
+        setBrands(component1.brands);
+      }
+      console.log(response.data);
     })
   }
 
@@ -95,7 +106,7 @@ export default function HomePage() {
         <External active={currentSlide === 6} />
         <Different active={currentSlide === 7} />
         <Testimonial active={currentSlide === 8} />
-        <Partner active={currentSlide === 9} />
+        <Partner active={currentSlide === 9} brands={brands} />
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />

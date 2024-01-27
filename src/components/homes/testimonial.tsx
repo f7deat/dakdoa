@@ -19,7 +19,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                 <div className="md:flex gap-4 text-white">
                     <div className="md:w-[387px] w-full bg-slate-200 rounded-lg mb-4">
                         <figure className="snip1577">
-                            <img src={avatar} className="object-cover w-full h-full  md:max-h-[400px] 2xl:max-h-[450px] mb-2" alt="AVATAR" loading="lazy" />
+                            <img src={avatar} className="object-cover w-full h-full md:max-h-[400px] 2xl:max-h-[500px] rounded" alt="AVATAR" loading="lazy" />
                             <figcaption>
                                 <h3>CCN SỐ 2 Đak Đoa</h3>
                                 <h4>Shinec Gia Lai</h4>
@@ -95,13 +95,13 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                         }
                                     }
                                 ]}>
+                                {Item('https://i.imgur.com/arIwong.png', 'Ông. Đặng Toàn Thắng',
+                                    'Phó Chủ tịch UBND TP. Pleiku',
+                                    'Gửi lời cảm ơn sâu sắc đến Công ty cổ phần Shinec Gia Lai đã tài trợ thành phố 300 cây hoa anh đào; đồng thời nhấn mạnh: Pleiku đang triển khai chương trình "Trồng 1 tỷ cây xanh" giai đoạn 2022-2025. Do vậy, đây là hoạt động có ý nghĩa quan trọng đối với thành phố trong việc phát triển tiềm năng, lợi thế về du lịch, giúp thành phố từng bước cải thiện hạ tầng, chỉnh trang đô thị, tạo điều kiện thúc đẩy kinh tế phát triển, phấn đấu từng bước đưa Pleiku trở thành “Cao nguyên xanh vì sức khỏe”')}
                                 {Item('https://namcaukien.com.vn/wp-content/uploads/2022/08/01.jpg', 'Ông. Phạm Hồng Điệp',
-                                    'Phạm Hồng Điệp - Chủ tịch SHINEC',
-                                    'Chúng tôi chung tay xây dựng thành công Khu Công Nghiệp Sinh Thái theo đúng nghĩa tại Nam Cầu Kiền, mang niềm tự hào này từ Hải Phòng truyền cảm hứng cho các Nhà đầu tư trong cả nước có cách nhìn đầu tư bền vững, đầu tư cho tương lai phát triển kinh tế gắn chặt với bảo vệ môi trường. Từ đó tạo ra nhiều hệ sinh thái cộng sinh đem niềm hạnh phúc đến cho mọi người”')}
-                                {Item('https://i.imgur.com/9iKD3dq.jpg', 'TS. Đỗ Văn Chiến',
-                                    'Phó Chủ tịch thường trực',
-                                    'Đánh giá khả năng thực hiện mô hình kinh tế tuần hoàn trong khu công nghiệp Việt Nam. (Khảo sát mô hình điểm khu công nghiệp Nam Cầu Kiền)” có ý nghĩa quan trọng, không chỉ đối với  Viện Sức khỏe và Môi trường vì cộng đồng và Công ty Cổ phần Shinec (Chủ đầu tư Khu công nghiệp Nam Cầu Kiền), mà còn đối với các tổ chức khác trong nước, đối với việc xây dựng chính sách của Nhà nước vì mục tiêu chiến lược phát triển quốc gia bền vững.')}
-                                {Item('https://i.imgur.com/q8VAC7s.jpg', 'Ông. Lê Tấn Dũng',
+                                    'Chủ tịch SHINEC',
+                                    'Chúng tôi chung tay xây dựng thành công Khu, Cụm Công Nghiệp Sinh Thái theo đúng nghĩa tại tập đoàn Shinec, mang niềm tự hào này truyền cảm hứng cho các Nhà đầu tư trong cả nước để có cách nhìn đầu tư bền vững, đầu tư cho tương lai phát triển kinh tế gắn chặt với bảo vệ môi trường. Từ đó tạo ra nhiều hệ sinh thái cộng sinh đem niềm hạnh phúc đến cho mọi người”')}
+                                {Item('https://i.imgur.com/q8VAC7s.jpg', 'Ông. Đặng Toàn Thắng',
                                     'Thứ trưởng Bộ Lao động, Thương binh và Xã hội',
                                     'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
                             </Carousel>

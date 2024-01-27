@@ -14,3 +14,12 @@ export async function apiCatalogList(params: any) {
         params
     });
 }
+
+export async function queryGetComponents(normalizedName: string, locale: string) {
+    return request.get(`catalog/components`, {
+        params: {
+            normalizedName,
+            locale
+        }
+    });
+}

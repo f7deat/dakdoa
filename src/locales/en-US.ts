@@ -21,7 +21,7 @@ export default {
     'TARGET': 'Target',
     'TARGET_QUOTE': 'Create a favorable environment for businesses to produce and do business',
     'SUPPORT': 'Support',
-    'SUPPORT_QUOTE': 'The success of customers is also the success of Dak Doa 2',
+    'SUPPORT_QUOTE': 'The success of customers is also the success of Shinec Gia Lai',
     'PARTNER_QUOTE': 'To each partner - customer, we deliver sustainable values, trust and companionship',
     'INTERNAL_AMENITIES': 'INTERNAL AMENITIES',
     'External_Amenities': 'External Amenities',

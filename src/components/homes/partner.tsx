@@ -8,7 +8,7 @@ import { animated, useSpring } from '@react-spring/web';
 
 const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
-    const { active } = props;
+    const { active, brands } = props;
     const intl = useIntl();
 
     const fadeLeft = useSpring({
@@ -29,7 +29,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
     const CarouselItem = (logo: string) => (
         <div className='shadow-lg'>
             <div className='h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
-                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500' />
+                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500 w-40' />
             </div>
         </div>
     )
@@ -63,41 +63,46 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                             </animated.div>
 
                             <div>
-                                <Swiper
-                                    slidesPerView={1}
-                                    autoplay={{
-                                        disableOnInteraction: false,
-                                        pauseOnMouseEnter: true
-                                    }}
-                                    breakpoints={{
-                                        768: {
-                                            spaceBetween: 20,
-                                            slidesPerView: 2
-                                        },
-                                        1024: {
-                                            spaceBetween: 30,
-                                            slidesPerView: 2
-                                        },
-                                        1280: {
-                                            spaceBetween: 40,
-                                            slidesPerView: 3
-                                        },
-                                        1536: {
-                                            spaceBetween: 60,
-                                            slidesPerView: 4
-                                        },
-                                    }}
-                                    loop
-                                    spaceBetween={10}
-                                    modules={[Autoplay, Navigation]}
-                                >
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-45.jpg')}</SwiperSlide>
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2022/10/Logo-DoiTac.jpg')}</SwiperSlide>
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-51.jpg')}</SwiperSlide>
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-50.jpg')}</SwiperSlide>
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/12/namcaukien-doi-tac-47.jpg')}</SwiperSlide>
-                                    <SwiperSlide>{CarouselItem('https://namcaukien.com.vn/wp-content/uploads/2021/06/DoiTac-004.jpg')}</SwiperSlide>
-                                </Swiper>
+                                {
+                                    brands && (
+                                        <Swiper
+                                            slidesPerView={1}
+                                            autoplay={{
+                                                disableOnInteraction: false,
+                                                pauseOnMouseEnter: true
+                                            }}
+                                            breakpoints={{
+                                                768: {
+                                                    spaceBetween: 20,
+                                                    slidesPerView: 2
+                                                },
+                                                1024: {
+                                                    spaceBetween: 30,
+                                                    slidesPerView: 2
+                                                },
+                                                1280: {
+                                                    spaceBetween: 40,
+                                                    slidesPerView: 3
+                                                },
+                                                1536: {
+                                                    spaceBetween: 60,
+                                                    slidesPerView: 4
+                                                },
+                                            }}
+                                            loop
+                                            spaceBetween={10}
+                                            modules={[Autoplay, Navigation]}
+                                        >
+                                            {
+                                                brands.map(brand => (
+                                                    <SwiperSlide key={brand.id}>
+                                                        {CarouselItem(brand.logo)}
+                                                    </SwiperSlide>
+                                                ))
+                                            }
+                                        </Swiper>
+                                    )
+                                }
                             </div>
 
                             <div className='md:py-5 py-2 mb-2 md:mb-10'></div>

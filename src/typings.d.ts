@@ -10,7 +10,8 @@ declare namespace API {
 }
 
 type HomeSectionItemProps = {
-    active: boolean
+    active: boolean;
+    brands?: any[]
 }
 
 declare module 'animated-cursor';

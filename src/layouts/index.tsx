@@ -68,7 +68,8 @@ export default function Layout1() {
           token: {
             fontSize: 16,
             colorLinkHover: '#0B8936',
-            fontFamily: `'Montserrat', sans-serif`
+            fontFamily: `'Montserrat', sans-serif`,
+            colorBgLayout: '#FFFFFF'
           }
         }}
       >

@@ -9,6 +9,8 @@ const Editor: React.FC<EditorProps> = (props) => {
 
     const { blocks } = props;
 
+    console.log(blocks)
+
     const stripHtml = (value: string) => {
         if (!value) {
             return '';
@@ -43,9 +45,32 @@ const Editor: React.FC<EditorProps> = (props) => {
                                 </div>
                             )
                         }
+                        <div className='mb-4'>
+                            {
+                                block.type === 'table' && (
+                                    <>
+                                        {
+                                            block.data.content.map((x: any, i: number) => (
+                                                <div key={i} className={`grid grid-cols-${x.length}`}>
+                                                    {
+                                                        x.map((y: any, j: number) => (
+                                                            <div key={j} className='border p-2'>
+                                                                {stripHtml(y)}
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            ))
+                                        }
+                                    </>
+                                )
+                            }
+                        </div>
                     </div>
                 ))
             }
+            <div className='grid-cols-3'></div>
+            <div className='grid-cols-5'></div>
         </>
     )
 }

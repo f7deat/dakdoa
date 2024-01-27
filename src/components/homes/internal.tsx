@@ -31,7 +31,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="px-4 text-white">
             <figure className="snip1577">
-                <img src={image} className="w-full bg-cover h-[250px] 2xl:h-[317px] mb-2" alt="Amenities" loading="lazy" />
+                <img src={image} className="w-full bg-cover h-[250px] 2xl:h-[317px]" alt="Amenities" loading="lazy" />
                 <figcaption>
                     <h3>CCN SỐ 2 Đak Đoa</h3>
                     <h4>Shinec Gia Lai</h4>

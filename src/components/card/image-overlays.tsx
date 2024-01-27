@@ -25,7 +25,7 @@ const CardImageOverlays: React.FC<CardImageOverlaysProps> = (props) => {
                             }
                             <div className="border-b w-16 border-2 mx-4 mb-4"></div>
                             <div className="item__body px-4">
-                                <ul className="list-disc pl-4">
+                                <ul className="list-disc pl-4 py-2">
                                     {props.descriptions.map((description, index) => (
                                         <li key={index}>{description}</li>
                                     ))}

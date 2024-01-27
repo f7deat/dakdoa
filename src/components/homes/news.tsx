@@ -53,7 +53,7 @@ const News: React.FC<NewsProps> = (props) => {
                                                             <img src={x.thumbnail} className="w-full h-32 md:h-48 mb-2 object-cover rounded" alt="Amenities" loading="lazy" />
                                                             <Link to={`/news/${x.id}`}></Link>
                                                         </figure>
-                                                        <div className='overlay'>
+                                                        <div className='overlay rounded'>
                                                             <div className='pt-10'>
                                                                 <Link
                                                                     to={`/news/${x.id}`}
