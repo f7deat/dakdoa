@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-    baseURL: 'https://localhost:64452/api/',
+    baseURL: 'https://shinecgialai.com.vn/api/',
     headers: {
         Accept: 'application/json',
         'content-type': 'application/json',
