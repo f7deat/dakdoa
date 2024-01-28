@@ -7,10 +7,8 @@ import Editor from "@/components/editor";
 import Loader from "@/components/loader";
 import { CalendarOutlined, EyeOutlined, HomeOutlined } from "@ant-design/icons";
 import ShareButton from "@/components/share-button";
-import { GoogleMap } from "@/components";
 import moment from "moment";
 import { apiGetCatalog, apiGetStructure } from "@/services/catalog";
-import BannerFooter from "@/components/banner/footer";
 
 const NewsDetails: React.FC = () => {
 
@@ -57,35 +55,41 @@ const NewsDetails: React.FC = () => {
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
             <Loader loading={loading} />
-            <main className="container mx-auto py-10 px-4 md:px-0">
-                <div className="mb-4">
-                    <Breadcrumb items={[
-                        {
-                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
-                        },
-                        {
-                            title: intl.formatMessage({ id: 'NEWS' })
-                        }
-                    ]} />
-                </div>
-                <div className="md:flex gap-4">
-                    <div className="md:w-3/4">
-                        <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
-                        <div className="mb-4 border-b border-dashed">
-                            <div className='mb-4'>
-                                {editor?.blocks && <Editor blocks={editor.blocks} />}
-                            </div>
-                            <div className='text-slate-500 italic flex justify-between'>
-                                <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
-                                <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
-                            </div>
-                        </div>
-                        <ShareButton />
+
+            <div style={{
+                backgroundImage: 'url(https://longhau.com.vn/assets/images/about-awards-bg-bottom.png)',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom'
+            }}>
+                <main className="container mx-auto py-10 px-4 md:px-0">
+                    <div className="mb-4">
+                        <Breadcrumb items={[
+                            {
+                                title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                            },
+                            {
+                                title: intl.formatMessage({ id: 'NEWS' })
+                            }
+                        ]} />
                     </div>
-                    <Sidebar />
-                </div>
-            </main>
-            <BannerFooter />
+                    <div className="md:flex gap-4">
+                        <div className="md:w-3/4">
+                            <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
+                            <div className="mb-4 border-b border-dashed">
+                                <div className='mb-4'>
+                                    {editor?.blocks && <Editor blocks={editor.blocks} />}
+                                </div>
+                                <div className='text-slate-500 italic flex justify-between'>
+                                    <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
+                                    <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <ShareButton />
+                        </div>
+                        <Sidebar />
+                    </div>
+                </main>
+            </div>
             <Footer height={height} />
         </div>
     )

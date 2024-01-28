@@ -48,57 +48,63 @@ const ProductListPage: React.FC = () => {
             <Helmet>
                 <title>{intl.formatMessage({ id: 'PRODUCT' })} - Shinec Gia Lai</title>
             </Helmet>
-            <div className="container mx-auto py-4">
-                <Loader loading={loading} />
-                <div className="mb-4">
-                    <Breadcrumb items={[
-                        {
-                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
-                        },
-                        {
-                            title: intl.formatMessage({ id: 'PRODUCT' })
-                        }
-                    ]} />
-                </div>
-                <div className="md:flex gap-4 mb-4">
-                    <div className="md:w-3/4">
-                        <div className="grid md:grid-cols-3 gap-4">
+
+            <div style={{
+                backgroundImage: 'url(https://longhau.com.vn/assets/images/about-awards-bg-bottom.png)',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom'
+            }}>
+                <div className="container mx-auto py-4">
+                    <Loader loading={loading} />
+                    <div className="mb-4">
+                        <Breadcrumb items={[
                             {
-                                articles.map(article => (
-                                    <Card
-                                        hoverable
-                                        key={article.id}
-                                        cover={
-                                            <img
-                                                alt={article.name}
-                                                src={article.thumbnail}
-                                                className="h-52 object-cover"
-                                            />
-                                        }
-                                    >
-                                        <Tooltip title={article.name}>
-                                            <Meta
-                                                title={(
-                                                    <Link to={`/product/${article.id}`}>
-                                                        {article.name}
-                                                    </Link>
-                                                )}
-                                                description={(
-                                                    <div className="truncate">
-                                                        {article.description}
-                                                    </div>
-                                                )}
-                                            />
-                                        </Tooltip>
-                                    </Card>
-                                ))
+                                title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                            },
+                            {
+                                title: intl.formatMessage({ id: 'PRODUCT' })
                             }
-                        </div>
+                        ]} />
                     </div>
-                    <Sidebar />
+                    <div className="md:flex gap-4 mb-4">
+                        <div className="md:w-3/4">
+                            <div className="grid md:grid-cols-3 gap-4">
+                                {
+                                    articles.map(article => (
+                                        <Card
+                                            hoverable
+                                            key={article.id}
+                                            cover={
+                                                <img
+                                                    alt={article.name}
+                                                    src={article.thumbnail}
+                                                    className="h-52 object-cover"
+                                                />
+                                            }
+                                        >
+                                            <Tooltip title={article.name}>
+                                                <Meta
+                                                    title={(
+                                                        <Link to={`/product/${article.id}`}>
+                                                            {article.name}
+                                                        </Link>
+                                                    )}
+                                                    description={(
+                                                        <div className="truncate">
+                                                            {article.description}
+                                                        </div>
+                                                    )}
+                                                />
+                                            </Tooltip>
+                                        </Card>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <Sidebar />
+                    </div>
                 </div>
             </div>
-            <BannerFooter />
             <Footer height={height} />
         </div>
     )

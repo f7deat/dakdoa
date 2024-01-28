@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
                 {
                     products.map(product => (
                         <div key={product.id} className="border-b px-4 py-2">
-                            <CaretRightOutlined className="text-green-700" /> <Link to={`/product/${product.id}`} className="text-slate-600 font-medium hover:text-green-700">{product.name}</Link>
+                            <CaretRightOutlined className="text-green-700" /> <Link to={`/product/${product.id}`} className="text-slate-800 font-medium hover:text-green-700">{product.name}</Link>
                         </div>
                     ))
                 }
@@ -47,16 +47,16 @@ const Sidebar: React.FC = () => {
                 <div className="bg-slate-100 rounded uppercase py-2 px-4 font-bold text-green-700"><AppstoreAddOutlined /> THÔNG TIN CHI TIẾT</div>
 
                 <div className="border-b px-4 py-2">
-                    <CaretRightOutlined className="text-green-700" /> <Link to={`/catalog`} className="text-slate-600 font-medium hover:text-green-700">Tài liệu</Link>
+                    <CaretRightOutlined className="text-green-700" /> <Link to={`/catalog`} className="text-slate-800 font-medium hover:text-green-700">Tài liệu</Link>
                 </div>
                 <div className="border-b px-4 py-2">
-                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/8bc9db4e-3ffb-4950-8e41-08dc081eba2c`} className="text-slate-600 font-medium hover:text-green-700">Phối cảnh 3D</Link>
+                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/8bc9db4e-3ffb-4950-8e41-08dc081eba2c`} className="text-slate-800 font-medium hover:text-green-700">Phối cảnh 3D</Link>
                 </div>
                 <div className="border-b px-4 py-2">
-                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/1c87fe8e-5094-49cf-4d09-08dc0823fa43`} className="text-slate-600 font-medium hover:text-green-700">Giải thưởng</Link>
+                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/1c87fe8e-5094-49cf-4d09-08dc0823fa43`} className="text-slate-800 font-medium hover:text-green-700">Giải thưởng</Link>
                 </div>
                 <div className="border-b px-4 py-2">
-                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/36724df0-a109-44b2-770f-08dc08244635`} className="text-slate-600 font-medium hover:text-green-700">Định hướng và tầm nhìn SHINEC</Link>
+                    <CaretRightOutlined className="text-green-700" /> <Link to={`/news/36724df0-a109-44b2-770f-08dc08244635`} className="text-slate-800 font-medium hover:text-green-700">Định hướng và tầm nhìn SHINEC</Link>
                 </div>
             </div>
             <div className="mb-4">

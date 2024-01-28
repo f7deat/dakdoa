@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 import './style.css';
 import { simpleLocale } from "@/ultis";
-import BannerFooter from "@/components/banner/footer";
 
 const NewsPage: React.FC = () => {
 
@@ -70,116 +69,122 @@ const NewsPage: React.FC = () => {
             <Helmet>
                 <title>{intl.formatMessage({ id: 'NEWS' })} - Shinec Gia Lai</title>
             </Helmet>
-            <div className="container mx-auto py-4 md:py-10 px-4 md:px-0">
-                <Loader loading={loading} />
-                <div className="mb-4 px-4">
-                    <Breadcrumb items={[
-                        {
-                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
-                        },
-                        {
-                            title: intl.formatMessage({ id: 'NEWS' })
-                        }
-                    ]} />
-                </div>
-                <div className="md:flex gap-4">
-                    <div className="md:w-3/4">
-                        <Tabs
-                            onChange={onChange}
-                            type="card"
-                            items={[
-                                {
-                                    key: 'gialai',
-                                    label: 'Đak Đoa',
-                                    children: (
-                                        <>
-                                            <div className="grid md:grid-cols-3 gap-4">
-                                                {
-                                                    articles.map(article => (
-                                                        <div
-                                                            key={article.id}
-                                                            className="shadow rounded bg-white"
-                                                        >
-                                                            <Link to={`/news/${article.id}`}>
-                                                                <figure className="snip1577">
-                                                                    <img
-                                                                        alt={article.name}
-                                                                        src={article.thumbnail}
-                                                                        className="h-52 object-cover max-w-64 w-full"
-                                                                        loading="lazy"
-                                                                    />
-                                                                    <figcaption>
-                                                                        <h3>CCN NO.2 Đak Đoa</h3>
-                                                                        <h4>Shinec Gia Lai</h4>
-                                                                    </figcaption>
-                                                                    <Link to={`/news/${article.id}`}></Link>
-                                                                </figure>
-                                                                <div className="p-2">
-                                                                    <Meta title={(
-                                                                        <div className="text-green-700 hover:text-green-800 font-semibold">
-                                                                            {article.name}
-                                                                        </div>
-                                                                    )}
-                                                                        description={(
-                                                                            <div className="line-clamp-3 text-gray-500 text-sm">
-                                                                                {article.description}
+
+            <div style={{
+                backgroundImage: 'url(https://longhau.com.vn/assets/images/about-awards-bg-bottom.png)',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom'
+            }}>
+                <div className="container mx-auto py-4 md:py-10 px-4 md:px-0">
+                    <Loader loading={loading} />
+                    <div className="mb-4 px-4">
+                        <Breadcrumb items={[
+                            {
+                                title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                            },
+                            {
+                                title: intl.formatMessage({ id: 'NEWS' })
+                            }
+                        ]} />
+                    </div>
+                    <div className="md:flex gap-4">
+                        <div className="md:w-3/4">
+                            <Tabs
+                                onChange={onChange}
+                                type="card"
+                                items={[
+                                    {
+                                        key: 'gialai',
+                                        label: 'Đak Đoa',
+                                        children: (
+                                            <>
+                                                <div className="grid md:grid-cols-3 gap-4">
+                                                    {
+                                                        articles.map(article => (
+                                                            <div
+                                                                key={article.id}
+                                                                className="shadow rounded bg-white"
+                                                            >
+                                                                <Link to={`/news/${article.id}`}>
+                                                                    <figure className="snip1577">
+                                                                        <img
+                                                                            alt={article.name}
+                                                                            src={article.thumbnail}
+                                                                            className="h-52 object-cover max-w-64 w-full"
+                                                                            loading="lazy"
+                                                                        />
+                                                                        <figcaption>
+                                                                            <h3>CCN NO.2 Đak Đoa</h3>
+                                                                            <h4>Shinec Gia Lai</h4>
+                                                                        </figcaption>
+                                                                        <Link to={`/news/${article.id}`}></Link>
+                                                                    </figure>
+                                                                    <div className="p-2">
+                                                                        <Meta title={(
+                                                                            <div className="text-green-700 line-clamp-2 mb-2 md:text-lg hover:text-green-800 font-semibold">
+                                                                                {article.name}
                                                                             </div>
                                                                         )}
-                                                                    />
-                                                                </div>
-                                                            </Link>
-                                                        </div>
-                                                    ))
-                                                }
-                                            </div>
-                                            <div className="py-2 flex justify-end">
-                                                <Pagination />
-                                            </div></>
-                                    )
-                                },
-                                {
-                                    key: 'namcaukien',
-                                    label: 'Shinec',
-                                    children: (
-                                        <>
-                                            <Table loading={shinecLoading} columns={[
-                                                {
-                                                    title: '#',
-                                                    render: (value, record, index) => index + 1
-                                                },
-                                                {
-                                                    title: 'Tiêu đề',
-                                                    render: (value, record) => (
-                                                        <button className="hover:text-green-700" onClick={() => {
-                                                            setArtice(record)
-                                                            setOpen(true);
-                                                        }}>
-                                                            {stripHtml(record.title.rendered)}
-                                                        </button>
-                                                    )
-                                                },
-                                                {
-                                                    title: 'Ngày',
-                                                    render: (value, record) => moment(record.date).format('DD-MM-YYYY hh:mm'),
-                                                    width: 200
-                                                }
-                                            ]}
-                                                dataSource={shinecArtices}
-                                            />
-                                        </>
-                                    )
-                                }
-                            ]}  >
+                                                                            description={(
+                                                                                <div className="line-clamp-3 text-gray-500 font-medium">
+                                                                                    {article.description}
+                                                                                </div>
+                                                                            )}
+                                                                        />
+                                                                    </div>
+                                                                </Link>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                                <div className="py-2 flex justify-end">
+                                                    <Pagination />
+                                                </div></>
+                                        )
+                                    },
+                                    {
+                                        key: 'namcaukien',
+                                        label: 'Shinec',
+                                        children: (
+                                            <>
+                                                <Table loading={shinecLoading} columns={[
+                                                    {
+                                                        title: '#',
+                                                        render: (value, record, index) => index + 1
+                                                    },
+                                                    {
+                                                        title: 'Tiêu đề',
+                                                        render: (value, record) => (
+                                                            <button className="hover:text-green-700" onClick={() => {
+                                                                setArtice(record)
+                                                                setOpen(true);
+                                                            }}>
+                                                                {stripHtml(record.title.rendered)}
+                                                            </button>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: 'Ngày',
+                                                        render: (value, record) => moment(record.date).format('DD-MM-YYYY hh:mm'),
+                                                        width: 200
+                                                    }
+                                                ]}
+                                                    dataSource={shinecArtices}
+                                                />
+                                            </>
+                                        )
+                                    }
+                                ]}  >
 
-                        </Tabs>
+                            </Tabs>
+                        </div>
+                        <Sidebar />
                     </div>
-                    <Sidebar />
                 </div>
             </div>
             <Modal title={stripHtml(artice?.title.rendered)} open={open} onCancel={() => setOpen(false)} footer={false} width={1000}>
                 {stripHtml(artice?.content.rendered)}
             </Modal>
-            <BannerFooter />
             <Footer height={100} />
         </div>
     )

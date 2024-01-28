@@ -36,7 +36,7 @@ const Page2: React.FC<HomeSectionItemProps> = (props) => {
                                 {intl.formatMessage({ id: 'TOP_INDUSTRIAL' })}
                             </animated.div>
                         </div>
-                        <div className="text-slate-600 mb-4 text-sm md:text-base max-w-[800px]">
+                        <div className="text-slate-900 font-medium mb-4 text-sm md:text-base max-w-[900px]">
                             {intl.formatMessage({ id: 'TOP_INDUSTRIAL_DES' })}
                         </div>
                         <Link to={`/news/67dd6e55-b552-433c-d103-08dc0551893f`}

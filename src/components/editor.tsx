@@ -18,7 +18,7 @@ const Editor: React.FC<EditorProps> = (props) => {
         return React.createElement("div", { dangerouslySetInnerHTML: { __html: value } });
     }
     return (
-        <>
+        <div className='tinos 2xl:text-xl text-lg'>
             {
                 blocks.map((block: any) => (
                     <div id={block.id}>
@@ -71,7 +71,7 @@ const Editor: React.FC<EditorProps> = (props) => {
             }
             <div className='grid-cols-3'></div>
             <div className='grid-cols-5'></div>
-        </>
+        </div>
     )
 }
 

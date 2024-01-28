@@ -7,7 +7,7 @@ type NavbarItemProps = {
 
 const NavbarItem: React.FC<NavbarItemProps> = (props) => {
     return (
-        <div className={`md:flex hidden font-semibold gap-8 inter ` + (props.white ? 'text-white' : 'text-slate-700')}>
+        <div className={`md:flex hidden font-semibold gap-8 inter ` + (props.white ? 'text-white' : 'text-slate-800')}>
             {
                 MenuData.map(menu => (
                     <div key={menu.key}>

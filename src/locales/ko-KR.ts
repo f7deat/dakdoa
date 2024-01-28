@@ -29,7 +29,6 @@ export default {
     'THINKING_DIFFERENT': '생각이 다르다',
     'TAY_NGUYEN_NATURE': 'Tây Nguyên 자연',
     'TAY_NGUYEN_NATURE_DESCRIPTION1': 'Gia Lai는 베트남에서 두 번째로 큰 성이며 북부 Tay Nguyen 지역에 위치한 고지대 성입니다(Gia Lai는 Tay Nguyen에서 면적 1위, 인구 2위).',
-    'TAY_NGUYEN_NATURE_DESCRIPTION2': '농업 생산 개발 및 농산물 수출에 많은 이점을 갖고 있는 Gia Lai는 산업 및 서비스 개발을 촉진하는 국제 추세에 보조를 맞추고 미래에 새로운 탄력성과 돌파구를 마련하여 투자자에게 많은 좋은 기회를 제공합니다.',
     'FULL_NAME': '성명',
     'TOP_INDUSTRIAL': '선도적 생태산업 클러스터',
     'TOP_INDUSTRIAL_DES': 'Dak Doa 2 산업 클러스터는 제조 기업 공동체가 동일한 이해 관계를 가지고 긴밀한 관계를 맺는 생태 산업 단지를 건설하고자 하는 일련의 기준에 따라 건설 및 개발되었습니다. 동시에 우리는 환경 및 천연자원 문제 관리에 긴밀히 협력합니다.',

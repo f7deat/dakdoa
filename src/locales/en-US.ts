@@ -29,7 +29,6 @@ export default {
     'THINKING_DIFFERENT': 'Thinking Different',
     'TAY_NGUYEN_NATURE': 'Tay Nguyen Nature',
     'TAY_NGUYEN_NATURE_DESCRIPTION1': 'Gia Lai is the second largest province in area in Vietnam and is a highland province located in the Northern Tay Nguyen region (Gia Lai ranks first in area and second in population in the Tay Nguyen).',
-    'TAY_NGUYEN_NATURE_DESCRIPTION2': 'With many advantages in developing agricultural production and exporting agricultural products, Gia Lai keeps pace with the international trend of promoting industrial and service development, creating new resilience and breakthroughs in the future, bringing many Good opportunity for investors.',
     'FULL_NAME': 'Full Name',
     'TOP_INDUSTRIAL': 'Leading ecological industrial cluster',
     'TOP_INDUSTRIAL_DES': 'Dak Doa 2 industrial cluster was built and developed according to a set of criteria with the desire to build an eco-industrial park, in which communities of manufacturing businesses have close relationships with the same interests; At the same time, we cooperate closely in managing environmental and natural resource issues.',

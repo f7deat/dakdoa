@@ -23,7 +23,7 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
         <div className="relative h-body">
             <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
                 <source
-                    src="https://shinecgialai.com.vn/videos/plateaus-seen-from-the-heights-in-a-sunset.mp4"
+                    src="https://shinecgialai.com.vn/videos/mt-2.mp4"
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -39,9 +39,8 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
                                     {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE' })}
                                 </animated.div>
                             </div>
-                            <animated.div className="text-slate-600 mb-4 text-sm md:text-base break-words max-w-[900px]">
+                            <animated.div className="text-slate-900 font-medium mb-4 text-sm md:text-base break-words max-w-[900px]">
                                 {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION1' })}
-                                {intl.formatMessage({ id: 'TAY_NGUYEN_NATURE_DESCRIPTION2' })}
                             </animated.div>
                             <animated.div>
                                 <Link to={`/news/c15e1eab-884b-42aa-4eb5-08dc054f1e5e`}
