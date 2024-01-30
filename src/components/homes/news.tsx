@@ -1,18 +1,39 @@
-import { FormattedMessage, Link } from 'umi';
-import { useRef } from 'react';
+import { FormattedMessage, Link, getLocale } from 'umi';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import bg from '../../assets/news-bg.png';
 import Header1 from '../header1';
+import { apiCatalogList } from '@/services/catalog';
 
 type NewsProps = {
-    news: API.Catalog[];
     active: boolean;
 }
 
 const News: React.FC<NewsProps> = (props) => {
 
-    const { news, active } = props;
+    const { active } = props;
+    const [news, setNews] = useState<any[]>([]);
     const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        getNews();
+    }, []);
+
+    const getNews = async () => {
+      if (news && news.length > 0) {
+        return;
+      }
+      apiCatalogList({
+        current: 1,
+        pageSize: 4,
+        type: 1,
+        locale: getLocale()
+      }).then(response => {
+        if (response.data.data) {
+          setNews(response.data.data);
+        }
+      })
+    }
 
     return (
         <div className="h-body bg-no-repeat bg-right bg-[#01822c] relative"

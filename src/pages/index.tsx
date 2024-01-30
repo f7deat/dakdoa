@@ -14,11 +14,9 @@ export default function HomePage() {
   const [height, setHeight] = useState<number>(0);
   const [currentSlide, setCurrentSile] = useState<number>(0);
   const [products, setProducts] = useState<any[]>([]);
-  const [news, setNews] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [components, setComponents] = useState<any[]>([]);
   const [brands, setBrands] = useState<any[]>([]);
-  const intl = useIntl();
 
   const getProducts = async () => {
     if (products && products.length > 0) {
@@ -29,7 +27,7 @@ export default function HomePage() {
       current: 1,
       pageSize: 8,
       type: 2,
-      language: simpleLocale(intl.locale)
+      locale: getLocale()
     }).then(response => {
       if (response.data.data) {
         setProducts(response.data.data);
@@ -47,25 +45,8 @@ export default function HomePage() {
     })
   }
 
-  const getNews = async () => {
-    if (products && products.length > 0) {
-      return;
-    }
-    apiCatalogList({
-      current: 1,
-      pageSize: 4,
-      type: 1,
-      language: simpleLocale(intl.locale)
-    }).then(response => {
-      if (response.data.data) {
-        setNews(response.data.data);
-      }
-    })
-  }
-
   useEffect(() => {
     getProducts();
-    getNews();
   }, []);
 
   const beforeChange = useCallback((current: number, next: number) => {
@@ -100,7 +81,7 @@ export default function HomePage() {
         <Cover active={currentSlide === 0} />
         <Page1 active={currentSlide === 1} />
         <Page2 active={currentSlide === 2} />
-        <News news={news} active={currentSlide === 3} />
+        <News active={currentSlide === 3} />
         <Page4 products={products} active={currentSlide === 4} />
         <Internal active={currentSlide === 5} />
         <External active={currentSlide === 6} />

@@ -3,7 +3,7 @@ import land from '../../assets/icons/land.svg';
 import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { animated, useSpring } from '@react-spring/web';
 
 const Partner: React.FC<HomeSectionItemProps> = (props) => {
@@ -28,8 +28,8 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
     const CarouselItem = (logo: string) => (
         <div className='shadow-lg'>
-            <div className='h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
-                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500 w-40' />
+            <div className='h-28 md:h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
+                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500 w-40 object-contain' />
             </div>
         </div>
     )
@@ -66,7 +66,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                 {
                                     brands && (
                                         <Swiper
-                                            slidesPerView={1}
+                                            slidesPerView={2}
                                             autoplay={{
                                                 disableOnInteraction: false,
                                                 pauseOnMouseEnter: true
@@ -82,7 +82,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                                 },
                                                 1280: {
                                                     spaceBetween: 40,
-                                                    slidesPerView: 3
+                                                    slidesPerView: 4
                                                 },
                                                 1536: {
                                                     spaceBetween: 60,
