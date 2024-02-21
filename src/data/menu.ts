@@ -2,7 +2,17 @@ const MenuData = [
     {
         key: '1',
         label: 'ABOUT',
-        url: '/catalog'
+        url: '/catalog',
+        children: [
+            {
+                key: 'about-shinec',
+                label: 'Về chúng tôi'
+            },
+            {
+                key: 'carrer',
+                label: 'Tuyển dụng'
+            }
+        ]
     },
     {
         key: '2',

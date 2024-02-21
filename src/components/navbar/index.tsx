@@ -1,9 +1,8 @@
 import logoWhite from '../../assets/logo/logo-green.svg';
-import { FormattedMessage, Link } from 'umi';
+import { FormattedMessage, Link, history } from 'umi';
 import Languages from './languages';
-import NavbarItem from './navbar-items';
 import { MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
 import { MenuData } from '@/data';
 
@@ -12,6 +11,15 @@ const { Sider } = Layout;
 const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
+    const [current, setCurrent] = useState('mail');
+    
+    const onClick: MenuProps['onClick'] = (e) => {
+      console.log('click ', e);
+      setCurrent(e.key);
+      if (e.key === 'about-shinec') {
+        history.push(`/page/gioi-thieu`);
+      }
+    };
 
     return (
         <div>
@@ -30,7 +38,21 @@ const Navbar: React.FC = () => {
                             <img src={logoWhite} alt='LOGO' className='w-28 md:w-auto' />
                         </Link>
                         <div className='flex items-center'>
-                            <NavbarItem />
+                            <Menu
+                            onClick={onClick}
+                                mode="horizontal"
+                                items={MenuData.map((menu, i) => (
+                                    {
+                                        key: menu.key,
+                                        label: (
+                                            <Link to={menu.url} className='nav-link'>
+                                                <FormattedMessage id={menu.label} />
+                                            </Link>
+                                        ),
+                                        children: menu.children
+                                    }
+                                ))}
+                            />
                             <div className='border-r h-8 mx-8 hidden md:block pl-8'></div>
                             <Languages />
                         </div>

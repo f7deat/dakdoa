@@ -1,11 +1,16 @@
 import { Cover, Page1, Page2, News, Page4, Internal, External, Different, Testimonial } from "@/components/homes";
 import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
+import Navbar from "@/components/navbar";
 import Footer from "@/layouts/footer";
 import { apiCatalogList, queryGetComponents } from "@/services/catalog";
-import { Carousel } from "antd";
+import { Carousel, ConfigProvider } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Helmet, getLocale, useIntl } from "umi";
+import { Helmet, getLocale } from "umi";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import '../layouts/index.less';
 
 export default function HomePage() {
 
@@ -75,10 +80,30 @@ export default function HomePage() {
   }, [scroll]);
 
   return (
-    <>
+    <ConfigProvider
+      theme={{
+        components: {
+          Carousel: {
+            dotHeight: 19,
+            dotWidth: 19
+          }
+        },
+        token: {
+          fontSize: 16,
+          colorLinkHover: '#0B8936',
+          fontFamily: `'Montserrat', sans-serif`,
+          colorBgLayout: '#FFFFFF'
+        }
+      }}
+    >
       <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W248JMRJ32"></script>
         <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
+      <Navbar />
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} beforeChange={beforeChange}>
         <Cover active={currentSlide === 0} />
         <News active={currentSlide === 1} />
@@ -91,6 +116,6 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
-    </>
+    </ConfigProvider>
   );
 }

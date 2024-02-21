@@ -8,11 +8,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import AnimatedCursor from 'animated-cursor'
-import { MenuData } from '@/data';
-import logoWhite from '../assets/logo/logo-green.svg';
 import ButtonContact from '@/components/button/contact';
+import Footer from './footer';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 export default function Layout1() {
 
@@ -72,6 +71,7 @@ export default function Layout1() {
           </Content>
           <ButtonContact />
         </Layout>
+        <Footer height={100} />
       </ConfigProvider>
     </div>
   );
