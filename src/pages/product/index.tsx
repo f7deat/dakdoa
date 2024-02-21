@@ -105,7 +105,6 @@ const ProductListPage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer height={height} />
         </div>
     )
 }

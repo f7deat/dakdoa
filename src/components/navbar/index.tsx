@@ -2,7 +2,7 @@ import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history } from 'umi';
 import Languages from './languages';
 import { MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Layout, Menu, MenuProps } from 'antd';
+import { ConfigProvider, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
 import { MenuData } from '@/data';
 
@@ -22,7 +22,16 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <div>
+        <ConfigProvider theme={{
+            components: {
+                Menu: {
+                    horizontalItemHoverColor: '#15803D',
+                    horizontalItemSelectedColor: '#15803D',
+                    itemSelectedColor: '#15803D',
+                    activeBarBorderWidth: 0
+                }
+            }
+        }}>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
             <nav className="bg-white shadow fixed top-0 z-10 right-0 left-0">
                 <div className='container mx-auto py-3 px-2 md:px-0'>
@@ -45,7 +54,7 @@ const Navbar: React.FC = () => {
                                     {
                                         key: menu.key,
                                         label: (
-                                            <Link to={menu.url} className='nav-link'>
+                                            <Link to={menu.url} className='nav-link font-medium'>
                                                 <FormattedMessage id={menu.label} />
                                             </Link>
                                         ),
@@ -81,7 +90,7 @@ const Navbar: React.FC = () => {
                     />
                 </Sider>
             </nav>
-        </div>
+        </ConfigProvider>
     )
 }
 

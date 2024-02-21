@@ -185,7 +185,6 @@ const NewsPage: React.FC = () => {
             <Modal title={stripHtml(artice?.title.rendered)} open={open} onCancel={() => setOpen(false)} footer={false} width={1000}>
                 {stripHtml(artice?.content.rendered)}
             </Modal>
-            <Footer height={100} />
         </div>
     )
 }

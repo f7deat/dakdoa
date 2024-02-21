@@ -90,7 +90,6 @@ const NewsDetails: React.FC = () => {
                     </div>
                 </main>
             </div>
-            <Footer height={height} />
         </div>
     )
 }

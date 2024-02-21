@@ -4,6 +4,10 @@ export async function apiGetCatalog(id: string) {
     return request.get(`catalog/${id}`);
 }
 
+export async function apiGetCatalogByName(id: string) {
+    return request.get(`catalog/name/${id}`);
+}
+
 export async function apiGetStructure(id: string) {
     return request.get(`catalog/structure-by-id/${id}`);
 }
