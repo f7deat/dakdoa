@@ -9,6 +9,7 @@ export default defineConfig({
     { path: "/news/:id", component: "news/detail" },
     { path: "/catalog", component: "catalog" },
     { path: "/vr360", component: "vr360", layout: false },
+    { path: "/contact", component: "contact" }
   ],
   history: {
     type: 'hash'

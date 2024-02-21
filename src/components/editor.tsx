@@ -18,7 +18,7 @@ const Editor: React.FC<EditorProps> = (props) => {
         return React.createElement("div", { dangerouslySetInnerHTML: { __html: value } });
     }
     return (
-        <div className='tinos 2xl:text-xl text-lg'>
+        <div className='2xl:text-lg'>
             {
                 blocks.map((block: any) => (
                     <div id={block.id}>

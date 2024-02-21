@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <footer className={`bg-[#015D20] bottom-0 left-0 right-0 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
+            <footer className={`bg-[#015D20] bottom-0 left-0 right-0 z-10 transition-height duration-500 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>
                 <div className="md:pl-20 md:pr-40 mx-auto px-4 text-white flex flex-col justify-between h-full">

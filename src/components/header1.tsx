@@ -14,9 +14,9 @@ const Header1: React.FC<Header1Props> = (props) => {
 
     return (
        <animated.div style={styles}>
-         <div className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-white mb-0 md:mb-4">
+         <h1 className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-white mb-0 md:mb-4">
             {props.children}
-        </div>
+        </h1>
        </animated.div>
     )
 }

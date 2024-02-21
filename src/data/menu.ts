@@ -13,6 +13,11 @@ const MenuData = [
         key: '3',
         label: 'NEWS',
         url: '/news'
+    },
+    {
+        key: '4',
+        label: 'CONTACT',
+        url: '/contact'
     }
 ]
 

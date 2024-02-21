@@ -3,7 +3,6 @@ import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
 import Footer from "@/layouts/footer";
 import { apiCatalogList, queryGetComponents } from "@/services/catalog";
-import { simpleLocale } from "@/ultis";
 import { Carousel } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet, getLocale, useIntl } from "umi";
@@ -50,7 +49,7 @@ export default function HomePage() {
   }, []);
 
   const beforeChange = useCallback((current: number, next: number) => {
-    if (next === 9) {
+    if (next === 7) {
       setHeight(100);
     } else {
       setHeight(0)
@@ -67,6 +66,9 @@ export default function HomePage() {
   }, [carouselRef]);
 
   useEffect(() => {
+    if (window.innerWidth < 768) {
+      return
+    }
     window.addEventListener("wheel", e => {
       scroll(e.deltaY);
     });
@@ -79,15 +81,13 @@ export default function HomePage() {
       </Helmet>
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} beforeChange={beforeChange}>
         <Cover active={currentSlide === 0} />
-        <Page1 active={currentSlide === 1} />
-        <Page2 active={currentSlide === 2} />
-        <News active={currentSlide === 3} />
-        <Page4 products={products} active={currentSlide === 4} />
-        <Internal active={currentSlide === 5} />
-        <External active={currentSlide === 6} />
-        <Different active={currentSlide === 7} />
-        <Testimonial active={currentSlide === 8} />
-        <Partner active={currentSlide === 9} brands={brands} />
+        <News active={currentSlide === 1} />
+        <Page4 products={products} active={currentSlide === 2} />
+        <Internal active={currentSlide === 3} />
+        <External active={currentSlide === 4} />
+        <Different active={currentSlide === 5} />
+        <Testimonial active={currentSlide === 6} />
+        <Partner active={currentSlide === 7} brands={brands} />
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />

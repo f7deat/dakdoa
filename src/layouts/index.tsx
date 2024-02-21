@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import AnimatedCursor from 'animated-cursor'
 import { MenuData } from '@/data';
 import logoWhite from '../assets/logo/logo-green.svg';
+import ButtonContact from '@/components/button/contact';
 
 const { Header, Content, Footer } = Layout;
 
@@ -33,7 +34,7 @@ export default function Layout1() {
         <link rel="shortcut icon" href={fav} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600&display=swap" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-W248JMRJ32"></script>
         <script>
           {`
@@ -41,19 +42,6 @@ export default function Layout1() {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-W248JMRJ32');
-          `}
-        </script>
-        <script>
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function() {
-              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-              s1.async=true;
-              s1.src='https://embed.tawk.to/658adc5007843602b805a423/1hij6p6l7';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
-            })();
           `}
         </script>
       </Helmet>
@@ -82,7 +70,7 @@ export default function Layout1() {
           <Content>
             <Outlet />
           </Content>
-
+          <ButtonContact />
         </Layout>
       </ConfigProvider>
     </div>
