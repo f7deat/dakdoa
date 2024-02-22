@@ -50,6 +50,12 @@ export default function Layout1() {
             Carousel: {
               dotHeight: 19,
               dotWidth: 19
+            },
+            Tabs: {
+              itemActiveColor: '#0B8936',
+              itemSelectedColor: '#0B8936',
+              itemHoverColor: '#0B8936',
+              inkBarColor: '#0B8936'
             }
           },
           token: {

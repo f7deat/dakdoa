@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Helmet, Link, useIntl, useParams } from 'umi';
-import Footer from '@/layouts/footer';
 import { Breadcrumb } from 'antd';
 import Sidebar from '@/layouts/sidebar';
 import Editor from '@/components/editor';
@@ -49,6 +48,9 @@ const ProductPage: React.FC = () => {
         <div className='relative'>
             <Helmet>
                 <title>{product?.name || ''} - Shinec Gia Lai</title>
+                <meta property="og:title" content={product?.name} />
+                <meta property="og:description" content={product?.description} />
+                <meta property="og:image" content={product?.thumbnail} />
             </Helmet>
             <Loader loading={loading} />
             <div style={{
@@ -69,7 +71,7 @@ const ProductPage: React.FC = () => {
                     </div>
                     <div className="md:flex gap-4">
                         <div className="md:w-3/4">
-                            <div className="text-2xl md:text-4xl text-green-700 text-center font-semibold py-4">{product?.name}</div>
+                            <h1 className="text-2xl md:text-4xl text-green-700 text-center font-semibold py-4">{product?.name}</h1>
                             <div className='mb-4 border-b border-dashed'>
                                 <div className='mb-4'>
                                     {editor?.blocks && <Editor blocks={editor.blocks} />}

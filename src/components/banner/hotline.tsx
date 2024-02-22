@@ -12,7 +12,7 @@ const Hotline: React.FC = () => {
                 <PhoneOutlined /> Hotline
             </div>
             <div className="font-bold text-3xl md:text-4xl">
-                <a href="tel:0269.6333.456">0269.6333.456</a>
+                <a href="tel:02696333456">0269.6333.456</a>
             </div>
         </div>
     )

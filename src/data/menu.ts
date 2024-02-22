@@ -2,15 +2,18 @@ const MenuData = [
     {
         key: '1',
         label: 'ABOUT',
-        url: '/catalog',
         children: [
             {
                 key: 'about-shinec',
                 label: 'Về chúng tôi'
             },
             {
-                key: 'carrer',
-                label: 'Tuyển dụng'
+                key: 'career',
+                label: 'Nghề nghiệp'
+            },
+            {
+                key: 'catalog',
+                label: 'Tài liệu'
             }
         ]
     },

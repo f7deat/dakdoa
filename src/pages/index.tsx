@@ -106,8 +106,8 @@ export default function HomePage() {
       <Navbar />
       <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} beforeChange={beforeChange}>
         <Cover active={currentSlide === 0} />
-        <News active={currentSlide === 1} />
-        <Page4 products={products} active={currentSlide === 2} />
+        <Page4 products={products} active={currentSlide === 1} />
+        <News active={currentSlide === 2} />
         <Internal active={currentSlide === 3} />
         <External active={currentSlide === 4} />
         <Different active={currentSlide === 5} />

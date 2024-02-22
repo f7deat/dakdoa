@@ -5,6 +5,7 @@ import { MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined } from '@ant-design/
 import { ConfigProvider, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
 import { MenuData } from '@/data';
+import './index.css';
 
 const { Sider } = Layout;
 
@@ -12,13 +13,19 @@ const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
     const [current, setCurrent] = useState('mail');
-    
+
     const onClick: MenuProps['onClick'] = (e) => {
-      console.log('click ', e);
-      setCurrent(e.key);
-      if (e.key === 'about-shinec') {
-        history.push(`/page/gioi-thieu`);
-      }
+        console.log('click ', e);
+        setCurrent(e.key);
+        if (e.key === 'about-shinec') {
+            history.push(`/page/gioi-thieu`);
+        }
+        if (e.key === 'catalog') {
+            history.push(`/catalog`);
+        }
+        if (e.key === 'career') {
+            history.push(`/career`);
+        }
     };
 
     return (
@@ -46,23 +53,24 @@ const Navbar: React.FC = () => {
                         <Link to={`/`}>
                             <img src={logoWhite} alt='LOGO' className='w-28 md:w-auto' />
                         </Link>
-                        <div className='flex items-center'>
-                            <Menu
-                            onClick={onClick}
-                                mode="horizontal"
-                                items={MenuData.map((menu, i) => (
-                                    {
-                                        key: menu.key,
-                                        label: (
-                                            <Link to={menu.url} className='nav-link font-medium'>
-                                                <FormattedMessage id={menu.label} />
-                                            </Link>
-                                        ),
-                                        children: menu.children
-                                    }
-                                ))}
-                            />
-                            <div className='border-r h-8 mx-8 hidden md:block pl-8'></div>
+                        <div className='flex items-center md:min-w-[800px]'>
+                            <div className='hidden md:block md:min-w-[800px]'>
+                                <Menu
+                                    onClick={onClick}
+                                    mode="horizontal"
+                                    items={MenuData.map((menu, i) => (
+                                        {
+                                            key: menu.key,
+                                            label: menu.url ? (
+                                                <Link to={menu.url} className='nav-link font-medium'>
+                                                    <FormattedMessage id={menu.label} />
+                                                </Link>
+                                            ) : (<FormattedMessage id={menu.label} />),
+                                            children: menu.children
+                                        }
+                                    ))}
+                                />
+                            </div>
                             <Languages />
                         </div>
                     </div>
@@ -80,11 +88,11 @@ const Navbar: React.FC = () => {
                         items={MenuData.map((menu, i) => (
                             {
                                 key: menu.key,
-                                label: (
-                                    <Link to={menu.url} className='nav-link'>
+                                label: menu.url ? (
+                                    <Link to={menu.url} className='nav-link font-medium'>
                                         <FormattedMessage id={menu.label} />
                                     </Link>
-                                )
+                                ) : (<FormattedMessage id={menu.label} />),
                             }
                         ))}
                     />
