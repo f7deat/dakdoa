@@ -39,7 +39,7 @@ const NewsPage: React.FC = () => {
             current: 1,
             pageSize: 8,
             type: 1,
-            language: simpleLocale(intl.locale)
+            locale: intl.locale
         }).then(response => {
             setArticles(response.data.data);
             setLoading(false);
@@ -126,7 +126,7 @@ const NewsPage: React.FC = () => {
                                                                             </div>
                                                                         )}
                                                                             description={(
-                                                                                <div className="line-clamp-3 text-gray-500 font-medium">
+                                                                                <div className="line-clamp-3 text-gray-500">
                                                                                     {article.description}
                                                                                 </div>
                                                                             )}

@@ -29,7 +29,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     }, []);
 
     const Amenities = (image: string, title: string, description: string[]) => (
-        <div className="px-4 text-white">
+        <div className="md:px-4 text-white">
             <figure className="snip1577">
                 <img src={image} className="w-full bg-cover h-[250px] 2xl:h-[317px]" alt="Amenities" loading="lazy" />
                 <figcaption>
@@ -113,7 +113,8 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                 <div className="flex items-center justify-center gap-2">
                                     {
                                         dataSource.map((item, index) => (
-                                            <button key={item.id} onClick={() => { setActiveIndex(index); swiperRef.current?.swiper.slideTo(index) }} className={`h-5 w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
+                                            <button key={item.id} onClick={() => { setActiveIndex(index); swiperRef.current?.swiper.slideTo(index) }}
+                                                className={`h-4 md:h-5 w-4 md:w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
                                         ))
                                     }
                                 </div>

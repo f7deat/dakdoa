@@ -25,6 +25,5 @@ export default defineConfig({
     antd: true,
     baseNavigator: true,
   },
-  npmClient: 'npm',
-  
+  npmClient: 'npm'
 });

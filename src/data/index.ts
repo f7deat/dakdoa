@@ -1,1 +1,0 @@
-export { default as MenuData } from './menu';

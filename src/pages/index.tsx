@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
+import PhoneButton from "@/components/button/contact";
 
 export default function HomePage() {
 
@@ -104,7 +105,7 @@ export default function HomePage() {
         <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
       <Navbar />
-      <Carousel dots dotPosition="left" ref={carouselRef} infinite={false} beforeChange={beforeChange}>
+      <Carousel dots dotPosition="left" ref={carouselRef} speed={700} infinite={false} beforeChange={beforeChange}>
         <Cover active={currentSlide === 0} />
         <Page4 products={products} active={currentSlide === 1} />
         <News active={currentSlide === 2} />
@@ -116,6 +117,7 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
+      <PhoneButton />
     </ConfigProvider>
   );
 }

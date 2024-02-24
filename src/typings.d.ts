@@ -13,5 +13,3 @@ type HomeSectionItemProps = {
     active: boolean;
     brands?: any[]
 }
-
-declare module 'animated-cursor';

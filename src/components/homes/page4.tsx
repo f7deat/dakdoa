@@ -21,10 +21,10 @@ const Page4: React.FC<SectionProps> = (props) => {
 
     const ProductItem = (product: API.Catalog) => (
         <div className="relative card-image-overlay">
-            <div className="item h-80 2xl:h-[390px]">
+            <div className="item h-96 2xl:h-[390px]">
                 <a href="#" className='text-white'>
-                    <img src={product.thumbnail} alt="IMG" className="object-cover h-80 2xl:h-[390px]" loading="lazy" />
-                    <div className="linear-gradient h-80 2xl:h-[390px]"></div>
+                    <img src={product.thumbnail} alt="IMG" className="object-cover h-96 2xl:h-[390px]" loading="lazy" />
+                    <div className="linear-gradient h-96 2xl:h-[390px]"></div>
                     <div className="item__overlay justify-start pt-24">
                         <Link to={`/product/${product.id}`}>
                             <div className="md:text-xl p-4 text-lg font-bold text-white 2xl:min-h-[90px]">{product.name}</div>
@@ -108,7 +108,7 @@ const Page4: React.FC<SectionProps> = (props) => {
                                                     swiperRef.current?.swiper.slideTo(index);
                                                     setActiveIndex(index)
                                                 }}
-                                                className={`h-5 w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
+                                                className={`w-4 h-4 md:h-5 md:w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
                                         ))
                                     }
                                 </div>

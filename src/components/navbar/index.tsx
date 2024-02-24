@@ -4,8 +4,8 @@ import Languages from './languages';
 import { MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { ConfigProvider, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
-import { MenuData } from '@/data';
 import './index.css';
+import MenuData from '@/data/menu';
 
 const { Sider } = Layout;
 
@@ -58,11 +58,11 @@ const Navbar: React.FC = () => {
                                 <Menu
                                     onClick={onClick}
                                     mode="horizontal"
-                                    items={MenuData.map((menu, i) => (
+                                    items={MenuData().map((menu, i) => (
                                         {
                                             key: menu.key,
                                             label: menu.url ? (
-                                                <Link to={menu.url} className='nav-link font-medium'>
+                                                <Link to={menu.url} className='nav-link font-semibold'>
                                                     <FormattedMessage id={menu.label} />
                                                 </Link>
                                             ) : (<FormattedMessage id={menu.label} />),
@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
                     <Menu
                         style={{ width: 256 }}
                         mode="inline"
-                        items={MenuData.map((menu, i) => (
+                        items={MenuData().map((menu, i) => (
                             {
                                 key: menu.key,
                                 label: menu.url ? (

@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     const ContactItem = (icon: any, title: string, description: string) => (
         <div className="flex gap-4">
-            <div className="h-10 md:h-10 w-10 md:w-10 rounded-full flex items-center justify-center bg-[#006E26]">
+            <div className="h-8 md:h-10 w-8 md:w-10 rounded-full flex items-center justify-center bg-[#006E26]">
                 {icon}
             </div>
             <div className="hidden md:block">
@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                 height: height
             }}>
                 <div className="md:pl-20 md:pr-40 mx-auto px-4 text-white flex flex-col justify-between h-full">
-                    <div className="flex-1 flex items-center gap-4">
+                    <div className="flex-1 flex items-center gap-2 md:gap-4">
                         <div className="flex-1">
                             <div className="flex gap-4 md:gap-10 items-center">
                                 <Link to='/' className="cursor-pointer">
@@ -42,12 +42,12 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex gap-6">
+                        <div className="flex gap-2 md:gap-6">
                             <div>
-                                <a href="#"><FacebookFilled className="text-3xl" /></a>
+                                <a href="#"><FacebookFilled className="text-xl md:text-3xl" /></a>
                             </div>
                             <div>
-                                <a href="#"><InstagramFilled className="text-3xl" /></a>
+                                <a href="#"><InstagramFilled className="text-xl md:text-3xl" /></a>
                             </div>
                         </div>
                     </div>

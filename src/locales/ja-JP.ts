@@ -1,9 +1,13 @@
 export default {
     'HOME': '家',
     'HOSPITAL': '病院',
+    'CONTACT_SUBTITLE': '最善のサポートをさせていただきますので、連絡先情報を残してください',
     'CONTACT': '接触',
     'ABOUT': 'について',
+    'ABOUT_US': '私たちについて',
     'NEWS': 'ニュース',
+    'CATALOG': 'カタログ',
+    'CAREER': 'キャリア',
     'PRODUCT': '製品とサービス',
     'TESTIMONIAL': 'お客様の声',
     'PARNERS_AND_CUSTOMERS': 'パートナーと顧客',

@@ -1,7 +1,7 @@
 import Hotline from "@/components/banner/hotline";
 import { AppstoreAddOutlined, CaretRightOutlined, SearchOutlined } from "@ant-design/icons"
 import { useEffect, useState } from "react";
-import { Link } from "umi";
+import { FormattedMessage, Link } from "umi";
 
 const Sidebar: React.FC = () => {
     const [products, setProducts] = useState<API.Catalog[]>([]);
@@ -34,7 +34,10 @@ const Sidebar: React.FC = () => {
                 </div>
             </div>
             <div className="mb-4">
-                <div className="bg-slate-100 rounded uppercase py-2 px-4 font-bold text-green-700"><AppstoreAddOutlined /> SẢN PHẨM - DỊCH VỤ</div>
+                <div className="bg-slate-100 rounded uppercase py-2 px-4 font-bold text-green-700">
+                    <AppstoreAddOutlined className="mr-2" />
+                    <FormattedMessage id='PRODUCT' />
+                </div>
                 {
                     products.map(product => (
                         <div key={product.id} className="border-b px-4 py-2">
@@ -44,10 +47,15 @@ const Sidebar: React.FC = () => {
                 }
             </div>
             <div className="mb-4">
-                <div className="bg-slate-100 rounded uppercase py-2 px-4 font-bold text-green-700"><AppstoreAddOutlined /> THÔNG TIN CHI TIẾT</div>
+                <div className="bg-slate-100 rounded uppercase py-2 px-4 font-bold text-green-700">
+                    <AppstoreAddOutlined className="mr-2" />
+                    <FormattedMessage id='ABOUT' />
+                </div>
 
                 <div className="border-b px-4 py-2">
-                    <CaretRightOutlined className="text-green-700" /> <Link to={`/catalog`} className="text-slate-800 font-medium hover:text-green-700">Tài liệu</Link>
+                    <CaretRightOutlined className="text-green-700" /> <Link to={`/catalog`} className="text-slate-800 font-medium hover:text-green-700">
+                        <FormattedMessage id='CATALOG' />
+                    </Link>
                 </div>
                 <div className="border-b px-4 py-2">
                     <CaretRightOutlined className="text-green-700" /> <Link to={`/news/8bc9db4e-3ffb-4950-8e41-08dc081eba2c`} className="text-slate-800 font-medium hover:text-green-700">Phối cảnh 3D</Link>

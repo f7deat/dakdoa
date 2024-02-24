@@ -7,25 +7,12 @@ import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import AnimatedCursor from 'animated-cursor'
 import ButtonContact from '@/components/button/contact';
 import Footer from './footer';
 
 const { Header, Content } = Layout;
 
 export default function Layout1() {
-
-  useEffect(() => {
-    const ac = AnimatedCursor({
-      color: '#fafafa',
-      outerAlpha: 0,
-      outerBorderSize: 2,
-      hasBlendMode: true,
-      outerScale: 2,
-      hideNativeCursor: false
-    })
-    ac.init()
-  }, [])
 
   return (
     <div>
@@ -60,16 +47,13 @@ export default function Layout1() {
           },
           token: {
             fontSize: 16,
-            colorLinkHover: '#0B8936',
             fontFamily: `'Montserrat', sans-serif`,
-            colorBgLayout: '#FFFFFF'
+            colorBgLayout: '#FFFFFF',
+            colorPrimary: '#15803d',
+            colorLink: '#15803d'
           }
         }}
       >
-        <div id="cursor" className='md:opacity-100 opacity-0'>
-          <div id="cursor-outer" className='z-50'></div>
-          <div id="cursor-inner" className='z-50'></div>
-        </div>
         <Layout hasSider>
           <Navbar />
           <Content>
