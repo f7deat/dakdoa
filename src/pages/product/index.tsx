@@ -25,6 +25,7 @@ const ProductListPage: React.FC = () => {
     }[]>([]);
 
     useEffect(() => {
+        if (!intl.locale) return;
         if (articles && articles.length > 1) {
             return;
         }
@@ -33,7 +34,7 @@ const ProductListPage: React.FC = () => {
             current: 1,
             pageSize: 8,
             type: 2,
-            language: simpleLocale(intl.locale)
+            locale: intl.locale
         }).then(response => {
             setArticles(response.data.data);
             setLoading(false);
@@ -41,7 +42,7 @@ const ProductListPage: React.FC = () => {
         setTimeout(() => {
             setHeight(100)
         }, 100);
-    }, []);
+    }, [intl.locale]);
 
     return (
         <div className="relative">
@@ -54,7 +55,7 @@ const ProductListPage: React.FC = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'bottom'
             }}>
-                <div className="container mx-auto py-4">
+                <div className="container mx-auto py-4 px-2 md:px-0">
                     <Loader loading={loading} />
                     <div className="mb-4">
                         <Breadcrumb items={[
@@ -71,32 +72,34 @@ const ProductListPage: React.FC = () => {
                             <div className="grid md:grid-cols-3 gap-4">
                                 {
                                     articles.map(article => (
-                                        <Card
-                                            hoverable
-                                            key={article.id}
-                                            cover={
+                                        <Link to={`/news/${article.id}`} key={article.id}>
+                                            <figure className="snip1577">
                                                 <img
                                                     alt={article.name}
                                                     src={article.thumbnail}
-                                                    className="h-52 object-cover"
+                                                    className="h-52 object-cover max-w-64 w-full"
+                                                    loading="lazy"
                                                 />
-                                            }
-                                        >
-                                            <Tooltip title={article.name}>
-                                                <Meta
-                                                    title={(
-                                                        <Link to={`/product/${article.id}`}>
-                                                            {article.name}
-                                                        </Link>
-                                                    )}
+                                                <figcaption>
+                                                    <h3>CCN NO.2 Đak Đoa</h3>
+                                                    <h4>Shinec Gia Lai</h4>
+                                                </figcaption>
+                                                <Link to={`/news/${article.id}`}></Link>
+                                            </figure>
+                                            <div className="p-2">
+                                                <Meta title={(
+                                                    <div className="text-green-700 line-clamp-2 mb-2 md:text-lg hover:text-green-800 font-semibold">
+                                                        {article.name}
+                                                    </div>
+                                                )}
                                                     description={(
-                                                        <div className="truncate">
+                                                        <div className="line-clamp-3 text-gray-500">
                                                             {article.description}
                                                         </div>
                                                     )}
                                                 />
-                                            </Tooltip>
-                                        </Card>
+                                            </div>
+                                        </Link>
                                     ))
                                 }
                             </div>

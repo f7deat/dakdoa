@@ -22,7 +22,7 @@ const Different: React.FC<HomeSectionItemProps> = (props) => {
 
     const Item = (title: string, description: string[], image: string, icon: string) => (
         <div className="text-white h-full px-4 bg-[#1C9C47] rounded-xl">
-            <div className="flex flex-col gap-4 justify-between h-full p-4 md:p-10">
+            <div className="flex flex-col gap-4 justify-between h-full p-2 md:p-10">
                 <div className="mb-4">
                     <img src={icon} alt="ICON" className="w-8 h-8 md:w-14 md:h-14" />
                 </div>

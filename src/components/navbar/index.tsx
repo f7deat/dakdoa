@@ -15,7 +15,6 @@ const Navbar: React.FC = () => {
     const [current, setCurrent] = useState('mail');
 
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
         setCurrent(e.key);
         if (e.key === 'about-shinec') {
             history.push(`/page/gioi-thieu`);
@@ -26,6 +25,7 @@ const Navbar: React.FC = () => {
         if (e.key === 'career') {
             history.push(`/career`);
         }
+        setCollaped(true);
     };
 
     return (

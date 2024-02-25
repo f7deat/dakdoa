@@ -1,9 +1,9 @@
-import { Cover, Page1, Page2, News, Page4, Internal, External, Different, Testimonial } from "@/components/homes";
+import { Cover, News, Page4, Internal, External, Different, Testimonial } from "@/components/homes";
 import Partner from "@/components/homes/partner";
 import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
 import Footer from "@/layouts/footer";
-import { apiCatalogList, queryGetComponents } from "@/services/catalog";
+import { queryGetComponents } from "@/services/catalog";
 import { Carousel, ConfigProvider } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet, getLocale } from "umi";
@@ -18,27 +18,13 @@ export default function HomePage() {
   const carouselRef = useRef<any>();
   const [height, setHeight] = useState<number>(0);
   const [currentSlide, setCurrentSile] = useState<number>(0);
-  const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [components, setComponents] = useState<any[]>([]);
   const [brands, setBrands] = useState<any[]>([]);
 
-  const getProducts = async () => {
-    if (products && products.length > 0) {
-      return;
-    }
+  useEffect(() => {
     setLoading(true)
-    apiCatalogList({
-      current: 1,
-      pageSize: 8,
-      type: 2,
-      locale: getLocale()
-    }).then(response => {
-      if (response.data.data) {
-        setProducts(response.data.data);
-      }
-      setLoading(false)
-    })
+    
     queryGetComponents('/index', getLocale()).then(response => {
       setComponents(response.data);
       const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
@@ -47,11 +33,8 @@ export default function HomePage() {
         setBrands(component1.brands);
       }
       console.log(response.data);
+      setLoading(false)
     })
-  }
-
-  useEffect(() => {
-    getProducts();
   }, []);
 
   const beforeChange = useCallback((current: number, next: number) => {
@@ -105,9 +88,10 @@ export default function HomePage() {
         <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
       <Navbar />
-      <Carousel dots dotPosition="left" ref={carouselRef} speed={700} infinite={false} beforeChange={beforeChange}>
+      <Carousel swipe={window.innerWidth > 768}
+        dots dotPosition="left" ref={carouselRef} speed={700} infinite={false} beforeChange={beforeChange}>
         <Cover active={currentSlide === 0} />
-        <Page4 products={products} active={currentSlide === 1} />
+        <Page4 active={currentSlide === 1} />
         <News active={currentSlide === 2} />
         <Internal active={currentSlide === 3} />
         <External active={currentSlide === 4} />

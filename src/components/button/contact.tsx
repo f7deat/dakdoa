@@ -3,7 +3,7 @@ import { FormattedMessage } from "umi";
 
 const PhoneButton: React.FC = () => {
     return (
-        <div className="fixed bottom-12 right-10 md:bottom-40 md:right-20 flex animate-bounce"><a href="tel:02696333456">
+        <div className="fixed bottom-8 right-8 md:bottom-20 md:right-20 flex animate-bounce z-10"><a href="tel:02696333456">
             <button className="h-12 w-12 md:h-16 md:w-16 absolute bg-white text-green-700 rounded-full -bottom-3 -left-10 border-4 border-green-700 md:text-2xl text-lg shadow">
                 <PhoneFilled />
             </button>

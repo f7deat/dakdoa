@@ -1,4 +1,4 @@
-import { FormattedMessage, Link, getLocale } from 'umi';
+import { FormattedMessage, Link, getLocale, useIntl } from 'umi';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import bg from '../../assets/news-bg.png';
@@ -14,7 +14,7 @@ const News: React.FC<NewsProps> = (props) => {
     const { active } = props;
     const [news, setNews] = useState<any[]>([]);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [controls] = useState<boolean>(window.innerWidth > 720);
+    const intl = useIntl();
 
     useEffect(() => {
         getNews();
@@ -28,7 +28,7 @@ const News: React.FC<NewsProps> = (props) => {
         current: 1,
         pageSize: window.innerWidth > 720 ? 4 : 2,
         type: 1,
-        locale: getLocale()
+        locale: intl.locale
       }).then(response => {
         if (response.data.data) {
           setNews(response.data.data);
@@ -56,7 +56,7 @@ const News: React.FC<NewsProps> = (props) => {
                                     <div className='md:w-1/2 md:h-full flex items-center flex-col justify-center'>
                                         <div>
                                             <div className='border-2 rounded-lg mb-4'>
-                                                <video autoPlay loop muted controls={controls} className="w-auto min-w-full min-h-full rounded-lg h-52 md:h-[420px] object-cover" ref={videoRef}>
+                                                <video autoPlay={window.innerWidth > 768} loop muted controls className="w-auto min-w-full min-h-full rounded-lg h-52 md:h-[420px] object-cover" ref={videoRef}>
                                                     <source
                                                         src="https://shinecgialai.com.vn/videos/dakdoa-full.mp4"
                                                         type="video/mp4"

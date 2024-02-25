@@ -1,23 +1,44 @@
 import bg from '../../assets/css/bg-feature.gif';
 import infra from '../../assets/tree-opa.svg';
-import { useRef, useState } from 'react';
-import { FormattedMessage, Link } from 'umi';
+import { useEffect, useRef, useState } from 'react';
+import { FormattedMessage, Link, useIntl } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Header1 from '../header1';
 import NextButton from '../button/next';
 import PreviousButton from '../button/previous';
+import { apiCatalogList } from '@/services/catalog';
 
 type SectionProps = {
-    products: API.Catalog[];
     active: boolean;
 }
 
 const Page4: React.FC<SectionProps> = (props) => {
 
-    const { products, active } = props;
+    const { active } = props;
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
+    const [products, setProducts] = useState<any[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const intl = useIntl();
+
+    useEffect(() => {
+        if (products && products.length > 0) {
+            return;
+        }
+        setLoading(true)
+        apiCatalogList({
+            current: 1,
+            pageSize: 8,
+            type: 2,
+            locale: intl.locale
+        }).then(response => {
+            if (response.data.data) {
+                setProducts(response.data.data);
+            }
+            setLoading(false)
+        })
+    }, []);
 
     const ProductItem = (product: API.Catalog) => (
         <div className="relative card-image-overlay">

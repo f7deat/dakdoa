@@ -31,13 +31,15 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>
-                    <div className="flex h-full items-center">
-                        <div className="container mx-auto px-10 md:px-0">
+                    <div className="h-full">
+                        <div className="container mx-auto px-10 md:px-0 h-full">
                             <Header1 active={active}>
                                 <FormattedMessage id='External_Amenities' />
                             </Header1>
                             <animated.div style={styles}>
-                                <div className="amenities max-h-[600px] md:max-h-full overflow-auto">
+                                <div className="amenities md:max-h-full overflow-auto" style={{
+                                    maxHeight: 'calc(100vh - 10rem)'
+                                }}>
                                     <div className="grid md:grid-cols-3 gap-4 2xl:gap-6] max-w-[320px] md:max-w-full">
                                         <CardImageOverlays
                                             title={intl.formatMessage({ id: 'HOSPITAL' })}

@@ -19,7 +19,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                 <div className="md:flex gap-4 text-white">
                     <div className="md:w-[387px] w-full bg-slate-200 rounded-lg mb-4">
                         <figure className="snip1577">
-                            <img src={avatar} className="object-cover w-full h-full md:max-h-[400px] 2xl:max-h-[500px] rounded" alt="AVATAR" loading="lazy" />
+                            <img src={avatar} className="object-cover w-full h-full h-64 md:h-[400px] 2xl:h-[500px] rounded" alt="AVATAR" loading="lazy" />
                             <figcaption>
                                 <h3>CCN SỐ 2 Đak Đoa</h3>
                                 <h4>Shinec Gia Lai</h4>
@@ -105,7 +105,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                                     'Thứ trưởng Bộ Lao động, Thương binh và Xã hội',
                                     'KCN Shinec Gia Lai đã dành cho chúng tôi một lô đất nằm cạnh hai cầu cảng container và cảng hàng lỏng. Hàng tháng chúng tôi phải nhập khoảng 2000 tấn chất lỏng về và việc nằm ngay tại cầu cảng giảm chi phí vận hành cho chúng tôi rất nhiều. Từ vị trí này kết nối với hệ thống đường cao tốc trong thành phố, tỏa đi khắp khu vực phía bắc cũng vô cùng thuận tiện. Thực sự chúng tôi rất tâm đắc với địa điểm đầu tư này.')}
                             </Carousel>
-                            <div className="flex justify-between md:w-2/3 mx-auto mt-8">
+                            <div className="flex justify-between w-2/3 mx-auto mt-8">
                                 <button className="h-10 w-10 md:h-12 md:w-12 2xl:h-14 2xl:w-14 bg-white opacity-50 rounded-full flex items-center justify-center hover:opacity-100 transition duration-500" onClick={() => onChange(false)}>
                                     <ArrowLeftOutlined />
                                 </button>
