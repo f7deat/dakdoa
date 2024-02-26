@@ -48,10 +48,10 @@ const Page4: React.FC<SectionProps> = (props) => {
                     <div className="linear-gradient h-96 2xl:h-[390px]"></div>
                     <div className="item__overlay justify-start pt-24">
                         <Link to={`/product/${product.id}`}>
-                            <div className="md:text-xl p-4 text-lg font-bold text-white 2xl:min-h-[90px]">{product.name}</div>
+                            <div className="md:text-xl p-4 text-lg 2xl:text-xl font-bold text-white 2xl:min-h-[50px]">{product.name}</div>
                             <div className="border-b w-16 border-2 mx-4"></div>
                         </Link>
-                        <div className='text-white px-4 py-2'>{product.description}</div>
+                        <div className='text-white px-4'>{product.description}</div>
                     </div>
                 </a>
             </div>
@@ -76,7 +76,7 @@ const Page4: React.FC<SectionProps> = (props) => {
                             <Header1 active={active}>
                                 <FormattedMessage id='PRODUCT' />
                             </Header1>
-                            <div className="text-white montserrat text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
+                            <div className="text-white text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
                                 <FormattedMessage id='PRODUCT_DES' />
                             </div>
                             <Swiper
@@ -104,7 +104,7 @@ const Page4: React.FC<SectionProps> = (props) => {
                                         slidesPerView: 4,
                                     },
                                     1536: {
-                                        slidesPerView: 5,
+                                        slidesPerView: 4,
                                     },
                                 }}
                             >

@@ -1,26 +1,29 @@
 import Hotline from "@/components/banner/hotline";
+import { apiCatalogList } from "@/services/catalog";
 import { AppstoreAddOutlined, CaretRightOutlined, SearchOutlined } from "@ant-design/icons"
 import { useEffect, useState } from "react";
-import { FormattedMessage, Link } from "umi";
+import { FormattedMessage, Link, useIntl } from "umi";
 
 const Sidebar: React.FC = () => {
     const [products, setProducts] = useState<API.Catalog[]>([]);
+    const intl = useIntl();
 
     const getProducts = async () => {
         if (products && products.length > 0) {
             return;
         }
-        const res = await fetch(`https://shinecgialai.com.vn/api/catalog/list?current=1&pageSize=10&type=2`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('wf_token')
+        apiCatalogList({
+            current: 1,
+            pageSize: 8,
+            type: 2,
+            locale: intl.locale
+        }).then(response => {
+            if (response.data.data) {
+                setProducts(response.data.data);
             }
         });
-        if (res.ok) {
-            const articles = await res.json().then(res => res.data);
-            setProducts(articles);
-        }
     }
+    
     useEffect(() => {
         getProducts();
     }, [])
