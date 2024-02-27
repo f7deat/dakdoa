@@ -2,7 +2,7 @@ import Editor from "@/components/editor";
 import Loader from "@/components/loader";
 import ShareButton from "@/components/share-button";
 import Sidebar from "@/layouts/sidebar";
-import { apiGetCatalog, apiGetCatalogByName, apiGetStructure, apiGetStructureNew } from "@/services/catalog";
+import { apiGetCatalogByName, apiGetStructure, apiGetStructureNew } from "@/services/catalog";
 import { HomeOutlined, CalendarOutlined, EyeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import moment from "moment";
@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { useParams, useIntl, Helmet, Link } from "umi";
 
 const Page: React.FC = () => {
-    const { id } = useParams();
+    const { id, parent } = useParams();
 
     const intl = useIntl();
     const [catalog, setCatalog] = useState<API.Catalog>();
@@ -20,26 +20,30 @@ const Page: React.FC = () => {
     useEffect(() => {
         if (id) {
             setLoading(true);
-            apiGetCatalogByName(id).then(response => {
+            let normalizedName = id;
+            if (parent) {
+                normalizedName = parent + '/' + id;
+            }
+            apiGetCatalogByName(normalizedName).then(response => {
                 setCatalog(response.data);
-            });
-            apiGetStructureNew(id).then(response => {
-                const data = response.data;
-                if (data && data.length > 0) {
-                    data.forEach((value: any) => {
-                        if (value.name === "Editor") {
-                            if (value.arguments) {
-                                const jsonData = JSON.parse(value.arguments)
-                                setEditor(jsonData);
-                                console.log(jsonData);
+                apiGetStructure(response.data.id).then(response => {
+                    const data = response.data;
+                    if (data && data.length > 0) {
+                        data.forEach((value: any) => {
+                            if (value.name === "Editor") {
+                                if (value.arguments) {
+                                    const jsonData = JSON.parse(value.arguments)
+                                    setEditor(jsonData);
+                                    console.log(jsonData);
+                                }
                             }
-                        }
-                    })
-                } else {
-                    setEditor([])
-                }
-                setLoading(false);
-            })
+                        })
+                    } else {
+                        setEditor([])
+                    }
+                    setLoading(false);
+                })
+            });
         }
     }, [id]);
 

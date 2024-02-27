@@ -87,11 +87,13 @@ const NewsPage: React.FC = () => {
                             }
                         ]} />
                     </div>
+                    <h1 className="text-center text-2xl md:text-4xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
+                        <FormattedMessage id='NEWS' />
+                    </h1>
                     <div className="md:flex gap-4">
                         <div className="md:w-3/4">
                             <Tabs
                                 onChange={onChange}
-                                type="card"
                                 items={[
                                     {
                                         key: 'gialai',

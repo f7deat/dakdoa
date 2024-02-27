@@ -32,7 +32,7 @@ const Sidebar: React.FC = () => {
         <div className="md:w-1/4">
             <div className="mb-4">
                 <div className="flex rounded-full bg-slate-100 h-10 w-full">
-                    <input type="text" className="h-full w-full bg-slate-100 rounded-full px-4" placeholder="Nhập từ khóa..." />
+                    <input type="text" className="h-full w-full bg-slate-100 rounded-full px-4" placeholder={intl.formatMessage({ id: 'SEARCH_PLACEHOLDER'})} />
                     <SearchOutlined className="text-xl text-slate-600 mr-3" />
                 </div>
             </div>

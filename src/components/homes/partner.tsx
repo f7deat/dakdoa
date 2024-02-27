@@ -5,6 +5,7 @@ import support from '../../assets/icons/support.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { animated, useSpring } from '@react-spring/web';
+import Brands from '../brands';
 
 const Partner: React.FC<HomeSectionItemProps> = (props) => {
 
@@ -25,14 +26,6 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
         y: props.active ? 0 : -400,
         opacity: props.active ? 1 : 0
     })
-
-    const CarouselItem = (logo: string) => (
-        <div className='shadow-lg'>
-            <div className='h-28 md:h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
-                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500 w-40 object-contain' />
-            </div>
-        </div>
-    )
 
     const TextItem = (title: string, description: string, icon: string) => (
         <div className='md:border-l border-[#f9f9f947] md:px-8 mb-4'>
@@ -62,48 +55,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                 </div>
                             </animated.div>
 
-                            <div>
-                                {
-                                    brands && (
-                                        <Swiper
-                                            slidesPerView={2}
-                                            autoplay={{
-                                                disableOnInteraction: false,
-                                                pauseOnMouseEnter: true
-                                            }}
-                                            breakpoints={{
-                                                768: {
-                                                    spaceBetween: 20,
-                                                    slidesPerView: 2
-                                                },
-                                                1024: {
-                                                    spaceBetween: 30,
-                                                    slidesPerView: 2
-                                                },
-                                                1280: {
-                                                    spaceBetween: 40,
-                                                    slidesPerView: 4
-                                                },
-                                                1536: {
-                                                    spaceBetween: 60,
-                                                    slidesPerView: 4
-                                                },
-                                            }}
-                                            loop
-                                            spaceBetween={10}
-                                            modules={[Autoplay, Navigation]}
-                                        >
-                                            {
-                                                brands.map(brand => (
-                                                    <SwiperSlide key={brand.id}>
-                                                        {CarouselItem(brand.logo)}
-                                                    </SwiperSlide>
-                                                ))
-                                            }
-                                        </Swiper>
-                                    )
-                                }
-                            </div>
+                            <Brands brands={brands} />
 
                             <div className='md:py-5 py-2 mb-2 md:mb-10'></div>
 

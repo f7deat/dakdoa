@@ -21,6 +21,15 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
         if (intl.locale === 'en-US') {
             parentId = '36c28881-24bb-40b2-3d37-08dc176ae07c';
         }
+        if (intl.locale === 'zh-CN') {
+            parentId = '3428200a-edfd-4d16-0387-08dc376f0897';
+        }
+        if (intl.locale === 'ko-KR') {
+            parentId = 'c45c0761-8553-46e3-f2e2-08dc376fd91d';
+        }
+        if (intl.locale === 'ja-JP') {
+            parentId = '7a420f08-13bc-4db4-5019-08dc377012fa';
+        }
         apiCatalogList({
             parentId: parentId
         }).then(response => {

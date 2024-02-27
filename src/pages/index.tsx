@@ -6,7 +6,7 @@ import Footer from "@/layouts/footer";
 import { queryGetComponents } from "@/services/catalog";
 import { Carousel, ConfigProvider } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Helmet, getLocale } from "umi";
+import { Helmet, getLocale, useIntl } from "umi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -21,11 +21,12 @@ export default function HomePage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [components, setComponents] = useState<any[]>([]);
   const [brands, setBrands] = useState<any[]>([]);
+  const intl = useIntl();
 
   useEffect(() => {
     setLoading(true)
     
-    queryGetComponents('/index', getLocale()).then(response => {
+    queryGetComponents('/index', intl.locale).then(response => {
       setComponents(response.data);
       const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
       if (sponsor) {

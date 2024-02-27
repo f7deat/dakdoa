@@ -67,12 +67,15 @@ const ProductListPage: React.FC = () => {
                             }
                         ]} />
                     </div>
+                    <h1 className="text-center text-2xl md:text-4xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
+                        <FormattedMessage id='PRODUCT' />
+                    </h1>
                     <div className="md:flex gap-4 mb-4">
                         <div className="md:w-3/4">
                             <div className="grid md:grid-cols-3 gap-4">
                                 {
                                     articles.map(article => (
-                                        <Link to={`/news/${article.id}`} key={article.id}>
+                                        <Link to={`/news/${article.id}`} key={article.id} className="shadow rounded bg-white">
                                             <figure className="snip1577">
                                                 <img
                                                     alt={article.name}

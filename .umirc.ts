@@ -11,7 +11,8 @@ export default defineConfig({
     { path: "/vr360", component: "vr360", layout: false },
     { path: "/contact", component: "contact" },
     { path: "/page/:id", component: "page" },
-    { path: "/career", component: "career" },
+    { path: "/page/:parent/:id", component: "page" },
+    { path: "/career", component: "career" }
   ],
   history: {
     type: 'hash'

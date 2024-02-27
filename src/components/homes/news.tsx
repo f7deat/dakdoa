@@ -73,12 +73,12 @@ const News: React.FC<NewsProps> = (props) => {
                                                     <div className='flex gap-2 flex-col relative border-2 border-white rounded-lg relative' key={x.id}>
                                                         <figure className="snip1577">
                                                             <img src={x.thumbnail} className="w-full h-32 md:h-48 mb-2 object-cover rounded-lg" alt="Amenities" loading="lazy" />
-                                                            <Link to={`/news/${x.id}`}></Link>
+                                                            <Link to={`/page/${x.normalizedName}`}></Link>
                                                         </figure>
                                                         <div className='overlay rounded'>
                                                             <div className='pt-10'>
                                                                 <Link
-                                                                    to={`/news/${x.id}`}
+                                                                    to={`/page/${x.normalizedName}`}
                                                                     className='line-clamp-2 px-2 md:text-lg font-semibold text-white hover:text-white hover:underline absolute 
                                                                     bottom-5 md:bottom-10'>
                                                                     {x.name}
@@ -93,7 +93,7 @@ const News: React.FC<NewsProps> = (props) => {
                                 </div>
                                 <div className='flex justify-center'>
                                     <Link to='/news'
-                                        className='px-8 py-2 md:py-3 rounded-full text-green-600 hover:text-green-700 bg-white md:text-lg font-semibold'
+                                        className='px-4 md:px-8 py-2 md:py-3 rounded-full text-green-600 hover:text-green-700 bg-white md:text-lg font-semibold'
                                     >
                                         <FormattedMessage id='VIEWMORE' />
                                         <ArrowRightOutlined className='ml-3' />

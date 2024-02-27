@@ -1,11 +1,14 @@
-import { apiCatalogList } from "@/services/catalog";
+import Brands from "@/components/brands";
+import { apiCatalogList, queryGetComponents } from "@/services/catalog";
 import { PhoneOutlined } from "@ant-design/icons";
 import { Button, Table, TableColumnType, Tabs, Tooltip } from "antd";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { FormattedMessage, Helmet } from "umi";
+import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 
 const CareerPage: React.FC = () => {
+    const [brands, setBrands] = useState<any[]>([]);
+    const intl = useIntl();
 
     const columns: TableColumnType<any>[] = [
         {
@@ -15,11 +18,20 @@ const CareerPage: React.FC = () => {
         },
         {
             title: 'Vị trí tuyển dụng',
-            dataIndex: 'name'
+            dataIndex: 'name',
+            render: (value, record) => (
+                <Link to={`/page/${record.normalizedName}`} className="font-medium">{value}</Link>
+            )
         },
         {
             title: 'Ngày đăng tải',
-            render: (value, record) => moment(record.createdDate).format('DD/MM/YYYY hh:mm:ss')
+            render: (value, record) => moment(record.modifiedDate).format('DD/MM/YYYY hh:mm:ss'),
+            width: 200
+        },
+        {
+            title: 'Hạn ứng tuyển',
+            render: (value, record) => moment(record.modifiedDate).add(1, 'month').format('DD/MM/YYYY hh:mm:ss'),
+            width: 200
         },
         {
             title: 'Tác vụ',
@@ -53,6 +65,15 @@ const CareerPage: React.FC = () => {
         }).then(response => {
             setJobNonShinecs(response.data.data);
         });
+
+        queryGetComponents('/index', intl.locale).then(response => {
+            const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
+            if (sponsor) {
+                const component1 = JSON.parse(sponsor.arguments)
+                setBrands(component1.brands);
+            }
+            setLoading(false)
+        })
     }, []);
 
     return (
@@ -68,19 +89,24 @@ const CareerPage: React.FC = () => {
                     items={[
                         {
                             key: 'shinec',
-                            label: 'Shinec Gia Lai',
+                            label: 'Shinec Gia Lai tuyển dụng',
                             children: <Table columns={columns} dataSource={jobShinecs} loading={loading} />
                         },
                         {
                             key: 'cluster',
-                            label: 'Nhà máy, xí nghiệp tại Shinec Gia Lai',
+                            label: 'Nhà đầu tư tuyển dụng',
                             children: <Table columns={columns} dataSource={jobNonShinecs} />
                         }
                     ]}
                 >
 
                 </Tabs>
-            </main>
+
+                <h1 className="text-center text-2xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
+                    Nhà đầu tư tuyển dụng
+                </h1>
+                <Brands brands={brands} />
+            </main >
         </>
     )
 }
