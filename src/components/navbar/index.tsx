@@ -1,7 +1,7 @@
 import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history } from 'umi';
 import Languages from './languages';
-import { MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { ConfigProvider, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
 import './index.css';
@@ -12,10 +12,9 @@ const { Sider } = Layout;
 const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
-    const [current, setCurrent] = useState('mail');
 
     const onClick: MenuProps['onClick'] = (e) => {
-        setCurrent(e.key);
+        setCollaped(true);
         if (e.key === 'about-shinec') {
             history.push(`/page/gioi-thieu`);
         }
@@ -25,7 +24,6 @@ const Navbar: React.FC = () => {
         if (e.key === 'career') {
             history.push(`/career`);
         }
-        setCollaped(true);
     };
 
     return (
@@ -66,7 +64,8 @@ const Navbar: React.FC = () => {
                                                     <FormattedMessage id={menu.label} />
                                                 </Link>
                                             ) : (<FormattedMessage id={menu.label} />),
-                                            children: menu.children
+                                            children: menu.children,
+                                            icon: menu.icon
                                         }
                                     ))}
                                 />
@@ -85,6 +84,7 @@ const Navbar: React.FC = () => {
                     <Menu
                         style={{ width: 256 }}
                         mode="inline"
+                        onClick={onClick}
                         items={MenuData().map((menu, i) => (
                             {
                                 key: menu.key,

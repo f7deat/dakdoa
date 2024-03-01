@@ -6,6 +6,7 @@ declare namespace API {
         thumbnail: string;
         modifiedDate: string;
         viewCount: number;
+        normalizedName: string;
     }
 }
 

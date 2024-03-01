@@ -75,6 +75,7 @@ export default {
     'SUPPORT_OUT2': 'Hỗ trợ thị trường xuất khẩu đầu ra, thủ tục pháp lý, logistics, hậu cần và tài trợ tín dụng xuất khẩu trong giao dịch quốc tế.',
     'SUPPORT_OUT3': 'Hỗ trợ nhà đầu tư hoàn thành các chứng chỉ, thủ tục hành chính, tín chỉ xanh.',
     'LATEST_NEWS': 'Tin tức mới nhất',
-    'SEARCH_PLACEHOLDER': 'Nhập từ khóa...'
+    'SEARCH_PLACEHOLDER': 'Nhập từ khóa...',
+    'SEARCH': 'Tìm kiếm'
   };
   

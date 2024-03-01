@@ -75,6 +75,7 @@ export default {
     'SUPPORT_OUT2': 'Support output export markets and export credit financing for investors in industrial parks and industrial clusters invested by Shinec. Support legal procedures, logistics and logistics in international business transactions.',
     'SUPPORT_OUT3': 'Support investors to complete green certificates and credits.',
     'LATEST_NEWS': 'Latest news',
-    'SEARCH_PLACEHOLDER': 'Typing keyword...'
+    'SEARCH_PLACEHOLDER': 'Typing keyword...',
+    'SEARCH': 'Search'
   };
   

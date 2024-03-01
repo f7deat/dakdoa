@@ -1,3 +1,4 @@
+import { AppstoreAddOutlined, GlobalOutlined, HomeOutlined, PhoneOutlined, SearchOutlined } from "@ant-design/icons"
 import { FormattedMessage } from "umi"
 
 const MenuData = () => {
@@ -18,22 +19,32 @@ const MenuData = () => {
                     key: 'catalog',
                     label: <FormattedMessage id='CATALOG' />
                 }
-            ]
+            ],
+            icon: <HomeOutlined className="text-slate-700" />
         },
         {
             key: '2',
             label: 'PRODUCT',
-            url: '/product'
+            url: '/product',
+            icon: <AppstoreAddOutlined className="text-slate-700" />
         },
         {
             key: '3',
             label: 'NEWS',
-            url: '/news'
+            url: '/news',
+            icon: <GlobalOutlined className="text-slate-700" />
         },
         {
             key: '4',
             label: 'CONTACT',
-            url: '/contact'
+            url: '/contact',
+            icon: <PhoneOutlined className="text-slate-700" />
+        },
+        {
+            key: 'search',
+            label: 'SEARCH',
+            url: '/search',
+            icon: <SearchOutlined className="text-slate-700" />
         }
     ]
 }

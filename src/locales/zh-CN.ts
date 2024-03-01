@@ -75,6 +75,7 @@ export default {
     'SUPPORT_OUT2': '支持Shinec投资的工业园区和工业园区投资者的产出出口市场和出口信贷融资。 支持国际商业交易中的法律程序、物流和物流。',
     'SUPPORT_OUT3': '支持投资者完成绿色证书和信贷。',
     'LATEST_NEWS': '最新消息',
-    'SEARCH_PLACEHOLDER': '输入关键字...'
+    'SEARCH_PLACEHOLDER': '输入关键字...',
+    'SEARCH': '搜索'
   };
   

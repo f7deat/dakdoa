@@ -12,7 +12,8 @@ export default defineConfig({
     { path: "/contact", component: "contact" },
     { path: "/page/:id", component: "page" },
     { path: "/page/:parent/:id", component: "page" },
-    { path: "/career", component: "career" }
+    { path: "/career", component: "career" },
+    { path: "/search", component: "search" }
   ],
   history: {
     type: 'hash'
