@@ -17,12 +17,7 @@ const ProductListPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     const intl = useIntl();
-    const [articles, setArticles] = useState<{
-        id: string;
-        name: string;
-        thumbnail: string;
-        description: string;
-    }[]>([]);
+    const [articles, setArticles] = useState<API.Catalog[]>([]);
 
     useEffect(() => {
         if (!intl.locale) return;
@@ -75,7 +70,7 @@ const ProductListPage: React.FC = () => {
                             <div className="grid md:grid-cols-3 gap-4">
                                 {
                                     articles.map(article => (
-                                        <Link to={`/news/${article.id}`} key={article.id} className="shadow rounded bg-white">
+                                        <Link to={`/page/${article.normalizedName}`} key={article.id} className="shadow rounded bg-white">
                                             <figure className="snip1577">
                                                 <img
                                                     alt={article.name}
@@ -87,7 +82,7 @@ const ProductListPage: React.FC = () => {
                                                     <h3>CCN NO.2 Đak Đoa</h3>
                                                     <h4>Shinec Gia Lai</h4>
                                                 </figcaption>
-                                                <Link to={`/news/${article.id}`}></Link>
+                                                <Link to={`/page/${article.normalizedName}`}></Link>
                                             </figure>
                                             <div className="p-2">
                                                 <Meta title={(

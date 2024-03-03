@@ -1,10 +1,11 @@
 import Editor from "@/components/editor";
+import ContactForm from "@/components/forms/contact";
 import Loader from "@/components/loader";
 import ShareButton from "@/components/share-button";
 import Sidebar from "@/layouts/sidebar";
 import { apiGetCatalogByName, apiGetStructure, apiGetStructureNew } from "@/services/catalog";
 import { HomeOutlined, CalendarOutlined, EyeOutlined } from "@ant-design/icons";
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Divider } from "antd";
 import moment from "moment";
 import { useState, useEffect } from "react";
 import { useParams, useIntl, Helmet, Link } from "umi";
@@ -77,12 +78,13 @@ const Page: React.FC = () => {
                                 <div className='mb-4'>
                                     {editor?.blocks && <Editor blocks={editor.blocks} />}
                                 </div>
+                                <Divider dashed />
+                                <ContactForm />
                                 <div className='text-slate-500 italic flex justify-between'>
                                     <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
                                     <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
                                 </div>
                             </div>
-                            <ShareButton />
                         </div>
                         <Sidebar />
                     </div>

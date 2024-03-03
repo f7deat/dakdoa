@@ -76,6 +76,7 @@ export default {
     'SUPPORT_OUT3': '投資家がグリーン証明書とクレジットを完了できるようにサポートします。',
     'LATEST_NEWS': '最新ニュース',
     'SEARCH_PLACEHOLDER': 'キーワードを入力します...',
-    'SEARCH': '検索'
+    'SEARCH': '検索',
+    'EVENT_AND_ACTIVITY': 'イベントとアクティビティ'
   };
   

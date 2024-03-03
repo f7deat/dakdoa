@@ -6,7 +6,7 @@ export default {
     'ABOUT': 'Giới thiệu',
     'ABOUT_US': 'Về chúng tôi',
     'CATALOG': 'Tài liệu',
-    'CAREER': 'Nghề nghiệp',
+    'CAREER': 'Tuyển dụng',
     'PRODUCT': 'Sản phẩm & dịch vụ',
     'NEWS': 'Tin tức',
     'TESTIMONIAL': 'Khách hàng nói gì về chúng tôi',
@@ -76,6 +76,7 @@ export default {
     'SUPPORT_OUT3': 'Hỗ trợ nhà đầu tư hoàn thành các chứng chỉ, thủ tục hành chính, tín chỉ xanh.',
     'LATEST_NEWS': 'Tin tức mới nhất',
     'SEARCH_PLACEHOLDER': 'Nhập từ khóa...',
-    'SEARCH': 'Tìm kiếm'
+    'SEARCH': 'Tìm kiếm',
+    'EVENT_AND_ACTIVITY': 'Sự kiện & Hoạt động'
   };
   

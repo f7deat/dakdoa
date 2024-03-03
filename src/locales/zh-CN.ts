@@ -76,6 +76,7 @@ export default {
     'SUPPORT_OUT3': '支持投资者完成绿色证书和信贷。',
     'LATEST_NEWS': '最新消息',
     'SEARCH_PLACEHOLDER': '输入关键字...',
-    'SEARCH': '搜索'
+    'SEARCH': '搜索',
+    'EVENT_AND_ACTIVITY': '事件与活动'
   };
   

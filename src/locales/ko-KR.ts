@@ -76,6 +76,7 @@ export default {
     'SUPPORT_OUT3': '투자자가 친환경 인증서 및 크레딧을 완료할 수 있도록 지원합니다.',
     'LATEST_NEWS': '최근 뉴스',
     'SEARCH_PLACEHOLDER': '키워드를 입력하세요...',
-    'SEARCH': '찾다'
+    'SEARCH': '찾다',
+    'EVENT_AND_ACTIVITY': '이벤트 및 활동'
   };
   

@@ -17,13 +17,9 @@ const Navbar: React.FC = () => {
         setCollaped(true);
         if (e.key === 'about-shinec') {
             history.push(`/page/gioi-thieu`);
+            return;
         }
-        if (e.key === 'catalog') {
-            history.push(`/catalog`);
-        }
-        if (e.key === 'career') {
-            history.push(`/career`);
-        }
+        history.push(e.key);
     };
 
     return (

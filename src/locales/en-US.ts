@@ -76,6 +76,7 @@ export default {
     'SUPPORT_OUT3': 'Support investors to complete green certificates and credits.',
     'LATEST_NEWS': 'Latest news',
     'SEARCH_PLACEHOLDER': 'Typing keyword...',
-    'SEARCH': 'Search'
+    'SEARCH': 'Search',
+    'EVENT_AND_ACTIVITY': 'Event & Activity'
   };
   

@@ -79,11 +79,11 @@ const CareerPage: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Nghề nghiệp</title>
+                <title>Tuyển dụng</title>
             </Helmet>
             <main className="container mx-auto py-4 md:py-8 2xl:py-10">
                 <h1 className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
-                    Nghề nghiệp
+                    <FormattedMessage id='CAREER' />
                 </h1>
                 <Tabs
                     items={[
