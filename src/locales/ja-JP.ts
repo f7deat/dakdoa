@@ -77,6 +77,7 @@ export default {
     'LATEST_NEWS': '最新ニュース',
     'SEARCH_PLACEHOLDER': 'キーワードを入力します...',
     'SEARCH': '検索',
-    'EVENT_AND_ACTIVITY': 'イベントとアクティビティ'
+    'EVENT_AND_ACTIVITY': 'イベントとアクティビティ',
+    'amenities': '投資家のメリット'
   };
   

@@ -77,6 +77,7 @@ export default {
     'LATEST_NEWS': 'Latest news',
     'SEARCH_PLACEHOLDER': 'Typing keyword...',
     'SEARCH': 'Search',
-    'EVENT_AND_ACTIVITY': 'Event & Activity'
+    'EVENT_AND_ACTIVITY': 'Event & Activity',
+    'amenities': 'Investor benefits'
   };
   

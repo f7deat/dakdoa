@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Helmet, Link, useIntl, useParams } from 'umi';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Divider } from 'antd';
 import Sidebar from '@/layouts/sidebar';
 import Editor from '@/components/editor';
 import Loader from '@/components/loader';
@@ -8,6 +8,7 @@ import { CalendarOutlined, EyeOutlined, HomeOutlined } from '@ant-design/icons';
 import ShareButton from '@/components/share-button';
 import moment from 'moment';
 import { apiGetCatalog, apiGetStructure } from '@/services/catalog';
+import ContactForm from '@/components/forms/contact';
 
 const ProductPage: React.FC = () => {
 
@@ -76,12 +77,13 @@ const ProductPage: React.FC = () => {
                                 <div className='mb-4'>
                                     {editor?.blocks && <Editor blocks={editor.blocks} />}
                                 </div>
+                            <Divider dashed />
+                            <ContactForm />
                                 <div className='text-slate-500 italic flex justify-between'>
                                     <div><CalendarOutlined /> Cập nhật lúc: {moment(product?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
                                     <div><EyeOutlined /> Lựợt xem: {(product?.viewCount || 0).toLocaleString()}</div>
                                 </div>
                             </div>
-                            <ShareButton />
                         </div>
                         <Sidebar />
                     </div>

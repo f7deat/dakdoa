@@ -77,6 +77,7 @@ export default {
     'LATEST_NEWS': '최근 뉴스',
     'SEARCH_PLACEHOLDER': '키워드를 입력하세요...',
     'SEARCH': '찾다',
-    'EVENT_AND_ACTIVITY': '이벤트 및 활동'
+    'EVENT_AND_ACTIVITY': '이벤트 및 활동',
+    'amenities': '투자자 혜택'
   };
   

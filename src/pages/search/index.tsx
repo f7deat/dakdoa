@@ -16,7 +16,7 @@ const SearchPage: React.FC = () => {
                             title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
                         },
                         {
-                            title: intl.formatMessage({ id: 'NEWS' })
+                            title: intl.formatMessage({ id: 'SEARCH' })
                         }
                     ]} />
                 </div>

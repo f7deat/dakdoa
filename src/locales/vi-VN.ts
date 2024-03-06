@@ -27,7 +27,7 @@ export default {
     'SUPPORT': 'Hỗ trợ',
     'SUPPORT_QUOTE': 'Sự thành công của khách hàng cũng là sự thành công của Shinec Gia Lai',
     'PARTNER_QUOTE': 'Với mỗi đối tác - khách hàng, chúng tôi trao gửi những giá trị bền vững, tín nhiệm và đồng hành',
-    'INTERNAL_AMENITIES': 'TIỆN ÍCH NỘI KHU',
+    'INTERNAL_AMENITIES': 'Tiện ích nội khu',
     'External_Amenities': 'Tiện ích ngoại khu',
     'ServicesofLogistics': 'Dịch vụ logistics',
     'THINKING_DIFFERENT': 'Khác biệt và lợi thế',
@@ -77,6 +77,7 @@ export default {
     'LATEST_NEWS': 'Tin tức mới nhất',
     'SEARCH_PLACEHOLDER': 'Nhập từ khóa...',
     'SEARCH': 'Tìm kiếm',
-    'EVENT_AND_ACTIVITY': 'Sự kiện & Hoạt động'
+    'EVENT_AND_ACTIVITY': 'Sự kiện & Hoạt động',
+    'amenities': 'Lợi ích của nhà đầu tư'
   };
   

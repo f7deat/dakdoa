@@ -19,6 +19,22 @@ const Navbar: React.FC = () => {
             history.push(`/page/gioi-thieu`);
             return;
         }
+        if (e.key === 'thue-dat-cong-nghiep') {
+            history.push(`/product/1f025462-0ad8-4ffb-31df-08dc044e3bfc`);
+            return;
+        }
+        if (e.key === 'thue-xuong-kho-xay-san') {
+            history.push(`/product/65773527-8ba5-485e-f318-08dc044f3d01`);
+            return;
+        }
+        if (e.key === 'cho-thue-dat-thuong-mai') {
+            history.push(`/product/ae3486a8-194d-4a37-d5d6-08dc0451c999`);
+            return;
+        }
+        if (e.key === 'cho-thue-van-phong') {
+            history.push(`/product/5dd86918-9719-4ca7-0359-08dc045188ed`);
+            return;
+        }
         history.push(e.key);
     };
 
@@ -47,23 +63,40 @@ const Navbar: React.FC = () => {
                         <Link to={`/`}>
                             <img src={logoWhite} alt='LOGO' className='w-28 md:w-auto' />
                         </Link>
-                        <div className='flex items-center md:min-w-[800px]'>
-                            <div className='hidden md:block md:min-w-[800px]'>
+                        <div className='flex items-center md:min-w-[1000px]'>
+                            <div className='hidden md:block md:min-w-[1000px]'>
                                 <Menu
                                     onClick={onClick}
                                     mode="horizontal"
-                                    items={MenuData().map((menu, i) => (
-                                        {
-                                            key: menu.key,
-                                            label: menu.url ? (
-                                                <Link to={menu.url} className='nav-link font-semibold'>
-                                                    <FormattedMessage id={menu.label} />
-                                                </Link>
-                                            ) : (<FormattedMessage id={menu.label} />),
-                                            children: menu.children,
-                                            icon: menu.icon
+                                    items={MenuData().map((menu, i) => {
+                                        if (menu.key === '/vr360') {
+                                            return (
+                                                {
+                                                    key: menu.key,
+                                                    label: (
+                                                        <Link to="/vr360">
+                                                            <div className="loader text-red-600 font-semibold">
+                                                                <FormattedMessage id="VR360" />
+                                                                <div className="tile"></div>
+                                                            </div>
+                                                        </Link>
+                                                    )
+                                                }
+                                            )
                                         }
-                                    ))}
+                                        return (
+                                            {
+                                                key: menu.key,
+                                                label: menu.url ? (
+                                                    <Link to={menu.url} className='nav-link font-semibold'>
+                                                        <FormattedMessage id={menu.label} />
+                                                    </Link>
+                                                ) : (<FormattedMessage id={menu.label} />),
+                                                children: menu.children,
+                                                icon: menu.icon
+                                            }
+                                        )
+                                    })}
                                 />
                             </div>
                             <Languages />
