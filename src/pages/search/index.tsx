@@ -9,7 +9,7 @@ const SearchPage: React.FC = () => {
             <Helmet>
                 <title>Tìm kiếm</title>
             </Helmet>
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 md:px-0">
                 <div className="mt-6">
                     <Breadcrumb items={[
                         {
@@ -20,17 +20,17 @@ const SearchPage: React.FC = () => {
                         }
                     ]} />
                 </div>
-                <main className="h-96 2xl:h-[700px] flex items-center justify-center">
+                <main className="h-[600px] md:h-96 2xl:h-[700px] flex items-center justify-center">
                     <div className="2xl:w-1/2">
                         <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
                             <div className="md:flex">
-                                <div className="w-full p-3">
+                                <div className="w-full p-2 md:p-3">
                                     <div className="relative border rounded-full">
                                         <i className="absolute fa fa-search text-gray-400 top-5 left-4" />
                                         <input
                                             placeholder={intl.formatMessage({ id: 'SEARCH_PLACEHOLDER' })}
-                                            type="text" className="bg-white h-14 w-full px-12 focus:outline-none hover:cursor-pointer rounded-full" />
-                                        <span className="absolute top-5 right-5 border-l pl-4">
+                                            type="text" className="bg-white h-12 md:h-14 w-full px-12 focus:outline-none hover:cursor-pointer rounded-full" />
+                                        <span className="absolute top-4 md:top-5 right-5 border-l pl-4">
                                             <SearchOutlined className="text-slate-700 text-lg" />
                                         </span>
                                     </div>

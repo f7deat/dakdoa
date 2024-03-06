@@ -4,7 +4,7 @@ import { FormattedMessage } from "umi"
 const MenuData = () => {
     return [
         {
-            key: '1',
+            key: '/about-shinec',
             label: 'ABOUT',
             children: [
                 {
@@ -95,9 +95,8 @@ const MenuData = () => {
         },
         {
             key: '/vr360',
-            label: 'SEARCH',
-            url: '/search',
-            icon: <SearchOutlined className="text-slate-700" />
+            label: 'VR 360',
+            url: '/vr360'
         }
     ]
 }

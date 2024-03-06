@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCollaped(true);
-        if (e.key === 'about-shinec') {
+        if (e.key === '/about-shinec') {
             history.push(`/page/gioi-thieu`);
             return;
         }
@@ -104,21 +104,21 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
                 <Sider
+                    width={244}
                     theme="light"
-                    className='border-t'
+                    className='border-t bg-white'
                     collapsedWidth={0}
                     collapsed={collapsed}
                     style={{ overflow: 'auto', height: '100vh', position: 'fixed', right: 0, top: 60, bottom: 0 }}
                 >
                     <Menu
-                        style={{ width: 256 }}
                         mode="inline"
                         onClick={onClick}
                         items={MenuData().map((menu, i) => (
                             {
                                 key: menu.key,
                                 label: menu.url ? (
-                                    <Link to={menu.url} className='nav-link font-medium'>
+                                    <Link to={menu.url} className='font-medium'>
                                         <FormattedMessage id={menu.label} />
                                     </Link>
                                 ) : (<FormattedMessage id={menu.label} />),
