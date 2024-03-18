@@ -86,7 +86,7 @@ const MenuData = () => {
             ]
         },
         {
-            key: '/event-activity',
+            key: '/news',
             label: 'Sự kiện và hoạt động',
             url: '/news',
             icon: <NotificationOutlined className="text-slate-700" />

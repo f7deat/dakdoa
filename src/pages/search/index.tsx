@@ -9,7 +9,7 @@ const SearchPage: React.FC = () => {
             <Helmet>
                 <title>Tìm kiếm</title>
             </Helmet>
-            <div className="container mx-auto px-4 md:px-0">
+            <div className="container mx-auto px-4 md:px-0 mt-10">
                 <div className="mt-6">
                     <Breadcrumb items={[
                         {

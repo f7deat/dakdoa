@@ -141,9 +141,11 @@ const Navbar: React.FC = () => {
                                 }
                             </button>
                         </div>
+                        <div className='md:w-48 block'>
                         <Link to={`/`}>
-                            <img src={logoWhite} alt='LOGO' className='w-28 md:w-auto' />
+                            <img src={logoWhite} alt='LOGO' className='w-28 md:w-40' />
                         </Link>
+                        </div>
                         <div className='flex-1 items-center md:min-w-[1000px]'>
                             <div className='hidden md:block text-right md:min-w-[1000px]'>
                                 <Menu
