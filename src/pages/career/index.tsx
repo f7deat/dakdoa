@@ -82,7 +82,7 @@ const CareerPage: React.FC = () => {
                 <title>Tuyển dụng</title>
             </Helmet>
             <main className="container mx-auto py-4 md:py-8 2xl:py-10">
-                <h1 className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
+                <h1 className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4 md:pt-8">
                     <FormattedMessage id='CAREER' />
                 </h1>
                 <Tabs

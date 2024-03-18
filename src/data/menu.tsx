@@ -1,4 +1,4 @@
-import { AlertOutlined, AppstoreAddOutlined, GlobalOutlined, HomeOutlined, PhoneOutlined, SearchOutlined } from "@ant-design/icons"
+import { AlertOutlined, AppstoreAddOutlined, GlobalOutlined, HomeOutlined, NotificationOutlined, PhoneOutlined, SearchOutlined } from "@ant-design/icons"
 import { FormattedMessage } from "umi"
 
 const MenuData = () => {
@@ -6,51 +6,47 @@ const MenuData = () => {
         {
             key: '/about-shinec',
             label: 'ABOUT',
-            children: [
-                {
-                    key: 'about-shinec',
-                    label: <FormattedMessage id='ABOUT_US' />
-                },
-                {
-                    key: '/career',
-                    label: <FormattedMessage id='CAREER' />
-                },
-                {
-                    key: '/catalog',
-                    label: <FormattedMessage id='CATALOG' />
-                },
-                {
-                    key: '/news',
-                    label: <FormattedMessage id='EVENT_AND_ACTIVITY' />
-                }
-            ],
             icon: <HomeOutlined className="text-slate-700" />
         },
         {
             key: '/product',
-            label: 'PRODUCT',
+            label: 'Về CCN số 2 Đak Đoa',
             url: '/product',
             icon: <AppstoreAddOutlined className="text-slate-700" />,
             children: [
                 {
                     key: 'tong-quan',
-                    label: 'Tổng quan'
+                    label: 'Tổng quan về CCN'
                 },
                 {
                     key: 'thue-dat-cong-nghiep',
-                    label: 'Thuê đất công nghiệp'
+                    label: 'Cho thuê nhà xưởng xây sẵn',
+                    children: [
+                        {
+                            key: 'Nhà xưởng xây sẵn ',
+                            label: 'Nhà xưởng xây sẵn '
+                        },
+                        {
+                            key: 'nhà xưởng xây theo yêu cầu',
+                            label: 'nhà xưởng xây theo yêu cầu'
+                        }
+                    ]
                 },
                 {
-                    key: 'thue-xuong-kho-xay-san',
-                    label: 'Thuê xưởng - Kho xây sẵn'
+                    key: 'Cho thuê đất công nghiệp',
+                    label: 'Cho thuê đất công nghiệp'
                 },
                 {
                     key: 'cho-thue-dat-thuong-mai',
-                    label: 'Cho thuê đất thương mại'
+                    label: 'Cho thuê đất thương mại và dịch vụ'
                 },
                 {
                     key: 'cho-thue-van-phong',
                     label: 'Cho thuê văn phòng'
+                },
+                {
+                    key: 'Ngành mục tiêu ',
+                    label: 'Ngành mục tiêu '
                 },
                 {
                     key: 'map',
@@ -59,6 +55,14 @@ const MenuData = () => {
                 {
                     key: 'customer',
                     label: 'Khách hàng hiện tại'
+                },
+                {
+                    key: 'Phòng trưng bày',
+                    label: 'Phòng trưng bày'
+                },
+                {
+                    key: 'Xem VR 360',
+                    label: 'Dịch vụ CSKH'
                 }
             ]
         },
@@ -82,21 +86,16 @@ const MenuData = () => {
             ]
         },
         {
+            key: '/event-activity',
+            label: 'Sự kiện và hoạt động',
+            url: '/news',
+            icon: <NotificationOutlined className="text-slate-700" />
+        },
+        {
             key: '/contact',
-            label: 'CONTACT',
+            label: 'Liên hệ với chúng tôi',
             url: '/contact',
             icon: <PhoneOutlined className="text-slate-700" />
-        },
-        {
-            key: '/search',
-            label: 'SEARCH',
-            url: '/search',
-            icon: <SearchOutlined className="text-slate-700" />
-        },
-        {
-            key: '/vr360',
-            label: 'VR 360',
-            url: '/vr360'
         }
     ]
 }

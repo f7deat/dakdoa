@@ -39,7 +39,7 @@ export default function HomePage() {
   }, []);
 
   const beforeChange = useCallback((current: number, next: number) => {
-    if (next === 7) {
+    if (next === 4) {
       setHeight(100);
     } else {
       setHeight(0)
@@ -94,11 +94,11 @@ export default function HomePage() {
         <Cover active={currentSlide === 0} />
         <Page4 active={currentSlide === 1} />
         <News active={currentSlide === 2} />
-        <Internal active={currentSlide === 3} />
-        <External active={currentSlide === 4} />
-        <Different active={currentSlide === 5} />
-        <Testimonial active={currentSlide === 6} />
-        <Partner active={currentSlide === 7} brands={brands} />
+        {/* <Internal active={currentSlide === 3} /> */}
+        {/* <External active={currentSlide === 4} /> */}
+        <Different active={currentSlide === 3} />
+        {/* <Testimonial active={currentSlide === 6} /> */}
+        <Partner active={currentSlide === 4} brands={brands} />
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
