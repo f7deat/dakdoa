@@ -23,7 +23,7 @@ const MenuData = () => {
                     label: 'Cho thuê nhà xưởng xây sẵn',
                     children: [
                         {
-                            key: 'Nhà xưởng xây sẵn ',
+                            key: 'thue-xuong-kho-xay-san',
                             label: 'Nhà xưởng xây sẵn '
                         },
                         {
@@ -33,7 +33,7 @@ const MenuData = () => {
                     ]
                 },
                 {
-                    key: 'Cho thuê đất công nghiệp',
+                    key: 'thue-dat-cong-nghiep',
                     label: 'Cho thuê đất công nghiệp'
                 },
                 {

@@ -1,7 +1,6 @@
 import Editor from "@/components/editor";
 import ContactForm from "@/components/forms/contact";
 import Loader from "@/components/loader";
-import ShareButton from "@/components/share-button";
 import Sidebar from "@/layouts/sidebar";
 import { apiGetCatalogByName, apiGetStructure, apiGetStructureNew } from "@/services/catalog";
 import { HomeOutlined, CalendarOutlined, EyeOutlined } from "@ant-design/icons";
@@ -67,7 +66,7 @@ const Page: React.FC = () => {
                                 title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
                             },
                             {
-                                title: intl.formatMessage({ id: 'NEWS' })
+                                title: catalog?.name
                             }
                         ]} />
                     </div>

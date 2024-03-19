@@ -50,7 +50,7 @@ const ProductListPage: React.FC = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'bottom'
             }}>
-                <div className="container mx-auto py-4 px-2 md:px-0">
+                <div className="container mx-auto py-4 px-2 md:px-0 md:py-10">
                     <Loader loading={loading} />
                     <div className="mb-4">
                         <Breadcrumb items={[

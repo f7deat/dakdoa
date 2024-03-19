@@ -1,6 +1,5 @@
 import logoWhite from '../../assets/logo/logo-green.svg';
-import { FormattedMessage, Link, history, setLocale, useIntl } from 'umi';
-import Languages from './languages';
+import { FormattedMessage, Link, history, setLocale, useIntl, useLocation } from 'umi';
 import { GlobalOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ScheduleOutlined, SearchOutlined } from '@ant-design/icons';
 import { ConfigProvider, Dropdown, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
@@ -12,10 +11,12 @@ const { Sider } = Layout;
 const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
-    const intl = useIntl()
+    const intl = useIntl();
+    const [current, setCurrent] = useState('mail');
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCollaped(true);
+        setCurrent(e.key);
         if (e.key === '/about-shinec') {
             history.push(`/page/gioi-thieu`);
             return;
@@ -180,6 +181,7 @@ const Navbar: React.FC = () => {
                     style={{ overflow: 'auto', height: '100vh', position: 'fixed', right: 0, top: 79, bottom: 0 }}
                 >
                     <Menu
+                    selectedKeys={[current]}
                         mode="inline"
                         onClick={onClick}
                         items={MenuData().map((menu, i) => (

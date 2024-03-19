@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import ButtonContact from '@/components/button/contact';
 import Footer from './footer';
+import PhoneButton2 from '@/components/button/phone2';
 
 const { Header, Content } = Layout;
 
@@ -59,7 +60,7 @@ export default function Layout1() {
           <Content>
             <Outlet />
           </Content>
-          <ButtonContact />
+          <PhoneButton2 />
         </Layout>
         <Footer height={100} />
       </ConfigProvider>

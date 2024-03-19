@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
 import PhoneButton from "@/components/button/contact";
+import PhoneButton2 from "@/components/button/phone2";
 
 export default function HomePage() {
 
@@ -102,7 +103,7 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
-      <PhoneButton />
+      <PhoneButton2 />
     </ConfigProvider>
   );
 }
