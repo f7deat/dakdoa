@@ -5,6 +5,7 @@ import { ConfigProvider, Dropdown, Layout, Menu, MenuProps } from 'antd';
 import { useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
+import '../../layouts/garland.css';
 
 const { Sider } = Layout;
 
@@ -37,7 +38,7 @@ const Navbar: React.FC = () => {
             history.push(`/product/5dd86918-9719-4ca7-0359-08dc045188ed`);
             return;
         }
-        history.push(e.key);
+        return;
     };
 
     const items: MenuProps['items'] = [

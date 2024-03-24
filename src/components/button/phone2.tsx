@@ -1,5 +1,4 @@
 import { PhoneFilled } from "@ant-design/icons";
-import { FormattedMessage } from "umi";
 
 const PhoneButton2: React.FC = () => {
     return (
