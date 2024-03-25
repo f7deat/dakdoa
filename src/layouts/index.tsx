@@ -1,17 +1,13 @@
 import { Helmet, Link, Outlet } from 'umi';
 import './index.less';
-import './bootstrap.min.css';
 import { ConfigProvider, Layout, Menu } from 'antd';
 import fav from '../assets/favicon.png';
-import { useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import ButtonContact from '@/components/button/contact';
 import Footer from './footer';
 import PhoneButton2 from '@/components/button/phone2';
-import Footer2 from '@/components/footers';
 
 const { Header, Content } = Layout;
 
@@ -64,7 +60,7 @@ export default function Layout1() {
           </Content>
           <PhoneButton2 />
         </Layout>
-        <Footer2 />
+        <Footer />
       </ConfigProvider>
     </div>
   );

@@ -2,8 +2,6 @@ import { FormattedMessage, useIntl } from 'umi';
 import land from '../../assets/icons/land.svg';
 import target from '../../assets/icons/target.svg';
 import support from '../../assets/icons/support.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
 import { animated, useSpring } from '@react-spring/web';
 import Brands from '../brands';
 
@@ -33,10 +31,10 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                 <img src={icon} loading='lazy' alt='ICON' className='w-10 md:w-auto' />
             </div>
             <animated.div style={fadeLeft}>
-                <div className='font-medium text-lg 2xl:text-2xl mb-2'>{title}</div>
+                <div className='font-medium text-lg 2xl:text-xl mb-2'>{title}</div>
             </animated.div>
             <animated.div style={fadeLeft1}>
-                <div className='text-xs 2xl:text-base line-clamp-3 md:text-sm'>{description}</div>
+                <div className='text-xs line-clamp-3 md:text-sm'>{description}</div>
             </animated.div>
         </div>
     )
@@ -67,12 +65,12 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                         </svg>
                                     </div>
                                     <animated.div style={fadeLeft}>
-                                        <div className='font-medium text-lg 2xl:text-2xl mb-2'>
+                                        <div className='font-medium text-lg 2xl:text-xl mb-2'>
                                             <FormattedMessage id='Assist' />
                                         </div>
                                     </animated.div>
                                     <animated.div style={fadeLeft1}>
-                                        <div className='text-white mb-4 md:text-sm text-xs line-clamp-3 2xl:text-xl'>
+                                        <div className='text-white mb-4 md:text-sm text-xs line-clamp-3'>
                                             <FormattedMessage id='PARTNER_QUOTE' />
                                         </div>
                                     </animated.div>

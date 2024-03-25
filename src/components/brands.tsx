@@ -9,8 +9,8 @@ const Brands: React.FC<Props> = ({ brands }) => {
 
     const CarouselItem = (logo: string) => (
         <div className='shadow-lg'>
-            <div className='h-28 md:h-32 2xl:h-[160px] flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
-                <img src={logo} alt='LOGO' className='h-16 md:h-auto hover:scale-125 transition duration-500 w-40 object-contain' />
+            <div className='h-28 flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
+                <img src={logo} alt='LOGO' className='transition duration-500 h-14 object-contain' />
             </div>
         </div>
     )
@@ -40,7 +40,7 @@ const Brands: React.FC<Props> = ({ brands }) => {
                             },
                             1536: {
                                 spaceBetween: 60,
-                                slidesPerView: 4
+                                slidesPerView: 5
                             },
                         }}
                         loop

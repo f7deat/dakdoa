@@ -1,5 +1,6 @@
 import { FormattedMessage, Helmet, useIntl } from "umi"
 import ContactForm from "@/components/forms/contact";
+import Header1 from "@/components/header1";
 
 const ContactPage: React.FC = () => {
 
@@ -17,9 +18,9 @@ const ContactPage: React.FC = () => {
                 <section className="text-gray-600 body-font relative">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-12">
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                            <Header1 active primary>
                                 <FormattedMessage id='CONTACT' />
-                            </h1>
+                            </Header1>
                             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
                                 <FormattedMessage id='CONTACT_SUBTITLE' />
                             </p>

@@ -1,5 +1,6 @@
 import Editor from "@/components/editor";
 import ContactForm from "@/components/forms/contact";
+import Header1 from "@/components/header1";
 import Loader from "@/components/loader";
 import Sidebar from "@/layouts/sidebar";
 import { apiGetCatalogByName, apiGetStructure, apiGetStructureNew } from "@/services/catalog";
@@ -72,7 +73,7 @@ const Page: React.FC = () => {
                     </div>
                     <div className="md:flex gap-4">
                         <div className="md:w-3/4">
-                            <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
+                            <Header1 active primary>{catalog?.name}</Header1>
                             <div className="mb-4 border-b border-dashed">
                                 <div className='mb-4'>
                                     {editor?.blocks && <Editor blocks={editor.blocks} />}

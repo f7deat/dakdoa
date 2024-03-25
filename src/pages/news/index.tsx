@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 import './style.css';
 import { simpleLocale } from "@/ultis";
+import Header1 from "@/components/header1";
 
 const NewsPage: React.FC = () => {
 
@@ -87,9 +88,7 @@ const NewsPage: React.FC = () => {
                             }
                         ]} />
                     </div>
-                    <h1 className="text-center text-2xl md:text-4xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
-                        <FormattedMessage id='NEWS' />
-                    </h1>
+                    <Header1 active primary><FormattedMessage id='NEWS' /></Header1>
                     <div className="md:flex gap-4">
                         <div className="md:w-3/4">
                             <Tabs

@@ -3,7 +3,7 @@ export default {
     'HOSPITAL': 'Bệnh viện',
     'CONTACT': 'Liên hệ',
     'CONTACT_SUBTITLE': 'Xin vui lòng để lại thông tin liên hệ của quý khách để chúng tôi có thể hỗ trợ một cách tốt nhất',
-    'ABOUT': 'Giới thiệu',
+    'ABOUT': 'Về chúng tôi',
     'ABOUT_US': 'Về chúng tôi',
     'CATALOG': 'Tài liệu',
     'CAREER': 'Tuyển dụng',

@@ -2,10 +2,9 @@ import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history, setLocale, useIntl, useLocation } from 'umi';
 import { GlobalOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ScheduleOutlined, SearchOutlined } from '@ant-design/icons';
 import { ConfigProvider, Dropdown, Layout, Menu, MenuProps } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
-import '../../layouts/garland.css';
 
 const { Sider } = Layout;
 
@@ -13,7 +12,11 @@ const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
     const intl = useIntl();
-    const [current, setCurrent] = useState('mail');
+    const [current, setCurrent] = useState('product');
+
+    useEffect(() => {
+
+    }, []);
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCollaped(true);
@@ -128,12 +131,12 @@ const Navbar: React.FC = () => {
                     <Dropdown menu={{ items, onClick: menuClick }} arrow className='text-xs md:text-sm'>
                         <div className='py-1 hover:text-green-600 cursor-pointer'><GlobalOutlined /> Ngôn ngữ</div>
                     </Dropdown>
-                    <Link to="/career"><div className='py-1 hover:text-green-600 cursor-pointer'><ScheduleOutlined /> Nghề nghiệp</div></Link>
+                    <Link to="/career"><div className='py-1 hover:text-green-600 cursor-pointer'><ScheduleOutlined /> Việc làm</div></Link>
                     <Link to="/search"><div className='py-1 hover:text-green-600 cursor-pointer'><SearchOutlined /> Tìm kiếm</div></Link>
                 </div>
             </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
-            <nav className="bg-white shadow fixed top-5 md:top-7 z-10 right-0 left-0">
+            <nav className="bg-white shadow-lg fixed top-5 md:top-7 z-10 right-0 left-0">
                 <div className='container mx-auto py-3 px-2 md:px-0'>
                     <div className='flex justify-between items-center'>
                         <div className='md:hidden flex-1'>
@@ -182,7 +185,7 @@ const Navbar: React.FC = () => {
                     style={{ overflow: 'auto', height: '100vh', position: 'fixed', right: 0, top: 79, bottom: 0 }}
                 >
                     <Menu
-                    selectedKeys={[current]}
+                        selectedKeys={[current]}
                         mode="inline"
                         onClick={onClick}
                         items={MenuData().map((menu, i) => (
