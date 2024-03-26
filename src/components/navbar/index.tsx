@@ -1,7 +1,7 @@
 import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history, setLocale, useIntl, useLocation } from 'umi';
 import { GlobalOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ScheduleOutlined, SearchOutlined } from '@ant-design/icons';
-import { ConfigProvider, Dropdown, Layout, Menu, MenuProps } from 'antd';
+import { ConfigProvider, Dropdown, Layout, Menu, MenuProps, message } from 'antd';
 import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
@@ -12,11 +12,14 @@ const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
     const intl = useIntl();
-    const [current, setCurrent] = useState('product');
+    const [current, setCurrent] = useState('/product');
+    const myLocation = useLocation();
 
     useEffect(() => {
-
-    }, []);
+        if (myLocation.pathname.includes('product')) {
+            setCurrent('/product');
+        }
+    }, [myLocation]);
 
     const onClick: MenuProps['onClick'] = (e) => {
         setCollaped(true);
@@ -147,14 +150,15 @@ const Navbar: React.FC = () => {
                             </button>
                         </div>
                         <div className='md:w-48 block'>
-                        <Link to={`/`}>
-                            <img src={logoWhite} alt='LOGO' className='w-28 md:w-40' />
-                        </Link>
+                            <Link to={`/`}>
+                                <img src={logoWhite} alt='LOGO' className='w-28 md:w-40' />
+                            </Link>
                         </div>
                         <div className='flex-1 items-center md:min-w-[1000px]'>
                             <div className='hidden md:block text-right md:min-w-[1000px]'>
                                 <Menu
-                                className='justify-end'
+                                    selectedKeys={[current]}
+                                    className='justify-end'
                                     onClick={onClick}
                                     mode="horizontal"
                                     items={MenuData().map((menu, i) => {

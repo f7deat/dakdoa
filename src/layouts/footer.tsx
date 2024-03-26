@@ -11,18 +11,6 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     const { height, fixed } = props;
 
-    const ContactItem = (icon: any, title: string, description: string) => (
-        <div className="flex gap-4">
-            <div className="h-8 md:h-10 w-8 md:w-10 rounded-full flex items-center justify-center bg-[#006E26]">
-                {icon}
-            </div>
-            <div className="hidden md:block">
-                <div className="text-xs 2xl:text-sm">{title}</div>
-                <div className="font-bold text-xs md:text-sm">{description}</div>
-            </div>
-        </div>
-    )
-
     return (
         <>
             <footer className={`bg-[#015D20] bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{

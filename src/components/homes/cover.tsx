@@ -1,10 +1,8 @@
-
 import cover from '../../assets/cover2.png';
-import icon360 from '../../assets/icons/360.svg';
-import { Link, useIntl } from 'umi';
 import ContactButton from '../button';
 import { animated, useSpring } from '@react-spring/web';
 import { AliyunOutlined } from '@ant-design/icons';
+import { Link, useIntl } from 'umi';
 
 const Cover: React.FC<HomeSectionItemProps> = (props) => {
 

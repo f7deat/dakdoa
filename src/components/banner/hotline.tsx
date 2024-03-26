@@ -3,7 +3,7 @@ import infra from '../../assets/tree-opa.svg';
 
 const Hotline: React.FC = () => {
     return (
-        <div className="h-[150px] md:h-[180px] bg-green-700 rounded-lg w-full flex flex-col justify-center items-center gap-4 text-white uppercase relative"
+        <div className="h-[150px] border-2 border-white md:h-[180px] bg-green-700 rounded-lg w-full flex flex-col justify-center items-center gap-4 text-white uppercase relative"
             style={{
                 backgroundImage: `url(${infra})`,
                 backgroundSize: 'cover'

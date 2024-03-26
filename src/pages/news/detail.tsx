@@ -9,6 +9,7 @@ import { CalendarOutlined, EyeOutlined, HomeOutlined } from "@ant-design/icons";
 import ShareButton from "@/components/share-button";
 import moment from "moment";
 import { apiGetCatalog, apiGetStructure } from "@/services/catalog";
+import Header1 from "@/components/header1";
 
 const NewsDetails: React.FC = () => {
 
@@ -50,46 +51,39 @@ const NewsDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <div className="relative">
+        <div className="relative bg-green-600 text-white">
             <Helmet>
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
             <Loader loading={loading} />
-
-            <div style={{
-                backgroundImage: 'url(https://longhau.com.vn/assets/images/about-awards-bg-bottom.png)',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'bottom'
-            }}>
-                <main className="container mx-auto py-10 px-4 md:px-0">
-                    <div className="mb-4">
-                        <Breadcrumb items={[
-                            {
-                                title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
-                            },
-                            {
-                                title: intl.formatMessage({ id: 'NEWS' })
-                            }
-                        ]} />
-                    </div>
-                    <div className="md:flex gap-4">
-                        <div className="md:w-3/4">
-                            <div className="text-3xl text-green-700 text-center font-semibold py-4">{catalog?.name}</div>
-                            <div className="mb-4 border-b border-dashed">
-                                <div className='mb-4'>
-                                    {editor?.blocks && <Editor blocks={editor.blocks} />}
-                                </div>
-                                <div className='text-slate-500 italic flex justify-between'>
-                                    <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
-                                    <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
-                                </div>
+            <main className="container mx-auto py-10 px-4 md:px-0">
+                <div className="mb-4">
+                    <Breadcrumb items={[
+                        {
+                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                        },
+                        {
+                            title: intl.formatMessage({ id: 'NEWS' })
+                        }
+                    ]} />
+                </div>
+                <div className="md:flex gap-4">
+                    <div className="md:w-3/4">
+                        <Header1 active>{catalog?.name}</Header1>
+                        <div className="mb-4 border-b border-dashed">
+                            <div className='mb-4'>
+                                {editor?.blocks && <Editor blocks={editor.blocks} />}
                             </div>
-                            <ShareButton />
+                            <div className='text-slate-100 italic flex justify-between'>
+                                <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
+                                <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
+                            </div>
                         </div>
-                        <Sidebar />
+                        <ShareButton />
                     </div>
-                </main>
-            </div>
+                    <Sidebar />
+                </div>
+            </main>
         </div>
     )
 }
