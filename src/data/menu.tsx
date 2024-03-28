@@ -68,7 +68,7 @@ const MenuData = () => {
         },
         {
             key: '/amenities',
-            label: 'amenities',
+            label: 'Lợi ích của nhà đầu tư',
             icon: <AlertOutlined className="text-slate-700" />,
             children: [
                 {

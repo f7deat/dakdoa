@@ -1,7 +1,7 @@
 import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history, setLocale, useIntl, useLocation } from 'umi';
 import { GlobalOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ScheduleOutlined, SearchOutlined } from '@ant-design/icons';
-import { ConfigProvider, Dropdown, Layout, Menu, MenuProps, message } from 'antd';
+import { Button, Card, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Popover, Select, message } from 'antd';
 import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
     const [collapsed, setCollaped] = useState<boolean>(true);
     const intl = useIntl();
-    const [current, setCurrent] = useState('/product');
+    const [current, setCurrent] = useState('/about-shinec');
     const myLocation = useLocation();
 
     useEffect(() => {
@@ -118,6 +118,15 @@ const Navbar: React.FC = () => {
         }
     }
 
+    const [options] = useState<any[]>(MenuData().filter(x => x.children).map(x => ({
+        label: x.label,
+        vaue: x.key,
+        options: x.children?.map(c => ({
+            value: c.key,
+            label: c.label
+        })) || []
+    })))
+
     return (
         <ConfigProvider theme={{
             components: {
@@ -135,7 +144,6 @@ const Navbar: React.FC = () => {
                         <div className='py-1 hover:text-green-600 cursor-pointer'><GlobalOutlined /> Ngôn ngữ</div>
                     </Dropdown>
                     <Link to="/career"><div className='py-1 hover:text-green-600 cursor-pointer'><ScheduleOutlined /> Việc làm</div></Link>
-                    <Link to="/search"><div className='py-1 hover:text-green-600 cursor-pointer'><SearchOutlined /> Tìm kiếm</div></Link>
                 </div>
             </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
@@ -177,6 +185,18 @@ const Navbar: React.FC = () => {
                                     })}
                                 />
                             </div>
+                        </div>
+                        <div className=''>
+                            <Popover
+                                content={(
+                                    <div className='w-80'>
+                                        <Select showSearch className='w-full' options={options}
+                                        placeholder="Nhập từ khóa tìm kiếm"
+                                        ></Select>
+                                    </div>
+                                )} showArrow>
+                                <Button icon={<SearchOutlined />} type='text' className='font-bold'>Tìm kiếm</Button>
+                            </Popover>
                         </div>
                     </div>
                 </div>

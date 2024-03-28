@@ -103,7 +103,6 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
-      <PhoneButton2 />
     </ConfigProvider>
   );
 }

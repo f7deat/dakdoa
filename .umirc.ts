@@ -8,7 +8,6 @@ export default defineConfig({
     { path: "/news", component: "news" },
     { path: "/news/:id", component: "news/detail" },
     { path: "/catalog", component: "catalog" },
-    { path: "/vr360", component: "vr360", layout: false },
     { path: "/contact", component: "contact" },
     { path: "/page/:id", component: "page" },
     { path: "/page/:parent/:id", component: "page" },

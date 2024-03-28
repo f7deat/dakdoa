@@ -1,6 +1,4 @@
-import { GoogleMap } from "@/components";
 import Loader from "@/components/loader";
-import Footer from "@/layouts/footer";
 import Sidebar from "@/layouts/sidebar";
 import { apiCatalogList } from "@/services/catalog";
 import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
@@ -18,19 +16,11 @@ const NewsPage: React.FC = () => {
 
     const { Meta } = Card;
     const [loading, setLoading] = useState<boolean>(false);
-    const [shinecLoading, setShinecLoading] = useState<boolean>(false);
     const [artice, setArtice] = useState<any>();
     const [open, setOpen] = useState<boolean>(false);
 
     const intl = useIntl();
-    const [articles, setArticles] = useState<{
-        id: string;
-        name: string;
-        thumbnail: string;
-        description: string;
-    }[]>([]);
-
-    const [shinecArtices, setShinecArtices] = useState<any[]>([]);
+    const [articles, setArticles] = useState<API.Catalog[]>([]);
 
     useEffect(() => {
         if (articles && articles.length > 1) {
@@ -47,18 +37,6 @@ const NewsPage: React.FC = () => {
             setLoading(false);
         })
     }, []);
-
-    const onChange = (actKey: string) => {
-        if (actKey === 'namcaukien' && shinecArtices.length === 0) {
-            setShinecLoading(true);
-            fetch(`https://shinecgialai.com.vn/api/open-api/wordpress/posts?domain=https://namcaukien.com.vn/`, {
-                method: 'GET'
-            }).then(response => response.json().then(data => {
-                setShinecArtices(data);
-                setShinecLoading(false);
-            }));
-        }
-    }
 
     const stripHtml = (value: string) => {
         if (!value) {
@@ -107,7 +85,7 @@ const NewsPage: React.FC = () => {
                                                 articles.map(article => (
                                                     <div
                                                         key={article.id}
-                                                        className="shadow rounded bg-green-700 shadow-lg"
+                                                        className="card"
                                                     >
                                                         <Link to={`/news/${article.id}`}>
                                                             <figure className="snip1577">
@@ -125,12 +103,13 @@ const NewsPage: React.FC = () => {
                                                             </figure>
                                                             <div className="p-2">
                                                                 <Meta title={(
-                                                                    <div className="text-green-700 line-clamp-2 mb-2 md:text-lg hover:text-green-800 font-semibold text-white">
+                                                                    <div className="text-green-700 line-clamp-2 md:text-lg hover:text-white font-semibold text-slate-200">
                                                                         {article.name}
                                                                     </div>
                                                                 )}
                                                                     description={(
-                                                                        <div className="line-clamp-3 text-gray-500 text-white">
+                                                                        <div className="line-clamp-2 text-gray-500 text-slate-300">
+                                                                            <div className="flex justify-end text-sm mb-2">{moment(article.modifiedDate).format('DD-MM-YYYY hh:mm')}</div>
                                                                             {article.description}
                                                                         </div>
                                                                     )}

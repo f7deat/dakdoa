@@ -1,13 +1,13 @@
-import { Helmet, Link, Outlet } from 'umi';
+import { Helmet, Outlet } from 'umi';
 import './index.less';
-import { ConfigProvider, Layout, Menu } from 'antd';
+import './style.less';
+import { ConfigProvider, Layout } from 'antd';
 import fav from '../assets/favicon.png';
 import Navbar from '@/components/navbar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Footer from './footer';
-import PhoneButton2 from '@/components/button/phone2';
 
 const { Header, Content } = Layout;
 

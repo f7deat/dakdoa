@@ -1,6 +1,7 @@
 import { FormattedMessage, Link } from "umi";
 import logo from '../assets/logo/logo-white.svg';
 import { FacebookFilled, GlobalOutlined, InstagramFilled, PhoneOutlined, SendOutlined } from "@ant-design/icons";
+import { message } from "antd";
 
 type FooterProps = {
     height?: number;
@@ -35,10 +36,10 @@ const Footer: React.FC<FooterProps> = (props) => {
                                     <Link to="/">Trang chủ</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="/">Giới thiệu</Link>
+                                    <Link to="/page/gioi-thieu">Giới thiệu</Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="/">Tin tức sự kiện</Link>
+                                    <Link to="/news">Tin tức sự kiện</Link>
                                 </li>
                                 <li className="mb-2">
                                     <Link to="/">Bản đồ</Link>
@@ -79,7 +80,11 @@ const Footer: React.FC<FooterProps> = (props) => {
                                     <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Số điện thoại" />
                                 </div>
                                 <div className="mb-2">
-                                    <button className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-500">Gửi thông tin</button>
+                                    <button 
+                                    onClick={() => {
+                                        message.success('Gửi thông tin thành công!');
+                                    }}
+                                    className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-500">Gửi thông tin</button>
                                 </div>
                             </div>
                         </div>
