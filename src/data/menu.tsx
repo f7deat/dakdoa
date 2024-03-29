@@ -1,4 +1,4 @@
-import { AlertOutlined, AppstoreAddOutlined, GlobalOutlined, HomeOutlined, NotificationOutlined, PhoneOutlined, SearchOutlined } from "@ant-design/icons"
+import { AlertOutlined, AppstoreAddOutlined, GlobalOutlined, HomeOutlined, NotificationOutlined, PhoneOutlined, ScheduleOutlined, SearchOutlined } from "@ant-design/icons"
 import { FormattedMessage } from "umi"
 
 const MenuData = () => {
@@ -73,11 +73,11 @@ const MenuData = () => {
             children: [
                 {
                     key: 'internal',
-                    label: <FormattedMessage id='INTERNAL_AMENITIES' />
+                    label: 'Tiện ích nội khu'
                 },
                 {
                     key: 'external',
-                    label: <FormattedMessage id='External_Amenities' />
+                    label: 'Tiện ích ngoại khu'
                 },
                 {
                     key: 'difference',
@@ -87,13 +87,19 @@ const MenuData = () => {
         },
         {
             key: '/news',
-            label: 'Sự kiện và hoạt động',
+            label: 'Tin tức',
             url: '/news',
             icon: <NotificationOutlined className="text-slate-700" />
         },
         {
+            key: '/career',
+            label: 'Việc làm',
+            url: '/career',
+            icon: <ScheduleOutlined className="text-slate-700" />
+        },
+        {
             key: '/contact',
-            label: 'Liên hệ với chúng tôi',
+            label: 'Liên hệ',
             url: '/contact',
             icon: <PhoneOutlined className="text-slate-700" />
         }

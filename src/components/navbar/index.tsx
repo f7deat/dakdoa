@@ -5,6 +5,7 @@ import { Button, Card, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Popove
 import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
+import Languages from './languages';
 
 const { Sider } = Layout;
 
@@ -118,14 +119,14 @@ const Navbar: React.FC = () => {
         }
     }
 
-    const [options] = useState<any[]>(MenuData().filter(x => x.children).map(x => ({
+    const [options] = useState<any[]>(MenuData().find(x => x.key === '/product')?.children?.map((x, i) => ({
         label: x.label,
         vaue: x.key,
-        options: x.children?.map(c => ({
-            value: c.key,
-            label: c.label
-        })) || []
-    })))
+        key: i
+    })) || []);
+
+    const filterOption = (input: string, option?: { label: string; value: string }) =>
+        (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
     return (
         <ConfigProvider theme={{
@@ -138,16 +139,8 @@ const Navbar: React.FC = () => {
                 }
             }
         }}>
-            <div className='px-4 text-xs md:text-sm fixed top-0 left-0 right-0 border-b z-20 bg-slate-100'>
-                <div className='flex justify-end gap-4 font-semibold text-slate-700'>
-                    <Dropdown menu={{ items, onClick: menuClick }} arrow className='text-xs md:text-sm'>
-                        <div className='py-1 hover:text-green-600 cursor-pointer'><GlobalOutlined /> Ngôn ngữ</div>
-                    </Dropdown>
-                    <Link to="/career"><div className='py-1 hover:text-green-600 cursor-pointer'><ScheduleOutlined /> Việc làm</div></Link>
-                </div>
-            </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
-            <nav className="bg-white shadow-lg fixed top-5 md:top-7 z-10 right-0 left-0">
+            <nav className="bg-white shadow-lg fixed top-5 md:top-0 z-10 right-0 left-0">
                 <div className='container mx-auto py-3 px-2 md:px-0'>
                     <div className='flex justify-between items-center'>
                         <div className='md:hidden flex-1'>
@@ -162,11 +155,11 @@ const Navbar: React.FC = () => {
                                 <img src={logoWhite} alt='LOGO' className='w-28 md:w-40' />
                             </Link>
                         </div>
-                        <div className='flex-1 items-center md:min-w-[1000px]'>
-                            <div className='hidden md:block text-right md:min-w-[1000px]'>
+                        <div className='flex-1 items-center'>
+                            <div className='hidden md:block text-right'>
                                 <Menu
                                     selectedKeys={[current]}
-                                    className='justify-end'
+                                    className='justify-end w-full flex-1'
                                     onClick={onClick}
                                     mode="horizontal"
                                     items={MenuData().map((menu, i) => {
@@ -174,7 +167,7 @@ const Navbar: React.FC = () => {
                                             {
                                                 key: menu.key,
                                                 label: menu.url ? (
-                                                    <Link to={menu.url} className='nav-link font-semibold'>
+                                                    <Link to={menu.url} className='nav-link'>
                                                         <FormattedMessage id={menu.label} />
                                                     </Link>
                                                 ) : (<FormattedMessage id={menu.label} />),
@@ -190,14 +183,28 @@ const Navbar: React.FC = () => {
                             <Popover
                                 content={(
                                     <div className='w-80'>
-                                        <Select showSearch className='w-full' options={options}
-                                        placeholder="Nhập từ khóa tìm kiếm"
+                                        <Select showSearch className='w-full' options={MenuData().find(x => x.key === '/product')?.children?.map((x, i) => ({
+                                            label: x.label,
+                                            value: x.key,
+                                        })) || []} filterOption={filterOption}
+                                            optionFilterProp="children"
+                                            placeholder="Nhập từ khóa tìm kiếm"
+                                            onSelect={(value) => {
+                                                console.log(1111)
+                                                onClick({
+                                                    key: value,
+                                                    keyPath: [value],
+                                                    item: null as any,
+                                                    domEvent: null as any
+                                                });
+                                            }}
                                         ></Select>
                                     </div>
                                 )} showArrow>
-                                <Button icon={<SearchOutlined />} type='text' className='font-bold'>Tìm kiếm</Button>
+                                <Button icon={<SearchOutlined />} type='text' className='font-semibold'>Tìm kiếm</Button>
                             </Popover>
                         </div>
+                        <Languages />
                     </div>
                 </div>
                 <Sider

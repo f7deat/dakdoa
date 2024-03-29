@@ -90,8 +90,8 @@ const Footer: React.FC<FooterProps> = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="py-2 border-t border-green-800">
-                    <div className="flex items-center justify-between container mx-auto">
+                <div className="py-1 border-t border-green-800">
+                    <div className="flex items-center justify-between container mx-auto text-sm">
                         <div>© Copyright 2024. All rights reserved. Shinec Gia Lai.</div>
                         <div className="flex gap-2 md:gap-6">
                             <div>
