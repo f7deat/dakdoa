@@ -1,12 +1,21 @@
-import { AlertOutlined, AppstoreAddOutlined, GlobalOutlined, HomeOutlined, NotificationOutlined, PhoneOutlined, ScheduleOutlined, SearchOutlined } from "@ant-design/icons"
-import { FormattedMessage } from "umi"
+import { AlertOutlined, AppstoreAddOutlined, HomeOutlined, NotificationOutlined, PhoneOutlined, ScheduleOutlined, SearchOutlined } from "@ant-design/icons"
 
 const MenuData = () => {
     return [
         {
             key: '/about-shinec',
             label: 'ABOUT',
-            icon: <HomeOutlined className="text-slate-700" />
+            icon: <HomeOutlined className="text-slate-700" />,
+            children: [
+                {
+                    key: 'shinec-gia-lai',
+                    label: 'Shinec Gia Lai' 
+                },
+                {
+                    key: 'su-menh-va-tam-nhin',
+                    label: 'Sứ mệnh và Tầm nhìn' 
+                }
+            ]
         },
         {
             key: '/product',
