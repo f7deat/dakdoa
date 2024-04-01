@@ -29,6 +29,18 @@ const Navbar: React.FC = () => {
             history.push(`/page/gioi-thieu`);
             return;
         }
+        if (e.key === '/news') {
+            history.push(`/news`);
+            return;
+        }
+        if (e.key === '/career') {
+            history.push(`/career`);
+            return;
+        }
+        if (e.key === '/contact') {
+            history.push(`/contact`);
+            return;
+        }
         if (e.key === 'thue-dat-cong-nghiep') {
             history.push(`/product/1f025462-0ad8-4ffb-31df-08dc044e3bfc`);
             return;
@@ -45,85 +57,13 @@ const Navbar: React.FC = () => {
             history.push(`/product/5dd86918-9719-4ca7-0359-08dc045188ed`);
             return;
         }
+        if (e.key === 'thue-dung-xuong-kho-theo-yeu-cau') {
+            history.push(`/product/24994986-a68c-4463-0358-08dc045188ed`);
+            return;
+        }
+        history.push(`/page/${e.key}`);
         return;
     };
-
-    const items: MenuProps['items'] = [
-        {
-            key: 'vi',
-            label: 'Tiếng Việt',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            ),
-            disabled: intl.locale === 'vi-VN'
-        },
-        {
-            key: 'en',
-            label: 'English',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            ),
-            disabled: intl.locale === 'en-US'
-        },
-        {
-            key: 'zh',
-            label: '简体中文',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            ),
-            disabled: intl.locale === 'zh-CN'
-        },
-        {
-            key: 'ja',
-            label: '日本語',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            ),
-            disabled: intl.locale === 'ja-JP'
-        },
-        {
-            key: 'ko',
-            label: '한국어',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            ),
-            disabled: intl.locale === 'ko-KR'
-        },
-    ];
-
-    const menuClick = (info: any) => {
-        if (info.key === 'vi') {
-            setLocale('vi-VN');
-        }
-        if (info.key === 'en') {
-            setLocale('en-US');
-        }
-        if (info.key === 'zh') {
-            setLocale('zh-CN');
-        }
-        if (info.key === 'ja') {
-            setLocale('ja-JP');
-        }
-        if (info.key === 'ko') {
-            setLocale('ko-KR');
-        }
-    }
-
-    const [options] = useState<any[]>(MenuData().find(x => x.key === '/product')?.children?.map((x, i) => ({
-        label: x.label,
-        vaue: x.key,
-        key: i
-    })) || []);
 
     const filterOption = (input: string, option?: { label: string; value: string }) =>
         (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
@@ -190,7 +130,6 @@ const Navbar: React.FC = () => {
                                             optionFilterProp="children"
                                             placeholder="Nhập từ khóa tìm kiếm"
                                             onSelect={(value) => {
-                                                console.log(1111)
                                                 onClick({
                                                     key: value,
                                                     keyPath: [value],

@@ -72,10 +72,12 @@ const Page: React.FC = () => {
                                 <div className="mb-4">
                                     <Breadcrumb items={[
                                         {
-                                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                                            title: <Link to='/'>
+                                                <span className="text-slate-200"><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</span>
+                                            </Link>
                                         },
                                         {
-                                            title: catalog?.name
+                                            title: <span className="text-slate-200">{catalog?.name}</span>
                                         }
                                     ]} />
                                 </div>
@@ -87,7 +89,7 @@ const Page: React.FC = () => {
                                                 {editor?.blocks && <Editor blocks={editor.blocks} />}
                                             </div>
                                             <Divider dashed />
-                                            <div className='text-slate-500 italic flex justify-between'>
+                                            <div className='text-slate-200 italic flex justify-between'>
                                                 <div><CalendarOutlined /> Cập nhật lúc: {moment(catalog?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
                                                 <div><EyeOutlined /> Lựợt xem: {(catalog?.viewCount || 0).toLocaleString()}</div>
                                             </div>

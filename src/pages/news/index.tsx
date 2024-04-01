@@ -87,7 +87,7 @@ const NewsPage: React.FC = () => {
                                                         key={article.id}
                                                         className="card"
                                                     >
-                                                        <Link to={`/news/${article.id}`}>
+                                                        <Link to={`/page/${article.normalizedName}`}>
                                                             <figure className="snip1577">
                                                                 <img
                                                                     alt={article.name}
@@ -99,7 +99,7 @@ const NewsPage: React.FC = () => {
                                                                     <h3>CCN NO.2 Đak Đoa</h3>
                                                                     <h4>Shinec Gia Lai</h4>
                                                                 </figcaption>
-                                                                <Link to={`/news/${article.id}`}></Link>
+                                                                <Link to={`/page/${article.normalizedName}`}></Link>
                                                             </figure>
                                                             <div className="p-2">
                                                                 <Meta title={(

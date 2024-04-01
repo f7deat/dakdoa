@@ -20,11 +20,10 @@ const MenuData = () => {
         {
             key: '/product',
             label: 'Về CCN số 2 Đak Đoa',
-            url: '/product',
             icon: <AppstoreAddOutlined className="text-slate-700" />,
             children: [
                 {
-                    key: 'tong-quan',
+                    key: 'tong-quan-ve-ccn',
                     label: 'Tổng quan về CCN'
                 },
                 {
@@ -33,11 +32,11 @@ const MenuData = () => {
                     children: [
                         {
                             key: 'thue-xuong-kho-xay-san',
-                            label: 'Nhà xưởng xây sẵn '
+                            label: 'Nhà xưởng xây sẵn'
                         },
                         {
-                            key: 'nhà xưởng xây theo yêu cầu',
-                            label: 'nhà xưởng xây theo yêu cầu'
+                            key: 'thue-dung-xuong-kho-theo-yeu-cau',
+                            label: 'Nhà xưởng xây theo yêu cầu'
                         }
                     ]
                 },
@@ -54,24 +53,28 @@ const MenuData = () => {
                     label: 'Cho thuê văn phòng'
                 },
                 {
-                    key: 'Ngành mục tiêu ',
+                    key: 'nganh-muc-tieu',
                     label: 'Ngành mục tiêu '
                 },
                 {
-                    key: 'map',
+                    key: 'ban-do-dia-diem',
                     label: 'Bản đồ địa điểm'
                 },
                 {
-                    key: 'customer',
+                    key: 'khach-hang-hien-tai',
                     label: 'Khách hàng hiện tại'
                 },
                 {
-                    key: 'Phòng trưng bày',
+                    key: 'phong-trung-bay',
                     label: 'Phòng trưng bày'
                 },
                 {
-                    key: 'Xem VR 360',
+                    key: 'dich-vu-cskh',
                     label: 'Dịch vụ CSKH'
+                },
+                {
+                    key: 'xem-vr-360',
+                    label: 'Xem VR 360'
                 }
             ]
         },
@@ -81,15 +84,15 @@ const MenuData = () => {
             icon: <AlertOutlined className="text-slate-700" />,
             children: [
                 {
-                    key: 'internal',
+                    key: 'tien-ich-noi-khu',
                     label: 'Tiện ích nội khu'
                 },
                 {
-                    key: 'external',
+                    key: 'tien-ich-ngoai-khu',
                     label: 'Tiện ích ngoại khu'
                 },
                 {
-                    key: 'difference',
+                    key: 'khac-biet-va-loi-the',
                     label: 'Khác biệt và lợi thế'
                 }
             ]

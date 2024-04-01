@@ -6,7 +6,6 @@ export default defineConfig({
     { path: "/product", component: "product" },
     { path: "/product/:id", component: "product/detail" },
     { path: "/news", component: "news" },
-    { path: "/news/:id", component: "news/detail" },
     { path: "/catalog", component: "catalog" },
     { path: "/contact", component: "contact" },
     { path: "/page/:id", component: "page" },
