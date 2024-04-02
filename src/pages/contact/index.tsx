@@ -16,7 +16,7 @@ const ContactPage: React.FC = () => {
                 </title>
 
             </Helmet>
-            <div className="bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
+            <div className="bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative overflow-x-hidden"
                 style={{
                     backgroundImage: `url(${bg})`
                 }}>

@@ -17,14 +17,11 @@ const Footer: React.FC<FooterProps> = (props) => {
             <footer className={`bg-[#015D20] bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>
-                <div className="container mx-auto py-4">
-                    <div className="md:flex gap-4">
-                        <div className="md:w-1/4 h-full">
-                            <div className="py-4">
-                                <img src={logo} alt="LOGO" />
-                            </div>
-                            <div className="text-sm">
-                                Mô hình cụm công nghiệp phát triển theo định hướng ESG, gắn liền với hình ảnh cụm công nghiệp sinh thái, chuỗi kinh tế tuần hoàn và thân thiện với môi trường.
+                <div className="container mx-auto py-4 px-4 md:px-0">
+                    <div className="flex gap-4 justify-between">
+                        <div className="md:w-64 h-full">
+                            <div className="md:py-10 py-4">
+                                <img src={logo} alt="LOGO" className="md:w-52 w-40" />
                             </div>
                         </div>
                         <div className="md:w-1/4 md:px-10">
@@ -46,8 +43,8 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="md:w-1/4">
-                            <div className="font-semibold uppercase  mb-4">
+                        <div className="flex-1 hidden md:block">
+                            <div className="font-semibold uppercase mb-4">
                                 <span className="border-b border-dashed border-slate-400 pb-2">Liên hệ</span>
                             </div>
                             <ul className="list-disc px-4 text-sm">
@@ -65,7 +62,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="md:w-1/4">
+                        <div className="md:w-1/4 hidden md:block">
                             <div className="font-semibold uppercase mb-6">
                                 <span className="border-b border-dashed border-slate-400 pb-2">
                                     Chúng tôi sẽ liên hệ với bạn
@@ -80,18 +77,18 @@ const Footer: React.FC<FooterProps> = (props) => {
                                     <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Số điện thoại" />
                                 </div>
                                 <div className="mb-2">
-                                    <button 
-                                    onClick={() => {
-                                        message.success('Gửi thông tin thành công!');
-                                    }}
-                                    className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-500">Gửi thông tin</button>
+                                    <button
+                                        onClick={() => {
+                                            message.success('Gửi thông tin thành công!');
+                                        }}
+                                        className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-500">Gửi thông tin</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="py-1 border-t border-green-800">
-                    <div className="flex items-center justify-between container mx-auto text-sm">
+                    <div className="flex items-center justify-between container mx-auto text-sm flex-col-reverse md:flex-row flex">
                         <div>© Copyright 2024. All rights reserved. Shinec Gia Lai.</div>
                         <div className="flex gap-2 md:gap-6">
                             <div>

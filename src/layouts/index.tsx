@@ -44,9 +44,6 @@ export default function Layout1() {
               itemSelectedColor: '#0B8936',
               itemHoverColor: '#0B8936',
               inkBarColor: '#0B8936'
-            },
-            Breadcrumb: {
-              separatorColor: '#FFFFFF'
             }
           },
           token: {

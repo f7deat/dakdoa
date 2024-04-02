@@ -106,8 +106,7 @@ const MenuData = () => {
         {
             key: '/career',
             label: 'Việc làm',
-            url: '/career',
-            icon: <ScheduleOutlined className="text-slate-700" />
+            url: '/career'
         },
         {
             key: '/contact',

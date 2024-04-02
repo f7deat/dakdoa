@@ -5,7 +5,6 @@ import { Button, Card, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Popove
 import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
-import Languages from './languages';
 
 const { Sider } = Layout;
 
@@ -68,6 +67,87 @@ const Navbar: React.FC = () => {
     const filterOption = (input: string, option?: { label: string; value: string }) =>
         (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
+
+    const items: MenuProps['items'] = [
+        {
+            key: 'vi',
+            label: 'Tiếng Việt',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            disabled: intl.locale === 'vi-VN'
+        },
+        {
+            key: 'en',
+            label: 'English',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            disabled: intl.locale === 'en-US'
+        },
+        {
+            key: 'zh',
+            label: '简体中文',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            disabled: intl.locale === 'zh-CN'
+        },
+        {
+            key: 'ja',
+            label: '日本語',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            disabled: intl.locale === 'ja-JP'
+        },
+        {
+            key: 'ko',
+            label: '한국어',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            disabled: intl.locale === 'ko-KR'
+        },
+    ];
+
+    const menuClick = (info: any) => {
+        if (info.key === 'vi') {
+            setLocale('vi-VN');
+        }
+        if (info.key === 'en') {
+            setLocale('en-US');
+        }
+        if (info.key === 'zh') {
+            setLocale('zh-CN');
+        }
+        if (info.key === 'ja') {
+            setLocale('ja-JP');
+        }
+        if (info.key === 'ko') {
+            setLocale('ko-KR');
+        }
+    }
+
+    const [options] = useState<any[]>(MenuData().filter(x => x.children).map(x => ({
+        label: x.label,
+        vaue: x.key,
+        options: x.children?.map(c => ({
+            value: c.key,
+            label: c.label
+        })) || []
+    })))
+
     return (
         <ConfigProvider theme={{
             components: {
@@ -79,8 +159,38 @@ const Navbar: React.FC = () => {
                 }
             }
         }}>
+            <div className='px-4 text-xs md:text-sm fixed top-0 left-0 right-0 border-b z-20 bg-green-700'>
+                <div className='flex justify-end gap-4 font-semibold text-white'>
+                    <Popover
+                        content={(
+                            <div className='w-80'>
+                                <Select showSearch className='w-full' options={MenuData().find(x => x.key === '/product')?.children?.map((x, i) => ({
+                                    label: x.label,
+                                    value: x.key,
+                                })) || []} filterOption={filterOption}
+                                    optionFilterProp="children"
+                                    placeholder="Nhập từ khóa tìm kiếm"
+                                    onSelect={(value) => {
+                                        onClick({
+                                            key: value,
+                                            keyPath: [value],
+                                            item: null as any,
+                                            domEvent: null as any
+                                        });
+                                    }}
+                                ></Select>
+                            </div>
+                        )} showArrow>
+                        <div className='py-1 hover:text-green-100 cursor-pointer'><SearchOutlined /> Tìm kiếm</div>
+                    </Popover>
+                    <Dropdown menu={{ items, onClick: menuClick }} arrow className='text-xs md:text-sm'>
+                        <div className='py-1 hover:text-green-100 cursor-pointer'><GlobalOutlined /> Ngôn ngữ</div>
+                    </Dropdown>
+                    <Link to="/career"><div className='py-1 hover:text-green-100 cursor-pointer'><ScheduleOutlined /> Việc làm</div></Link>
+                </div>
+            </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
-            <nav className="bg-white shadow-lg fixed top-5 md:top-0 z-10 right-0 left-0">
+            <nav className="bg-white shadow-lg fixed top-5 md:top-6 z-10 right-0 left-0">
                 <div className='container mx-auto py-3 px-2 md:px-0'>
                     <div className='flex justify-between items-center'>
                         <div className='md:hidden flex-1'>
@@ -119,31 +229,6 @@ const Navbar: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <div className=''>
-                            <Popover
-                                content={(
-                                    <div className='w-80'>
-                                        <Select showSearch className='w-full' options={MenuData().find(x => x.key === '/product')?.children?.map((x, i) => ({
-                                            label: x.label,
-                                            value: x.key,
-                                        })) || []} filterOption={filterOption}
-                                            optionFilterProp="children"
-                                            placeholder="Nhập từ khóa tìm kiếm"
-                                            onSelect={(value) => {
-                                                onClick({
-                                                    key: value,
-                                                    keyPath: [value],
-                                                    item: null as any,
-                                                    domEvent: null as any
-                                                });
-                                            }}
-                                        ></Select>
-                                    </div>
-                                )} showArrow>
-                                <Button icon={<SearchOutlined />} type='text' className='font-semibold'>Tìm kiếm</Button>
-                            </Popover>
-                        </div>
-                        <Languages />
                     </div>
                 </div>
                 <Sider
