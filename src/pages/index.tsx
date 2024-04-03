@@ -41,7 +41,7 @@ export default function HomePage() {
 
   const beforeChange = useCallback((current: number, next: number) => {
     if (next === 4) {
-      setHeight(235);
+      setHeight(250);
     } else {
       setHeight(0)
     }

@@ -99,18 +99,13 @@ const MenuData = () => {
         },
         {
             key: '/news',
-            label: 'Tin tức',
+            label: 'Sự kiện & Hoạt động',
             url: '/news',
             icon: <NotificationOutlined className="text-slate-700" />
         },
         {
-            key: '/career',
-            label: 'Việc làm',
-            url: '/career'
-        },
-        {
             key: '/contact',
-            label: 'Liên hệ',
+            label: 'Liên hệ với chúng tôi',
             url: '/contact',
             icon: <PhoneOutlined className="text-slate-700" />
         }

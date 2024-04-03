@@ -18,36 +18,12 @@ const Footer: React.FC<FooterProps> = (props) => {
                 height: height
             }}>
                 <div className="container mx-auto py-4 px-4 md:px-0">
-                    <div className="flex gap-4 justify-between">
-                        <div className="md:w-64 h-full">
-                            <div className="md:py-10 py-4">
-                                <img src={logo} alt="LOGO" className="md:w-52 w-40" />
-                            </div>
-                        </div>
-                        <div className="md:w-1/4 md:px-10">
-                            <div className="font-semibold uppercase mb-4">
-                                <span className="border-b border-dashed border-slate-400 pb-2">Về chúng tôi</span>
-                            </div>
-                            <ul className="list-disc px-4 text-sm">
-                                <li className="mb-2">
-                                    <Link to="/">Trang chủ</Link>
-                                </li>
-                                <li className="mb-2">
-                                    <Link to="/page/gioi-thieu">Giới thiệu</Link>
-                                </li>
-                                <li className="mb-2">
-                                    <Link to="/news">Tin tức sự kiện</Link>
-                                </li>
-                                <li className="mb-2">
-                                    <Link to="/">Bản đồ</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex-1 hidden md:block">
+                    <div className="flex gap-4 justify-center xl:gap-10">
+                        <div className="max-w-[600px] hidden md:block">
                             <div className="font-semibold uppercase mb-4">
                                 <span className="border-b border-dashed border-slate-400 pb-2">Liên hệ</span>
                             </div>
-                            <ul className="list-disc px-4 text-sm">
+                            <ul className="list-disc px-4">
                                 <li className="mb-2">
                                     Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
                                 </li>
@@ -62,13 +38,32 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="md:w-1/4 hidden md:block">
+                        <div className="md:w-1/5 md:px-10">
+                            <div className="font-semibold uppercase mb-4">
+                                <span className="border-b border-dashed border-slate-400 pb-2">Về chúng tôi</span>
+                            </div>
+                            <ul className="list-disc px-4">
+                                <li className="mb-2">
+                                    <Link to="/">Trang chủ</Link>
+                                </li>
+                                <li className="mb-2">
+                                    <Link to="/page/gioi-thieu">Giới thiệu</Link>
+                                </li>
+                                <li className="mb-2">
+                                    <Link to="/news">Tin tức sự kiện</Link>
+                                </li>
+                                <li className="mb-2">
+                                    <Link to="/">Bản đồ</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="md:w-72 hidden md:block">
                             <div className="font-semibold uppercase mb-6">
                                 <span className="border-b border-dashed border-slate-400 pb-2">
                                     Chúng tôi sẽ liên hệ với bạn
                                 </span>
                             </div>
-                            <div className="text-xs">
+                            <div className="text-sm">
                                 <div className="mb-2">
                                     <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Họ và tên" />
                                 </div>

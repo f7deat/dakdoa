@@ -53,8 +53,6 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                 </div>
                             </animated.div>
 
-                            <Brands brands={brands} />
-
                             <div className='grid grid-cols-2 gap-4 md:grid-cols-4 mb-4 mt-4 2xl:mt-20'>
                                 <div>
                                     <div className='mb-4 mt-2'>
@@ -77,6 +75,8 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                 {TextItem(intl.formatMessage({ id: 'TARGET' }), intl.formatMessage({ id: 'TARGET_QUOTE' }), target)}
                                 {TextItem(intl.formatMessage({ id: 'SUPPORT' }), intl.formatMessage({ id: 'SUPPORT_QUOTE' }), support)}
                             </div>
+
+                            <Brands brands={brands} />
                         </div>
                     </div>
                 </div>

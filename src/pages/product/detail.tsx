@@ -57,57 +57,35 @@ const ProductPage: React.FC = () => {
                 <meta property="og:image" content={product?.thumbnail} />
             </Helmet>
             <Loader loading={loading} />
-            <div className="bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
-                style={{
-                    backgroundImage: `url(${bg})`
-                }}>
-                <div className="flex h-full flex-col justify-between w-screen" >
-                    <div className="relative h-full" style={{
-                        background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                    }}>
-                        <div className="h-full flex items-center justify-center" style={{
-                            backgroundImage: `url(${infra})`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'bottom right'
-                        }}>
-                            <main className="container mx-auto py-10 px-4 md:px-0 text-white">
-                                <div className="mb-4">
-                                    <Breadcrumb items={[
-                                        {
-                                            title: <Link to='/'><span className='text-white'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</span></Link>
-                                        },
-                                        {
-                                            title: <span className='text-white'>{intl.formatMessage({ id: 'PRODUCT' })}</span>
-                                        }
-                                    ]} />
-                                </div>
-                                <div className="md:flex gap-4">
-                                    <div className="md:w-3/4">
-                                        <Header1 active>{product?.name}</Header1>
-                                        <div className='mb-4 border-b border-dashed'>
-                                            <div className='mb-4'>
-                                                {editor?.blocks && <Editor blocks={editor.blocks} />}
-                                            </div>
-                                            <div className='py-4 text-center'>
-                                                <button className='border-2 py-2 px-6 hover:bg-red-500' onClick={() => setOpen(true)}>Liên hệ với chúng tôi</button>
-                                            </div>
-                                            <Divider dashed />
-                                            <div className='text-slate-100 italic flex justify-between'>
-                                                <div><CalendarOutlined /> Cập nhật lúc: {moment(product?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
-                                                <div><EyeOutlined /> Lựợt xem: {(product?.viewCount || 0).toLocaleString()}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <Sidebar />
-                                </div>
-                            </main>
-                        </div>
-                    </div>
+            <main className="container mx-auto py-10 px-4 md:px-0">
+                <div className="mb-4">
+                    <Breadcrumb items={[
+                        {
+                            title: <Link to='/'><HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}</Link>
+                        },
+                        {
+                            title: intl.formatMessage({ id: 'PRODUCT' })
+                        }
+                    ]} />
                 </div>
-            </div>
+                        <Header1 active primary>{product?.name}</Header1>
+                        <div className='mb-4 border-b border-dashed'>
+                            <div className='mb-4'>
+                                {editor?.blocks && <Editor blocks={editor.blocks} />}
+                            </div>
+                            <div className='py-4 text-center'>
+                                <button className='border-2 border-red-500 text-red-500 font-bold py-2 px-6 hover:bg-red-500 hover:text-white' onClick={() => setOpen(true)}>Liên hệ với chúng tôi</button>
+                            </div>
+                            <Divider dashed />
+                            <div className='italic flex justify-between'>
+                                <div><CalendarOutlined /> Cập nhật lúc: {moment(product?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
+                                <div><EyeOutlined /> Lựợt xem: {(product?.viewCount || 0).toLocaleString()}</div>
+                            </div>
+                        </div>
+            </main>
             <Modal open={open} onCancel={() => setOpen(false)} width={900} footer={false}>
-                <div className='bg-green-600 rounded-lg'>
-                    <div className='text-center text-white pt-4 text-xl'>Liên hệ với chúng tôi</div>
+                <div className='rounded-lg'>
+                    <div className='text-center pt-4 text-xl'>Liên hệ với chúng tôi</div>
                     <Divider dashed />
                     <ContactForm />
                 </div>
