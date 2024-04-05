@@ -37,9 +37,10 @@ const News: React.FC<NewsProps> = (props) => {
     }
 
     return (
-        <div className="h-body bg-no-repeat bg-right bg-[#01822c] relative"
+        <div className="h-body bg-no-repeat bg-right relative"
             style={{
-                backgroundImage: `url(${bg})`
+                backgroundImage: `url(${bg})`,
+                backgroundSize: 'cover'
             }}>
             <div className="h-full flex flex-col justify-between">
                 <div className="relative h-full">

@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <footer className={`bg-[#015D20] bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
+            <footer className={`bg-green-800 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>
                 <div className="container mx-auto py-4 px-4 md:px-0">
@@ -65,18 +65,18 @@ const Footer: React.FC<FooterProps> = (props) => {
                             </div>
                             <div className="text-sm">
                                 <div className="mb-2">
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Họ và tên" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Họ và tên" />
                                 </div>
                                 <div className="mb-2 flex gap-2">
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Email" />
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-700" placeholder="Số điện thoại" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Email" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Số điện thoại" />
                                 </div>
                                 <div className="mb-2">
                                     <button
                                         onClick={() => {
                                             message.success('Gửi thông tin thành công!');
                                         }}
-                                        className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-500">Gửi thông tin</button>
+                                        className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-700">Gửi thông tin</button>
                                 </div>
                             </div>
                         </div>

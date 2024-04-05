@@ -48,7 +48,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                     <div className='container mx-auto md:pt-10 text-white md:px-0 px-10'>
                         <div className='md:mb-20 mb-10'>
                             <animated.div style={styles}>
-                                <div className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-10">
+                                <div className="text-center text-2xl md:text-4xl 2xl:text-5xl uppercase font-bold py-4 text-green-700 mb-0 md:mb-4">
                                     <FormattedMessage id='PARNERS_AND_CUSTOMERS' />
                                 </div>
                             </animated.div>

@@ -64,11 +64,13 @@ const NewsPage: React.FC = () => {
                         }
                     ]} />
                 </div>
-                <Header1 active primary><FormattedMessage id='NEWS' /></Header1>
+                <Header1 active primary>
+                    Sự kiện & hoạt động
+                </Header1>
                 <div className="grid md:grid-cols-4 gap-4">
                     {
                         articles.map(article => (
-                            <div className="shadow"
+                            <div className="shadow-lg"
                                 key={article.id}
                             >
                                 <Link to={`/page/${article.normalizedName}`}>
