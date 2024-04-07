@@ -9,7 +9,7 @@ const Brands: React.FC<Props> = ({ brands }) => {
 
     const CarouselItem = (logo: string) => (
         <div className='shadow-lg'>
-            <div className='h-28 flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
+            <div className='h-24 2xl:h-28 flex justify-center items-center p-4 bg-white border-green-800 border-2 rounded-lg'>
                 <img src={logo} alt='LOGO' className='transition duration-500 h-14 object-contain' />
             </div>
         </div>
@@ -36,7 +36,7 @@ const Brands: React.FC<Props> = ({ brands }) => {
                             },
                             1280: {
                                 spaceBetween: 40,
-                                slidesPerView: 4
+                                slidesPerView: 5
                             },
                             1536: {
                                 spaceBetween: 60,

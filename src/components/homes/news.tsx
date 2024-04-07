@@ -57,7 +57,7 @@ const News: React.FC<NewsProps> = (props) => {
                                     <div className='md:w-1/2 md:h-full flex items-center flex-col justify-center'>
                                         <div>
                                             <div className='border-2 rounded-lg mb-4'>
-                                                <video autoPlay={window.innerWidth > 768} loop muted controls className="w-auto min-w-full min-h-full rounded-lg h-52 md:h-[420px] object-cover" ref={videoRef}>
+                                                <video autoPlay={window.innerWidth > 768} loop muted controls className="w-auto min-w-full min-h-full rounded-lg h-52 md:h-[350px] 2xl:h-[420px] object-cover" ref={videoRef}>
                                                     <source
                                                         src="https://shinecgialai.com.vn/videos/dakdoa-full.mp4"
                                                         type="video/mp4"
@@ -94,7 +94,7 @@ const News: React.FC<NewsProps> = (props) => {
                                 </div>
                                 <div className='flex justify-center'>
                                     <Link to='/news'
-                                        className='px-4 md:px-8 py-2 md:py-3 rounded-full text-green-600 hover:text-green-700 bg-white md:text-lg font-semibold'
+                                        className='px-4 md:px-8 py-2 2xl:py-3 rounded-full text-green-700 hover:text-green-600 bg-white md:text-lg font-semibold'
                                     >
                                         <FormattedMessage id='VIEWMORE' />
                                         <ArrowRightOutlined className='ml-3' />

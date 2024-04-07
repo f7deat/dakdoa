@@ -31,7 +31,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                 <img src={icon} loading='lazy' alt='ICON' className='w-10 h-10' />
             </div>
             <animated.div style={fadeLeft}>
-                <div className='font-medium text-lg 2xl:text-3xl mb-2'>{title}</div>
+                <div className='font-semibold text-lg 2xl:text-3xl mb-2'>{title}</div>
             </animated.div>
             <animated.div style={fadeLeft1}>
                 <div className='text-xs line-clamp-3 md:text-sm 2xl:text-base'>{description}</div>
@@ -61,7 +61,7 @@ const Partner: React.FC<HomeSectionItemProps> = (props) => {
                                         </svg>
                                     </div>
                                     <animated.div style={fadeLeft}>
-                                        <div className='font-medium text-lg 2xl:text-3xl mb-2'>
+                                        <div className='font-semibold text-lg 2xl:text-3xl mb-2'>
                                             <FormattedMessage id='Assist' />
                                         </div>
                                     </animated.div>
