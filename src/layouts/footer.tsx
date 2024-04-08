@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                                     Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
                                 </li>
                                 <li className="mb-2">
-                                    Văn phòng làm việc: 14 Trần Hưng Đạo
+                                    Văn phòng làm việc: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, Gia Lai
                                 </li>
                                 <li className="mb-2">
                                     Hotline: 02696.333.456
