@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = (props) => {
             <footer className={`bg-green-800 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
                 height: height
             }}>
-                <div className="container mx-auto py-4 px-4 md:px-0">
+                <div className="container mx-auto pb-3 pt-4 px-4 md:px-0">
                     <div className="flex gap-4 justify-center xl:gap-10">
                         <div className="max-w-[600px] hidden md:block">
                             <div className="font-semibold uppercase mb-4">
@@ -33,7 +33,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 <li className="mb-2">
                                     Hotline: 02696.333.456
                                 </li>
-                                <li className="mb-2">
+                                <li className="mb-1">
                                     Email: congtyshinecgialai@gmail.com
                                 </li>
                             </ul>
@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="py-1 border-t border-green-800">
+                <div className="py-1 border-t border-green-900">
                     <div className="flex items-center justify-between container mx-auto text-sm flex-col-reverse md:flex-row flex">
                         <div>© Copyright 2024. All rights reserved. Shinec Gia Lai.</div>
                         <div className="flex gap-2 md:gap-6">
