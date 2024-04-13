@@ -1,5 +1,4 @@
 import Loader from "@/components/loader";
-import Sidebar from "@/layouts/sidebar";
 import { apiCatalogList } from "@/services/catalog";
 import { HomeOutlined, SearchOutlined } from "@ant-design/icons";
 import { Avatar, Breadcrumb, Card, Input, Modal, Pagination, Spin, Table, Tabs, Tooltip } from "antd";
@@ -8,8 +7,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { FormattedMessage, Helmet, Link, useIntl } from "umi";
 import './style.css';
-import bg from '../../assets/css/bg-feature.gif';
-import infra from '../../assets/tree-opa.svg';
 import Header1 from "@/components/header1";
 
 const NewsPage: React.FC = () => {
@@ -50,20 +47,23 @@ const NewsPage: React.FC = () => {
                 <title>{intl.formatMessage({ id: 'NEWS' })} - Shinec Gia Lai</title>
             </Helmet>
 
+            <div className="mb-4 h-32 bg-gray-300 flex items-center justify-center text-white" style={{
+                background: `url('https://longhau.com.vn/assets/images/about-awards-bg-bottom.png') #010e007d bottom`,
+                backgroundBlendMode: 'multiply'
+            }}>
+                <Breadcrumb items={[
+                    {
+                        title: <Link to='/'>
+                            <HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}
+                        </Link>
+                    },
+                    {
+                        title: intl.formatMessage({ id: 'NEWS' })
+                    }
+                ]} />
+            </div>
             <div className="container mx-auto py-4 md:py-10 px-4 md:px-0">
                 <Loader loading={loading} />
-                <div className="mb-4 px-4">
-                    <Breadcrumb items={[
-                        {
-                            title: <Link to='/'>
-                                <HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}
-                            </Link>
-                        },
-                        {
-                            title: intl.formatMessage({ id: 'NEWS' })
-                        }
-                    ]} />
-                </div>
                 <Header1 active primary>
                     Sự kiện & hoạt động
                 </Header1>

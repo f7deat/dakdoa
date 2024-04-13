@@ -1,7 +1,7 @@
 import { FormattedMessage, Link, getLocale, useIntl } from 'umi';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
-import bg from '../../assets/news-bg.png';
+import bg from '../../assets/news-bg.svg';
 import Header1 from '../header1';
 import { apiCatalogList } from '@/services/catalog';
 
@@ -37,20 +37,19 @@ const News: React.FC<NewsProps> = (props) => {
     }
 
     return (
-        <div className="h-body bg-no-repeat bg-right relative"
+        <div className="h-body bg-no-repeat md:bg-right relative bg-gray-100 bg-cover md:bg-contain"
             style={{
-                backgroundImage: `url(${bg})`,
-                backgroundSize: 'cover'
+                backgroundImage: `url(${bg})`
             }}>
             <div className="h-full flex flex-col justify-between">
                 <div className="relative h-full">
                     <div className="h-full items-center">
                         <div className='mx-auto md:flex h-full justify-center flex-col md:gap-20 gap-4 relative items-center'>
                             <div className='relative z-10 container mx-auto md:p-0 px-8 py-10'>
-                                <Header1 active={active}>
+                                <Header1 active={active} primary>
                                     <FormattedMessage id='LATEST_NEWS' />
                                 </Header1>
-                                <div className='text-white text-center md:mb-10 mb-4'>
+                                <div className='text-gray-600 text-center md:mb-10 mb-4'>
                                     <FormattedMessage id='AMENITIES_DES' />
                                 </div>
                                 <div className='md:flex mb-4 md:gap-10 gap-4'>
@@ -71,19 +70,20 @@ const News: React.FC<NewsProps> = (props) => {
                                         <div className='grid md:grid-cols-2 gap-2 md:gap-4'>
                                             {
                                                 news.map(x => (
-                                                    <div className='flex gap-2 flex-col relative border-2 border-white rounded-lg relative' key={x.id}>
+                                                    <div className='flex gap-2 flex-col relative rounded-lg relative' key={x.id}>
                                                         <figure className="snip1577">
-                                                            <img src={x.thumbnail} className="w-full h-32 md:h-48 mb-2 object-cover rounded-lg" alt="Amenities" loading="lazy" />
+                                                            <img src={x.thumbnail} className="w-full h-32 md:h-48 mb-2 object-cover" alt="Amenities" loading="lazy" />
                                                             <Link to={`/page/${x.normalizedName}`}></Link>
                                                         </figure>
                                                         <div className='overlay rounded'>
                                                             <div className='pt-10'>
                                                                 <Link
                                                                     to={`/page/${x.normalizedName}`}
-                                                                    className='line-clamp-2 px-2 md:text-lg font-semibold text-white hover:text-white hover:underline absolute 
-                                                                    bottom-5 md:bottom-10'>
+                                                                    className='line-clamp-2 mb-2 font-semibold text-white hover:text-gray-200 absolute 
+                                                                    bottom-5'>
                                                                     {x.name}
                                                                 </Link>
+                                                                <div className='border-b w-32 bg-white'></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,7 +94,7 @@ const News: React.FC<NewsProps> = (props) => {
                                 </div>
                                 <div className='flex justify-center'>
                                     <Link to='/news'
-                                        className='px-4 md:px-8 py-2 2xl:py-3 rounded-full text-green-700 hover:text-green-600 bg-white md:text-lg font-semibold'
+                                        className='px-4 md:px-8 py-2 2xl:py-3 rounded-full bg-gradient-to-b from-orange-400 to-orange-300 text-white hover:text-white md:text-lg font-semibold'
                                     >
                                         <FormattedMessage id='VIEWMORE' />
                                         <ArrowRightOutlined className='ml-3' />

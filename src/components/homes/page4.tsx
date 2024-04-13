@@ -19,14 +19,12 @@ const Page4: React.FC<SectionProps> = (props) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
     const [products, setProducts] = useState<any[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
     const intl = useIntl();
 
     useEffect(() => {
         if (products && products.length > 0) {
             return;
         }
-        setLoading(true)
         apiCatalogList({
             current: 1,
             pageSize: 8,
@@ -36,7 +34,6 @@ const Page4: React.FC<SectionProps> = (props) => {
             if (response.data.data) {
                 setProducts(response.data.data);
             }
-            setLoading(false)
         })
     }, []);
 
@@ -59,24 +56,19 @@ const Page4: React.FC<SectionProps> = (props) => {
     )
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-green-800 relative"
-            style={{
-                backgroundImage: `url(${bg})`
-            }}>
+        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-gray-100 relative">
             <div className="flex h-full flex-col justify-between w-screen" >
-                <div className="relative h-full" style={{
-                    background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                }}>
+                <div className="relative h-full">
                     <div className="h-full flex items-center justify-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
                         <div className="container mx-auto px-10 md:px-0">
-                            <Header1 active={active}>
+                            <Header1 active={active} primary>
                                 <FormattedMessage id='PRODUCT' />
                             </Header1>
-                            <div className="text-white text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
+                            <div className="text-gray-600 text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
                                 <FormattedMessage id='PRODUCT_DES' />
                             </div>
                             <Swiper

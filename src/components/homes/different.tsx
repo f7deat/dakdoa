@@ -21,7 +21,7 @@ const Different: React.FC<HomeSectionItemProps> = (props) => {
     })
 
     const Item = (title: string, description: string[], image: string, icon: string) => (
-        <div className="text-white h-full px-4 bg-[#1C9C47] rounded-xl">
+        <div className="text-white 2xl:h-[500px] px-4 bg-green-700 rounded-xl">
             <div className="flex flex-col gap-4 justify-between h-full p-2 md:p-10">
                 <div className="mb-4">
                     <img src={icon} alt="ICON" className="w-8 h-8 md:w-14 md:h-14" />
@@ -53,24 +53,19 @@ const Different: React.FC<HomeSectionItemProps> = (props) => {
     )
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
-            style={{
-                backgroundImage: `url(${bg})`
-            }}>
+        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-gray-100 relative">
             <div className="h-full flex flex-col justify-between w-screen" >
-                <div className="relative h-full" style={{
-                    background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                }}>
+                <div className="relative h-full">
                     <div className="flex h-full items-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
                         <div className="container mx-auto px-10 md:px-0">
-                            <Header1 active={active}>
+                            <Header1 active={active} primary>
                                 <FormattedMessage id='THINKING_DIFFERENT' />
                             </Header1>
-                            <div className="text-white text-center mx-auto mb-8 text-base md:text-lg md:hidden 2xl:block">
+                            <div className="text-gray-600 text-center mx-auto mb-8 text-base md:text-lg">
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <animated.div style={styles}>

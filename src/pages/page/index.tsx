@@ -54,9 +54,25 @@ const Page: React.FC = () => {
             <Helmet>
                 <title>{catalog?.name || ''} - Shinec Gia Lai</title>
             </Helmet>
+            
+            <div className="mb-4 h-32 bg-gray-300 flex items-center justify-center text-white" style={{
+                background: `url('https://longhau.com.vn/assets/images/about-awards-bg-bottom.png') #010e007d bottom`,
+                backgroundBlendMode: 'multiply'
+            }}>
+                <Breadcrumb items={[
+                    {
+                        title: <Link to='/'>
+                            <HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}
+                        </Link>
+                    },
+                    {
+                        title: catalog?.name
+                    }
+                ]} />
+            </div>
             <Loader loading={loading} />
             <div className="flex h-full flex-col justify-between w-screen" >
-                <main className="container mx-auto py-10 px-4 md:px-0">
+                <main className="container mx-auto px-4 md:px-0">
                     <div className="mb-4">
                         <Breadcrumb items={[
                             {

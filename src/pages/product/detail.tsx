@@ -56,8 +56,24 @@ const ProductPage: React.FC = () => {
                 <meta property="og:description" content={product?.description} />
                 <meta property="og:image" content={product?.thumbnail} />
             </Helmet>
+
+            <div className="mb-4 h-32 bg-gray-300 flex items-center justify-center text-white" style={{
+                background: `url('https://longhau.com.vn/assets/images/about-awards-bg-bottom.png') #010e007d bottom`,
+                backgroundBlendMode: 'multiply'
+            }}>
+                <Breadcrumb items={[
+                    {
+                        title: <Link to='/'>
+                            <HomeOutlined /> {intl.formatMessage({ id: 'HOME' })}
+                        </Link>
+                    },
+                    {
+                        title: product?.name
+                    }
+                ]} />
+            </div>
             <Loader loading={loading} />
-            <main className="container mx-auto py-10 px-4 md:px-0">
+            <main className="container mx-auto px-4 md:px-0">
                 <div className="mb-4">
                     <Breadcrumb items={[
                         {
@@ -68,20 +84,20 @@ const ProductPage: React.FC = () => {
                         }
                     ]} />
                 </div>
-                        <Header1 active primary>{product?.name}</Header1>
-                        <div className='mb-4 border-b border-dashed'>
-                            <div className='mb-4'>
-                                {editor?.blocks && <Editor blocks={editor.blocks} />}
-                            </div>
-                            <div className='py-4 text-center'>
-                                <button className='border-2 border-red-500 text-red-500 font-bold py-2 px-6 hover:bg-red-500 hover:text-white' onClick={() => setOpen(true)}>Liên hệ với chúng tôi</button>
-                            </div>
-                            <Divider dashed />
-                            <div className='italic flex justify-between'>
-                                <div><CalendarOutlined /> Cập nhật lúc: {moment(product?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
-                                <div><EyeOutlined /> Lựợt xem: {(product?.viewCount || 0).toLocaleString()}</div>
-                            </div>
-                        </div>
+                <Header1 active primary>{product?.name}</Header1>
+                <div className='mb-4 border-b border-dashed'>
+                    <div className='mb-4'>
+                        {editor?.blocks && <Editor blocks={editor.blocks} />}
+                    </div>
+                    <div className='py-4 text-center'>
+                        <button className='border-2 border-red-500 text-red-500 font-bold py-2 px-6 hover:bg-red-500 hover:text-white' onClick={() => setOpen(true)}>Liên hệ với chúng tôi</button>
+                    </div>
+                    <Divider dashed />
+                    <div className='italic flex justify-between'>
+                        <div><CalendarOutlined /> Cập nhật lúc: {moment(product?.modifiedDate).format('DD/MM/YYYY hh:mm')}</div>
+                        <div><EyeOutlined /> Lựợt xem: {(product?.viewCount || 0).toLocaleString()}</div>
+                    </div>
+                </div>
             </main>
             <Modal open={open} onCancel={() => setOpen(false)} width={900} footer={false}>
                 <div className='rounded-lg'>

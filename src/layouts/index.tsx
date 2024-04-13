@@ -44,6 +44,12 @@ export default function Layout1() {
               itemSelectedColor: '#0B8936',
               itemHoverColor: '#0B8936',
               inkBarColor: '#0B8936'
+            },
+            Breadcrumb: {
+              colorText: '#FFF',
+              fontSize: 26,
+              linkColor: '#FFF',
+              separatorColor: '#FFF'
             }
           },
           token: {

@@ -67,9 +67,7 @@ const Testimonial: React.FC<HomeSectionItemProps> = (props) => {
                 backgroundImage: `url(${bg})`
             }}>
             <div className="h-full flex flex-col justify-between w-screen" >
-                <div className="relative h-full" style={{
-                    background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                }}>
+                <div className="relative h-full">
                     <div className="h-full items-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',

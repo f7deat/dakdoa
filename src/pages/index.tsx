@@ -4,15 +4,15 @@ import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
 import Footer from "@/layouts/footer";
 import { queryGetComponents } from "@/services/catalog";
-import { Carousel, ConfigProvider } from "antd";
+import { Carousel, ConfigProvider, Modal } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet, getLocale, useIntl } from "umi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
-import PhoneButton from "@/components/button/contact";
-import PhoneButton2 from "@/components/button/phone2";
+import Languages from "@/components/navbar/languages";
+import Languages2 from "@/components/lang2";
 
 export default function HomePage() {
 
@@ -23,10 +23,11 @@ export default function HomePage() {
   const [components, setComponents] = useState<any[]>([]);
   const [brands, setBrands] = useState<any[]>([]);
   const intl = useIntl();
+  const [open, setOpen] = useState<boolean>(!localStorage.getItem('lang-selected') || false);
 
   useEffect(() => {
     setLoading(true)
-    
+
     queryGetComponents('/index', intl.locale).then(response => {
       setComponents(response.data);
       const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
@@ -104,6 +105,11 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
+      <Modal open={open} footer={false} centered title="Chọn ngôn ngữ" onCancel={() => setOpen(false)}>
+        <div className="flex justify-center py-2">
+          <Languages2 />
+        </div>
+      </Modal>
     </ConfigProvider>
   );
 }
