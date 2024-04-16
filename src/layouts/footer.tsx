@@ -14,32 +14,33 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <footer className={`bg-green-800 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
-                height: height
+            <footer className={`bg-green-700 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
+                height: height,
+                backgroundImage: 'url(https://namcaukien.com.vn/wp-content/themes/thietkewebhiendai/images/photo-background-footer.jpg)'
             }}>
-                <div className="container mx-auto pb-3 pt-4 px-4 md:px-0">
-                    <div className="flex gap-4 justify-center xl:gap-10">
-                        <div className="max-w-[600px] hidden md:block">
-                            <div className="font-semibold uppercase mb-4">
+                <div className="container mx-auto pb-8 pt-10 px-4 md:px-0">
+                    <div className="flex gap-4">
+                        <div className="md:w-1/4 hidden md:block">
+                            <div className="font-semibold uppercase mb-6">
                                 <span className="border-b border-dashed border-slate-400 pb-2">Liên hệ</span>
                             </div>
                             <ul className="list-disc px-4">
-                                <li className="mb-2">
+                                <li className="mb-3">
                                     Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
                                 </li>
-                                <li className="mb-2">
+                                <li className="mb-3">
                                     Văn phòng làm việc: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, Gia Lai
                                 </li>
-                                <li className="mb-2">
+                                <li className="mb-3">
                                     Hotline: 02696.333.456
                                 </li>
-                                <li className="mb-1">
+                                <li className="mb-3">
                                     Email: congtyshinecgialai@gmail.com
                                 </li>
                             </ul>
                         </div>
                         <div className="md:w-1/5 md:px-10">
-                            <div className="font-semibold uppercase mb-4">
+                            <div className="font-semibold uppercase mb-6">
                                 <span className="border-b border-dashed border-slate-400 pb-2">Về chúng tôi</span>
                             </div>
                             <ul className="list-disc px-4">
@@ -82,7 +83,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="py-1 border-t border-green-900">
+                <div className="py-2 border-t border-green-900 bg-green-900">
                     <div className="flex items-center justify-between container mx-auto text-sm flex-col-reverse md:flex-row flex">
                         <div>© Copyright 2024. All rights reserved. Shinec Gia Lai.</div>
                         <div className="flex gap-2 md:gap-6">

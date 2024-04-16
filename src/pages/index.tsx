@@ -42,7 +42,7 @@ export default function HomePage() {
 
   const beforeChange = useCallback((current: number, next: number) => {
     if (next === 4) {
-      setHeight(250);
+      setHeight(350);
     } else {
       setHeight(0)
     }
@@ -105,7 +105,11 @@ export default function HomePage() {
       </Carousel>
       <Loader loading={loading} />
       <Footer height={height} fixed />
-      <Modal open={open} footer={false} centered title="Chọn ngôn ngữ" onCancel={() => setOpen(false)}>
+      <Modal open={open} footer={false} centered title="Chọn ngôn ngữ" onCancel={() => {
+        localStorage.setItem('lang-selected', 'vi-VN');
+        setOpen(false)
+      }
+      }>
         <div className="flex justify-center py-2">
           <Languages2 />
         </div>
