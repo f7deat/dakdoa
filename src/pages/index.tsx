@@ -42,7 +42,7 @@ export default function HomePage() {
 
   const beforeChange = useCallback((current: number, next: number) => {
     if (next === 4) {
-      setHeight(350);
+      setHeight(window.innerWidth > 768 ? 340 : 280);
     } else {
       setHeight(0)
     }

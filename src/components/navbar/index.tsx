@@ -159,7 +159,7 @@ const Navbar: React.FC = () => {
                 }
             }
         }}>
-            <div className='px-4 text-xs md:text-sm fixed top-0 left-0 right-0 border-b z-20 bg-green-700'>
+            <div className='px-4 text-xs md:text-sm fixed top-0 left-0 right-0 border-b z-20 bg-green-700 md:py-1'>
                 <div className='flex justify-end gap-4 font-semibold text-white'>
                     <Popover
                         content={(
@@ -190,7 +190,7 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>
-            <nav className="bg-white shadow-lg fixed top-5 md:top-6 z-10 right-0 left-0">
+            <nav className="bg-white shadow-lg fixed top-5 md:top-9 z-10 right-0 left-0">
                 <div className='container mx-auto py-3 px-2 md:px-0'>
                     <div className='flex justify-between items-center'>
                         <div className='md:hidden flex-1'>

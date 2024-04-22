@@ -18,26 +18,10 @@ const Footer: React.FC<FooterProps> = (props) => {
                 height: height,
                 backgroundImage: 'url(https://namcaukien.com.vn/wp-content/themes/thietkewebhiendai/images/photo-background-footer.jpg)'
             }}>
-                <div className="container mx-auto pb-8 pt-10 px-4 md:px-0">
+                <div className="container mx-auto py-6 md:py-8 px-4 md:px-0">
                     <div className="flex gap-4">
-                        <div className="md:w-1/4 hidden md:block">
-                            <div className="font-semibold uppercase mb-6">
-                                <span className="border-b border-dashed border-slate-400 pb-2">Liên hệ</span>
-                            </div>
-                            <ul className="list-disc px-4">
-                                <li className="mb-3">
-                                    Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
-                                </li>
-                                <li className="mb-3">
-                                    Văn phòng làm việc: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, Gia Lai
-                                </li>
-                                <li className="mb-3">
-                                    Hotline: 02696.333.456
-                                </li>
-                                <li className="mb-3">
-                                    Email: congtyshinecgialai@gmail.com
-                                </li>
-                            </ul>
+                        <div className="md:w-1/5 w-1/2">
+                            <img src={logo} />
                         </div>
                         <div className="md:w-1/5 md:px-10">
                             <div className="font-semibold uppercase mb-6">
@@ -58,6 +42,25 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </li>
                             </ul>
                         </div>
+                        <div className="md:w-1/4 hidden md:block">
+                            <div className="font-semibold uppercase mb-6">
+                                <span className="border-b border-dashed border-slate-400 pb-2">Liên hệ</span>
+                            </div>
+                            <ul className="list-disc px-4">
+                                <li className="mb-3">
+                                    Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
+                                </li>
+                                <li className="mb-3">
+                                    Văn phòng làm việc: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, Gia Lai
+                                </li>
+                                <li className="mb-3">
+                                    Hotline: 02696.333.456
+                                </li>
+                                <li className="mb-3">
+                                    Email: congtyshinecgialai@gmail.com
+                                </li>
+                            </ul>
+                        </div>
                         <div className="md:w-72 hidden md:block">
                             <div className="font-semibold uppercase mb-6">
                                 <span className="border-b border-dashed border-slate-400 pb-2">
@@ -66,18 +69,18 @@ const Footer: React.FC<FooterProps> = (props) => {
                             </div>
                             <div className="text-sm">
                                 <div className="mb-2">
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Họ và tên" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Họ và tên" />
                                 </div>
                                 <div className="mb-2 flex gap-2">
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Email" />
-                                    <input className="px-4 py-2 rounded-full w-full bg-green-900" placeholder="Số điện thoại" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Email" />
+                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Số điện thoại" />
                                 </div>
                                 <div className="mb-2">
                                     <button
                                         onClick={() => {
                                             message.success('Gửi thông tin thành công!');
                                         }}
-                                        className="w-full px-2 border py-2 rounded-full hover:bg-white transition hover:text-green-700">Gửi thông tin</button>
+                                        className="w-full px-2 border py-2 rounded-full bg-gradient-to-b from-orange-500 to-orange-400 hover:border-orange-500">Gửi thông tin</button>
                                 </div>
                             </div>
                         </div>
