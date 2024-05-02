@@ -28,7 +28,7 @@ const MenuData = () => {
                 },
                 {
                     key: 'thue-dat-cong-nghiep',
-                    label: 'Cho thuê nhà xưởng xây sẵn',
+                    label: 'Cho thuê nhà xưởng',
                     children: [
                         {
                             key: 'thue-xuong-kho-xay-san',

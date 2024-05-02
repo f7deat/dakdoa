@@ -69,7 +69,7 @@ const ContactForm: React.FC = () => {
                                 <br />
                                 Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
                                 <br />
-                                Văn phòng làm việc: 14 Trần Hưng Đạo
+                                Văn phòng giao dịch: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, tỉnh Gia Lai
                             </p>
                             <span className="inline-flex">
                                 <a>

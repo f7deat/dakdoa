@@ -11,7 +11,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
-import Languages from "@/components/navbar/languages";
 import Languages2 from "@/components/lang2";
 
 export default function HomePage() {
@@ -42,7 +41,7 @@ export default function HomePage() {
 
   const beforeChange = useCallback((current: number, next: number) => {
     if (next === 4) {
-      setHeight(window.innerWidth > 768 ? 340 : 280);
+      setHeight(window.innerWidth > 768 ? 420 : 550);
     } else {
       setHeight(0)
     }
