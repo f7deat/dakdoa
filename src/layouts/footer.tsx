@@ -1,7 +1,6 @@
 import { FormattedMessage, Link } from "umi";
-import logo from '../assets/logo/logo-white.svg';
-import { FacebookFilled, GlobalOutlined, InstagramFilled, PhoneOutlined, SendOutlined } from "@ant-design/icons";
-import { message } from "antd";
+import { FacebookFilled, YoutubeFilled } from "@ant-design/icons";
+import { Form, message } from "antd";
 
 type FooterProps = {
     height?: number;
@@ -14,7 +13,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <>
-            <footer className={`bg-green-700 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 fixed`} style={{
+            <footer className={`bg-green-700 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
                 height: height,
                 backgroundImage: 'url(https://namcaukien.com.vn/wp-content/themes/thietkewebhiendai/images/photo-background-footer.jpg)'
             }}>
@@ -32,19 +31,19 @@ const Footer: React.FC<FooterProps> = (props) => {
                             </div>
                             <ul className="list-disc px-4 flex flex-wrap md:flex-col text-sm md:text-base">
                                 <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/">Trang chủ</Link>
+                                    <Link to="/" className="hover:border-b">Trang chủ</Link>
                                 </li>
                                 <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/news">Sự kiện & hoạt động</Link>
+                                    <Link to="/news" className="hover:border-b">Sự kiện & hoạt động</Link>
                                 </li>
                                 <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/page/gioi-thieu">Giới thiệu</Link>
+                                    <Link to="/page/gioi-thieu" className="hover:border-b">Giới thiệu</Link>
                                 </li>
                                 <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/">Bản đồ địa điểm</Link>
+                                    <Link to="/" className="hover:border-b">Bản đồ địa điểm</Link>
                                 </li>
                                 <li className="md:mb-3 mb-2">
-                                    <Link to="/">Xem VR 360</Link>
+                                    <Link to="/" className="hover:border-b">Xem VR 360</Link>
                                 </li>
                             </ul>
                         </div>
@@ -57,7 +56,7 @@ const Footer: React.FC<FooterProps> = (props) => {
                                     Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
                                 </li>
                                 <li className="mb-3">
-                                Văn phòng giao dịch: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, tỉnh Gia Lai
+                                    Văn phòng giao dịch: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, tỉnh Gia Lai
                                 </li>
                                 <li className="mb-3">
                                     Hotline: 02696.333.456
@@ -74,33 +73,42 @@ const Footer: React.FC<FooterProps> = (props) => {
                                 </span>
                             </div>
                             <div className="text-slate-800">
-                                <div className="mb-4">
-                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Họ và tên" />
-                                </div>
-                                <div className="mb-4 flex gap-2">
-                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Email" />
-                                    <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Số điện thoại" />
-                                </div>
-                                <div className="mb-4 text-white">
-                                    <button
-                                        onClick={() => {
-                                            message.success('Gửi thông tin thành công!');
-                                        }}
-                                        className="w-full px-2 border py-2 rounded-full bg-gradient-to-b from-orange-500 to-orange-400 hover:border-orange-500">Gửi thông tin</button>
-                                </div>
+                                <Form>
+                                    <Form.Item name="name" className="mb-3" rules={[
+                                        {
+                                            required: true,
+                                            message: 'Vui lòng nhập họ và tên'
+                                        }
+                                    ]}>
+                                        <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Họ và tên" />
+                                    </Form.Item>
+                                    <div className="flex gap-2">
+                                        <Form.Item name="email" className="mb-3">
+                                            <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Email" />
+                                        </Form.Item>
+                                        <Form.Item name="phoneNumber" className="mb-3">
+                                            <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Số điện thoại" />
+                                        </Form.Item>
+                                    </div>
+                                    <div className="text-white">
+                                        <button
+                                            type="submit"
+                                            className="w-full px-2 border py-2 rounded-full bg-gradient-to-b from-orange-500 to-orange-400 hover:border-orange-500">Gửi thông tin</button>
+                                    </div>
+                                </Form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={`py-2 border-t border-green-900 bg-green-900 bottom-0 left-0 right-0 ${(height || 0) > 0 ? 'absolute' : ''}`}>
                     <div className="flex items-center justify-between container mx-auto text-sm flex-col-reverse md:flex-row flex">
-                        <div>© Copyright 2024. All rights reserved. Shinec Gia Lai.</div>
-                        <div className="flex gap-2 md:gap-6">
+                        <div>© Copyright 2024. All rights reserved. <Link to={`/`}><b>Shinec Gia Lai</b></Link>.</div>
+                        <div className="flex gap-2 md:gap-4 items-center">
                             <div>
                                 <a href="https://www.facebook.com/shinecgialai/"><FacebookFilled className="text-xl" /></a>
                             </div>
                             <div>
-                                <a href="#"><InstagramFilled className="text-xl" /></a>
+                                <a href="#"><YoutubeFilled className="text-xl" /></a>
                             </div>
                         </div>
                     </div>
