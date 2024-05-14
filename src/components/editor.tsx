@@ -22,7 +22,7 @@ const Editor: React.FC<EditorProps> = (props) => {
             {
                 blocks.map((block: any) => (
                     <div id={block.id}>
-                        {block.type === "header" && <h1 className="mb-2 font-bold text-lg md:text-xl">{stripHtml(block.data.text)}</h1>}
+                        {block.type === "header" && <h1 className="mb-2 font-bold text-lg md:text-xl" data-aos="fade-up">{stripHtml(block.data.text)}</h1>}
                         {block.type === "paragraph" && <p className="mb-2">{stripHtml(block.data.text)}</p>}
                         {block.type === "list" && <div className="mb-2">
                             <ul className='list-disc pl-6'>
@@ -32,7 +32,7 @@ const Editor: React.FC<EditorProps> = (props) => {
                             </ul>
                         </div>}
                         {block.type === "simpleImage" && (
-                            <div className="flex justify-center mb-2">
+                            <div className="flex justify-center mb-2" data-aos="zoom-in">
                                 <Image src={block.data.url} alt="IMG" loading="lazy" width='80%' />
                             </div>
                         )}
