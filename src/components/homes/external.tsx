@@ -1,4 +1,3 @@
-import bg from '../../assets/css/bg-feature.gif';
 import { CardImageOverlays } from "..";
 import hospital from '../../assets/amenities/hospital.png';
 import school from '../../assets/amenities/school.png';
@@ -23,11 +22,8 @@ const External: React.FC<HomeSectionItemProps> = (props) => {
     })
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
-            style={{
-                backgroundImage: `url(${bg})`
-            }}>
-            <div className="h-full flex flex-col justify-between w-screen" >
+        <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative w-full">
+            <div className="h-full flex flex-col justify-between w-full" >
                 <div className="relative h-full" style={{
                     background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
                 }}>

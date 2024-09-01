@@ -1,114 +1,43 @@
-import { FormattedMessage, Link } from "umi";
-import { FacebookFilled, YoutubeFilled } from "@ant-design/icons";
-import { Form, message } from "antd";
+import { Link } from "umi";
+import { FacebookFilled, GlobalOutlined, InstagramFilled, PhoneOutlined, SendOutlined } from "@ant-design/icons";
 
-type FooterProps = {
-    height?: number;
-    fixed?: boolean;
-}
+const Footer: React.FC = () => {
 
-const Footer: React.FC<FooterProps> = (props) => {
-
-    const { height, fixed } = props;
+    const ContactItem = (icon: any, title: string, description: string) => (
+        <div className="flex gap-4">
+            <div className="h-10 md:h-10 w-10 md:w-10 rounded-full flex items-center justify-center bg-[#006E26]">
+                {icon}
+            </div>
+            <div className="hidden md:block">
+                <div className="text-xs md:text-sm">{title}</div>
+                <div className="font-bold text-xs md:text-sm">{description}</div>
+            </div>
+        </div>
+    )
 
     return (
         <>
-            <footer className={`bg-green-700 bottom-0 left-0 right-0 z-10 transition-height duration-500 text-slate-200 ${fixed ? 'fixed' : ''}`} style={{
-                height: height,
-                backgroundImage: 'url(https://namcaukien.com.vn/wp-content/themes/thietkewebhiendai/images/photo-background-footer.jpg)'
-            }}>
-                <div className="container mx-auto py-6 2xl:py-16 md:py-12 px-4 md:px-0">
-                    <div className="flex gap-2 md:gap-4 md:flex-row flex-col mb-4">
-                        <div className="2xl:w-1/5">
-                            <div className="border-b border-dashed border-slate-400 pb-2 uppercase md:mb-8 mb-4">Quét mã QR để xem catalogue</div>
-                            <div className="flex justify-center">
-                                <img src="https://i.imgur.com/dqRsTlF.png" alt="QR" className="md:w-40 w-24" />
+            <footer className={`bg-green-800 bottom-0 left-0 right-0 transition-height duration-500 py-10`}>
+                <div className="md:pl-20 md:pr-40 mx-auto px-4 text-white flex flex-col justify-between h-full">
+                    <div className="flex-1 flex items-center gap-4">
+                        <div className="flex-1">
+                            <div className="flex gap-4 md:gap-10 items-center">
+                                <Link to='/' className="cursor-pointer">
+                                    <img src='https://shinecgialai.com.vn/imgs/logo-white.png' alt="LOGO" loading="lazy" className="w-52" />
+                                </Link>
+                                <div className="flex gap-4">
+                                    {ContactItem(<SendOutlined />, 'Email:', 'congtyshinecgialai@gmail.com')}
+                                    {ContactItem(<PhoneOutlined />, 'Hotline:', '0269.6333.456')}
+                                    {ContactItem(<GlobalOutlined />, 'Website:', 'shinecgialai.vn')}
+                                </div>
                             </div>
                         </div>
-                        <div className="2xl:w-1/5 md:px-10">
-                            <div className="font-semibold uppercase md:mb-8 mb-4">
-                                <span className="border-b border-dashed border-slate-400 pb-2">Về chúng tôi</span>
-                            </div>
-                            <ul className="list-disc px-4 flex flex-wrap md:flex-col text-sm md:text-base">
-                                <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/" className="hover:border-b">Trang chủ</Link>
-                                </li>
-                                <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/news" className="hover:border-b">Sự kiện & hoạt động</Link>
-                                </li>
-                                <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/page/gioi-thieu" className="hover:border-b">Giới thiệu</Link>
-                                </li>
-                                <li className="md:mb-3 mr-8 mb-2">
-                                    <Link to="/" className="hover:border-b">Bản đồ địa điểm</Link>
-                                </li>
-                                <li className="md:mb-3 mb-2">
-                                    <Link to="/" className="hover:border-b">Xem VR 360</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="md:w-2/5">
-                            <div className="font-semibold uppercase md:mb-8 mb-4">
-                                <span className="border-b border-dashed border-slate-400 pb-2">CỤM CÔNG NGHIỆP SỐ 2 HUYỆN ĐAK ĐOA</span>
-                            </div>
-                            <ul className="list-disc px-4 text-sm md:text-base">
-                                <li className="md:mb-3 mb-1">
-                                    Trụ sở chính: Thôn 2, xã Tân Bình, huyện Đak Đoa, tỉnh Gia Lai
-                                </li>
-                                <li className="mb-3">
-                                    Văn phòng giao dịch: 14 Trần Hưng Đạo, Phường Tây Sơn, TP.Pleiku, tỉnh Gia Lai
-                                </li>
-                                <li className="mb-3">
-                                    Hotline: 02696.333.456
-                                </li>
-                                <li className="mb-3">
-                                    Email: congtyshinecgialai@gmail.com
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="md:w-72 hidden md:block">
-                            <div className="font-semibold uppercase mb-8">
-                                <span className="border-b border-dashed border-slate-400 pb-2">
-                                    Chúng tôi sẽ liên hệ với bạn
-                                </span>
-                            </div>
-                            <div className="text-slate-800">
-                                <Form>
-                                    <Form.Item name="name" className="mb-3" rules={[
-                                        {
-                                            required: true,
-                                            message: 'Vui lòng nhập họ và tên'
-                                        }
-                                    ]}>
-                                        <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Họ và tên" />
-                                    </Form.Item>
-                                    <div className="flex gap-2">
-                                        <Form.Item name="email" className="mb-3">
-                                            <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Email" />
-                                        </Form.Item>
-                                        <Form.Item name="phoneNumber" className="mb-3">
-                                            <input className="px-4 py-2 rounded-full w-full bg-white" placeholder="Số điện thoại" />
-                                        </Form.Item>
-                                    </div>
-                                    <div className="text-white">
-                                        <button
-                                            type="submit"
-                                            className="w-full px-2 border py-2 rounded-full bg-gradient-to-b from-orange-500 to-orange-400 hover:border-orange-500">Gửi thông tin</button>
-                                    </div>
-                                </Form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={`py-2 border-t border-green-900 bg-green-900 bottom-0 left-0 right-0 ${(height || 0) > 0 ? 'absolute' : ''}`}>
-                    <div className="flex items-center justify-between container mx-auto text-sm flex-col-reverse md:flex-row flex">
-                        <div>© Copyright 2024. All rights reserved. <Link to={`/`}><b>Shinec Gia Lai</b></Link>.</div>
-                        <div className="flex gap-2 md:gap-4 items-center">
+                        <div className="flex gap-6">
                             <div>
-                                <a href="https://www.facebook.com/shinecgialai/"><FacebookFilled className="text-xl" /></a>
+                                <a href="#"><FacebookFilled className="text-3xl" /></a>
                             </div>
                             <div>
-                                <a href="#"><YoutubeFilled className="text-xl" /></a>
+                                <a href="#"><InstagramFilled className="text-3xl" /></a>
                             </div>
                         </div>
                     </div>

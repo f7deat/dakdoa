@@ -1,52 +1,17 @@
-import { Cover, News, Page4, Internal, External, Different, Testimonial } from "@/components/homes";
-import Partner from "@/components/homes/partner";
-import Loader from "@/components/loader";
+import { Cover, Page4, Internal } from "@/components/homes";
 import Navbar from "@/components/navbar";
 import Footer from "@/layouts/footer";
-import { queryGetComponents } from "@/services/catalog";
-import { Carousel, ConfigProvider, Modal } from "antd";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Helmet, getLocale, useIntl } from "umi";
+import { ConfigProvider } from "antd";
+import { useCallback, useEffect, useRef } from "react";
+import { Helmet } from "umi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
-import Languages2 from "@/components/lang2";
 
 export default function HomePage() {
 
   const carouselRef = useRef<any>();
-  const [height, setHeight] = useState<number>(0);
-  const [currentSlide, setCurrentSile] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [components, setComponents] = useState<any[]>([]);
-  const [brands, setBrands] = useState<any[]>([]);
-  const intl = useIntl();
-  const [open, setOpen] = useState<boolean>(!localStorage.getItem('lang-selected') || false);
-
-  useEffect(() => {
-    setLoading(true)
-
-    queryGetComponents('/index', intl.locale).then(response => {
-      setComponents(response.data);
-      const sponsor = response.data.find((x: any) => x.normalizedName === 'Sponsor');
-      if (sponsor) {
-        const component1 = JSON.parse(sponsor.arguments)
-        setBrands(component1.brands);
-      }
-      console.log(response.data);
-      setLoading(false)
-    })
-  }, []);
-
-  const beforeChange = useCallback((current: number, next: number) => {
-    if (next === 4) {
-      setHeight(window.innerWidth > 768 ? 420 : 550);
-    } else {
-      setHeight(0)
-    }
-    setCurrentSile(next);
-  }, []);
 
   const scroll = useCallback((y: number) => {
     if (y > 0) {
@@ -91,28 +56,11 @@ export default function HomePage() {
         <title>Shinec Gia Lai - Industrial Clusters</title>
       </Helmet>
       <Navbar />
-      <Carousel swipe={window.innerWidth > 768}
-        dots dotPosition="left" ref={carouselRef} speed={700} infinite={false} beforeChange={beforeChange}>
-        <Cover active={currentSlide === 0} />
-        <Page4 active={currentSlide === 1} />
-        <News active={currentSlide === 2} />
-        {/* <Internal active={currentSlide === 3} /> */}
-        {/* <External active={currentSlide === 4} /> */}
-        <Different active={currentSlide === 3} />
-        {/* <Testimonial active={currentSlide === 6} /> */}
-        <Partner active={currentSlide === 4} brands={brands} />
-      </Carousel>
-      <Loader loading={loading} />
-      <Footer height={height} fixed />
-      <Modal open={open} footer={false} centered title="Chọn ngôn ngữ" onCancel={() => {
-        localStorage.setItem('lang-selected', 'vi-VN');
-        setOpen(false)
-      }
-      }>
-        <div className="flex justify-center py-2">
-          <Languages2 />
-        </div>
-      </Modal>
+      <Cover />
+      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute right-0 top-40' />
+      <Page4 />
+      <Internal />
+      <Footer />
     </ConfigProvider>
   );
 }

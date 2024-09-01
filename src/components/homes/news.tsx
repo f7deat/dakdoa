@@ -37,7 +37,7 @@ const News: React.FC<NewsProps> = (props) => {
     }
 
     return (
-        <div className="h-body bg-no-repeat md:bg-right relative bg-gray-100 bg-cover md:bg-contain"
+        <div className="bg-no-repeat md:bg-right relative bg-gray-100 bg-cover md:bg-contain"
             style={{
                 backgroundImage: `url(${bg})`
             }}>

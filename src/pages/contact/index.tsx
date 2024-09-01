@@ -1,8 +1,6 @@
 import { FormattedMessage, Helmet, Link, useIntl } from "umi"
 import ContactForm from "@/components/forms/contact";
 import Header1 from "@/components/header1";
-import bg from '../../assets/css/bg-feature.gif';
-import infra from '../../assets/tree-opa.svg';
 import { Breadcrumb } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 

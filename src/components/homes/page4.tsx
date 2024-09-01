@@ -1,4 +1,3 @@
-import bg from '../../assets/css/bg-feature.gif';
 import infra from '../../assets/tree-opa.svg';
 import { useEffect, useRef, useState } from 'react';
 import { FormattedMessage, Link, useIntl } from 'umi';
@@ -9,13 +8,8 @@ import NextButton from '../button/next';
 import PreviousButton from '../button/previous';
 import { apiCatalogList } from '@/services/catalog';
 
-type SectionProps = {
-    active: boolean;
-}
+const Page4: React.FC = () => {
 
-const Page4: React.FC<SectionProps> = (props) => {
-
-    const { active } = props;
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
     const [products, setProducts] = useState<any[]>([]);
@@ -56,79 +50,35 @@ const Page4: React.FC<SectionProps> = (props) => {
     )
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-right bg-gray-100 relative">
-            <div className="flex h-full flex-col justify-between w-screen" >
+        <div className="bg-white">
+            <div className="flex h-full flex-col justify-between w-full" >
                 <div className="relative h-full">
                     <div className="h-full flex items-center justify-center" style={{
                         backgroundImage: `url(${infra})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
-                        <div className="container mx-auto px-10 md:px-0">
-                            <Header1 active={active} primary>
-                                <FormattedMessage id='PRODUCT' />
-                            </Header1>
-                            <div className="text-gray-600 text-center max-w-[1000px] mx-auto mb-8 text-sm md:text-base">
-                                <FormattedMessage id='PRODUCT_DES' />
-                            </div>
-                            <Swiper
-                                ref={swiperRef}
-                                slidesPerView={1}
-                                loop
-                                autoplay={{
-                                    pauseOnMouseEnter: true,
-
-                                }}
-                                modules={[Autoplay]}
-                                spaceBetween={30}
-                                onAutoplay={(event) => {
-                                    setActiveIndex(event.realIndex);
-                                }}
-
-                                breakpoints={{
-                                    768: {
-                                        slidesPerView: 2,
-                                    },
-                                    1024: {
-                                        slidesPerView: 3,
-                                    },
-                                    1280: {
-                                        slidesPerView: 4,
-                                    },
-                                    1536: {
-                                        slidesPerView: 4,
-                                    },
-                                }}
-                            >
-                                {products.map(product => (
-                                    <SwiperSlide key={product.id}>
-                                        {ProductItem(product)}
-                                    </SwiperSlide>
-                                ))}
-
-                            </Swiper>
-
-                            <div className="flex justify-between mx-auto mt-8">
-                                <PreviousButton onClick={() => {
-                                    swiperRef.current?.swiper.slidePrev();
-                                    setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
-                                }} />
-                                <div className="flex items-center justify-center gap-2">
-                                    {
-                                        products.map((_, index) => (
-                                            <button key={index}
-                                                onClick={() => {
-                                                    swiperRef.current?.swiper.slideTo(index);
-                                                    setActiveIndex(index)
-                                                }}
-                                                className={`w-4 h-4 md:h-5 md:w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
-                                        ))
-                                    }
+                        <div className="container mx-auto px-10 md:px-0 md:py-20 py-8">
+                            <div className='md:flex gap-4'>
+                                <div className='md:w-1/2 flex flex-col items-center justify-center gap-4'>
+                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Cơ cấu sử dụng đất</div>
+                                    <img src='https://shinecgialai.com.vn/imgs/pie-chart.png' alt='chart' />
                                 </div>
-                                <NextButton onClick={() => {
-                                    swiperRef.current?.swiper.slideNext();
-                                    setActiveIndex(swiperRef.current?.swiper.realIndex || 0);
-                                }} />
+                                <div className='md:w-1/2 text-center'>
+                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl 2xl:mb-10'>Ngành nghề thu hút đầu tư</div>
+                                    <div className='flex gap-4 2xl:gap-10 items-center justify-center mb-10'>
+                                        <img src='https://shinecgialai.com.vn/imgs/n1.png' />
+                                        <img src='https://shinecgialai.com.vn/imgs/n2.png' />
+                                        <img src='https://shinecgialai.com.vn/imgs/n3.png' />
+                                        <img src='https://shinecgialai.com.vn/imgs/n4.png' />
+                                    </div>
+                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Hỗ trợ xuyên suốt dự án</div>
+                                    <div className='flex gap-10 justify-center text-xl font-bold 2xl:mb-10 text-slate-800'>
+                                        <span>1. Thông tin</span>
+                                        <span>2. Pháp lý</span>
+                                        <span>3. Hoạt động</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

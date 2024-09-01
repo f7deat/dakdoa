@@ -20,7 +20,7 @@ const Page1: React.FC<HomeSectionItemProps> = (props) => {
     })
 
     return (
-        <div className="relative h-body">
+        <div className="relative">
             <video autoPlay loop muted className="absolute w-auto min-w-full min-h-full max-w-none">
                 <source
                     src="https://shinecgialai.com.vn/videos/mt-2.mp4"

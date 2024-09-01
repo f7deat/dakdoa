@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Helmet, Link, useIntl, useParams } from 'umi';
 import { Breadcrumb, Divider, Modal } from 'antd';
-import Sidebar from '@/layouts/sidebar';
 import Editor from '@/components/editor';
 import Loader from '@/components/loader';
 import { CalendarOutlined, EyeOutlined, HomeOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import { apiGetCatalog, apiGetStructure } from '@/services/catalog';
-import bg from '../../assets/css/bg-feature.gif';
-import infra from '../../assets/tree-opa.svg';
 import Header1 from '@/components/header1';
 import ContactForm from '@/components/forms/contact';
 

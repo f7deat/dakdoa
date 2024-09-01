@@ -8,3 +8,9 @@
 /dist
 .swc
 pnpm-lock.yaml
+package-lock.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/dakdoa/FileContentIndex/b2ece79b-e811-4d36-88b2-76ed415a9ead.vsidx
+.vs/dakdoa/v17/.wsuo
+.vs/dakdoa/v17/DocumentLayout.json

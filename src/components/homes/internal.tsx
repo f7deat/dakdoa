@@ -1,4 +1,3 @@
-import bg from '../../assets/css/bg-feature.gif';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { useEffect, useRef, useState } from 'react';
@@ -7,9 +6,7 @@ import Header1 from '../header1';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { apiCatalogList } from '@/services/catalog';
 
-const Internal: React.FC<HomeSectionItemProps> = (props) => {
-
-    const { active } = props;
+const Internal: React.FC = () => {
 
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperRef>(null);
@@ -40,15 +37,19 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     const Amenities = (image: string, title: string, description: string[]) => (
         <div className="md:px-4 text-white">
             <figure className="snip1577">
-                <img src={image} className="w-full bg-cover h-[250px] 2xl:h-[317px]" alt="Amenities" loading="lazy" />
+                <img src={image} className="w-full bg-cover h-[200px] 2xl:h-[250px]" alt="Amenities" loading="lazy" />
                 <figcaption>
                     <h3>CCN SỐ 2 Đak Đoa</h3>
                     <h4>Shinec Gia Lai</h4>
                 </figcaption>
                 <a href="#"></a>
             </figure>
-            <div className="font-semibold text-xl py-2">{title}</div>
-            <ul className="text-sm list-disc">
+            <div className="font-bold text-xl py-2 " style={{
+                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+            }}>{title}</div>
+            <ul className="text-sm list-disc" style={{
+                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+            }}>
                 {
                     description.map((value: string, index: number) => (
                         <li key={index} className="ml-4">{value}</li>
@@ -59,18 +60,16 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
     )
 
     return (
-        <div className="h-body bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
+        <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
             style={{
-                backgroundImage: `url(${bg})`
+                backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-cover-2.png)`
             }}>
-            <div className="h-full flex flex-col justify-between w-screen" >
-                <div className="relative h-full" style={{
-                    background: 'linear-gradient(114deg, rgba(11, 137, 54, 0.67) 0%, #00812C 68.71%)'
-                }}>
-                    <div className="flex  h-full items-center">
+            <div className="h-full flex flex-col justify-between w-full" >
+                <div className="relative h-full">
+                    <div className="flex h-full items-center md:py-20 py-8">
                         <div className="container mx-auto px-10 md:px-0">
-                            <Header1 active={active}>
-                                <FormattedMessage id='INTERNAL_AMENITIES' />
+                            <Header1 active>
+                                Hạ tầng kỹ thuật đồng bộ và hiện đại
                             </Header1>
                             <div className="text-white text-center mx-auto mb-8 text-base md:text-lg">
                                 <FormattedMessage id='AMENITIES_DES' />
@@ -97,7 +96,7 @@ const Internal: React.FC<HomeSectionItemProps> = (props) => {
                                         slidesPerView: 3,
                                     },
                                     1536: {
-                                        slidesPerView: 3,
+                                        slidesPerView: 4,
                                     },
                                 }}
                             >

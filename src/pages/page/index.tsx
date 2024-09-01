@@ -1,9 +1,6 @@
 import Editor from "@/components/editor";
-import bg from '../../assets/css/bg-feature.gif';
-import infra from '../../assets/tree-opa.svg';
 import Header1 from "@/components/header1";
 import Loader from "@/components/loader";
-import Sidebar from "@/layouts/sidebar";
 import { apiGetCatalogByName, apiGetStructure } from "@/services/catalog";
 import { HomeOutlined, CalendarOutlined, EyeOutlined } from "@ant-design/icons";
 import { Breadcrumb, Divider } from "antd";
@@ -71,7 +68,7 @@ const Page: React.FC = () => {
                 ]} />
             </div>
             <Loader loading={loading} />
-            <div className="flex h-full flex-col justify-between w-screen" >
+            <div className="flex h-full flex-col justify-between w-full" >
                 <main className="container mx-auto px-4 md:px-0">
                     <div className="mb-4">
                         <Breadcrumb items={[
