@@ -37,9 +37,9 @@ export default function HomePage() {
         <div className="flex justify-center">
           <img src={`https://shinecgialai.com.vn/imgs/i${icon}.png`} />
         </div>
-        <div className="font-bold text-center md:text-xl text-white" style={{
-                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-            }}>{text}</div>
+        <div className="font-bold text-center md:text-xl text-white line-clamp-1" style={{
+          textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+        }}>{text}</div>
       </div>
     )
   }
@@ -71,7 +71,7 @@ export default function HomePage() {
       </Helmet>
       <Navbar />
       <Cover />
-      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute right-0 top-40 2xl:w-[960px] md:w-[750px]' />
+      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute top-60 md:top-40 2xl:w-[960px] md:w-[750px] w-80 right-0' />
       <Page4 />
       <div className="bg-gradient-to-r from-sky-500 from-10% via-sky-200 via-30% to-green-600 to-90% h-1"></div>
       <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
@@ -82,12 +82,12 @@ export default function HomePage() {
           backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-2.png)`,
           backgroundPosition: 'bottom right'
         }}>
-          <div className="container mx-auto">
+          <div className="container mx-auto px-2 md:px-0">
             <div className="py-6 md:py-10">
               <Header1 active>
                 Lợi thế đầu tư tại cụm công nghiệp Số 2 Đak Đoa
               </Header1>
-              <div className="grid md:grid-cols-6 gap-4 py-10">
+              <div className="grid md:grid-cols-6 grid-cols-3 gap-4 py-6 md:py-10">
                 {Benefits(1, "Tối ưu chi phí đầu tư xây dựng")}
                 {Benefits(2, "Thủ tục pháp lý đầu tư minh bạch")}
                 {Benefits(3, "Tuyển dụng hiệu quả")}

@@ -1,49 +1,6 @@
 import infra from '../../assets/tree-opa.svg';
-import { useEffect, useRef, useState } from 'react';
-import { FormattedMessage, Link, useIntl } from 'umi';
-import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
-import { apiCatalogList } from '@/services/catalog';
 
 const Page4: React.FC = () => {
-
-    const [activeIndex, setActiveIndex] = useState<number>(0);
-    const swiperRef = useRef<SwiperRef>(null);
-    const [products, setProducts] = useState<any[]>([]);
-    const intl = useIntl();
-
-    useEffect(() => {
-        if (products && products.length > 0) {
-            return;
-        }
-        apiCatalogList({
-            current: 1,
-            pageSize: 8,
-            type: 2,
-            locale: intl.locale
-        }).then(response => {
-            if (response.data.data) {
-                setProducts(response.data.data);
-            }
-        })
-    }, []);
-
-    const ProductItem = (product: API.Catalog) => (
-        <div className="relative card-image-overlay">
-            <div className="item h-96 2xl:h-[390px]">
-                <a href="#" className='text-white'>
-                    <img src={product.thumbnail} alt="IMG" className="object-cover h-96 2xl:h-[390px]" loading="lazy" />
-                    <div className="linear-gradient h-96 2xl:h-[390px]"></div>
-                    <div className="item__overlay justify-start pt-24">
-                        <Link to={`/product/${product.id}`}>
-                            <div className="md:text-xl p-4 text-lg 2xl:text-xl font-bold text-white 2xl:min-h-[50px]">{product.name}</div>
-                            <div className="border-b w-16 border-2 mx-4"></div>
-                        </Link>
-                        <div className='text-white px-4'>{product.description}</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    )
 
     return (
         <div className="bg-white">
@@ -54,54 +11,65 @@ const Page4: React.FC = () => {
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'bottom right'
                     }}>
-                        <div className="container mx-auto px-10 md:px-0 md:py-20 py-8">
+                        <div className="container mx-auto px-2 md:px-10 md:px-0 md:py-20 py-12">
                             <div className='md:flex gap-4'>
-                                <div className='md:w-1/2 flex flex-col items-center justify-center gap-4'>
+                                <div className='md:w-1/2 flex flex-col items-center justify-center gap-4 mb-6'>
                                     <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Cơ cấu sử dụng đất</div>
-                                    <div className='flex justify-center mb-4'>
-                                        <img src='https://shinecgialai.com.vn/imgs/pie-chart.png' alt='chart' />
-                                    </div>
-                                    <div className='grid md:grid-cols-2'>
-                                        <div className='py-1 flex items-center gap-2'>
-                                            <div className='w-4 h-4 bg-blue-500'></div>
-                                            <div>Đất kho xưởng:</div>
-                                            <div className='text-blue-500 font-bold'>50,96 Ha</div>
+                                    <div className='flex md:flex-col'>
+                                        <div className='flex justify-center mb-4 w-1/2 md:w-full'>
+                                            <img src='https://shinecgialai.com.vn/imgs/pie-chart.png' alt='chart' />
                                         </div>
-                                        <div className='py-1 flex items-center gap-2'>
-                                            <div className='w-4 h-4 bg-sky-500'></div>
-                                            <div>Đất giao thông nội bộ:</div>
-                                            <div className='text-blue-500 font-bold'>8,78 Ha</div>
-                                        </div>
-                                        <div className='py-1 flex items-center gap-2'>
-                                            <div className='w-4 h-4 bg-green-500'></div>
-                                            <div>Đất cây xanh:</div>
-                                            <div className='text-blue-500 font-bold'>9,74 Ha</div>
-                                        </div>
-                                        <div className='py-1 flex items-center gap-2'>
-                                            <div className='w-4 h-4 bg-green-500'></div>
-                                            <div>Đất kỹ thuật:</div>
-                                            <div className='text-blue-500 font-bold'>1,67 Ha</div>
-                                        </div>
-                                        <div className='py-1 flex items-center gap-2'>
-                                            <div className='w-4 h-4 bg-green-500'></div>
-                                            <div>Đất dịch vụ:</div>
-                                            <div className='text-blue-500 font-bold'>3,65 Ha</div>
+                                        <div className='grid md:grid-cols-2 md:text-base text-xs flex-1'>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2'>
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                                <div>Đất kho xưởng: <span className='text-blue-500 font-bold'>50,96 Ha</span></div>
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2'>
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-sky-500 rounded-full'></div>
+                                                <div>Đất giao thông nội bộ: <span className='text-blue-500 font-bold'>8,78 Ha</span></div>
+
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2'>
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-green-500 rounded-full'></div>
+                                                <div>Đất cây xanh:</div>
+                                                <span className='text-blue-500 font-bold'>9,74 Ha</span>
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2'>
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-green-500 rounded-full'></div>
+                                                <div>Đất kỹ thuật:</div>
+                                                <span className='text-blue-500 font-bold'>1,67 Ha</span>
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2'>
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-green-500 rounded-full'></div>
+                                                <div>Đất dịch vụ:</div>
+                                                <span className='text-blue-500 font-bold'>3,65 Ha</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='md:w-1/2 text-center'>
-                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl md:mb-8 2xl:mb-10'>Ngành nghề thu hút đầu tư</div>
-                                    <div className='flex gap-4 2xl:gap-10 items-center justify-center mb-10'>
-                                        <img src='https://shinecgialai.com.vn/imgs/n1.png' />
-                                        <img src='https://shinecgialai.com.vn/imgs/n2.png' />
-                                        <img src='https://shinecgialai.com.vn/imgs/n3.png' />
-                                        <img src='https://shinecgialai.com.vn/imgs/n4.png' />
+                                    <div className='text-2xl mb-6 text-green-800 font-bold 2xl:text-3xl md:mb-8 2xl:mb-10'>Ngành nghề thu hút đầu tư</div>
+                                    <div className='grid md:grid-cols-4 grid-cols-2 gap-4 2xl:gap-10 items-center justify-center mb-10'>
+                                        <div className='flex justify-center'>
+                                            <img src='https://shinecgialai.com.vn/imgs/n1.png' />
+                                        </div>
+                                        <div className='flex justify-center'>
+                                            <img src='https://shinecgialai.com.vn/imgs/n2.png' />
+                                        </div>
+                                        <div className='flex justify-center'>
+                                            <img src='https://shinecgialai.com.vn/imgs/n3.png' />
+                                        </div>
+                                        <div className='flex justify-center'>
+                                            <img src='https://shinecgialai.com.vn/imgs/n4.png' />
+                                        </div>
                                     </div>
-                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Hỗ trợ xuyên suốt dự án</div>
-                                    <div className='flex gap-10 justify-center text-xl font-bold 2xl:mb-10 text-slate-800'>
-                                        <span>1. Thông tin</span>
-                                        <span>2. Pháp lý</span>
-                                        <span>3. Hoạt động</span>
+                                    <div className=''>
+                                        <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Hỗ trợ xuyên suốt dự án</div>
+                                        <div className='flex gap-10 justify-center md:text-xl font-bold 2xl:mb-10 text-slate-800 text-sm'>
+                                            <span>1. Thông tin</span>
+                                            <span>2. Pháp lý</span>
+                                            <span>3. Hoạt động</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
