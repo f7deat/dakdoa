@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../layouts/index.less';
+import Header1 from "@/components/header1";
 
 export default function HomePage() {
 
@@ -29,6 +30,19 @@ export default function HomePage() {
       scroll(e.deltaY);
     });
   }, [scroll]);
+
+  const Benefits = (icon: number, text: string) => {
+    return (
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-center">
+          <img src={`https://shinecgialai.com.vn/imgs/i${icon}.png`} />
+        </div>
+        <div className="font-bold text-center md:text-xl text-white" style={{
+                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+            }}>{text}</div>
+      </div>
+    )
+  }
 
   return (
     <ConfigProvider
@@ -57,9 +71,36 @@ export default function HomePage() {
       </Helmet>
       <Navbar />
       <Cover />
-      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute right-0 top-40' />
+      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute right-0 top-40 2xl:w-[960px] md:w-[750px]' />
       <Page4 />
+      <div className="bg-gradient-to-r from-sky-500 from-10% via-sky-200 via-30% to-green-600 to-90% h-1"></div>
+      <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
+        style={{
+          backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-cover-2.png)`
+        }}>
+        <div className="h-full flex items-center justify-center bg-repeat-x" style={{
+          backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-2.png)`,
+          backgroundPosition: 'bottom right'
+        }}>
+          <div className="container mx-auto">
+            <div className="py-6 md:py-10">
+              <Header1 active>
+                Lợi thế đầu tư tại cụm công nghiệp Số 2 Đak Đoa
+              </Header1>
+              <div className="grid md:grid-cols-6 gap-4 py-10">
+                {Benefits(1, "Tối ưu chi phí đầu tư xây dựng")}
+                {Benefits(2, "Thủ tục pháp lý đầu tư minh bạch")}
+                {Benefits(3, "Tuyển dụng hiệu quả")}
+                {Benefits(4, "Mô hình cụm công nghiệp sinh thái - Môi trường đầu tư bền vững")}
+                {Benefits(5, "Linh hoạt trong thu hút đầu tư")}
+                {Benefits(6, "Đội ngũ nhân viên tận tâm, hỗ trợ và kết nối các dịch vụ")}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Internal />
+      <div className="bg-gradient-to-r from-sky-500 from-10% via-sky-200 via-30% to-green-600 to-90% h-1"></div>
       <Footer />
     </ConfigProvider>
   );

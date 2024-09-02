@@ -34,10 +34,10 @@ const Footer: React.FC = () => {
                         </div>
                         <div className="flex gap-6">
                             <div>
-                                <a href="#"><FacebookFilled className="text-3xl" /></a>
+                                <a href="https://www.facebook.com/shinecgialai/"><FacebookFilled className="text-3xl" /></a>
                             </div>
                             <div>
-                                <a href="#"><InstagramFilled className="text-3xl" /></a>
+                                <a href="https://www.facebook.com/shinecgialai/"><InstagramFilled className="text-3xl" /></a>
                             </div>
                         </div>
                     </div>

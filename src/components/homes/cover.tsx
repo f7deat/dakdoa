@@ -7,7 +7,7 @@ const Cover: React.FC = () => {
 
     const intl = useIntl();
     return (
-        <div className="bg-no-repeat bg-cover bg-right bg-green-800 w-full h-[600px]"
+        <div className="bg-no-repeat bg-cover bg-right bg-green-800 w-full md:h-[500px] 2xl:h-[600px]"
             style={{
                 backgroundImage: `url('https://shinecgialai.com.vn/imgs/bg-cover-2.png')`
             }}>
@@ -15,8 +15,8 @@ const Cover: React.FC = () => {
                 <div className='container mx-auto md:px-10 2xl:px-0 h-full'>
                     <div className='h-full md:py-0'>
                         <div className='px-10 md:px-0'>
-                            <div className='pt-[134px]'>
-                                <div className='montserrat text-5xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-[40px] uppercase' style={{
+                            <div className='2xl:pt-[134px] md:pt-20'>
+                                <div className='2xl:text-5xl lg:text-[68px] font-extrabold text-white lg:leading-[94px] mb-4 md:mb-6 2xl:mb-[40px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
                                     <div>
@@ -27,7 +27,7 @@ const Cover: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-white montserrat mb-6 md:mb-[40px] max-w-[545px]'>
+                            <div className='text-white mb-4 md:mb-[40px] max-w-[545px]'>
                                 {intl.formatMessage({ id: 'COVER_SUBTITLE' })}
                             </div>
                             <div className='flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>

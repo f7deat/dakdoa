@@ -2,10 +2,6 @@ import infra from '../../assets/tree-opa.svg';
 import { useEffect, useRef, useState } from 'react';
 import { FormattedMessage, Link, useIntl } from 'umi';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import Header1 from '../header1';
-import NextButton from '../button/next';
-import PreviousButton from '../button/previous';
 import { apiCatalogList } from '@/services/catalog';
 
 const Page4: React.FC = () => {
@@ -62,10 +58,39 @@ const Page4: React.FC = () => {
                             <div className='md:flex gap-4'>
                                 <div className='md:w-1/2 flex flex-col items-center justify-center gap-4'>
                                     <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl'>Cơ cấu sử dụng đất</div>
-                                    <img src='https://shinecgialai.com.vn/imgs/pie-chart.png' alt='chart' />
+                                    <div className='flex justify-center mb-4'>
+                                        <img src='https://shinecgialai.com.vn/imgs/pie-chart.png' alt='chart' />
+                                    </div>
+                                    <div className='grid md:grid-cols-2'>
+                                        <div className='py-1 flex items-center gap-2'>
+                                            <div className='w-4 h-4 bg-blue-500'></div>
+                                            <div>Đất kho xưởng:</div>
+                                            <div className='text-blue-500 font-bold'>50,96 Ha</div>
+                                        </div>
+                                        <div className='py-1 flex items-center gap-2'>
+                                            <div className='w-4 h-4 bg-sky-500'></div>
+                                            <div>Đất giao thông nội bộ:</div>
+                                            <div className='text-blue-500 font-bold'>8,78 Ha</div>
+                                        </div>
+                                        <div className='py-1 flex items-center gap-2'>
+                                            <div className='w-4 h-4 bg-green-500'></div>
+                                            <div>Đất cây xanh:</div>
+                                            <div className='text-blue-500 font-bold'>9,74 Ha</div>
+                                        </div>
+                                        <div className='py-1 flex items-center gap-2'>
+                                            <div className='w-4 h-4 bg-green-500'></div>
+                                            <div>Đất kỹ thuật:</div>
+                                            <div className='text-blue-500 font-bold'>1,67 Ha</div>
+                                        </div>
+                                        <div className='py-1 flex items-center gap-2'>
+                                            <div className='w-4 h-4 bg-green-500'></div>
+                                            <div>Đất dịch vụ:</div>
+                                            <div className='text-blue-500 font-bold'>3,65 Ha</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className='md:w-1/2 text-center'>
-                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl 2xl:mb-10'>Ngành nghề thu hút đầu tư</div>
+                                    <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl md:mb-8 2xl:mb-10'>Ngành nghề thu hút đầu tư</div>
                                     <div className='flex gap-4 2xl:gap-10 items-center justify-center mb-10'>
                                         <img src='https://shinecgialai.com.vn/imgs/n1.png' />
                                         <img src='https://shinecgialai.com.vn/imgs/n2.png' />

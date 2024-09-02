@@ -35,7 +35,7 @@ const Internal: React.FC = () => {
     }, []);
 
     const Amenities = (image: string, title: string, description: string[]) => (
-        <div className="md:px-4 text-white">
+        <div className="md:px-4 text-green-700">
             <figure className="snip1577">
                 <img src={image} className="w-full bg-cover h-[200px] 2xl:h-[250px]" alt="Amenities" loading="lazy" />
                 <figcaption>
@@ -44,12 +44,8 @@ const Internal: React.FC = () => {
                 </figcaption>
                 <a href="#"></a>
             </figure>
-            <div className="font-bold text-xl py-2 " style={{
-                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-            }}>{title}</div>
-            <ul className="text-sm list-disc" style={{
-                textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-            }}>
+            <div className="font-bold text-xl py-2 ">{title}</div>
+            <ul className="text-sm md:text-base list-disc" >
                 {
                     description.map((value: string, index: number) => (
                         <li key={index} className="ml-4">{value}</li>
@@ -60,18 +56,15 @@ const Internal: React.FC = () => {
     )
 
     return (
-        <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative"
-            style={{
-                backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-cover-2.png)`
-            }}>
+        <div className="bg-cover bg-no-repeat bg-fixed bg-center relative">
             <div className="h-full flex flex-col justify-between w-full" >
                 <div className="relative h-full">
-                    <div className="flex h-full items-center md:py-20 py-8">
+                    <div className="flex h-full items-center md:py-10 py-8">
                         <div className="container mx-auto px-10 md:px-0">
-                            <Header1 active>
+                            <Header1 active primary>
                                 Hạ tầng kỹ thuật đồng bộ và hiện đại
                             </Header1>
-                            <div className="text-white text-center mx-auto mb-8 text-base md:text-lg">
+                            <div className="text-center mx-auto mb-8 text-base md:text-lg text-green-700">
                                 <FormattedMessage id='AMENITIES_DES' />
                             </div>
                             <Swiper
@@ -109,7 +102,7 @@ const Internal: React.FC = () => {
                                 }
                             </Swiper>
 
-                            <div className="flex justify-between md:w-2/3 mx-auto mt-8 gap-4">
+                            <div className="flex justify-between md:w-2/3 mx-auto gap-4">
                                 <button
                                     onClick={() => {
                                         swiperRef.current?.swiper.slidePrev();
@@ -122,7 +115,7 @@ const Internal: React.FC = () => {
                                     {
                                         dataSource.map((item, index) => (
                                             <button key={item.id} onClick={() => { setActiveIndex(index); swiperRef.current?.swiper.slideTo(index) }}
-                                                className={`h-4 md:h-5 w-4 md:w-5 rounded-full border-2 border-white ` + (index === activeIndex ? 'bg-orange-500' : '')}></button>
+                                                className={`h-4 md:h-5 w-4 md:w-5 rounded-full border-2 border-green-500 ` + (index === activeIndex ? 'bg-blue-500' : '')}></button>
                                         ))
                                     }
                                 </div>
