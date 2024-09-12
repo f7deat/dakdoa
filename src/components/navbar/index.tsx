@@ -1,7 +1,6 @@
-import logoWhite from '../../assets/logo/logo-green.svg';
 import { FormattedMessage, Link, history, setLocale, useIntl, useLocation } from 'umi';
 import { GlobalOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ScheduleOutlined, SearchOutlined } from '@ant-design/icons';
-import { Button, Card, ConfigProvider, Dropdown, Layout, Menu, MenuProps, Popover, Select, message } from 'antd';
+import { ConfigProvider, Dropdown, Layout, Menu, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 import './index.css';
 import MenuData from '@/data/menu';
@@ -24,8 +23,8 @@ const Navbar: React.FC = () => {
     const onClick: MenuProps['onClick'] = (e) => {
         setCollaped(true);
         setCurrent(e.key);
-        if (e.key === '/about-shinec') {
-            history.push(`/page/gioi-thieu`);
+        if (e.key === 'about') {
+            history.push(`/`);
             return;
         }
         if (e.key === '/news') {
@@ -40,33 +39,17 @@ const Navbar: React.FC = () => {
             history.push(`/contact`);
             return;
         }
-        if (e.key === 'thue-dat-cong-nghiep') {
-            history.push(`/product/1f025462-0ad8-4ffb-31df-08dc044e3bfc`);
+        if (e.key === 'product') {
+            window.open('https://shinecgialai.com.vn/product');
             return;
         }
-        if (e.key === 'thue-xuong-kho-xay-san') {
-            history.push(`/product/65773527-8ba5-485e-f318-08dc044f3d01`);
-            return;
-        }
-        if (e.key === 'cho-thue-dat-thuong-mai') {
-            history.push(`/product/ae3486a8-194d-4a37-d5d6-08dc0451c999`);
-            return;
-        }
-        if (e.key === 'cho-thue-van-phong') {
-            history.push(`/product/5dd86918-9719-4ca7-0359-08dc045188ed`);
-            return;
-        }
-        if (e.key === 'thue-dung-xuong-kho-theo-yeu-cau') {
-            history.push(`/product/24994986-a68c-4463-0358-08dc045188ed`);
+        if (e.key === 'benefits') {
+            document.getElementById("benefits")?.scrollIntoView();
             return;
         }
         history.push(`/page/${e.key}`);
         return;
     };
-
-    const filterOption = (input: string, option?: { label: string; value: string }) =>
-        (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
-
 
     const items: MenuProps['items'] = [
         {
@@ -139,15 +122,6 @@ const Navbar: React.FC = () => {
         }
     }
 
-    const [options] = useState<any[]>(MenuData().filter(x => x.children).map(x => ({
-        label: x.label,
-        vaue: x.key,
-        options: x.children?.map(c => ({
-            value: c.key,
-            label: c.label
-        })) || []
-    })))
-
     return (
         <ConfigProvider theme={{
             components: {
@@ -202,7 +176,6 @@ const Navbar: React.FC = () => {
                                                         <FormattedMessage id={menu.label} />
                                                     </Link>
                                                 ) : (<FormattedMessage id={menu.label} />),
-                                                children: menu.children,
                                                 icon: menu.icon
                                             }
                                         )
@@ -232,7 +205,6 @@ const Navbar: React.FC = () => {
                                         <FormattedMessage id={menu.label} />
                                     </Link>
                                 ) : (<FormattedMessage id={menu.label} />),
-                                children: menu.children,
                                 icon: menu.icon
                             }
                         ))}

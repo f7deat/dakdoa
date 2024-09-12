@@ -1,5 +1,3 @@
-import { animated, useSpring } from "@react-spring/web";
-
 type Header1Props = {
     children: any;
     active: boolean;
@@ -8,19 +6,13 @@ type Header1Props = {
 
 const Header1: React.FC<Header1Props> = (props) => {
 
-    const styles = useSpring({
-        y: props.active ? 0 : -400,
-        opacity: props.active ? 1 : 0
-    })
-
     return (
-        <animated.div style={styles}>
             <h1 style={{
                 textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-            }} className={`text-center text-2xl md:text-4xl 2xl:text-4xl uppercase font-bold py-4 ${props.primary ? 'text-green-700' : 'text-white'} mb-0 2xl:mb-4`}>
+            }}  data-aos="fade-up"
+            className={`text-center text-2xl md:text-4xl 2xl:text-4xl uppercase font-bold py-4 ${props.primary ? 'text-green-700' : 'text-white'} mb-0 2xl:mb-4`}>
                 {props.children}
             </h1>
-        </animated.div>
     )
 }
 
