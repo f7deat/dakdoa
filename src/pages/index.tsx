@@ -82,7 +82,7 @@ export default function HomePage() {
       </Helmet>
       <Navbar />
       <Cover />
-      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute top-60 md:top-40 2xl:w-[960px] md:w-[750px] w-80 right-0' />
+      <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute top-60 md:top-40 2xl:w-[960px] md:w-[750px] w-80 right-0' data-aos="fade-left" data-aos-delay="200" />
       <Page4 />
       <div className="bg-gradient-to-r from-sky-500 from-10% via-sky-200 via-30% to-green-600 to-90% h-1"></div>
       <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative" id="benefits"

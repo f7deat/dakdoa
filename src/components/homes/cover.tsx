@@ -19,18 +19,18 @@ const Cover: React.FC = () => {
                                 <div className='xl:text-5xl 2xl:text-[68px] font-extrabold text-3xl text-white 2xl:leading-[90px] mb-4 md:mb-6 2xl:mb-[20px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
-                                    <div>
+                                    <div data-aos="fade-up">
                                         {intl.formatMessage({ id: 'INDUSTRIAL_CLUSTERS' })}
                                     </div>
-                                    <div>
+                                    <div data-aos="fade-up">
                                         {intl.formatMessage({ id: 'NO_2' }) + ' Đak Đoa'}
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-white mb-4 md:mb-[40px] max-w-[545px] z-10 relative'>
+                            <div className='text-white mb-4 md:mb-[40px] max-w-[545px] z-10 relative' data-aos="fade-up">
                                 {intl.formatMessage({ id: 'COVER_SUBTITLE' })}
                             </div>
-                            <div className='hidden md:flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start'>
+                            <div className='hidden md:flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start' data-aos="fade-up">
                                 <ContactButton />
                                 <div className='vr'>
                                     <div className='btn'>
