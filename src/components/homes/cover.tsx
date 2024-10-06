@@ -1,5 +1,4 @@
 import ContactButton from '../button';
-import { animated, useSpring } from '@react-spring/web';
 import { AliyunOutlined } from '@ant-design/icons';
 import { Link, useIntl } from 'umi';
 
@@ -16,7 +15,7 @@ const Cover: React.FC = () => {
                     <div className='h-full md:py-0'>
                         <div className='md:px-10 px-4 md:px-0'>
                             <div className='2xl:pt-[134px] md:pt-20 pt-10'>
-                                <div className='xl:text-5xl 2xl:text-[68px] font-extrabold text-3xl text-white 2xl:leading-[90px] mb-4 md:mb-6 2xl:mb-[20px] uppercase' style={{
+                                <div className='xl:text-5xl 2xl:text-[68px] font-extrabold text-3xl text-green-700 2xl:leading-[90px] mb-4 md:mb-6 2xl:mb-[20px] uppercase' style={{
                                     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
                                 }}>
                                     <div data-aos="fade-up">
@@ -27,19 +26,19 @@ const Cover: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-white mb-4 md:mb-[40px] max-w-[545px] z-10 relative' data-aos="fade-up">
+                            <div className='text-green-700 mb-4 md:mb-[40px] max-w-[545px] z-10 relative 2xl:text-lg' data-aos="fade-up">
                                 {intl.formatMessage({ id: 'COVER_SUBTITLE' })}
                             </div>
                             <div className='hidden md:flex flex-col md:flex-row md:gap-6 gap-2 font-semibold md:text-lg inter justify-center md:justify-start' data-aos="fade-up">
                                 <ContactButton />
                                 <div className='vr'>
                                     <div className='btn'>
-                                        <Link to='/vr360' className='z-10 w-full rounded-full text-red-600 bg-white md:py-3 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
+                                        <a href='https://shinecgialai.com.vn/leaf/vr-360' className='z-10 w-full rounded-full text-red-600 bg-white md:py-3 px-2 md:px-8 flex gap-3 items-center justify-center relative'>
                                             <div className="loader">
                                                 <span><AliyunOutlined className='text-xl' /> VR 360</span>
                                                 <div className="tile"></div>
                                             </div>
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -16,35 +16,15 @@ const Sidebar: React.FC = () => {
             return;
         }
         if (e.key === '/news') {
-            history.push(`/news`);
+            window.location.href = 'https://shinecgialai.com.vn/article'
             return;
         }
         if (e.key === '/career') {
-            history.push(`/career`);
+            window.location.href = 'https://shinecgialai.com.vn/leaf/viec-lam';
             return;
         }
         if (e.key === '/contact') {
             history.push(`/contact`);
-            return;
-        }
-        if (e.key === 'thue-dat-cong-nghiep') {
-            history.push(`/product/1f025462-0ad8-4ffb-31df-08dc044e3bfc`);
-            return;
-        }
-        if (e.key === 'thue-xuong-kho-xay-san') {
-            history.push(`/product/65773527-8ba5-485e-f318-08dc044f3d01`);
-            return;
-        }
-        if (e.key === 'cho-thue-dat-thuong-mai') {
-            history.push(`/product/ae3486a8-194d-4a37-d5d6-08dc0451c999`);
-            return;
-        }
-        if (e.key === 'cho-thue-van-phong') {
-            history.push(`/product/5dd86918-9719-4ca7-0359-08dc045188ed`);
-            return;
-        }
-        if (e.key === 'thue-dung-xuong-kho-theo-yeu-cau') {
-            history.push(`/product/24994986-a68c-4463-0358-08dc045188ed`);
             return;
         }
         history.push(`/page/${e.key}`);

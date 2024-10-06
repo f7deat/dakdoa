@@ -28,11 +28,11 @@ const Navbar: React.FC = () => {
             return;
         }
         if (e.key === '/news') {
-            history.push(`/news`);
+            window.location.href = 'https://shinecgialai.com.vn/article'
             return;
         }
         if (e.key === '/career') {
-            history.push(`/career`);
+            window.location.href = 'https://shinecgialai.com.vn/leaf/viec-lam';
             return;
         }
         if (e.key === '/contact') {
@@ -135,13 +135,13 @@ const Navbar: React.FC = () => {
         }}>
             <div className='px-4 text-xs md:text-sm fixed top-0 left-0 right-0 border-b z-20 bg-slate-500'>
                 <div className='flex justify-end gap-4 font-semibold text-white'>
-                    <a href='https://shinecgialai.com.vn'>
+                    <a href='https://shinecgialai.com.vn/search'>
                         <div className='py-1 hover:text-green-100 cursor-pointer'><SearchOutlined /> Tìm kiếm</div>
                     </a>
                     <Dropdown menu={{ items, onClick: menuClick }} arrow className='text-xs md:text-sm'>
                         <div className='py-1 hover:text-green-100 cursor-pointer'><GlobalOutlined /> Ngôn ngữ</div>
                     </Dropdown>
-                    <Link to="/career"><div className='py-1 hover:text-green-100 cursor-pointer'><ScheduleOutlined /> Việc làm</div></Link>
+                    <a href="https://shinecgialai.com.vn/leaf/viec-lam"><div className='py-1 hover:text-green-100 cursor-pointer'><ScheduleOutlined /> Việc làm</div></a>
                 </div>
             </div>
             <div className='bg-slate-900 opacity-75 fixed top-0 left-0 right-0 h-screen z-10' hidden={collapsed}></div>

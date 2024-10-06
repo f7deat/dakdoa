@@ -1,24 +1,24 @@
 import { Cover, Page4, Internal } from "@/components/homes";
 import Navbar from "@/components/navbar";
 import Footer from "@/layouts/footer";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, Tooltip } from "antd";
 import { useCallback, useEffect, useRef } from "react";
 import { Helmet } from "umi";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import '../layouts/index.less';
 import Header1 from "@/components/header1";
+import 'aos/dist/aos.css';
 // @ts-ignore
 import AOS from 'aos';
 
 export default function HomePage() {
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000
-    });
-  }, []);
+    if (AOS) {
+      AOS.init({
+        duration: 1000
+      });
+    }
+  }, [AOS]);
 
   const carouselRef = useRef<any>();
 
@@ -41,14 +41,16 @@ export default function HomePage() {
 
   const Benefits = (icon: number, text: string, delay: number) => {
     return (
-      <div className="flex flex-col gap-4" 
-      data-aos="fade-up"
-      data-aos-delay={delay}
+      <div className="flex flex-col gap-4"
+        data-aos="fade-up"
+        data-aos-delay={delay}
       >
         <div className="flex justify-center">
-          <img src={`https://shinecgialai.com.vn/imgs/i${icon}.png`} />
+          <Tooltip title={text}>
+            <img src={`https://shinecgialai.com.vn/imgs/i${icon}.png`} />
+          </Tooltip>
         </div>
-        <div className="font-bold text-center md:text-xl text-white line-clamp-1" style={{
+        <div className="font-bold text-center md:text-xl text-white line-clamp-1 md:line-clamp-2" style={{
           textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
         }}>{text}</div>
       </div>
@@ -85,6 +87,25 @@ export default function HomePage() {
       <img src='https://shinecgialai.com.vn/imgs/bg-cover-1.png' className='absolute top-60 md:top-40 2xl:w-[960px] md:w-[750px] w-80 right-0' data-aos="fade-left" data-aos-delay="200" />
       <Page4 />
       <div className="bg-gradient-to-r from-sky-500 from-10% via-sky-200 via-30% to-green-600 to-90% h-1"></div>
+      <div className="md:flex py-4 items-center">
+        <div className="md:w-1/3 px-4">
+          <div className="mb-2 text-lg md:text-3xl font-semibold text-green-700" data-aos="fade-up">
+            TỔNG QUAN TỈNH GIA LAI
+          </div>
+          <div className="text-gray-400 mb-4 text-sm" data-aos="fade-up">
+            <div className="mb-2">
+              Gia Lai là tỉnh có diện tích lớn thứ hai Việt Nam và là một tỉnh cao nguyên nằm ở khu vực Bắc Tây Nguyên (Gia Lai đứng thứ nhất về diện tích và đứng thứ 2 về dân số khu vực Tây Nguyên).
+            </div>
+            <div>
+              Với nhiều lợi thế trong phát triển sản xuất nông nghiệp, xuất khẩu nông sản, Gia Lai bắt nhịp xu hướng quốc tế thúc đẩy phát triển công nghiệp và dịch vụ, tạo nên sức bật và đột phá mới trong tương lại, đem đến nhiều cơ hội tốt cho các nhà đầu tư.
+            </div>
+          </div>
+          <img src="https://shinecgialai.com.vn/imgs/info-map.png" data-aos="fade-up" />
+        </div>
+        <div className="md:w-2/3">
+          <img src="https://shinecgialai.com.vn/imgs/map.png" data-aos="fade-up" />
+        </div>
+      </div>
       <div className="bg-cover bg-no-repeat bg-fixed bg-center bg-green-800 relative" id="benefits"
         style={{
           backgroundImage: `url(https://shinecgialai.com.vn/imgs/bg-cover-2.png)`

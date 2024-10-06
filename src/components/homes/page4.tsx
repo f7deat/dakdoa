@@ -13,7 +13,7 @@ const Page4: React.FC = () => {
                     }}>
                         <div className="container mx-auto px-2 md:px-10 md:px-0 md:py-20 py-12">
                             <div className='md:flex gap-4'>
-                                <div className='md:w-1/2 flex flex-col items-center justify-center gap-4 mb-6'>
+                                <div className='md:w-2/5 flex flex-col items-center justify-center gap-4 mb-6'>
                                     <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl' data-aos="fade-up">Cơ cấu sử dụng đất</div>
                                     <div className='flex md:flex-col'>
                                         <div className='flex justify-center mb-4 w-1/2 md:w-full'>
@@ -47,28 +47,40 @@ const Page4: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='md:w-1/2 text-center'>
-                                    <div className='text-2xl mb-6 text-green-800 font-bold 2xl:text-3xl md:mb-8 2xl:mb-10' data-aos="fade-up">Ngành nghề thu hút đầu tư</div>
-                                    <div className='grid md:grid-cols-4 grid-cols-2 gap-4 2xl:gap-10 items-center justify-center mb-10'>
-                                        <div className='flex justify-center'>
-                                            <img src='https://shinecgialai.com.vn/imgs/n1.png' />
+                                <div className='md:w-3/5 text-center'>
+                                    <div className='text-2xl mb-2 text-green-800 font-bold 2xl:text-3xl' data-aos="fade-up">Cụm công nghiệp số 2 Đak Đoa</div>
+                                    <div className='text-gray-500 mb-4 2xl:mb-6' data-aos="fade-up">
+                                        Vị trí: Xã Tân Bình, huyên Đak Đoa, tỉnh Gia Lai
+                                    </div>
+                                    <div className='mb-4 md:px-10 2xl:px-20 2xl:mb-10'>
+                                        <div className='py-1 flex items-center gap-1 md:gap-2 md:text-2xl mb-2' data-aos="fade-up">
+                                            <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                            <div>Tổng diện tích: <span className='font-bold bg-blue-500 text-white px-4 py-1 rounded-full'>50,96 Ha</span></div>
                                         </div>
-                                        <div className='flex justify-center'>
-                                            <img src='https://shinecgialai.com.vn/imgs/n2.png' />
+                                        <div className='py-1 flex items-center gap-1 md:gap-2 md:text-2xl mb-2' data-aos="fade-up">
+                                            <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                            <div>Thời hạn: <span className='font-bold bg-blue-500 text-white px-4 py-1 rounded-full'>2025-2075</span></div>
                                         </div>
-                                        <div className='flex justify-center'>
-                                            <img src='https://shinecgialai.com.vn/imgs/n3.png' />
-                                        </div>
-                                        <div className='flex justify-center'>
-                                            <img src='https://shinecgialai.com.vn/imgs/n4.png' />
+                                        <div className='py-1 flex items-center gap-1 md:gap-2 md:text-2xl mb-2' data-aos="fade-up">
+                                            <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                            <div>Dự kiến giao đất: <span className='font-bold bg-blue-500 text-white px-4 py-1 rounded-full'>Quý IV/2025</span></div>
                                         </div>
                                     </div>
-                                    <div className=''>
-                                        <div className='text-2xl mb-4 text-green-800 font-bold 2xl:text-3xl' data-aos="fade-up">Hỗ trợ xuyên suốt dự án</div>
-                                        <div className='flex gap-10 justify-center md:text-xl font-bold 2xl:mb-10 text-slate-800 text-sm' data-aos="fade-up">
-                                            <span>1. Thông tin</span>
-                                            <span>2. Pháp lý</span>
-                                            <span>3. Hoạt động</span>
+                                    <div className='text-2xl mb-2 text-green-800 font-bold 2xl:text-3xl md:mb-8' data-aos="fade-up">Ngành nghề thu hút đầu tư</div>
+                                    <div className='gap-4'>
+                                        <div className='mb-4 md:px-10 2xl:px-20 text-gray-600'>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2 md:text-lg mb-1' data-aos="fade-up">
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                                Sản xuất chế biến các sản phẩm nông - lâm sản
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2 md:text-lg mb-1' data-aos="fade-up">
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                                Công nghiệp chế biến thực phẩm, công nghiệp tiêu dùng, may mặc
+                                            </div>
+                                            <div className='py-1 flex items-center gap-1 md:gap-2 md:text-lg mb-1' data-aos="fade-up">
+                                                <div className='md:w-4 md:h-4 w-2 h-2 bg-blue-500 rounded-full'></div>
+                                                Công nghiệp cơ khí, chế tạo, điện tử; Các ngành công nghiệp phụ trợ,...
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -4,24 +4,12 @@ import './style.less';
 import { ConfigProvider, Layout } from 'antd';
 import fav from '../assets/favicon.png';
 import Navbar from '@/components/navbar';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import Footer from './footer';
-// @ts-ignore
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 const { Header, Content } = Layout;
 
 export default function Layout1() {
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000
-    });
-  }, []);
 
   return (
     <div>
