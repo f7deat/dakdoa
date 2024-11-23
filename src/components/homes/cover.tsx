@@ -6,7 +6,7 @@ const Cover: React.FC = () => {
 
     const intl = useIntl();
     return (
-        <div className="bg-no-repeat bg-cover bg-right w-full md:h-[500px] 2xl:h-[600px] h-[300px]"
+        <div className="bg-no-repeat bg-cover bg-right w-full md:h-[500px] 2xl:h-[750px] h-[300px]"
             style={{
                 backgroundImage: `url('https://shinecgialai.com.vn/imgs/bg-cover-2.png')`
             }}>
